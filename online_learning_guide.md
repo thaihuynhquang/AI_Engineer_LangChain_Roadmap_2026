@@ -44,8 +44,8 @@ Bộ hướng dẫn này **thay thế hoàn toàn cuốn sách** *Generative AI 
   * **pgvector**: HNSW Index & Full-Text Search của PostgreSQL.
   * Advanced RAG: Query Rewriting, Hybrid Search (Vector + BM25), Cross-Encoder Reranking.
 * **2. Tài nguyên Học thay thế Sách (Miễn phí)**:
-  * 📹 **Khóa học 1**: [DeepLearning.AI: Building Agentic RAG with LlamaIndex / LangChain](https://www.deeplearning.ai/short-courses/building-agentic-rag-with-llamaindex/) *(RAG tự sửa lỗi & routing)*.
-  * 📹 **Khóa học 2**: [DeepLearning.AI: Preprocessing Data for LLMs](https://www.deeplearning.ai/short-courses/preprocessing-data-for-llms/) *(Xử lý & chunking tài liệu)*.
+  * 📹 **Khóa học 1**: [DeepLearning.AI: Building Agentic RAG with LlamaIndex](https://www.deeplearning.ai/short-courses/building-agentic-rag-with-llamaindex/) *(RAG tự sửa lỗi & routing)*.
+  * 📹 **Khóa học 2**: [DeepLearning.AI: Preprocessing Unstructured Data for LLM Applications](https://www.deeplearning.ai/short-courses/preprocessing-unstructured-data-for-llm-applications/) *(Xử lý & chunking tài liệu)*.
   * 📖 **Tài liệu tra cứu**: [LangChain RAG Conceptual Guide](https://python.langchain.com/docs/concepts/rag/) *(Mẫu thiết kế Retriever)*.
   * 📖 **DB Docs**: [pgvector GitHub & Documentation](https://github.com/pgvector/pgvector) *(Cú pháp HNSW index & SQL vector)*.
 * **3. Nhiệm vụ Thực hành (Sprint 2 Deliverables)**:
@@ -90,7 +90,7 @@ Bộ hướng dẫn này **thay thế hoàn toàn cuốn sách** *Generative AI 
   * CSS Styling với Tailwind CSS & Shadcn/ui.
 * **2. Tài nguyên Học thay thế Sách (Miễn phí)**:
   * 📖 **Tài liệu 1**: [Vercel AI SDK Official Documentation](https://sdk.vercel.ai/docs).
-  * 📖 **Tài liệu 2**: [Vercel AI SDK Python/FastAPI Integration Guide](https://sdk.vercel.ai/docs/guides/frameworks/fastapi).
+  * 📖 **Tài liệu 2**: [Vercel AI SDK Stream Protocol](https://sdk.vercel.ai/docs/ai-sdk-ui/stream-protocol).
   * 📖 **Tài liệu 3**: [Next.js Official Documentation](https://nextjs.org/docs).
 * **3. Nhiệm vụ Thực hành (Sprint 4 Deliverables)**:
   - Khởi tạo Web Client với Next.js 14+ (App Router) + Tailwind CSS + Shadcn/ui.
@@ -109,7 +109,7 @@ Bộ hướng dẫn này **thay thế hoàn toàn cuốn sách** *Generative AI 
   * Evaluation Metrics: Context Precision, Context Recall, Answer Faithfulness (phát hiện Hallucination).
   * Containerization với Docker Compose.
 * **2. Tài nguyên Học thay thế Sách (Miễn phí)**:
-  * 📹 **Khóa học**: [DeepLearning.AI: Evaluating & Debugging Generative AI Models](https://www.deeplearning.ai/short-courses/evaluating-debugging-generative-ai/) *(Đánh giá mô hình)*.
+  * 📹 **Khóa học**: [DeepLearning.AI: Evaluating and Debugging Generative AI](https://www.deeplearning.ai/short-courses/evaluating-debugging-generative-ai/) *(Đánh giá mô hình)*.
   * 📖 **Tài liệu Tracing**: [LangSmith Documentation](https://docs.smith.langchain.com/) hoặc [Langfuse Open-source Docs](https://langfuse.com/docs).
 * **3. Nhiệm vụ Thực hành (Sprint 5 Deliverables)**:
   - Gắn Tracing SDK (`langsmith` hoặc `langfuse`) vào FastAPI backend.

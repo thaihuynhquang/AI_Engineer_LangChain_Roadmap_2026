@@ -21,12 +21,12 @@ Tập hợp đầy đủ và cập nhật 100% theo lộ trình 5 Module trong t
 
 ## 🟡 Module 2: Advanced RAG System & PostgreSQL (`pgvector`)
 
-* 🎓 **[Khóa học Video Miễn phí 1] Building Agentic RAG with LlamaIndex / LangChain**:
+* 🎓 **[Khóa học Video Miễn phí 1] Building Agentic RAG with LlamaIndex**:
   * *Nội dung*: Kỹ thuật RAG tự sửa lỗi (Self-Corrective RAG), Query Rewriting và Document Routing.
   * *URL*: [deeplearning.ai/short-courses/building-agentic-rag-with-llamaindex/](https://www.deeplearning.ai/short-courses/building-agentic-rag-with-llamaindex/)
-* 🎓 **[Khóa học Video Miễn phí 2] Preprocessing Data for LLMs**:
+* 🎓 **[Khóa học Video Miễn phí 2] Preprocessing Unstructured Data for LLM Applications**:
   * *Nội dung*: Phương pháp parse, làm sạch và chia nhỏ văn bản (Chunking Strategies) từ PDF/Markdown.
-  * *URL*: [deeplearning.ai/short-courses/preprocessing-data-for-llms/](https://www.deeplearning.ai/short-courses/preprocessing-data-for-llms/)
+  * *URL*: [deeplearning.ai/short-courses/preprocessing-unstructured-data-for-llm-applications/](https://www.deeplearning.ai/short-courses/preprocessing-unstructured-data-for-llm-applications/)
 * 🐘 **[Docs Tra Cứu] `pgvector` Extension Documentation**:
   * *Nội dung*: Cú pháp SQL tạo bảng Vector, đánh chỉ mục HNSW/IVFFlat và thực hiện Hybrid Search trên PostgreSQL.
   * *URL*: [github.com/pgvector/pgvector](https://github.com/pgvector/pgvector)
@@ -61,9 +61,9 @@ Tập hợp đầy đủ và cập nhật 100% theo lộ trình 5 Module trong t
 * 🚀 **[Docs Tra Cứu] Vercel AI SDK Documentation**:
   * *Nội dung*: Thư viện React Hooks chuẩn (`useChat`, `streamText`) để kết nối Next.js với LLM Streaming backend.
   * *URL*: [sdk.vercel.ai/docs](https://sdk.vercel.ai/docs)
-* 🔗 **[Docs Tra Cứu] Vercel AI SDK FastAPI Integration Guide**:
-  * *Nội dung*: Hướng dẫn đấu nối giao diện Next.js với Python FastAPI Server qua SSE.
-  * *URL*: [sdk.vercel.ai/docs/guides/frameworks/fastapi](https://sdk.vercel.ai/docs/guides/frameworks/fastapi)
+* 🔗 **[Docs Tra Cứu] Vercel AI SDK Stream Protocol (FastAPI Integration)**:
+  * *Nội dung*: Hướng dẫn định dạng giao thức Streaming (Stream Protocol) kết nối Next.js với FastAPI Python Server qua SSE.
+  * *URL*: [sdk.vercel.ai/docs/ai-sdk-ui/stream-protocol](https://sdk.vercel.ai/docs/ai-sdk-ui/stream-protocol)
 * 🌐 **[Docs Tra Cứu] Next.js Official Documentation**:
   * *Nội dung*: Hướng dẫn sử dụng App Router, React Server Components và Server Actions.
   * *URL*: [nextjs.org/docs](https://nextjs.org/docs)
@@ -72,7 +72,7 @@ Tập hợp đầy đủ và cập nhật 100% theo lộ trình 5 Module trong t
 
 ## 🟣 Module 5: Production LLMOps, Tracing, Evaluation & Deployment
 
-* 🎓 **[Khóa học Video Miễn phí] Evaluating & Debugging Generative AI Models**:
+* 🎓 **[Khóa học Video Miễn phí] Evaluating and Debugging Generative AI**:
   * *Nội dung*: Đo đạc độ chính xác của RAG, phát hiện Hallucination và kiểm thử tự động với Weights & Biases / Ragas.
   * *URL*: [deeplearning.ai/short-courses/evaluating-debugging-generative-ai/](https://www.deeplearning.ai/short-courses/evaluating-debugging-generative-ai/)
 * 🔍 **[Docs Tra Cứu] LangSmith Documentation**:
