@@ -1,10 +1,52 @@
-import { DAILY_SCHEDULE } from '../data/planData';
-import { getState, toggleChecked } from '../state/storage';
+import { SPRINT_MODULES, META_DATA } from '../data/planData';
+import {
+  getState,
+  addPomodoroSession,
+  removePomodoroSession,
+  updatePomodoroSettings,
+  DEFAULT_POMODORO_SETTINGS,
+} from '../state/storage';
 import { registerRenderListener, unregisterRenderListener } from '../renderer';
+import { playSessionCompleteSound, playBreakCompleteSound } from '../utils/audio';
+import { requestNotificationPermission, sendWebNotification } from '../utils/notification';
+import { showToast } from '../toast';
+import { Task } from '../types/appState';
+
+type TimerMode = 'focus' | 'shortBreak' | 'longBreak';
+
+// Module-level persistent timer engine state (continues running across tab switches)
+let timerMode: TimerMode = 'focus';
+let secondsRemaining = 25 * 60;
+let totalSeconds = 25 * 60;
+let isRunning = false;
+let timerInterval: number | null = null;
+let selectedTaskId = '';
+let completedFocusCountInRow = 0;
+
+const formatTime = (secs: number): string => {
+  const m = Math.floor(secs / 60);
+  const s = secs % 60;
+  return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+};
+
+const updateDocumentTitle = () => {
+  if (isRunning) {
+    const modeLabel = timerMode === 'focus' ? '🎯 Focus' : '☕ Break';
+    document.title = `(${formatTime(secondsRemaining)}) ${modeLabel} - AI Engineer Roadmap`;
+  } else {
+    document.title = 'AI Engineer LangChain Roadmap 2026 - Tracker';
+  }
+};
+
+const stopTimerInterval = () => {
+  if (timerInterval !== null) {
+    clearInterval(timerInterval);
+    timerInterval = null;
+  }
+};
 
 export class RoadmapViewSchedule extends HTMLElement {
   private boundRefresh = this.refresh.bind(this);
-  private selectedWeek = 1;
 
   connectedCallback(): void {
     registerRenderListener(this.boundRefresh);
@@ -15,121 +57,558 @@ export class RoadmapViewSchedule extends HTMLElement {
     unregisterRenderListener(this.boundRefresh);
   }
 
+  private startTimer(): void {
+    if (isRunning) return;
+    isRunning = true;
+    updateDocumentTitle();
+
+    stopTimerInterval();
+    timerInterval = window.setInterval(() => {
+      if (secondsRemaining > 0) {
+        secondsRemaining--;
+        updateDocumentTitle();
+        this.updateTimerDisplayOnly();
+      } else {
+        this.onTimerComplete();
+      }
+    }, 1000);
+
+    this.refresh();
+  }
+
+  private pauseTimer(): void {
+    isRunning = false;
+    stopTimerInterval();
+    updateDocumentTitle();
+    this.refresh();
+  }
+
+  private resetTimer(): void {
+    this.pauseTimer();
+    const settings = getState().pomodoroSettings || DEFAULT_POMODORO_SETTINGS;
+    if (timerMode === 'focus') {
+      secondsRemaining = settings.focusDuration * 60;
+    } else if (timerMode === 'shortBreak') {
+      secondsRemaining = settings.breakDuration * 60;
+    } else {
+      secondsRemaining = settings.longBreakDuration * 60;
+    }
+    totalSeconds = secondsRemaining;
+    updateDocumentTitle();
+    this.refresh();
+  }
+
+  private skipTimer(): void {
+    this.pauseTimer();
+    if (timerMode === 'focus') {
+      this.switchMode('shortBreak');
+    } else {
+      this.switchMode('focus');
+    }
+  }
+
+  private switchMode(newMode: TimerMode): void {
+    this.pauseTimer();
+    timerMode = newMode;
+    const settings = getState().pomodoroSettings || DEFAULT_POMODORO_SETTINGS;
+    if (newMode === 'focus') {
+      secondsRemaining = settings.focusDuration * 60;
+    } else if (newMode === 'shortBreak') {
+      secondsRemaining = settings.breakDuration * 60;
+    } else {
+      secondsRemaining = settings.longBreakDuration * 60;
+    }
+    totalSeconds = secondsRemaining;
+    updateDocumentTitle();
+    this.refresh();
+  }
+
+  private setProfile(preset: '25/5' | '50/5' | 'custom', focusMins?: number, breakMins?: number): void {
+    this.pauseTimer();
+    let fMins = 25;
+    let bMins = 5;
+
+    if (preset === '25/5') {
+      fMins = 25;
+      bMins = 5;
+    } else if (preset === '50/5') {
+      fMins = 50;
+      bMins = 5;
+    } else if (preset === 'custom') {
+      fMins = focusMins && focusMins > 0 ? focusMins : 45;
+      bMins = breakMins && breakMins > 0 ? breakMins : 10;
+    }
+
+    updatePomodoroSettings({
+      preset,
+      focusDuration: fMins,
+      breakDuration: bMins,
+    });
+
+    if (timerMode === 'focus') {
+      secondsRemaining = fMins * 60;
+    } else if (timerMode === 'shortBreak') {
+      secondsRemaining = bMins * 60;
+    }
+    totalSeconds = secondsRemaining;
+    updateDocumentTitle();
+    this.refresh();
+  }
+
+  private onTimerComplete(): void {
+    stopTimerInterval();
+    const settings = getState().pomodoroSettings || DEFAULT_POMODORO_SETTINGS;
+
+    if (timerMode === 'focus') {
+      if (settings.soundEnabled) playSessionCompleteSound();
+      if (settings.notificationEnabled) {
+        sendWebNotification('🎉 Hoàn thành phiên Pomodoro!', {
+          body: 'Tuyệt vời! Đã cộng +1 Pomodoro vào tiến độ tích lũy.',
+        });
+      }
+      showToast('🎉 Hoàn thành phiên Pomodoro! (+1 điểm tích lũy)', 'success');
+
+      // Find task info if selected
+      let taskTitle = '';
+      if (selectedTaskId) {
+        for (const s of SPRINT_MODULES) {
+          const found = s.deliverables.find((t) => t.id === selectedTaskId);
+          if (found) {
+            taskTitle = found.title;
+            break;
+          }
+        }
+      }
+
+      // Add session log (Increments total pomodoro count for 40% Dashboard weight)
+      addPomodoroSession({
+        durationMinutes: settings.focusDuration,
+        taskId: selectedTaskId || undefined,
+        taskTitle: taskTitle || undefined,
+        preset: settings.preset,
+      });
+
+      completedFocusCountInRow++;
+
+      // Switch to break
+      if (completedFocusCountInRow % 4 === 0) {
+        timerMode = 'longBreak';
+        secondsRemaining = settings.longBreakDuration * 60;
+      } else {
+        timerMode = 'shortBreak';
+        secondsRemaining = settings.breakDuration * 60;
+      }
+      totalSeconds = secondsRemaining;
+
+      if (settings.autoStartBreaks) {
+        this.startTimer();
+      } else {
+        isRunning = false;
+        updateDocumentTitle();
+        this.refresh();
+      }
+    } else {
+      // Break complete
+      if (settings.soundEnabled) playBreakCompleteSound();
+      if (settings.notificationEnabled) {
+        sendWebNotification('☕ Hết giờ nghỉ!', {
+          body: 'Sẵn sàng cho phiên tập trung tiếp theo.',
+        });
+      }
+      showToast('☕ Hết giờ nghỉ! Sẵn sàng cho phiên tập trung mới.', 'info');
+
+      timerMode = 'focus';
+      secondsRemaining = settings.focusDuration * 60;
+      totalSeconds = secondsRemaining;
+      isRunning = false;
+      updateDocumentTitle();
+      this.refresh();
+    }
+  }
+
+  private updateTimerDisplayOnly(): void {
+    const digitsEl = this.querySelector('.timer-digits');
+    const ringEl = this.querySelector<SVGCircleElement>('.timer-ring-progress');
+
+    if (digitsEl) {
+      digitsEl.textContent = formatTime(secondsRemaining);
+    }
+
+    if (ringEl && totalSeconds > 0) {
+      const radius = 120;
+      const circumference = 2 * Math.PI * radius; // ~753.98
+      const progressRatio = secondsRemaining / totalSeconds;
+      const strokeDashoffset = circumference * (1 - progressRatio);
+      ringEl.style.strokeDashoffset = strokeDashoffset.toString();
+    }
+  }
+
   refresh(): void {
-    const { checked } = getState();
+    const state = getState();
+    const settings = state.pomodoroSettings || DEFAULT_POMODORO_SETTINGS;
+    const sessions = state.pomodoroSessions || [];
 
-    // Group days by week
-    const weekDays = DAILY_SCHEDULE.filter((d) => d.weekNum === this.selectedWeek);
-
-    // Count checked pomodoros in this week
-    let weekCheckedPoms = 0;
-    const weekTotalPoms = 30; // 5 days x 6 poms
-    weekDays.forEach((day) => {
-      day.poms.forEach((p) => {
-        if (checked[p.id]) weekCheckedPoms++;
+    // All Tasks flat list for dropdown
+    const allTasks: { id: string; title: string; sprintTitle: string }[] = [];
+    SPRINT_MODULES.forEach((sprint) => {
+      sprint.deliverables.forEach((t: Task) => {
+        allTasks.push({
+          id: t.id,
+          title: t.title,
+          sprintTitle: `Sprint ${sprint.moduleNum}`,
+        });
       });
     });
 
+    // Today stats
+    const startOfToday = new Date();
+    startOfToday.setHours(0, 0, 0, 0);
+    const todaySessions = sessions.filter((s) => s.timestamp >= startOfToday.getTime());
+    const todayMinutes = todaySessions.reduce((acc, s) => acc + s.durationMinutes, 0);
+    const totalAccumulatedPoms = sessions.length;
+
+    // SVG Ring calculations
+    const radius = 120;
+    const circumference = 2 * Math.PI * radius;
+    const progressRatio = totalSeconds > 0 ? secondsRemaining / totalSeconds : 1;
+    const strokeDashoffset = circumference * (1 - progressRatio);
+
     this.innerHTML = `
-      <div class="schedule-container">
-        <!-- Pomodoro Rule Info Header -->
-        <div class="progress-card" style="margin-bottom: 1.5rem; background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(16, 185, 129, 0.05)); border: 1px solid var(--border-color-strong);">
-          <div style="font-weight: 700; font-size: 1.1rem; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-            ⏱️ Quy Tắc Pomodoro 50m Focus - 5m Short Break - 20m Long Break
-          </div>
-          <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">
-            • <b>Ca Chiều</b> (13:00 - 17:00 | 4 Pomodoros): Nạp lý thuyết, tra cứu pattern & Heavy Coding.<br/>
-            • <b>Ca Tối</b> (22:00 - 24:00 | 2 Pomodoros): UI Integration, Debugging, Refactoring & Commit GitHub.<br/>
-            • <b>Định lượng</b>: 6 Pomodoro/ngày = 30 Pomodoro/tuần = 150 Pomodoro toàn dự án (5 Tuần).
-          </div>
-        </div>
+      <div class="zen-pomodoro-container">
+        <!-- Main Zen Focus Card -->
+        <div class="timer-hero-card">
 
-        <!-- Week Selector Tabs -->
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
-          <div style="display: flex; gap: 0.5rem;">
-            ${[1, 2, 3, 4, 5]
-              .map(
-                (w) => `
-              <button 
-                class="action-btn btn-week-tab ${this.selectedWeek === w ? 'active' : ''}" 
-                data-week="${w}"
-                style="${this.selectedWeek === w ? 'background: var(--primary); color: white; border-color: var(--primary);' : ''}"
-              >
-                Tuần ${w}
+          <!-- Timer Mode Switcher (Focus / Short Break / Long Break) -->
+          <div class="mode-pills-group">
+            <button class="mode-pill ${timerMode === 'focus' ? 'active' : ''}" data-mode="focus">
+              🎯 Focus
+            </button>
+            <button class="mode-pill ${timerMode === 'shortBreak' ? 'active' : ''}" data-mode="shortBreak">
+              ☕ Short Break (${settings.breakDuration}m)
+            </button>
+            <button class="mode-pill ${timerMode === 'longBreak' ? 'active' : ''}" data-mode="longBreak">
+              🌴 Long Break (${settings.longBreakDuration}m)
+            </button>
+          </div>
+
+          <!-- Profile Selector Pills -->
+          <div class="profile-pills-group">
+            <button class="profile-pill ${settings.preset === '25/5' ? 'active' : ''}" data-preset="25/5">
+              ⚡ 25m Focus / 5m Break
+            </button>
+            <button class="profile-pill ${settings.preset === '50/5' ? 'active' : ''}" data-preset="50/5">
+              🚀 50m Deep Focus / 5m Break
+            </button>
+            <button class="profile-pill ${settings.preset === 'custom' ? 'active' : ''}" data-preset="custom">
+              ⚙️ Custom
+            </button>
+          </div>
+
+          <!-- Custom Duration Controls (Visible when preset === 'custom') -->
+          ${
+            settings.preset === 'custom'
+              ? `
+            <div class="custom-inputs-row">
+              <div class="custom-input-group">
+                <label for="custom-focus-input">Focus (m):</label>
+                <input 
+                  type="number" 
+                  id="custom-focus-input" 
+                  class="custom-input-field" 
+                  min="1" 
+                  max="120" 
+                  value="${settings.focusDuration}" 
+                />
+              </div>
+              <div class="custom-input-group">
+                <label for="custom-break-input">Break (m):</label>
+                <input 
+                  type="number" 
+                  id="custom-break-input" 
+                  class="custom-input-field" 
+                  min="1" 
+                  max="60" 
+                  value="${settings.breakDuration}" 
+                />
+              </div>
+              <button class="action-btn" id="btn-apply-custom" style="padding: 0.25rem 0.65rem; font-size: 0.78rem;">
+                Áp dụng
               </button>
-            `
-              )
-              .join('')}
+            </div>
+          `
+              : ''
+          }
+
+          <!-- Roadmap Task Selector -->
+          <div class="task-selector-wrapper">
+            <select id="task-select-dropdown" class="task-select-dropdown">
+              <option value="">🎯 Tập trung tự do (General Focus)</option>
+              ${allTasks
+                .map(
+                  (t) => `
+                <option value="${t.id}" ${selectedTaskId === t.id ? 'selected' : ''}>
+                  [${t.sprintTitle}] ${t.title}
+                </option>
+              `
+                )
+                .join('')}
+            </select>
           </div>
 
-          <div style="font-weight: 700; font-size: 0.95rem; color: var(--accent-emerald);">
-            Tiến độ Tuần ${this.selectedWeek}: ${weekCheckedPoms}/${weekTotalPoms} Poms (${Math.round((weekCheckedPoms / weekTotalPoms) * 100)}%)
+          <!-- SVG Circular Progress Ring Display -->
+          <div class="timer-svg-container ${timerMode !== 'focus' ? 'break' : ''} ${isRunning ? 'running' : ''}">
+            <svg width="270" height="270" viewBox="0 0 270 270">
+              <circle
+                class="timer-ring-bg"
+                cx="135"
+                cy="135"
+                r="${radius}"
+                stroke-width="12"
+                fill="none"
+              />
+              <circle
+                class="timer-ring-progress"
+                cx="135"
+                cy="135"
+                r="${radius}"
+                stroke-width="12"
+                fill="none"
+                stroke-dasharray="${circumference}"
+                stroke-dashoffset="${strokeDashoffset}"
+              />
+            </svg>
+
+            <div class="timer-text-overlay">
+              <div class="timer-digits">${formatTime(secondsRemaining)}</div>
+              <div class="timer-status-badge">
+                ${
+                  timerMode === 'focus'
+                    ? '🎯 TẬP TRUNG'
+                    : timerMode === 'shortBreak'
+                    ? '☕ NGHỈ NGẮN'
+                    : '🌴 NGHỈ DÀI'
+                }
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons Controls -->
+          <div class="timer-controls-group">
+            <button class="btn-timer-secondary" id="btn-timer-reset" title="Đặt lại bộ đếm">
+              🔄
+            </button>
+            <button class="btn-timer-primary" id="btn-timer-toggle">
+              ${isRunning ? '⏸️ Tạm Dừng' : '▶️ Bắt Đầu'}
+            </button>
+            <button class="btn-timer-secondary" id="btn-timer-skip" title="Bỏ qua phiên">
+              ⏭️
+            </button>
+          </div>
+
+          <!-- Toggles Row (Sound / Notification / Auto Break) -->
+          <div class="timer-toggles-row">
+            <label class="toggle-option" title="Phát tiếng chuông khi hết giờ">
+              <input type="checkbox" id="chk-sound" ${settings.soundEnabled ? 'checked' : ''} />
+              🔊 Chuông báo
+            </label>
+            <label class="toggle-option" title="Gửi thông báo trình duyệt">
+              <input type="checkbox" id="chk-notif" ${settings.notificationEnabled ? 'checked' : ''} />
+              🔔 Thông báo Web
+            </label>
+            <label class="toggle-option" title="Tự động chạy timer nghỉ khi hết giờ tập trung">
+              <input type="checkbox" id="chk-autobreak" ${settings.autoStartBreaks ? 'checked' : ''} />
+              ⚡ Tự động nghỉ
+            </label>
+          </div>
+
+        </div>
+
+        <!-- Today's Focus Metrics Row -->
+        <div class="dashboard-grid">
+          <div class="metric-card">
+            <div class="metric-icon" style="background: rgba(99, 102, 241, 0.12); color: var(--primary);">
+              ⏱️
+            </div>
+            <div class="metric-info">
+              <span class="metric-value">${todaySessions.length} phiên</span>
+              <span class="metric-label">Tập trung hôm nay</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon" style="background: rgba(16, 185, 129, 0.12); color: var(--accent-emerald);">
+              💡
+            </div>
+            <div class="metric-info">
+              <span class="metric-value">${todayMinutes}m</span>
+              <span class="metric-label">Thời gian học hôm nay (~${(todayMinutes / 60).toFixed(1)}h)</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon" style="background: rgba(245, 158, 11, 0.12); color: #f59e0b;">
+              🏆
+            </div>
+            <div class="metric-info">
+              <span class="metric-value">${totalAccumulatedPoms}/${META_DATA.totalPomodoros}</span>
+              <span class="metric-label">Pomodoro tích lũy (Dashboard 40%)</span>
+            </div>
           </div>
         </div>
 
-        <!-- Daily Grid for Selected Week -->
-        <div class="schedule-week-block">
-          <div class="days-grid">
-            ${weekDays
-              .map((day) => {
-                const dayCheckedPoms = day.poms.filter((p) => checked[p.id]).length;
-                return `
-                  <div class="day-card">
-                    <div class="day-header">
-                      <span>${day.dayName}</span>
-                      <span style="font-size: 0.75rem; color: var(--accent-emerald); font-weight: 600;">
-                        ${dayCheckedPoms}/6 Poms
-                      </span>
-                    </div>
-                    <div class="day-theme">${day.theme}</div>
-
-                    <div class="pom-slots-list">
-                      ${day.poms
-                        .map((pom) => {
-                          const isChecked = !!checked[pom.id];
-                          return `
-                            <label class="pom-slot-item ${isChecked ? 'checked' : ''}">
-                              <input 
-                                type="checkbox" 
-                                class="pom-checkbox" 
-                                data-pom-id="${pom.id}"
-                                ${isChecked ? 'checked' : ''} 
-                              />
-                              <div style="flex: 1; display: flex; flex-direction: column;">
-                                <span style="font-weight: 600; font-size: 0.78rem;">${pom.label}</span>
-                                <span style="font-size: 0.7rem; color: var(--text-muted);">${pom.timeSlot}</span>
-                              </div>
-                            </label>
-                          `;
-                        })
-                        .join('')}
-                    </div>
-                  </div>
-                `;
-              })
-              .join('')}
+        <!-- Session History List -->
+        <div class="progress-card">
+          <div class="progress-header" style="margin-bottom: 1rem;">
+            <div class="progress-title">📝 Nhật ký phiên tập trung gần nhất</div>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">
+              ${sessions.length} phiên tổng cộng
+            </span>
           </div>
+
+          ${
+            sessions.length === 0
+              ? `<div style="text-align: center; color: var(--text-muted); font-size: 0.85rem; padding: 1rem 0;">
+                  Chưa có phiên tập trung nào. Hãy chọn Task và bấm ▶️ Bắt Đầu!
+                </div>`
+              : `<div class="history-list">
+                  ${sessions
+                    .slice()
+                    .reverse()
+                    .slice(0, 5)
+                    .map((s) => {
+                      const d = new Date(s.timestamp);
+                      const timeStr = `${d.getHours().toString().padStart(2, '0')}:${d
+                        .getMinutes()
+                        .toString()
+                        .padStart(2, '0')} (${d.getDate()}/${d.getMonth() + 1})`;
+                      return `
+                        <div class="history-item">
+                          <div style="display: flex; align-items: center; gap: 0.6rem;">
+                            <span style="color: var(--accent-emerald); font-weight: 700;">✅ +1 Pomodoro</span>
+                            <span style="color: var(--text-muted); font-size: 0.8rem;">${timeStr}</span>
+                            <span style="font-weight: 600;">(${s.durationMinutes}m)</span>
+                            ${
+                              s.taskTitle
+                                ? `<span style="color: var(--primary-glow); font-size: 0.8rem; background: rgba(99, 102, 241, 0.1); padding: 0.1rem 0.4rem; border-radius: 4px;">
+                                    ${s.taskTitle}
+                                  </span>`
+                                : ''
+                            }
+                          </div>
+                          <button class="history-item-del" data-session-id="${s.id}" title="Xóa phiên này">
+                            🗑️
+                          </button>
+                        </div>
+                      `;
+                    })
+                    .join('')}
+                </div>`
+          }
         </div>
       </div>
     `;
 
-    // Attach week tab listeners
-    this.querySelectorAll<HTMLButtonElement>('.btn-week-tab').forEach((btn) => {
+    // Attach Event Listeners
+
+    // Mode pills
+    this.querySelectorAll<HTMLButtonElement>('.mode-pill').forEach((btn) => {
       btn.addEventListener('click', (e) => {
-        const wStr = (e.currentTarget as HTMLElement).getAttribute('data-week');
-        if (wStr) {
-          this.selectedWeek = parseInt(wStr, 10);
-          this.refresh();
-        }
+        const m = (e.currentTarget as HTMLElement).getAttribute('data-mode') as TimerMode;
+        if (m) this.switchMode(m);
       });
     });
 
-    // Attach pomodoro checkbox listeners
-    this.querySelectorAll<HTMLInputElement>('.pom-checkbox').forEach((cb) => {
-      cb.addEventListener('change', (e) => {
-        const pomId = (e.target as HTMLInputElement).getAttribute('data-pom-id');
-        if (pomId) {
-          toggleChecked(pomId);
+    // Profile pills
+    this.querySelectorAll<HTMLButtonElement>('.profile-pill').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const p = (e.currentTarget as HTMLElement).getAttribute('data-preset') as '25/5' | '50/5' | 'custom';
+        if (p) this.setProfile(p);
+      });
+    });
+
+    // Custom Apply Button
+    const btnApplyCustom = this.querySelector<HTMLButtonElement>('#btn-apply-custom');
+    if (btnApplyCustom) {
+      btnApplyCustom.addEventListener('click', () => {
+        const focusInput = this.querySelector<HTMLInputElement>('#custom-focus-input');
+        const breakInput = this.querySelector<HTMLInputElement>('#custom-break-input');
+        const f = focusInput ? parseInt(focusInput.value, 10) : 45;
+        const b = breakInput ? parseInt(breakInput.value, 10) : 10;
+        this.setProfile('custom', f, b);
+      });
+    }
+
+    // Task Selector
+    const taskSelect = this.querySelector<HTMLSelectElement>('#task-select-dropdown');
+    if (taskSelect) {
+      taskSelect.addEventListener('change', (e) => {
+        selectedTaskId = (e.target as HTMLSelectElement).value;
+      });
+    }
+
+    // Primary Play/Pause
+    const btnToggle = this.querySelector<HTMLButtonElement>('#btn-timer-toggle');
+    if (btnToggle) {
+      btnToggle.addEventListener('click', () => {
+        if (isRunning) {
+          this.pauseTimer();
+        } else {
+          this.startTimer();
+        }
+      });
+    }
+
+    // Reset button
+    const btnReset = this.querySelector<HTMLButtonElement>('#btn-timer-reset');
+    if (btnReset) {
+      btnReset.addEventListener('click', () => this.resetTimer());
+    }
+
+    // Skip button
+    const btnSkip = this.querySelector<HTMLButtonElement>('#btn-timer-skip');
+    if (btnSkip) {
+      btnSkip.addEventListener('click', () => this.skipTimer());
+    }
+
+    // Checkboxes toggles
+    const chkSound = this.querySelector<HTMLInputElement>('#chk-sound');
+    if (chkSound) {
+      chkSound.addEventListener('change', (e) => {
+        updatePomodoroSettings({ soundEnabled: (e.target as HTMLInputElement).checked });
+      });
+    }
+
+    const chkNotif = this.querySelector<HTMLInputElement>('#chk-notif');
+    if (chkNotif) {
+      chkNotif.addEventListener('change', async (e) => {
+        const isChecked = (e.target as HTMLInputElement).checked;
+        if (isChecked) {
+          const granted = await requestNotificationPermission();
+          updatePomodoroSettings({ notificationEnabled: granted });
+          if (!granted) {
+            (e.target as HTMLInputElement).checked = false;
+            showToast('Quyền thông báo trình duyệt bị từ chối hoặc chưa được cấp.', 'warning');
+          }
+        } else {
+          updatePomodoroSettings({ notificationEnabled: false });
+        }
+      });
+    }
+
+    const chkAutoBreak = this.querySelector<HTMLInputElement>('#chk-autobreak');
+    if (chkAutoBreak) {
+      chkAutoBreak.addEventListener('change', (e) => {
+        updatePomodoroSettings({ autoStartBreaks: (e.target as HTMLInputElement).checked });
+      });
+    }
+
+    // Session delete history items
+    this.querySelectorAll<HTMLButtonElement>('.history-item-del').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const sid = (e.currentTarget as HTMLElement).getAttribute('data-session-id');
+        if (sid) {
+          removePomodoroSession(sid);
+          showToast('Đã xóa phiên tập trung khỏi nhật ký', 'info');
         }
       });
     });

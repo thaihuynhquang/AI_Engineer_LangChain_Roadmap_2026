@@ -1,12 +1,24 @@
-import { AppState } from '../types/appState';
+import { AppState, PomodoroSessionLog, PomodoroTimerSettings } from '../types/appState';
 import { STORAGE_KEY, THEME_KEY, ROUTE_IDS } from '../constants';
 import { renderAll } from '../renderer';
+
+export const DEFAULT_POMODORO_SETTINGS: PomodoroTimerSettings = {
+  preset: '25/5',
+  focusDuration: 25,
+  breakDuration: 5,
+  longBreakDuration: 15,
+  autoStartBreaks: false,
+  soundEnabled: true,
+  notificationEnabled: true,
+};
 
 const defaultState: AppState = {
   checked: {},
   resourceFlags: {},
   activeTab: ROUTE_IDS.DASHBOARD,
   theme: 'dark',
+  pomodoroSettings: { ...DEFAULT_POMODORO_SETTINGS },
+  pomodoroSessions: [],
 };
 
 let state: AppState = { ...defaultState };
@@ -29,6 +41,10 @@ export const normalizeState = (raw: Partial<AppState> | null): AppState => {
     resourceFlags: raw.resourceFlags && typeof raw.resourceFlags === 'object' ? raw.resourceFlags : {},
     activeTab: raw.activeTab && typeof raw.activeTab === 'string' ? raw.activeTab : ROUTE_IDS.DASHBOARD,
     theme: raw.theme === 'light' || raw.theme === 'dark' ? raw.theme : getInitialTheme(),
+    pomodoroSettings: raw.pomodoroSettings
+      ? { ...DEFAULT_POMODORO_SETTINGS, ...raw.pomodoroSettings }
+      : { ...DEFAULT_POMODORO_SETTINGS },
+    pomodoroSessions: Array.isArray(raw.pomodoroSessions) ? raw.pomodoroSessions : [],
   };
 };
 
@@ -93,6 +109,40 @@ export const setThemeState = (theme: 'dark' | 'light'): void => {
 export const resetProgress = (): void => {
   state.checked = {};
   state.resourceFlags = {};
+  state.pomodoroSessions = [];
+  state.pomodoroSettings = { ...DEFAULT_POMODORO_SETTINGS };
+  saveState();
+  renderAll();
+};
+
+export const addPomodoroSession = (sessionData: Omit<PomodoroSessionLog, 'id' | 'timestamp'>): PomodoroSessionLog => {
+  if (!state.pomodoroSessions) {
+    state.pomodoroSessions = [];
+  }
+  const newLog: PomodoroSessionLog = {
+    ...sessionData,
+    id: 'pom_log_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4),
+    timestamp: Date.now(),
+  };
+  state.pomodoroSessions.push(newLog);
+  saveState();
+  renderAll();
+  return newLog;
+};
+
+export const removePomodoroSession = (id: string): void => {
+  if (state.pomodoroSessions) {
+    state.pomodoroSessions = state.pomodoroSessions.filter((s) => s.id !== id);
+    saveState();
+    renderAll();
+  }
+};
+
+export const updatePomodoroSettings = (newSettings: Partial<PomodoroTimerSettings>): void => {
+  state.pomodoroSettings = {
+    ...(state.pomodoroSettings || DEFAULT_POMODORO_SETTINGS),
+    ...newSettings,
+  };
   saveState();
   renderAll();
 };
@@ -107,3 +157,4 @@ export const importState = (newState: Partial<AppState>): void => {
 export const exportStateJSON = (): string => {
   return JSON.stringify(state, null, 2);
 };
+

@@ -1,4 +1,4 @@
-import { SPRINT_MODULES, DAILY_SCHEDULE, META_DATA } from './data/planData';
+import { SPRINT_MODULES, META_DATA } from './data/planData';
 import { getState } from './state/storage';
 
 export interface ProgressSummary {
@@ -60,13 +60,11 @@ export const calculateProgress = (): ProgressSummary => {
   let completedPomodoros = 0;
   const totalPomodoros = META_DATA.totalPomodoros; // 150
 
-  DAILY_SCHEDULE.forEach((day) => {
-    day.poms.forEach((pom) => {
-      if (checked[pom.id]) {
-        completedPomodoros++;
-      }
-    });
-  });
+  const state = getState();
+  const legacyCheckedPoms = Object.keys(state.checked).filter((k) => k.startsWith('pom_') && state.checked[k]).length;
+  const sessionPoms = (state.pomodoroSessions || []).length;
+  completedPomodoros = Math.max(legacyCheckedPoms, sessionPoms);
+
 
   // 3. Combined percentage (weighted average of deliverables 60% and pomodoros 40%)
   const deliverablesPct = totalDeliverables > 0 ? (completedDeliverables / totalDeliverables) * 100 : 0;

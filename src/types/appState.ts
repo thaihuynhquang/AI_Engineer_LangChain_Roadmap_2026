@@ -63,9 +63,31 @@ export interface TechStackLayer {
   }[];
 }
 
+export interface PomodoroSessionLog {
+  id: string;
+  timestamp: number;
+  durationMinutes: number;
+  taskId?: string;
+  taskTitle?: string;
+  preset: '25/5' | '50/5' | 'custom';
+}
+
+export interface PomodoroTimerSettings {
+  preset: '25/5' | '50/5' | 'custom';
+  focusDuration: number; // in minutes
+  breakDuration: number; // in minutes
+  longBreakDuration: number; // in minutes
+  autoStartBreaks: boolean;
+  soundEnabled: boolean;
+  notificationEnabled: boolean;
+}
+
 export interface AppState {
   checked: Record<string, boolean>;
   resourceFlags: Record<string, boolean>;
   activeTab: string;
   theme: 'dark' | 'light';
+  pomodoroSettings?: PomodoroTimerSettings;
+  pomodoroSessions?: PomodoroSessionLog[];
 }
+
