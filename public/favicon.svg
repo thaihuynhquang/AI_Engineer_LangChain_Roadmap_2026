@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5" />
+      <stop offset="50%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#9333ea" />
+    </linearGradient>
+    <linearGradient id="sparkleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e0e7ff" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded Squircle Base -->
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#bgGrad)" />
+
+  <!-- Inner subtle border outline -->
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="none" stroke="#ffffff" stroke-opacity="0.2" stroke-width="2" />
+
+  <!-- Main AI Sparkle Shape -->
+  <path d="M64 24 C64 44 44 64 24 64 C44 64 64 84 64 104 C64 84 84 64 104 64 C84 64 64 44 64 24 Z" fill="url(#sparkleGrad)" />
+
+  <!-- Secondary Accent Sparkle / Node (Top Right) -->
+  <path d="M92 26 C92 34 84 42 76 42 C84 42 92 50 92 58 C92 50 100 42 108 42 C100 42 92 34 92 26 Z" fill="url(#accentGrad)" opacity="0.9" />
+
+  <!-- Central Core Dot -->
+  <circle cx="64" cy="64" r="7" fill="#4f46e5" />
+</svg>
