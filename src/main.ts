@@ -10,6 +10,7 @@ import { initRouter, navigateTo } from './router';
 import { registerRenderListener, renderAll } from './renderer';
 import { handleExportBackup, handleImportBackup, handleResetProgress } from './actions/backup';
 import { calculateProgress } from './progress';
+import { ICONS } from './utils/icons';
 import { RouteId } from './constants';
 
 function bootstrap(): void {
@@ -75,7 +76,7 @@ function bootstrap(): void {
 function updateThemeToggleIcon(theme: 'dark' | 'light'): void {
   const btnTheme = document.getElementById('btn-theme');
   if (btnTheme) {
-    btnTheme.textContent = theme === 'dark' ? '☀️' : '🌙';
+    btnTheme.innerHTML = theme === 'dark' ? ICONS.sun : ICONS.moon;
   }
 }
 

@@ -2,6 +2,7 @@ import { calculateProgress } from '../progress';
 import { registerRenderListener, unregisterRenderListener } from '../renderer';
 import { META_DATA, SPRINT_MODULES } from '../data/planData';
 import { toggleChecked } from '../state/storage';
+import { ICONS } from '../utils/icons';
 
 export class RoadmapViewDashboard extends HTMLElement {
   private boundRefresh = this.refresh.bind(this);
@@ -23,7 +24,7 @@ export class RoadmapViewDashboard extends HTMLElement {
         <!-- Key Metrics Cards -->
         <div class="dashboard-grid">
           <div class="metric-card">
-            <div class="metric-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">🏆</div>
+            <div class="metric-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">${ICONS.trophy}</div>
             <div class="metric-info">
               <span class="metric-value">${stats.overallPercentage}%</span>
               <span class="metric-label">Tổng Tiến Độ Lộ Trình</span>
@@ -31,7 +32,7 @@ export class RoadmapViewDashboard extends HTMLElement {
           </div>
 
           <div class="metric-card">
-            <div class="metric-icon" style="background: rgba(99, 102, 241, 0.15); color: #6366f1;">🎯</div>
+            <div class="metric-icon" style="background: rgba(99, 102, 241, 0.15); color: #6366f1;">${ICONS.target}</div>
             <div class="metric-info">
               <span class="metric-value">${stats.completedDeliverablesCount}/${stats.totalDeliverablesCount}</span>
               <span class="metric-label">Nhiệm Vụ Thực Hành</span>
@@ -39,7 +40,7 @@ export class RoadmapViewDashboard extends HTMLElement {
           </div>
 
           <div class="metric-card">
-            <div class="metric-icon" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;">🍅</div>
+            <div class="metric-icon" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;">${ICONS.pomodoro}</div>
             <div class="metric-info">
               <span class="metric-value">${stats.completedPomodorosCount}/${stats.totalPomodorosCount}</span>
               <span class="metric-label">Pomodoro Đã Hoàn Thành</span>
@@ -47,7 +48,7 @@ export class RoadmapViewDashboard extends HTMLElement {
           </div>
 
           <div class="metric-card">
-            <div class="metric-icon" style="background: rgba(14, 165, 233, 0.15); color: #0ea5e9;">⏳</div>
+            <div class="metric-icon" style="background: rgba(14, 165, 233, 0.15); color: #0ea5e9;">${ICONS.clock}</div>
             <div class="metric-info">
               <span class="metric-value">${stats.completedHours}h / ${META_DATA.totalHours}h</span>
               <span class="metric-label">Thời Gian Học Thực Tế</span>
@@ -76,8 +77,8 @@ export class RoadmapViewDashboard extends HTMLElement {
           stats.nextTask
             ? `
             <div class="progress-card" style="border-left: 4px solid var(--primary);">
-              <div style="font-size: 0.8rem; font-weight: 700; color: var(--primary); text-transform: uppercase; margin-bottom: 0.35rem;">
-                🚀 Nhiệm Vụ Tiếp Theo Cần Làm
+              <div style="font-size: 0.8rem; font-weight: 700; color: var(--primary); text-transform: uppercase; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.35rem;">
+                ${ICONS.rocket} Nhiệm Vụ Tiếp Theo Cần Làm
               </div>
               <div style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.35rem;">
                 ${stats.nextTask.title}
@@ -86,14 +87,14 @@ export class RoadmapViewDashboard extends HTMLElement {
                 Thuộc: ${stats.nextTask.sprintTitle}
               </div>
               <button class="action-btn" id="btn-quick-do-task" data-task-id="${stats.nextTask.id}" style="background: var(--primary); color: white; border: none;">
-                ✓ Đánh dấu hoàn thành task này
+                ${ICONS.check} <span class="btn-label">Đánh dấu hoàn thành task này</span>
               </button>
             </div>
           `
             : `
             <div class="progress-card" style="border-left: 4px solid var(--accent-emerald);">
-              <div style="font-size: 1.1rem; font-weight: 700; color: var(--accent-emerald);">
-                🎉 Thật tuyệt vời! Bạn đã hoàn thành 100% lộ trình AI Engineer!
+              <div style="font-size: 1.1rem; font-weight: 700; color: var(--accent-emerald); display: flex; align-items: center; gap: 0.5rem;">
+                ${ICONS.checkCircle} Thật tuyệt vời! Bạn đã hoàn thành 100% lộ trình AI Engineer!
               </div>
             </div>
           `
@@ -101,7 +102,9 @@ export class RoadmapViewDashboard extends HTMLElement {
 
         <!-- Sprint Progress Overview List -->
         <div class="section-header">
-          <div class="section-title">🗺️ Tiến Độ Từng Sprint (5 Modules)</div>
+          <div class="section-title" style="display: flex; align-items: center; gap: 0.5rem;">
+            ${ICONS.roadmap} Tiến Độ Từng Sprint (5 Modules)
+          </div>
         </div>
 
         <div class="sprint-list">

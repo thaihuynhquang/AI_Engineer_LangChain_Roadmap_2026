@@ -11,6 +11,7 @@ import { playSessionCompleteSound, playBreakCompleteSound } from '../utils/audio
 import { requestNotificationPermission, sendWebNotification } from '../utils/notification';
 import { showToast } from '../toast';
 import { Task } from '../types/appState';
+import { ICONS } from '../utils/icons';
 
 type TimerMode = 'focus' | 'shortBreak' | 'longBreak';
 
@@ -280,27 +281,27 @@ export class RoadmapViewSchedule extends HTMLElement {
 
           <!-- Timer Mode Switcher (Focus / Short Break / Long Break) -->
           <div class="mode-pills-group">
-            <button class="mode-pill ${timerMode === 'focus' ? 'active' : ''}" data-mode="focus">
-              🎯 Focus
+            <button class="mode-pill ${timerMode === 'focus' ? 'active' : ''}" data-mode="focus" style="display: inline-flex; align-items: center; gap: 0.35rem;">
+              ${ICONS.target} Focus
             </button>
-            <button class="mode-pill ${timerMode === 'shortBreak' ? 'active' : ''}" data-mode="shortBreak">
-              ☕ Short Break (${settings.breakDuration}m)
+            <button class="mode-pill ${timerMode === 'shortBreak' ? 'active' : ''}" data-mode="shortBreak" style="display: inline-flex; align-items: center; gap: 0.35rem;">
+              ${ICONS.clock} Short Break (${settings.breakDuration}m)
             </button>
-            <button class="mode-pill ${timerMode === 'longBreak' ? 'active' : ''}" data-mode="longBreak">
-              🌴 Long Break (${settings.longBreakDuration}m)
+            <button class="mode-pill ${timerMode === 'longBreak' ? 'active' : ''}" data-mode="longBreak" style="display: inline-flex; align-items: center; gap: 0.35rem;">
+              ${ICONS.clock} Long Break (${settings.longBreakDuration}m)
             </button>
           </div>
 
           <!-- Profile Selector Pills -->
           <div class="profile-pills-group">
             <button class="profile-pill ${settings.preset === '25/5' ? 'active' : ''}" data-preset="25/5">
-              ⚡ 25m Focus / 5m Break
+              25m Focus / 5m Break
             </button>
             <button class="profile-pill ${settings.preset === '50/5' ? 'active' : ''}" data-preset="50/5">
-              🚀 50m Deep Focus / 5m Break
+              50m Deep Focus / 5m Break
             </button>
             <button class="profile-pill ${settings.preset === 'custom' ? 'active' : ''}" data-preset="custom">
-              ⚙️ Custom
+              Custom Preset
             </button>
           </div>
 
@@ -342,7 +343,7 @@ export class RoadmapViewSchedule extends HTMLElement {
           <!-- Roadmap Task Selector -->
           <div class="task-selector-wrapper">
             <select id="task-select-dropdown" class="task-select-dropdown">
-              <option value="">🎯 Tập trung tự do (General Focus)</option>
+              <option value="">Tập trung tự do (General Focus)</option>
               ${allTasks
                 .map(
                   (t) => `
@@ -383,10 +384,10 @@ export class RoadmapViewSchedule extends HTMLElement {
               <div class="timer-status-badge">
                 ${
                   timerMode === 'focus'
-                    ? '🎯 TẬP TRUNG'
+                    ? 'TẬP TRUNG'
                     : timerMode === 'shortBreak'
-                    ? '☕ NGHỈ NGẮN'
-                    : '🌴 NGHỈ DÀI'
+                    ? 'NGHỈ NGẮN'
+                    : 'NGHỈ DÀI'
                 }
               </div>
             </div>
@@ -395,13 +396,13 @@ export class RoadmapViewSchedule extends HTMLElement {
           <!-- Action Buttons Controls -->
           <div class="timer-controls-group">
             <button class="btn-timer-secondary" id="btn-timer-reset" title="Đặt lại bộ đếm">
-              🔄
+              ${ICONS.reset}
             </button>
-            <button class="btn-timer-primary" id="btn-timer-toggle">
-              ${isRunning ? '⏸️ Tạm Dừng' : '▶️ Bắt Đầu'}
+            <button class="btn-timer-primary" id="btn-timer-toggle" style="display: inline-flex; align-items: center; gap: 0.4rem;">
+              ${isRunning ? `${ICONS.pause} Tạm Dừng` : `${ICONS.play} Bắt Đầu`}
             </button>
             <button class="btn-timer-secondary" id="btn-timer-skip" title="Bỏ qua phiên">
-              ⏭️
+              ${ICONS.skip}
             </button>
           </div>
 
@@ -409,15 +410,15 @@ export class RoadmapViewSchedule extends HTMLElement {
           <div class="timer-toggles-row">
             <label class="toggle-option" title="Phát tiếng chuông khi hết giờ">
               <input type="checkbox" id="chk-sound" ${settings.soundEnabled ? 'checked' : ''} />
-              🔊 Chuông báo
+              Chuông báo
             </label>
             <label class="toggle-option" title="Gửi thông báo trình duyệt">
               <input type="checkbox" id="chk-notif" ${settings.notificationEnabled ? 'checked' : ''} />
-              🔔 Thông báo Web
+              Thông báo Web
             </label>
             <label class="toggle-option" title="Tự động chạy timer nghỉ khi hết giờ tập trung">
               <input type="checkbox" id="chk-autobreak" ${settings.autoStartBreaks ? 'checked' : ''} />
-              ⚡ Tự động nghỉ
+              Tự động nghỉ
             </label>
           </div>
 
@@ -427,7 +428,7 @@ export class RoadmapViewSchedule extends HTMLElement {
         <div class="dashboard-grid">
           <div class="metric-card">
             <div class="metric-icon" style="background: rgba(99, 102, 241, 0.12); color: var(--primary);">
-              ⏱️
+              ${ICONS.pomodoro}
             </div>
             <div class="metric-info">
               <span class="metric-value">${todaySessions.length} phiên</span>
@@ -437,7 +438,7 @@ export class RoadmapViewSchedule extends HTMLElement {
 
           <div class="metric-card">
             <div class="metric-icon" style="background: rgba(16, 185, 129, 0.12); color: var(--accent-emerald);">
-              💡
+              ${ICONS.clock}
             </div>
             <div class="metric-info">
               <span class="metric-value">${todayMinutes}m</span>
@@ -447,7 +448,7 @@ export class RoadmapViewSchedule extends HTMLElement {
 
           <div class="metric-card">
             <div class="metric-icon" style="background: rgba(245, 158, 11, 0.12); color: #f59e0b;">
-              🏆
+              ${ICONS.trophy}
             </div>
             <div class="metric-info">
               <span class="metric-value">${totalAccumulatedPoms}/${META_DATA.totalPomodoros}</span>
@@ -459,7 +460,9 @@ export class RoadmapViewSchedule extends HTMLElement {
         <!-- Session History List -->
         <div class="progress-card">
           <div class="progress-header" style="margin-bottom: 1rem;">
-            <div class="progress-title">📝 Nhật ký phiên tập trung gần nhất</div>
+            <div class="progress-title" style="display: flex; align-items: center; gap: 0.4rem;">
+              ${ICONS.bookOpen} Nhật ký phiên tập trung gần nhất
+            </div>
             <span style="font-size: 0.8rem; color: var(--text-muted);">
               ${sessions.length} phiên tổng cộng
             </span>
@@ -468,7 +471,7 @@ export class RoadmapViewSchedule extends HTMLElement {
           ${
             sessions.length === 0
               ? `<div style="text-align: center; color: var(--text-muted); font-size: 0.85rem; padding: 1rem 0;">
-                  Chưa có phiên tập trung nào. Hãy chọn Task và bấm ▶️ Bắt Đầu!
+                  Chưa có phiên tập trung nào. Hãy chọn Task và bấm Bắt Đầu!
                 </div>`
               : `<div class="history-list">
                   ${sessions
@@ -484,7 +487,9 @@ export class RoadmapViewSchedule extends HTMLElement {
                       return `
                         <div class="history-item">
                           <div style="display: flex; align-items: center; gap: 0.6rem;">
-                            <span style="color: var(--accent-emerald); font-weight: 700;">✅ +1 Pomodoro</span>
+                            <span style="color: var(--accent-emerald); font-weight: 700; display: inline-flex; align-items: center; gap: 0.25rem;">
+                              ${ICONS.checkCircle} +1 Pomodoro
+                            </span>
                             <span style="color: var(--text-muted); font-size: 0.8rem;">${timeStr}</span>
                             <span style="font-weight: 600;">(${s.durationMinutes}m)</span>
                             ${
@@ -496,7 +501,7 @@ export class RoadmapViewSchedule extends HTMLElement {
                             }
                           </div>
                           <button class="history-item-del" data-session-id="${s.id}" title="Xóa phiên này">
-                            🗑️
+                            ${ICONS.trash}
                           </button>
                         </div>
                       `;

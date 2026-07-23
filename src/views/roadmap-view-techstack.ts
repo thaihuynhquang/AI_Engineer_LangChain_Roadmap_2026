@@ -1,5 +1,6 @@
 import { TECH_STACK_LAYERS } from '../data/planData';
 import { registerRenderListener, unregisterRenderListener } from '../renderer';
+import { ICONS } from '../utils/icons';
 
 export class RoadmapViewTechstack extends HTMLElement {
   private boundRefresh = this.refresh.bind(this);
@@ -18,7 +19,9 @@ export class RoadmapViewTechstack extends HTMLElement {
       <div class="techstack-container">
         <div class="section-header">
           <div>
-            <div class="section-title">🏗️ Báo Cáo Chuyên Sâu: AI Application Tech Stack 2026</div>
+            <div class="section-title" style="display: flex; align-items: center; gap: 0.5rem;">
+              ${ICONS.cpu} Báo Cáo Chuyên Sâu: AI Application Tech Stack 2026
+            </div>
             <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
               Bức tranh công nghệ chuẩn mực phát triển ứng dụng AI từ PoC/MVP đến Production.
             </div>
@@ -28,8 +31,8 @@ export class RoadmapViewTechstack extends HTMLElement {
         <!-- Reference Architecture Cards -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem; margin-bottom: 2rem;">
           <div class="progress-card" style="border-top: 4px solid var(--primary);">
-            <div style="font-size: 1.05rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">
-              🔵 Architecture A: Modern Full-Stack AI Web App (SaaS Product)
+            <div style="font-size: 1.05rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem;">
+              ${ICONS.layers} Architecture A: Modern Full-Stack AI Web App (SaaS Product)
             </div>
             <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
               • <b>Frontend:</b> Next.js (TypeScript) + TailwindCSS + Shadcn/ui + Vercel AI SDK.<br/>
@@ -42,8 +45,8 @@ export class RoadmapViewTechstack extends HTMLElement {
           </div>
 
           <div class="progress-card" style="border-top: 4px solid var(--accent-emerald);">
-            <div style="font-size: 1.05rem; font-weight: 700; color: var(--accent-emerald); margin-bottom: 0.5rem;">
-              🟢 Architecture B: Enterprise Private AI Stack (Bảo Mật Nội Bộ)
+            <div style="font-size: 1.05rem; font-weight: 700; color: var(--accent-emerald); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem;">
+              ${ICONS.shield} Architecture B: Enterprise Private AI Stack (Bảo Mật Nội Bộ)
             </div>
             <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
               • <b>Serving Layer:</b> vLLM Cluster (Chạy trên On-Premise GPU).<br/>
@@ -57,8 +60,8 @@ export class RoadmapViewTechstack extends HTMLElement {
         </div>
 
         <!-- 7 Layers Breakdown -->
-        <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">
-          🧩 Chi Tiết 7 Tầng Hệ Sinh Thái AI (7-Layer Ecosystem)
+        <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+          ${ICONS.cpu} Chi Tiết 7 Tầng Hệ Sinh Thái AI (7-Layer Ecosystem)
         </div>
 
         ${TECH_STACK_LAYERS.map(

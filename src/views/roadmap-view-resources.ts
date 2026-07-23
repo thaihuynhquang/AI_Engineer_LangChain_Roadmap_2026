@@ -1,6 +1,7 @@
 import { SPRINT_MODULES } from '../data/planData';
 import { getState, toggleResourceFlag } from '../state/storage';
 import { registerRenderListener, unregisterRenderListener } from '../renderer';
+import { ICONS } from '../utils/icons';
 
 export class RoadmapViewResources extends HTMLElement {
   private boundRefresh = this.refresh.bind(this);
@@ -29,7 +30,9 @@ export class RoadmapViewResources extends HTMLElement {
       <div class="resources-container">
         <div class="section-header">
           <div>
-            <div class="section-title">📚 Thư Viện Tài Nguyên Học Tập & Tra Cứu (100% Online Free)</div>
+            <div class="section-title" style="display: flex; align-items: center; gap: 0.5rem;">
+              ${ICONS.bookOpen} Thư Viện Tài Nguyên Học Tập & Tra Cứu (100% Online Free)
+            </div>
             <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
               Danh sách khóa học video miễn phí từ DeepLearning.AI & tài liệu official docs 2026.
             </div>
@@ -40,13 +43,13 @@ export class RoadmapViewResources extends HTMLElement {
         <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
           <button class="action-btn btn-res-filter ${this.selectedModuleId === 'all' ? 'active' : ''}" data-mod="all"
             style="${this.selectedModuleId === 'all' ? 'background: var(--primary); color: white;' : ''}">
-            Tất Cả Modules
+            <span class="btn-label">Tất Cả Modules</span>
           </button>
           ${SPRINT_MODULES.map(
             (s) => `
             <button class="action-btn btn-res-filter ${this.selectedModuleId === s.id ? 'active' : ''}" data-mod="${s.id}"
               style="${this.selectedModuleId === s.id ? 'background: var(--primary); color: white;' : ''}">
-              Module ${s.moduleNum}
+              <span class="btn-label">Module ${s.moduleNum}</span>
             </button>
           `
           ).join('')}
@@ -65,19 +68,25 @@ export class RoadmapViewResources extends HTMLElement {
                   : 'rgba(245, 158, 11, 0.15)';
               const badgeColor =
                 res.type === 'course' ? '#10b981' : res.type === 'docs' ? '#6366f1' : '#f59e0b';
-              const typeText =
+              const typeIcon =
                 res.type === 'course'
-                  ? '📹 Video Course'
+                  ? ICONS.video
                   : res.type === 'docs'
-                  ? '📖 Official Docs'
-                  : '🐍 Code Repo';
+                  ? ICONS.bookOpen
+                  : ICONS.code;
+              const typeLabel =
+                res.type === 'course'
+                  ? 'Video Course'
+                  : res.type === 'docs'
+                  ? 'Official Docs'
+                  : 'Code Repo';
 
               return `
                 <div class="resource-card">
                   <div>
                     <div style="display: flex; align-items: center; justify-content: space-between;">
-                      <span class="resource-type-badge" style="background: ${badgeBg}; color: ${badgeColor};">
-                        ${typeText}
+                      <span class="resource-type-badge" style="background: ${badgeBg}; color: ${badgeColor}; display: inline-flex; align-items: center; gap: 0.3rem;">
+                        ${typeIcon} ${typeLabel}
                       </span>
                       <button 
                         class="action-btn btn-flag-resource" 
@@ -85,7 +94,7 @@ export class RoadmapViewResources extends HTMLElement {
                         title="Đánh dấu tài nguyên này"
                         style="padding: 0.2rem 0.4rem; font-size: 0.9rem;"
                       >
-                        ${isFlagged ? '⭐' : '☆'}
+                        ${isFlagged ? ICONS.starFilled : ICONS.starOutline}
                       </button>
                     </div>
 
@@ -94,8 +103,8 @@ export class RoadmapViewResources extends HTMLElement {
                   </div>
 
                   <div class="resource-footer">
-                    <span style="font-size: 0.75rem; color: var(--accent-emerald); font-weight: 600;">
-                      ${res.isFree ? '🎓 Miễn phí 100%' : 'Trả phí'}
+                    <span style="font-size: 0.75rem; color: var(--accent-emerald); font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">
+                      ${ICONS.gradCap} ${res.isFree ? 'Miễn phí 100%' : 'Trả phí'}
                     </span>
                     <a 
                       href="${res.url}" 
@@ -104,7 +113,7 @@ export class RoadmapViewResources extends HTMLElement {
                       class="action-btn"
                       style="background: var(--primary-glow); color: var(--primary); border-color: rgba(99, 102, 241, 0.3);"
                     >
-                      Mở Link 🔗
+                      <span class="btn-label">Mở Link</span> ${ICONS.externalLink}
                     </a>
                   </div>
                 </div>

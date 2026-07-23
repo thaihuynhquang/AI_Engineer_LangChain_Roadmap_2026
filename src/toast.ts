@@ -1,11 +1,20 @@
+import { ICONS } from './utils/icons';
+
 export const showToast = (message: string, type: 'info' | 'success' | 'warning' | 'error' = 'success'): void => {
   const container = document.getElementById('toast-container');
   if (!container) return;
 
+  const iconSvgMap = {
+    success: ICONS.checkCircle,
+    info: ICONS.info,
+    warning: ICONS.warning,
+    error: ICONS.error,
+  };
+
   const toast = document.createElement('div');
   toast.className = `toast toast-${type}`;
   toast.innerHTML = `
-    <span class="toast-icon">${type === 'success' ? '✅' : type === 'info' ? 'ℹ️' : type === 'warning' ? '⚠️' : '❌'}</span>
+    <span class="toast-icon">${iconSvgMap[type]}</span>
     <span class="toast-message">${escapeHTML(message)}</span>
   `;
 
