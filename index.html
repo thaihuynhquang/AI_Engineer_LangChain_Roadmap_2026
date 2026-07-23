@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Engineer LangChain Roadmap 2026 - Tracker</title>
+  <meta name="description" content="Lộ trình tự học và theo dõi tiến độ xây dựng ứng dụng AI Engineer Enterprise Knowledge Assistant 2026" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./src/styles/main.css" />
+</head>
+<body>
+  <!-- Header Bar -->
+  <header class="app-header">
+    <div class="header-brand">
+      <div class="brand-icon">🦜</div>
+      <div>
+        <div class="brand-title">AI Engineer Roadmap 2026</div>
+        <div class="brand-subtitle">Enterprise Knowledge AI Assistant</div>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button class="action-btn" id="btn-export" title="Xuất file JSON sao lưu tiến độ">
+        <span>💾 Export</span>
+      </button>
+      <button class="action-btn" id="btn-import" title="Nhập file JSON khôi phục tiến độ">
+        <span>📂 Import</span>
+      </button>
+      <button class="action-btn action-btn-danger" id="btn-reset" title="Đặt lại toàn bộ tiến độ">
+        <span>🔄 Reset</span>
+      </button>
+      <button class="theme-toggle-btn" id="btn-theme" title="Chuyển đổi giao diện Sáng/Tối" aria-label="Toggle Theme">
+        🌙
+      </button>
+    </div>
+  </header>
+
+  <!-- Navigation Tab Bar -->
+  <nav class="nav-tabs-container" aria-label="Main Navigation">
+    <div class="nav-tabs" role="tablist">
+      <button class="nav-tab active" data-tab="dashboard" role="tab" aria-selected="true" id="tab-dashboard">
+        📊 Dashboard <span class="tab-badge" id="badge-overall-pct">0%</span>
+      </button>
+      <button class="nav-tab" data-tab="roadmap" role="tab" aria-selected="false" id="tab-roadmap">
+        🗺️ Roadmap Sprints
+      </button>
+      <button class="nav-tab" data-tab="schedule" role="tab" aria-selected="false" id="tab-schedule">
+        ⏱️ Pomodoro Schedule
+      </button>
+      <button class="nav-tab" data-tab="resources" role="tab" aria-selected="false" id="tab-resources">
+        📚 Free Resources
+      </button>
+      <button class="nav-tab" data-tab="techstack" role="tab" aria-selected="false" id="tab-techstack">
+        🏗️ Tech Stack
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main View Containers -->
+  <main class="app-main">
+    <section class="view-container active" data-view="dashboard" id="view-dashboard">
+      <roadmap-view-dashboard></roadmap-view-dashboard>
+    </section>
+
+    <section class="view-container" data-view="roadmap" id="view-roadmap">
+      <roadmap-view-roadmap></roadmap-view-roadmap>
+    </section>
+
+    <section class="view-container" data-view="schedule" id="view-schedule">
+      <roadmap-view-schedule></roadmap-view-schedule>
+    </section>
+
+    <section class="view-container" data-view="resources" id="view-resources">
+      <roadmap-view-resources></roadmap-view-resources>
+    </section>
+
+    <section class="view-container" data-view="techstack" id="view-techstack">
+      <roadmap-view-techstack></roadmap-view-techstack>
+    </section>
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Main Bootstrap Entry Script -->
+  <script type="module" src="./src/main.ts"></script>
+</body>
+</html>
