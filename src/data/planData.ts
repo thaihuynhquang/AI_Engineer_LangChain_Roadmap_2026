@@ -97,7 +97,7 @@ export const SPRINT_MODULES: SprintModule[] = [
         id: "res-m1-1",
         title: "ChatGPT Prompt Engineering for Developers",
         type: "course",
-        description: "Khóa học miễn phí DeepLearning.AI về tư duy viết prompt chuẩn và Few-shot.",
+        description: "Nắm vững tư duy viết Prompt chuẩn, Few-shot Prompting và Structured Output cho LLM.",
         url: "https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/",
         moduleId: "mod-1",
         isFree: true
@@ -106,7 +106,7 @@ export const SPRINT_MODULES: SprintModule[] = [
         id: "res-m1-2",
         title: "FastAPI Official Tutorial (Async & Streaming)",
         type: "docs",
-        description: "Hướng dẫn lập trình Async Python và StreamingResponse SSE.",
+        description: "Hướng dẫn lập trình Python Async/Await và phát dòng dữ liệu qua StreamingResponse (Server-Sent Events - SSE).",
         url: "https://fastapi.tiangolo.com/tutorial/",
         moduleId: "mod-1",
         isFree: true
@@ -115,7 +115,7 @@ export const SPRINT_MODULES: SprintModule[] = [
         id: "res-m1-3",
         title: "LangChain Python Core Quickstart",
         type: "docs",
-        description: "Cú pháp kết nối API LLM và khởi tạo Prompt Templates.",
+        description: "Cú pháp kết nối API OpenAI/Anthropic, khởi tạo Prompt Templates và Output Parsers.",
         url: "https://python.langchain.com/docs/introduction/",
         moduleId: "mod-1",
         isFree: true
@@ -176,19 +176,19 @@ export const SPRINT_MODULES: SprintModule[] = [
     resources: [
       {
         id: "res-m2-1",
-        title: "Building Agentic RAG with LlamaIndex / LangChain",
+        title: "Building Agentic RAG with LlamaIndex",
         type: "course",
-        description: "Khóa học miễn phí về RAG tự sửa lỗi, Query Rewriting & Routing.",
+        description: "Kỹ thuật RAG tự sửa lỗi (Self-Corrective RAG), Query Rewriting và Document Routing.",
         url: "https://www.deeplearning.ai/short-courses/building-agentic-rag-with-llamaindex/",
         moduleId: "mod-2",
         isFree: true
       },
       {
         id: "res-m2-2",
-        title: "Preprocessing Data for LLMs",
+        title: "Preprocessing Unstructured Data for LLM Applications",
         type: "course",
-        description: "Phương pháp parse, làm sạch và chunking văn bản từ PDF/Markdown.",
-        url: "https://www.deeplearning.ai/short-courses/preprocessing-data-for-llms/",
+        description: "Phương pháp parse, làm sạch và chia nhỏ văn bản (Chunking Strategies) từ PDF/Markdown.",
+        url: "https://www.deeplearning.ai/short-courses/preprocessing-unstructured-data-for-llm-applications/",
         moduleId: "mod-2",
         isFree: true
       },
@@ -196,16 +196,16 @@ export const SPRINT_MODULES: SprintModule[] = [
         id: "res-m2-3",
         title: "pgvector Extension Documentation",
         type: "docs",
-        description: "Cú pháp SQL tạo bảng Vector, chỉ mục HNSW và Hybrid Search.",
+        description: "Cú pháp SQL tạo bảng Vector, đánh chỉ mục HNSW/IVFFlat và thực hiện Hybrid Search trên PostgreSQL.",
         url: "https://github.com/pgvector/pgvector",
         moduleId: "mod-2",
         isFree: true
       },
       {
         id: "res-m2-4",
-        title: "LangChain RAG Conceptual Guide",
+        title: "LangChain RAG Conceptual & How-To Guides",
         type: "docs",
-        description: "Mẫu thiết kế Retriever nâng cao (Context Compression, Reranking).",
+        description: "Mẫu thiết kế Retriever nâng cao (Context Compression, Multi-query Retriever, Cross-encoder Reranking).",
         url: "https://python.langchain.com/docs/concepts/rag/",
         moduleId: "mod-2",
         isFree: true
@@ -268,7 +268,7 @@ export const SPRINT_MODULES: SprintModule[] = [
         id: "res-m3-1",
         title: "AI Agents in LangGraph (by Harrison Chase)",
         type: "course",
-        description: "Khóa học miễn phí về xây dựng Stateful Agents & Memory.",
+        description: "Xây dựng Agentic Workflows có trạng thái (Stateful Agents), quản lý Memory và Human-in-the-loop.",
         url: "https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/",
         moduleId: "mod-3",
         isFree: true
@@ -277,7 +277,7 @@ export const SPRINT_MODULES: SprintModule[] = [
         id: "res-m3-2",
         title: "LangGraph Academy",
         type: "course",
-        description: "Chương trình đào tạo chính thức của LangChain về kiến trúc StateGraph.",
+        description: "Chương trình đào tạo video chính thức của LangChain về kiến trúc đồ thị StateGraph từ cơ bản đến nâng cao.",
         url: "https://academy.langchain.com/",
         moduleId: "mod-3",
         isFree: true
@@ -286,7 +286,7 @@ export const SPRINT_MODULES: SprintModule[] = [
         id: "res-m3-3",
         title: "Model Context Protocol Official Docs",
         type: "docs",
-        description: "Chuẩn giao thức mở của Anthropic giúp Agent kết nối an toàn với Tools & DBs.",
+        description: "Chuẩn giao thức của Anthropic giúp Agent kết nối an toàn với Tools, Databases và APIs ngoại vi.",
         url: "https://modelcontextprotocol.io",
         moduleId: "mod-3",
         isFree: true
@@ -295,8 +295,17 @@ export const SPRINT_MODULES: SprintModule[] = [
         id: "res-m3-4",
         title: "FastMCP Python SDK GitHub",
         type: "repo",
-        description: "Thư viện Python dựng MCP Server cực nhanh với cú pháp decorator.",
+        description: "Thư viện Python giúp dựng MCP Server cực nhanh chỉ với cú pháp Decorator tương tự FastAPI.",
         url: "https://github.com/jlowin/fastmcp",
+        moduleId: "mod-3",
+        isFree: true
+      },
+      {
+        id: "res-m3-5",
+        title: "LangGraph Official Documentation",
+        type: "docs",
+        description: "Các Mẫu kiến trúc Agent chuẩn (Supervisor pattern, State persistence, Time-travel debugging).",
+        url: "https://langchain-ai.github.io/langgraph/",
         moduleId: "mod-3",
         isFree: true
       }
@@ -358,17 +367,17 @@ export const SPRINT_MODULES: SprintModule[] = [
         id: "res-m4-1",
         title: "Vercel AI SDK Documentation",
         type: "docs",
-        description: "Thư viện React Hooks chuẩn (useChat, streamText) kết nối LLM Streaming.",
+        description: "Thư viện React Hooks chuẩn (useChat, streamText) để kết nối Next.js với LLM Streaming backend.",
         url: "https://sdk.vercel.ai/docs",
         moduleId: "mod-4",
         isFree: true
       },
       {
         id: "res-m4-2",
-        title: "Vercel AI SDK FastAPI Integration Guide",
+        title: "Vercel AI SDK Stream Protocol (FastAPI Integration)",
         type: "docs",
-        description: "Hướng dẫn đấu nối Next.js với Python FastAPI qua SSE.",
-        url: "https://sdk.vercel.ai/docs/guides/frameworks/fastapi",
+        description: "Hướng dẫn định dạng giao thức Streaming (Stream Protocol) kết nối Next.js với FastAPI Python Server qua SSE.",
+        url: "https://sdk.vercel.ai/docs/ai-sdk-ui/stream-protocol",
         moduleId: "mod-4",
         isFree: true
       },
@@ -376,7 +385,7 @@ export const SPRINT_MODULES: SprintModule[] = [
         id: "res-m4-3",
         title: "Next.js Official Documentation",
         type: "docs",
-        description: "Hướng dẫn App Router, React Server Components.",
+        description: "Hướng dẫn sử dụng App Router, React Server Components và Server Actions.",
         url: "https://nextjs.org/docs",
         moduleId: "mod-4",
         isFree: true
@@ -437,9 +446,9 @@ export const SPRINT_MODULES: SprintModule[] = [
     resources: [
       {
         id: "res-m5-1",
-        title: "Evaluating & Debugging Generative AI Models",
+        title: "Evaluating and Debugging Generative AI",
         type: "course",
-        description: "Khóa học DeepLearning.AI về đo đạc chất lượng RAG và phát hiện Hallucination.",
+        description: "Đo đạc độ chính xác của RAG, phát hiện Hallucination và kiểm thử tự động với Weights & Biases / Ragas.",
         url: "https://www.deeplearning.ai/short-courses/evaluating-debugging-generative-ai/",
         moduleId: "mod-5",
         isFree: true
@@ -448,7 +457,7 @@ export const SPRINT_MODULES: SprintModule[] = [
         id: "res-m5-2",
         title: "LangSmith Documentation",
         type: "docs",
-        description: "Tracing toàn bộ luồng suy luận LangChain/LangGraph.",
+        description: "Tracing toàn bộ luồng suy luận của LangChain/LangGraph, theo dõi chi phí Token và Latency.",
         url: "https://docs.smith.langchain.com/",
         moduleId: "mod-5",
         isFree: true
@@ -457,7 +466,7 @@ export const SPRINT_MODULES: SprintModule[] = [
         id: "res-m5-3",
         title: "Langfuse Open-Source LLMOps Docs",
         type: "docs",
-        description: "Giải pháp Observability mã nguồn mở tự host bằng Docker.",
+        description: "Giải pháp Tracing & Observability mã nguồn mở có thể tự host (Self-hosted) bằng Docker Compose.",
         url: "https://langfuse.com/docs",
         moduleId: "mod-5",
         isFree: true
@@ -466,7 +475,7 @@ export const SPRINT_MODULES: SprintModule[] = [
         id: "res-m5-4",
         title: "Docker Compose Documentation",
         type: "docs",
-        description: "Đóng gói multi-container cho hệ thống AI Fullstack.",
+        description: "Đóng gói multi-container ứng dụng Fullstack (Next.js + FastAPI + Postgres + Langfuse).",
         url: "https://docs.docker.com/compose/",
         moduleId: "mod-5",
         isFree: true
