@@ -491,7 +491,6 @@
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.25rem;
-    background: rgba(0, 0, 0, 0.2);
     padding: 0.65rem 1.25rem;
     border-radius: var(--radius-md);
     border: 1px solid var(--border-color);
