@@ -35,15 +35,16 @@ Tài liệu này tổng hợp toàn bộ kiến trúc kỹ thuật, công nghệ
 ```text
 ├── .github/
 │   └── workflows/          # GitHub Actions deployment workflow (static build & deploy to GitHub Pages)
+├── docs/                   # Thư mục chứa toàn bộ tài liệu hướng dẫn & lộ trình (Markdown)
+│   ├── architecture_guide.md   # File hướng dẫn kiến trúc & tái tạo repo (File này)
+│   ├── online_learning_guide.md# Tài liệu hướng dẫn khóa học online miễn phí
+│   ├── resources.md            # Danh sách tài nguyên học tập chi tiết
+│   ├── schedule.md             # Chi tiết lịch trình Pomodoro mẫu
+│   └── tech_stack.md           # Chi tiết các lớp công nghệ AI Engineer
 ├── index.html              # HTML Shell (Header, Navigation Tabs, 5 View Containers, Toast container)
 ├── package.json            # npm scripts (dev, build, preview, typecheck) & devDependencies (typescript, vite)
 ├── tsconfig.json           # Cấu hình TypeScript compiler options
 ├── vite.config.ts          # Cấu hình Vite bundler (khai báo base: './' cho relative assets path)
-├── online_learning_guide.md# Tài liệu hướng dẫn khóa học online miễn phí
-├── resources.md            # Danh sách tài nguyên học tập chi tiết
-├── schedule.md             # Chi tiết lịch trình Pomodoro mẫu
-├── tech_stack.md           # Chi tiết các lớp công nghệ AI Engineer
-├── architecture_guide.md   # File hướng dẫn kiến trúc & tái tạo repo (File này)
 └── src/
     ├── actions/
     │   └── backup.ts       # Xử lý Export JSON sao lưu, Import JSON khôi phục và Reset tiến độ

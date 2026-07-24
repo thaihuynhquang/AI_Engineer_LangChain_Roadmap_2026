@@ -1,6 +1,6 @@
 # AI Engineer Roadmap 2026: Enterprise Knowledge AI Assistant
 
-Dành cho lập trình viên muốn chuyển mình sang **AI Engineer** thông qua việc xây dựng sản phẩm thực tế (Production-ready AI Application) dựa trên **lộ trình tự học 100% bằng tài nguyên online miễn phí (`online_learning_guide.md`)** và hệ sinh thái công nghệ cập nhật tháng 7/2026.
+Dành cho lập trình viên muốn chuyển mình sang **AI Engineer** thông qua việc xây dựng sản phẩm thực tế (Production-ready AI Application) dựa trên **lộ trình tự học 100% bằng tài nguyên online miễn phí (`docs/online_learning_guide.md`)** và hệ sinh thái công nghệ cập nhật tháng 7/2026.
 
 ---
 
@@ -30,7 +30,7 @@ Dành cho lập trình viên muốn chuyển mình sang **AI Engineer** thông q
 
 ### 🟢 Sprint 1: Dựng Khung Backend & Gọi LLM API Streaming
 * **Mục tiêu**: Xây dựng Backend Python cơ bản bằng FastAPI, kết nối API LLM và truyền dữ liệu dạng Stream (token-by-token) về Client.
-* **Module tự học Online**: **Module 1 trong `online_learning_guide.md`**
+* **Module tự học Online**: **Module 1 trong `docs/online_learning_guide.md`**
   - Khóa học DeepLearning.AI Prompt Engineering & FastAPI Async Docs.
 * **Nhiệm vụ thực hành**:
   1. Khởi tạo dự án Python (khuyên dùng Python 3.11+) và cài đặt FastAPI, `langchain-core`, `langchain-anthropic` / `langchain-openai`.
@@ -41,7 +41,7 @@ Dành cho lập trình viên muốn chuyển mình sang **AI Engineer** thông q
 
 ### 🟡 Sprint 2: Xây dựng Hệ thống Tri thức Doanh nghiệp (Advanced RAG)
 * **Mục tiêu**: Đọc tài liệu (PDF, Markdown), lưu trữ Vector Embeddings và tra cứu ngữ nghĩa chính xác cao.
-* **Module tự học Online**: **Module 2 trong `online_learning_guide.md`**
+* **Module tự học Online**: **Module 2 trong `docs/online_learning_guide.md`**
   - Khóa học DeepLearning.AI Agentic RAG, Preprocessing Data & `pgvector` Docs.
 * **Nhiệm vụ thực hành**:
   1. Sử dụng LangChain Document Loaders đọc file PDF/Markdown.
@@ -56,7 +56,7 @@ Dành cho lập trình viên muốn chuyển mình sang **AI Engineer** thông q
 
 ### 🔴 Sprint 3: Xây dựng AI Agent nâng cao với LangGraph & MCP
 * **Mục tiêu**: Biến ứng dụng từ "trả lời câu hỏi" thành "hệ thống AI tự động hóa tác vụ" (Agentic Workflows).
-* **Module tự học Online**: **Module 3 trong `online_learning_guide.md`**
+* **Module tự học Online**: **Module 3 trong `docs/online_learning_guide.md`**
   - Khóa học DeepLearning.AI LangGraph, LangGraph Academy, Model Context Protocol (MCP) Docs.
 * **Nhiệm vụ thực hành**:
   1. Đọc tài liệu **LangGraph** để thiết kế luồng xử lý dạng đồ thị có trạng thái (`StateGraph`).
@@ -69,7 +69,7 @@ Dành cho lập trình viên muốn chuyển mình sang **AI Engineer** thông q
 
 ### 🔵 Sprint 4: Đấu nối Web UI & Streaming Real-time (Frontend Integration)
 * **Mục tiêu**: Dựng giao diện Web thương mại mượt mà, hiển thị phản hồi token-by-token và trạng thái suy luận của Agent.
-* **Module tự học Online**: **Module 4 trong `online_learning_guide.md`**
+* **Module tự học Online**: **Module 4 trong `docs/online_learning_guide.md`**
   - Vercel AI SDK Docs & Next.js Docs.
 * **Nhiệm vụ thực hành**:
   1. Khởi tạo dự án Web bằng **Next.js (App Router)** + Tailwind CSS.
@@ -82,7 +82,7 @@ Dành cho lập trình viên muốn chuyển mình sang **AI Engineer** thông q
 
 ### 🟣 Sprint 5: LLMOps, Tracing & Đánh giá Chất lượng (Production-Ready)
 * **Mục tiêu**: Giám sát hiệu năng, kiểm soát chi phí token, phát hiện lỗi hallucination và đóng gói ứng dụng.
-* **Module tự học Online**: **Module 5 trong `online_learning_guide.md`**
+* **Module tự học Online**: **Module 5 trong `docs/online_learning_guide.md`**
   - LangSmith Docs / Langfuse Docs & Khóa học Evaluating Generative AI Models.
 * **Nhiệm vụ thực hành**:
   1. Tích hợp **LangSmith** (hoặc Langfuse self-hosted) vào Backend Python.
