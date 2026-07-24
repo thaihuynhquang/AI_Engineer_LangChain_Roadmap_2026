@@ -29,7 +29,7 @@ export class RoadmapViewTechstack extends HTMLElement {
         </div>
 
         <!-- Reference Architecture Cards -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem; margin-bottom: 2rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1.25rem; margin-bottom: 2rem;">
           <div class="progress-card" style="border-top: 4px solid var(--primary);">
             <div style="font-size: 1.05rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem;">
               ${ICONS.layers} Architecture A: Modern Full-Stack AI Web App (SaaS Product)
@@ -70,31 +70,33 @@ export class RoadmapViewTechstack extends HTMLElement {
             <div class="tech-layer-title">${layer.name}</div>
             <div class="tech-layer-desc">${layer.description}</div>
 
-            <table class="tech-table">
-              <thead>
-                <tr>
-                  <th>Công nghệ</th>
-                  <th>Vai trò trong hệ thống</th>
-                  <th>Xu hướng / Thị phần</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${layer.items
-                  .map(
-                    (item) => `
+            <div class="table-wrapper">
+              <table class="tech-table">
+                <thead>
                   <tr>
-                    <td>
-                      <span style="font-weight: 700;">${item.name}</span>
-                      ${item.isPrimaryChoice ? '<span style="margin-left: 0.4rem; font-size: 0.7rem; background: rgba(16, 185, 129, 0.2); color: #10b981; padding: 0.1rem 0.4rem; border-radius: 4px;">Primary</span>' : ''}
-                    </td>
-                    <td style="color: var(--text-secondary);">${item.role}</td>
-                    <td><span class="task-tag">${item.usageShare || 'Standard'}</span></td>
+                    <th>Công nghệ</th>
+                    <th>Vai trò trong hệ thống</th>
+                    <th>Xu hướng / Thị phần</th>
                   </tr>
-                `
-                  )
-                  .join('')}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  ${layer.items
+                    .map(
+                      (item) => `
+                    <tr>
+                      <td>
+                        <span style="font-weight: 700;">${item.name}</span>
+                        ${item.isPrimaryChoice ? '<span style="margin-left: 0.4rem; font-size: 0.7rem; background: rgba(16, 185, 129, 0.2); color: #10b981; padding: 0.1rem 0.4rem; border-radius: 4px;">Primary</span>' : ''}
+                      </td>
+                      <td style="color: var(--text-secondary);">${item.role}</td>
+                      <td><span class="task-tag">${item.usageShare || 'Standard'}</span></td>
+                    </tr>
+                  `
+                    )
+                    .join('')}
+                </tbody>
+              </table>
+            </div>
           </div>
         `
         ).join('')}

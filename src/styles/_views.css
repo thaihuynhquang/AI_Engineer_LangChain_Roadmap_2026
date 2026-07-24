@@ -385,8 +385,15 @@
     margin-bottom: 1rem;
   }
 
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .tech-table {
     width: 100%;
+    min-width: 550px;
     border-collapse: collapse;
     font-size: 0.85rem;
   }
@@ -445,6 +452,10 @@
     font-weight: 600;
     cursor: pointer;
     transition: all var(--transition-fast);
+  }
+
+  .mode-pill svg {
+    flex-shrink: 0;
   }
 
   .mode-pill.active {
