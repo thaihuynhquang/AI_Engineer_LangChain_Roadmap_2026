@@ -89,7 +89,7 @@ export class RoadmapViewTechstack extends HTMLElement {
                         ${item.isPrimaryChoice ? '<span class="badge-primary-choice">Primary</span>' : ''}
                       </td>
                       <td class="tech-table-cell-muted">${item.role}</td>
-                      <td><span class="task-tag">${item.usageShare || 'Standard'}</span></td>
+                      <td><span class="task-tag" title="${item.usageShare || 'Standard'}">${item.usageShare || 'Standard'}</span></td>
                     </tr>
                   `
                     )
