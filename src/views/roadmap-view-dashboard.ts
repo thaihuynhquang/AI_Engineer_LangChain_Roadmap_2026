@@ -127,6 +127,10 @@ export class RoadmapViewDashboard extends HTMLElement {
                   </div>
                 </div>
                 <div class="sprint-card-body">
+                  <div class="sprint-card-meta">
+                    <span class="sprint-meta-item">${ICONS.clock} ${sprint.duration}</span>
+                    <span class="sprint-meta-item">${ICONS.target} ${spStat.completedCount}/${spStat.totalCount} Nhiệm vụ</span>
+                  </div>
                   <div class="progress-bar-bg progress-bar-bg--sm">
                     <div class="progress-bar-fill progress-bar-fill-dynamic" style="--progress: ${spStat.percentage}%; --status-color: ${sprint.statusColor};"></div>
                   </div>
