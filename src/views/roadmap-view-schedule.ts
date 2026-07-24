@@ -281,13 +281,13 @@ export class RoadmapViewSchedule extends HTMLElement {
 
           <!-- Timer Mode Switcher (Focus / Short Break / Long Break) -->
           <div class="mode-pills-group">
-            <button class="mode-pill ${timerMode === 'focus' ? 'active' : ''}" data-mode="focus" style="display: inline-flex; align-items: center; gap: 0.35rem;">
+            <button class="mode-pill mode-pill-icon ${timerMode === 'focus' ? 'active' : ''}" data-mode="focus">
               ${ICONS.target} Focus
             </button>
-            <button class="mode-pill ${timerMode === 'shortBreak' ? 'active' : ''}" data-mode="shortBreak" style="display: inline-flex; align-items: center; gap: 0.35rem;">
+            <button class="mode-pill mode-pill-icon ${timerMode === 'shortBreak' ? 'active' : ''}" data-mode="shortBreak">
               ${ICONS.clock} Short Break (${settings.breakDuration}m)
             </button>
-            <button class="mode-pill ${timerMode === 'longBreak' ? 'active' : ''}" data-mode="longBreak" style="display: inline-flex; align-items: center; gap: 0.35rem;">
+            <button class="mode-pill mode-pill-icon ${timerMode === 'longBreak' ? 'active' : ''}" data-mode="longBreak">
               ${ICONS.clock} Long Break (${settings.longBreakDuration}m)
             </button>
           </div>
@@ -332,7 +332,7 @@ export class RoadmapViewSchedule extends HTMLElement {
                   value="${settings.breakDuration}" 
                 />
               </div>
-              <button class="action-btn" id="btn-apply-custom" style="padding: 0.25rem 0.65rem; font-size: 0.78rem;">
+              <button class="action-btn btn-apply-custom" id="btn-apply-custom">
                 Áp dụng
               </button>
             </div>
@@ -398,7 +398,7 @@ export class RoadmapViewSchedule extends HTMLElement {
             <button class="btn-timer-secondary" id="btn-timer-reset" title="Đặt lại bộ đếm">
               ${ICONS.reset}
             </button>
-            <button class="btn-timer-primary" id="btn-timer-toggle" style="display: inline-flex; align-items: center; gap: 0.4rem;">
+            <button class="btn-timer-primary btn-timer-icon" id="btn-timer-toggle">
               ${isRunning ? `${ICONS.pause} Tạm Dừng` : `${ICONS.play} Bắt Đầu`}
             </button>
             <button class="btn-timer-secondary" id="btn-timer-skip" title="Bỏ qua phiên">
@@ -427,7 +427,7 @@ export class RoadmapViewSchedule extends HTMLElement {
         <!-- Today's Focus Metrics Row -->
         <div class="dashboard-grid">
           <div class="metric-card">
-            <div class="metric-icon" style="background: rgba(99, 102, 241, 0.12); color: var(--primary);">
+            <div class="metric-icon metric-icon--indigo-soft">
               ${ICONS.pomodoro}
             </div>
             <div class="metric-info">
@@ -437,7 +437,7 @@ export class RoadmapViewSchedule extends HTMLElement {
           </div>
 
           <div class="metric-card">
-            <div class="metric-icon" style="background: rgba(16, 185, 129, 0.12); color: var(--accent-emerald);">
+            <div class="metric-icon metric-icon--emerald-soft">
               ${ICONS.clock}
             </div>
             <div class="metric-info">
@@ -447,7 +447,7 @@ export class RoadmapViewSchedule extends HTMLElement {
           </div>
 
           <div class="metric-card">
-            <div class="metric-icon" style="background: rgba(245, 158, 11, 0.12); color: #f59e0b;">
+            <div class="metric-icon metric-icon--amber-soft">
               ${ICONS.trophy}
             </div>
             <div class="metric-info">
@@ -459,18 +459,18 @@ export class RoadmapViewSchedule extends HTMLElement {
 
         <!-- Session History List -->
         <div class="progress-card">
-          <div class="progress-header" style="margin-bottom: 1rem;">
-            <div class="progress-title" style="display: flex; align-items: center; gap: 0.4rem;">
+          <div class="progress-header progress-header--margin">
+            <div class="progress-title section-title-flex">
               ${ICONS.bookOpen} Nhật ký phiên tập trung gần nhất
             </div>
-            <span style="font-size: 0.8rem; color: var(--text-muted);">
+            <span class="section-subtitle-muted">
               ${sessions.length} phiên tổng cộng
             </span>
           </div>
 
           ${
             sessions.length === 0
-              ? `<div style="text-align: center; color: var(--text-muted); font-size: 0.85rem; padding: 1rem 0;">
+              ? `<div class="history-empty-text">
                   Chưa có phiên tập trung nào. Hãy chọn Task và bấm Bắt Đầu!
                 </div>`
               : `<div class="history-list">
@@ -486,15 +486,15 @@ export class RoadmapViewSchedule extends HTMLElement {
                         .padStart(2, '0')} (${d.getDate()}/${d.getMonth() + 1})`;
                       return `
                         <div class="history-item">
-                          <div style="display: flex; align-items: center; gap: 0.6rem;">
-                            <span style="color: var(--accent-emerald); font-weight: 700; display: inline-flex; align-items: center; gap: 0.25rem;">
+                          <div class="section-title-flex">
+                            <span class="free-resource-tag">
                               ${ICONS.checkCircle} +1 Pomodoro
                             </span>
-                            <span style="color: var(--text-muted); font-size: 0.8rem;">${timeStr}</span>
-                            <span style="font-weight: 600;">(${s.durationMinutes}m)</span>
+                            <span class="section-subtitle-muted">${timeStr}</span>
+                            <span class="history-duration">(${s.durationMinutes}m)</span>
                             ${
                               s.taskTitle
-                                ? `<span style="color: var(--primary-glow); font-size: 0.8rem; background: rgba(99, 102, 241, 0.1); padding: 0.1rem 0.4rem; border-radius: 4px;">
+                                ? `<span class="task-tag task-tag--primary">
                                     ${s.taskTitle}
                                   </span>`
                                 : ''

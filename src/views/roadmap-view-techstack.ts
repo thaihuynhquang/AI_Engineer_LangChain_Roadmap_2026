@@ -19,22 +19,22 @@ export class RoadmapViewTechstack extends HTMLElement {
       <div class="techstack-container">
         <div class="section-header">
           <div>
-            <div class="section-title" style="display: flex; align-items: center; gap: 0.5rem;">
+            <div class="section-title section-title-flex">
               ${ICONS.cpu} Báo Cáo Chuyên Sâu: AI Application Tech Stack 2026
             </div>
-            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+            <div class="section-subtitle-muted">
               Bức tranh công nghệ chuẩn mực phát triển ứng dụng AI từ PoC/MVP đến Production.
             </div>
           </div>
         </div>
 
         <!-- Reference Architecture Cards -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1.25rem; margin-bottom: 2rem;">
-          <div class="progress-card" style="border-top: 4px solid var(--primary);">
-            <div style="font-size: 1.05rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem;">
+        <div class="techstack-grid">
+          <div class="progress-card progress-card--top-primary">
+            <div class="roadmap-summary-title">
               ${ICONS.layers} Architecture A: Modern Full-Stack AI Web App (SaaS Product)
             </div>
-            <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+            <div class="progress-card-desc--lineheight">
               • <b>Frontend:</b> Next.js (TypeScript) + TailwindCSS + Shadcn/ui + Vercel AI SDK.<br/>
               • <b>Backend:</b> Python FastAPI Server.<br/>
               • <b>Agent Orchestration:</b> LangGraph StateGraph + MCP Protocol.<br/>
@@ -44,11 +44,11 @@ export class RoadmapViewTechstack extends HTMLElement {
             </div>
           </div>
 
-          <div class="progress-card" style="border-top: 4px solid var(--accent-emerald);">
-            <div style="font-size: 1.05rem; font-weight: 700; color: var(--accent-emerald); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem;">
+          <div class="progress-card progress-card--top-emerald">
+            <div class="progress-card-header-title--emerald">
               ${ICONS.shield} Architecture B: Enterprise Private AI Stack (Bảo Mật Nội Bộ)
             </div>
-            <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+            <div class="progress-card-desc--lineheight">
               • <b>Serving Layer:</b> vLLM Cluster (Chạy trên On-Premise GPU).<br/>
               • <b>Open-Source Model:</b> Llama 3.3 70B / DeepSeek-V3.<br/>
               • <b>Vector DB:</b> Qdrant hoặc Milvus (Rust/Go engine).<br/>
@@ -60,7 +60,7 @@ export class RoadmapViewTechstack extends HTMLElement {
         </div>
 
         <!-- 7 Layers Breakdown -->
-        <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+        <div class="techstack-heading">
           ${ICONS.cpu} Chi Tiết 7 Tầng Hệ Sinh Thái AI (7-Layer Ecosystem)
         </div>
 
@@ -85,10 +85,10 @@ export class RoadmapViewTechstack extends HTMLElement {
                       (item) => `
                     <tr>
                       <td>
-                        <span style="font-weight: 700;">${item.name}</span>
-                        ${item.isPrimaryChoice ? '<span style="margin-left: 0.4rem; font-size: 0.7rem; background: rgba(16, 185, 129, 0.2); color: #10b981; padding: 0.1rem 0.4rem; border-radius: 4px;">Primary</span>' : ''}
+                        <span class="techstack-item-name">${item.name}</span>
+                        ${item.isPrimaryChoice ? '<span class="badge-primary-choice">Primary</span>' : ''}
                       </td>
-                      <td style="color: var(--text-secondary);">${item.role}</td>
+                      <td class="tech-table-cell-muted">${item.role}</td>
                       <td><span class="task-tag">${item.usageShare || 'Standard'}</span></td>
                     </tr>
                   `

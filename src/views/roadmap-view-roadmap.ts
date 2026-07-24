@@ -20,12 +20,12 @@ export class RoadmapViewRoadmap extends HTMLElement {
 
     this.innerHTML = `
       <div class="roadmap-container">
-        <div class="section-header" style="margin-bottom: 1.5rem;">
+        <div class="section-header section-header--margin">
           <div>
-            <div class="section-title" style="display: flex; align-items: center; gap: 0.5rem;">
+            <div class="section-title section-title-flex">
               ${ICONS.roadmap} Lộ Trình Chi Tiết 5 Sprints (Deliverables & Tasks)
             </div>
-            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+            <div class="section-subtitle-muted">
               Tích chọn từng nhiệm vụ thực hành khi bạn hoàn thành code & test thành công.
             </div>
           </div>
@@ -42,12 +42,12 @@ export class RoadmapViewRoadmap extends HTMLElement {
                 <div class="sprint-card-header">
                   <div class="sprint-title-group">
                     <span class="sprint-title">${sprint.title}</span>
-                    <span class="sprint-subtitle" style="display: inline-flex; align-items: center; gap: 0.25rem;">
+                    <span class="sprint-subtitle sprint-subtitle-icon">
                       ${sprint.subtitle} • ${ICONS.clock} ${sprint.duration}
                     </span>
                   </div>
-                  <div style="display: flex; align-items: center; gap: 0.75rem;">
-                    <span style="font-weight: 700; font-size: 0.9rem; color: ${sprint.statusColor};">
+                  <div class="sprint-status-group">
+                    <span class="sprint-status-value" style="--status-color: ${sprint.statusColor};">
                       ${completedCount}/${totalCount} (${pct}%)
                     </span>
                   </div>
@@ -55,17 +55,17 @@ export class RoadmapViewRoadmap extends HTMLElement {
 
                 <div class="sprint-card-body">
                   <!-- Objectives & Knowledge -->
-                  <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem;">
-                    <div style="font-weight: 700; font-size: 0.85rem; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem;">
+                  <div class="roadmap-summary-box">
+                    <div class="roadmap-summary-title">
                       ${ICONS.gradCap} Mục tiêu kiến thức & Kỹ năng nạp:
                     </div>
-                    <ul style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.85rem; color: var(--text-secondary);">
+                    <ul class="roadmap-summary-list">
                       ${sprint.knowledgeToLoad.map((k) => `<li>• ${k}</li>`).join('')}
                     </ul>
                   </div>
 
                   <!-- Tasks Checklist -->
-                  <div style="font-weight: 700; font-size: 0.9rem; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.4rem;">
+                  <div class="roadmap-deliverables-heading">
                     ${ICONS.laptop} Nhiệm Vụ Thực Hành (Deliverables):
                   </div>
 
@@ -85,7 +85,7 @@ export class RoadmapViewRoadmap extends HTMLElement {
                               <div class="task-title">${task.title}</div>
                               <div class="task-desc">${task.description}</div>
                               <div class="task-meta">
-                                <span class="task-tag" style="background: var(--primary-glow); color: var(--primary); display: inline-flex; align-items: center; gap: 0.25rem;">
+                                <span class="task-tag task-tag--primary">
                                   ${ICONS.pomodoro} ${task.pomodoros} Poms (~${task.hoursEstimate}h)
                                 </span>
                                 ${task.tags ? task.tags.map((t) => `<span class="task-tag">#${t}</span>`).join('') : ''}

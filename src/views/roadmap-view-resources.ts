@@ -30,25 +30,23 @@ export class RoadmapViewResources extends HTMLElement {
       <div class="resources-container">
         <div class="section-header">
           <div>
-            <div class="section-title" style="display: flex; align-items: center; gap: 0.5rem;">
+            <div class="section-title section-title-flex">
               ${ICONS.bookOpen} Thư Viện Tài Nguyên Học Tập & Tra Cứu (100% Online Free)
             </div>
-            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+            <div class="section-subtitle-muted">
               Danh sách khóa học video miễn phí từ DeepLearning.AI & tài liệu official docs 2026.
             </div>
           </div>
         </div>
 
         <!-- Filter Tabs -->
-        <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-          <button class="action-btn btn-res-filter ${this.selectedModuleId === 'all' ? 'active' : ''}" data-mod="all"
-            style="${this.selectedModuleId === 'all' ? 'background: var(--primary); color: white;' : ''}">
+        <div class="filter-bar-container">
+          <button class="action-btn btn-res-filter ${this.selectedModuleId === 'all' ? 'active' : ''}" data-mod="all">
             <span class="btn-label">Tất Cả Modules</span>
           </button>
           ${SPRINT_MODULES.map(
             (s) => `
-            <button class="action-btn btn-res-filter ${this.selectedModuleId === s.id ? 'active' : ''}" data-mod="${s.id}"
-              style="${this.selectedModuleId === s.id ? 'background: var(--primary); color: white;' : ''}">
+            <button class="action-btn btn-res-filter ${this.selectedModuleId === s.id ? 'active' : ''}" data-mod="${s.id}">
               <span class="btn-label">Module ${s.moduleNum}</span>
             </button>
           `
@@ -84,15 +82,14 @@ export class RoadmapViewResources extends HTMLElement {
               return `
                 <div class="resource-card">
                   <div>
-                    <div style="display: flex; align-items: center; justify-content: space-between;">
-                      <span class="resource-type-badge" style="background: ${badgeBg}; color: ${badgeColor}; display: inline-flex; align-items: center; gap: 0.3rem;">
+                    <div class="resource-header-row">
+                      <span class="resource-type-badge resource-type-badge-dynamic" style="--badge-bg: ${badgeBg}; --badge-color: ${badgeColor};">
                         ${typeIcon} ${typeLabel}
                       </span>
                       <button 
-                        class="action-btn btn-flag-resource" 
+                        class="action-btn btn-flag-resource btn-reset-filter" 
                         data-res-id="${res.id}"
                         title="Đánh dấu tài nguyên này"
-                        style="padding: 0.2rem 0.4rem; font-size: 0.9rem;"
                       >
                         ${isFlagged ? ICONS.starFilled : ICONS.starOutline}
                       </button>
@@ -103,15 +100,14 @@ export class RoadmapViewResources extends HTMLElement {
                   </div>
 
                   <div class="resource-footer">
-                    <span style="font-size: 0.75rem; color: var(--accent-emerald); font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">
+                    <span class="free-resource-tag">
                       ${ICONS.gradCap} ${res.isFree ? 'Miễn phí 100%' : 'Trả phí'}
                     </span>
                     <a 
                       href="${res.url}" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      class="action-btn"
-                      style="background: var(--primary-glow); color: var(--primary); border-color: rgba(99, 102, 241, 0.3);"
+                      class="action-btn btn-resource-primary"
                     >
                       <span class="btn-label">Mở Link</span> ${ICONS.externalLink}
                     </a>
