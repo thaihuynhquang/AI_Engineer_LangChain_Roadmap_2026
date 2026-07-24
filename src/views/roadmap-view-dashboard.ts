@@ -119,7 +119,7 @@ export class RoadmapViewDashboard extends HTMLElement {
                   </div>
                   <div class="sprint-header-left">
                     <span class="sprint-status-text" style="--status-color: ${sprint.statusColor};">
-                      ${spStat.completedCount}/${spStat.totalCount} Tasks (${spStat.percentage}%)
+                      ${spStat.percentage}%
                     </span>
                     <span class="sprint-badge sprint-badge-dynamic" style="--status-color: ${sprint.statusColor};">
                       ${spStat.percentage === 100 ? 'Đã Xong' : spStat.percentage > 0 ? 'Đang Học' : 'Chưa Bắt Đầu'}

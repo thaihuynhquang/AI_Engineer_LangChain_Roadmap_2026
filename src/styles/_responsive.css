@@ -32,6 +32,15 @@
     .days-grid {
       grid-template-columns: 1fr;
     }
+    .sprint-card-header {
+      padding: 1rem 1.15rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .sprint-title {
+      font-size: 1rem;
+    }
   }
 
   @media (max-width: 480px) {
@@ -42,6 +51,14 @@
     .nav-tab {
       padding: 0.75rem 0.85rem;
       font-size: 0.82rem;
+    }
+
+    .sprint-card-header {
+      padding: 0.85rem 1rem;
+    }
+
+    .sprint-header-left {
+      gap: 0.5rem;
     }
   }
 }
