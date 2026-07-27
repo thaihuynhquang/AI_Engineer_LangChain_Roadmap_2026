@@ -27,7 +27,7 @@ Tài liệu này tổng hợp toàn bộ kiến trúc kỹ thuật, công nghệ
 | **State Management** | **Centralized Store + Observer Re-render** | Quản lý state tập trung tại `src/state/storage.ts`. Tự động đồng bộ `localStorage` và trigger `renderAll()` cho các active views. |
 | **Router** | **Hash Router (`#/route`)** | Client-side routing nhẹ dựa trên `window.onhashchange`, đồng bộ giữa URL hash, UI tab active và `localStorage`. |
 | **Icons & Audio** | **SVG Dictionary + Web Audio API** | Render SVG icons tập trung tại `src/utils/icons.ts`. Phát âm thanh báo hiệu Pomodoro không cần file mp3 tĩnh nhờ `src/utils/audio.ts`. |
-| **Deployment** | **GitHub Actions + GitHub Pages** | Workflow tự động build thư mục `dist/` và deploy lên GitHub Pages với `base: './'` trong `vite.config.ts`. |
+| **Deployment** | **GitHub Actions + GitHub Pages** | Workflow tự động build thư mục `dist/` và deploy lên GitHub Pages với `base: './'` trong `vite.config.ts`. Chi tiết hướng dẫn tại **[github_pages_deployment_guide.md](./github_pages_deployment_guide.md)**. |
 
 ---
 
@@ -128,7 +128,18 @@ CSS được cấu trúc bằng chỉ thị `@layer` để kiểm soát thứ t�
 
 ## 5. Blueprint Từng Bước Để AI Agent Clone/Tái Tạo Repo
 
-Nếu bạn là một AI Agent được giao nhiệm vụ tạo mới một dự án tương tự cho một chủ đề khác, hãy thực hiện theo đúng 7 bước sau:
+Nếu bạn là một AI Agent được giao nhiệm vụ tạo mới một dự án tương tự cho một chủ đề khác, hãy tuân thủ nghiêm ngặt **Yêu cầu Tiền đề** và thực hiện theo đúng **8 bước** dưới đây:
+
+> [!IMPORTANT]
+> **Yêu cầu Bắt buộc Tiền đề cho AI Agent (Mandatory Documentation Analysis)**:
+> Trước khi khởi tạo hoặc viết bất kỳ đoạn code nào, AI Agent **BẮT BUỘC** phải đọc và phân tích toàn bộ 5 tài liệu kỹ thuật thuộc thư mục **`docs/guides/`** để đảm bảo tính chính xác 100% khi clone/tái tạo repo:
+> 1. **[architecture_guide.md](./architecture_guide.md)**: Nắm vững kiến trúc Data-Driven, Observer Pattern, State Store & Progress Engine.
+> 2. **[project_structure.md](./project_structure.md)**: Nắm vững cây thư mục chuẩn và vị trí/vai trò của từng tập tin.
+> 3. **[ui_system_design_guide.md](./ui_system_design_guide.md)**: Nắm vững hệ thống CSS Tokens (`_tokens.css`), CSS Layers (`@layer`), Dark/Light mode & SVG Dictionary.
+> 4. **[interactive_components_guide.md](./interactive_components_guide.md)**: Nắm vững PRD, UX Specs, Web Components lifecycle & cơ chế tương tác state.
+> 5. **[github_pages_deployment_guide.md](./github_pages_deployment_guide.md)**: Nắm vững quy trình cấu hình CI/CD tự động build & deploy lên GitHub Pages qua GitHub Actions.
+
+---
 
 ### Bước 1: Khởi tạo Repo & Cấu hình Build Environment
 1. Khởi tạo `package.json` với các scripts:
@@ -137,7 +148,7 @@ Nếu bạn là một AI Agent được giao nhiệm vụ tạo mới một dự
    - `"preview": "vite preview"`
    - `"typecheck": "tsc --noEmit"`
 2. Cài đặt `devDependencies`: `typescript` và `vite`.
-3. Tạo file `vite.config.ts` bắt buộc khai báo `base: './'` để static assets hoạt động đúng khi deploy trên GitHub Pages.
+3. Tạo file `vite.config.ts` bắt buộc khai báo `base: './'` để static assets hoạt động đúng khi deploy trên GitHub Pages (Tham khảo **[github_pages_deployment_guide.md](./github_pages_deployment_guide.md)**).
 
 ### Bước 2: Xây dựng Core Types & State Store
 1. Tạo `src/types/appState.ts` định nghĩa interfaces cho data models và `AppState` (`checked`, `resourceFlags`, `activeTab`, `theme`, `pomodoroSettings`, `pomodoroSessions`).
@@ -146,7 +157,7 @@ Nếu bạn là một AI Agent được giao nhiệm vụ tạo mới một dự
 
 ### Bước 3: Định nghĩa Data Model Mới (`src/data/planData.ts`)
 1. Thiết kế dữ liệu theo cấu trúc chuẩn: `META_DATA`, `SPRINT_MODULES`, `POMODORO_SCHEDULE`, `FREE_RESOURCES`, `TECH_STACK_LAYERS`.
-2. Gán ID tĩnh duy nhất cho tất cả các nhiệm vụ, tài nguyên và slot đếm giờ.
+2. Gán ID tĩnh duy nhất cho tất cả các nhiệm vụ, tài nguyên và slot đếm giờ (Theo quy chuẩn tại **[architecture_guide.md](./architecture_guide.md)**).
 
 ### Bước 4: Xây dựng Domain Progress Engine (`src/progress.ts`)
 1. Viết pure function `calculateProgress()` dựa trên `state.checked`, `state.pomodoroSessions` và `PLAN_DATA`.
@@ -158,13 +169,19 @@ Nếu bạn là một AI Agent được giao nhiệm vụ tạo mới một dự
 
 ### Bước 6: Xây dựng Custom Element Views (`src/views/`)
 1. Mỗi Tab tạo một Custom Element kế thừa `HTMLElement` (ví dụ `roadmap-view-dashboard.ts`, `roadmap-view-roadmap.ts`).
-2. Viết phương thức `refresh()` thực hiện re-render HTML và gán event listeners.
-3. Đăng ký Web Component: `customElements.define("roadmap-view-dashboard", RoadmapViewDashboard)`.
+2. Tham khảo quy chuẩn UX & Component Lifecycle tại **[interactive_components_guide.md](./interactive_components_guide.md)**.
+3. Viết phương thức `refresh()` thực hiện re-render HTML và gán event listeners.
+4. Đăng ký Web Component: `customElements.define("roadmap-view-dashboard", RoadmapViewDashboard)`.
 
 ### Bước 7: Hoàn thiện HTML Shell, Design System & Bootstrap
 1. Cấu hình `index.html` chứa `<header>`, thanh `<nav class="nav-tabs">`, các container view `<roadmap-view-*>` và script bootstrap.
-2. Xây dựng bộ CSS Token (`_tokens.css`) và các CSS Layers (`main.css`).
+2. Xây dựng bộ CSS Token (`_tokens.css`) và các CSS Layers (`main.css`) dựa theo **[ui_system_design_guide.md](./ui_system_design_guide.md)**.
 3. Khai báo `src/main.ts` kết nối tất cả các thành phần: load state ➔ apply theme ➔ gán event listener ➔ init router ➔ thực thi `renderAll()`.
+
+### Bước 8: Thiết lập CI/CD & Auto Deployment qua GitHub Actions
+1. Tạo thư mục và file workflow `.github/workflows/deploy.yml`.
+2. Cấu hình các triggers, permissions (`pages: write`, `id-token: write`), Node v22, `npm ci`, `npm run build` và deploy artifact `dist/`.
+3. Bật tính năng Pages với **Source: GitHub Actions** trong Repository Settings (Tham khảo chi tiết tại **[github_pages_deployment_guide.md](./github_pages_deployment_guide.md)**).
 
 ---
 
@@ -172,6 +189,7 @@ Nếu bạn là một AI Agent được giao nhiệm vụ tạo mới một dự
 
 - [ ] `npm run typecheck` chạy thành công không có lỗi TypeScript.
 - [ ] `npm run build` tạo thành công thư mục `dist/` với đường dẫn tương đối (`./assets/...`).
+- [ ] Workflow `.github/workflows/deploy.yml` tự động build và deploy ứng dụng lên GitHub Pages thành công.
 - [ ] Khi tích/bỏ tích checkbox công việc, phần trăm tiến độ trên Dashboard và Navigation Badge được cập nhật tức thì.
 - [ ] Khi F5 (Reload trang), toàn bộ trạng thái checked, cài đặt theme và tab active được giữ nguyên.
 - [ ] Bộ đếm giờ Pomodoro chạy mượt mà, phát âm thanh báo khi kết thúc và lưu lịch sử phiên.

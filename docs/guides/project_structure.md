@@ -19,6 +19,7 @@ Tài liệu này mô tả chi tiết sơ đồ tổ chức cây thư mục, vai 
 │   │   └── tech_stack.md           # Sơ đồ & phân tích 5 lớp công nghệ AI Engineer chuẩn 2026
 │   └── guides/                     # Tài liệu hướng dẫn phát triển & tái tạo repo cho AI Agent / Developer
 │       ├── architecture_guide.md   # Hướng dẫn kiến trúc tổng thể, tech stack, design patterns & blueprint tái tạo
+│       ├── github_pages_deployment_guide.md # Hướng dẫn chi tiết cấu hình CI/CD deploy GitHub Pages qua GitHub Actions
 │       ├── interactive_components_guide.md # Tài liệu Yêu cầu Chức năng (PRD) & Quy chuẩn Tương tác UX
 │       ├── project_structure.md    # File sơ đồ & giải thích chi tiết cấu trúc thư mục dự án (File này)
 │       └── ui_system_design_guide.md # Quy chuẩn thiết kế hệ thống UI, CSS Layers, Tokens & SVG Icons
@@ -79,6 +80,7 @@ Tài liệu này mô tả chi tiết sơ đồ tổ chức cây thư mục, vai 
 
 #### 📂 `docs/guides/` (Tài liệu hướng dẫn phát triển & tái tạo repo cho AI Agent / Developer)
 - **`architecture_guide.md`**: Bản thiết kế chi tiết (Master Blueprint) về kiến trúc ứng dụng, tech stack, các thiết kế mẫu (Design Patterns) và checklist tái tạo dự án.
+- **`github_pages_deployment_guide.md`**: Hướng dẫn chi tiết cấu hình CI/CD và quy trình triển khai tự động lên GitHub Pages sử dụng GitHub Actions cho Vite SPA.
 - **`interactive_components_guide.md`**: Tài liệu PRD & UX Specs chi tiết mô tả cơ chế tương tác, state machine và trải nghiệm người dùng trên các thành phần UI.
 - **`project_structure.md`**: Tài liệu hiện tại, cung cấp sơ đồ cây thư mục và vai trò chi tiết của từng tập tin.
 - **`ui_system_design_guide.md`**: Cẩm nang thiết kế UI, hệ thống biến CSS (Tokens), cấu trúc CSS Layers và từ điển SVG Icons.
