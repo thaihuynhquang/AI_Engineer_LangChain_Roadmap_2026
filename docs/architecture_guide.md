@@ -1,6 +1,6 @@
 # ARCHITECTURE & REPLICATION GUIDE (HƯỚNG DẪN KIẾN TRÚC & TÁI TẠO REPO)
 
-Tài liệu này tổng hợp toàn bộ kiến trúc kỹ thuật, công nghệ (Tech Stack), các thiết kế mẫu (Design Patterns), cấu trúc thư mục (Project Structure) và luồng xử lý dữ liệu của kho mã nguồn này. Dữ liệu này được thiết kế như một **bản thiết kế chi tiết (Master Blueprint)** giúp bất kỳ AI Agent hoặc lập trình viên nào có thể hiểu rõ, bảo trì, hoặc tái tạo (clone) lại cấu trúc ứng dụng cho bất kỳ dự án theo dõi lộ trình nào khác (ví dụ: *Web Dev Tracker, DevOps Journey, Data Engineering Roadmap...*).
+Tài liệu này tổng hợp toàn bộ kiến trúc kỹ thuật, công nghệ (Tech Stack), các thiết kế mẫu (Design Patterns), cấu trúc thư mục (Project Structure), luồng xử lý dữ liệu (Data Flow) và quản lý bộ nhớ của kho mã nguồn này. Dữ liệu này được thiết kế như một **bản thiết kế chi tiết (Master Blueprint)** giúp bất kỳ AI Agent hoặc lập trình viên nào có thể hiểu rõ, bảo trì, hoặc tái tạo (clone) lại cấu trúc ứng dụng cho bất kỳ dự án theo dõi lộ trình nào khác (ví dụ: *Web Dev Tracker, DevOps Journey, Data Engineering Roadmap...*).
 
 ---
 
@@ -10,7 +10,8 @@ Tài liệu này tổng hợp toàn bộ kiến trúc kỹ thuật, công nghệ
 
 - **Triết lý cốt lõi**: Lightweight, zero-framework runtime overhead, cực kỳ nhanh, mô-đun hóa bằng **Vanilla TypeScript** kết hợp **Custom Elements (Web Components - Light DOM)** và **Layered Vanilla CSS**.
 - **Data-Driven Architecture**: 100% dữ liệu nội dung (Sprints, Modules, Tasks, Deliverables, Schedule, Resources, Tech Stack) được tách bạch hoàn toàn trong `src/data/planData.ts`. Giao diện UI chỉ đọc dữ liệu và render.
-- **Client-side Persistence & Offline First**: Lưu trữ tiến độ người dùng, chủ đề giao diện và lịch sử phiên Pomodoro hoàn toàn tại `localStorage` với tính năng Export/Import dữ liệu định dạng JSON để sao lưu.
+- **Centralized State Store & Client-side Persistence**: Quản lý state tập trung tại `src/state/storage.ts`. Tự động lưu vết tiến độ người dùng, chủ đề giao diện và lịch sử phiên Pomodoro vào `localStorage` với tính năng Export/Import dữ liệu định dạng JSON để sao lưu.
+- **Observer-Driven Reactive Loop**: Đồng bộ trạng thái tự động giữa State Store và các Custom Elements active mà không dùng Virtual DOM hay thư viện reactive bên ngoài.
 - **Integrated Pomodoro Engine**: Tích hợp bộ đếm giờ Pomodoro tương tác với âm thanh tổng hợp bằng Web Audio API và thông báo đẩy (Browser Notifications).
 
 ---
@@ -37,6 +38,7 @@ Tài liệu này tổng hợp toàn bộ kiến trúc kỹ thuật, công nghệ
 │   └── workflows/          # GitHub Actions deployment workflow (static build & deploy to GitHub Pages)
 ├── docs/                   # Thư mục chứa toàn bộ tài liệu hướng dẫn & lộ trình (Markdown)
 │   ├── architecture_guide.md   # File hướng dẫn kiến trúc & tái tạo repo (File này)
+│   ├── ui_system_design_guide.md # File hướng dẫn hệ thống giao diện UI & bố cục layout
 │   ├── online_learning_guide.md# Tài liệu hướng dẫn khóa học online miễn phí
 │   ├── resources.md            # Danh sách tài nguyên học tập chi tiết
 │   ├── schedule.md             # Chi tiết lịch trình Pomodoro mẫu
@@ -90,27 +92,36 @@ Tài liệu này tổng hợp toàn bộ kiến trúc kỹ thuật, công nghệ
 - **Primary Key Constraint**: Mỗi Task, Resource, hay Schedule slot **BẮT BUỘC** có một `id` duy nhất (ví dụ: `s1-t1`, `res-1`, `w1d1-p1`).
 - **Cảnh báo quan trọng cho AI Agent**: Không bao giờ đổi tên hoặc thay đổi `id` của nhiệm vụ đã tạo trong `planData.ts` vì `id` chính là chìa khóa primary key lưu trữ trạng thái checked của người dùng trong `localStorage`.
 
-### Pattern 2: Light-DOM Custom Elements Pattern
+### Pattern 2: Light-DOM Custom Elements Pattern & Lifecycle Management
 Các view sử dụng trực tiếp chuẩn **Custom Elements API** native của trình duyệt:
 ```typescript
 export class RoadmapViewDashboard extends HTMLElement {
+  private boundRefresh = this.refresh.bind(this);
+
   connectedCallback(): void {
+    // Đăng ký render listener khi element được add vào DOM
+    registerRenderListener(this.boundRefresh);
     this.refresh();
+  }
+
+  disconnectedCallback(): void {
+    // BẮT BUỘC hủy đăng ký khi element bị tháo khỏi DOM để tránh Memory Leak
+    unregisterRenderListener(this.boundRefresh);
   }
 
   refresh(): void {
     // 1. Lấy dữ liệu mới nhất từ storage & progress engine
     const stats = calculateProgress();
-    // 2. Tạo chuỗi HTML
-    // 3. Cập nhật innerHTML
-    // 4. Gắn event listeners cho các phần tử vừa tạo
+    // 2. Tạo chuỗi HTML & cập nhật innerHTML
+    // 3. Gắn event listeners cho các phần tử tương tác vừa tạo
   }
 }
 customElements.define("roadmap-view-dashboard", RoadmapViewDashboard);
 ```
 
 ### Pattern 3: Unidirectional Data Flow & Observer Re-render Loop
-Ứng dụng duy trì luồng dữ liệu một chiều minh bạch:
+Ứng dụng duy trì luồng dữ liệu một chiều minh bạch giữa State Store và Renderer:
+
 ```mermaid
 graph LR
     UserAction[Hành động người dùng Check/Timer] --> MutateState[Thay đổi State trong storage.ts]
@@ -143,11 +154,11 @@ CSS được cấu trúc bằng chỉ thị `@layer` để kiểm soát thứ t�
 - Quản lý **Dark/Light Theme** thông qua thuộc tính `data-theme` trên thẻ `<html>`:
   ```css
   :root {
-    --bg-primary: #0b0f19;
-    --text-primary: #f8fafc;
+    --bg-main: #0b0f19;
+    --text-primary: #f9fafb;
   }
   [data-theme="light"] {
-    --bg-primary: #ffffff;
+    --bg-main: #f8fafc;
     --text-primary: #0f172a;
   }
   ```
@@ -170,7 +181,7 @@ Nếu bạn là một AI Agent được giao nhiệm vụ tạo mới một dự
 ### Bước 2: Xây dựng Core Types & State Store
 1. Tạo `src/types/appState.ts` định nghĩa interfaces cho data models và `AppState` (`checked`, `resourceFlags`, `activeTab`, `theme`, `pomodoroSettings`, `pomodoroSessions`).
 2. Tạo `src/constants.ts` chứa `STORAGE_KEY`, `THEME_KEY`, `ROUTE_IDS`.
-3. Tạo `src/state/storage.ts` quản lý singleton `AppState`, cung cấp `loadState()`, `saveState()`, `setThemeState()`, `savePomodoroSession()`.
+3. Tạo `src/state/storage.ts` quản lý singleton `AppState`, cung cấp `loadState()`, `saveState()`, `setThemeState()`, `addPomodoroSession()`.
 
 ### Bước 3: Định nghĩa Data Model Mới (`src/data/planData.ts`)
 1. Thiết kế dữ liệu theo cấu trúc chuẩn: `META_DATA`, `SPRINT_MODULES`, `POMODORO_SCHEDULE`, `FREE_RESOURCES`, `TECH_STACK_LAYERS`.
