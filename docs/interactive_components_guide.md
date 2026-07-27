@@ -5,7 +5,7 @@ Tài liệu này đóng vai trò là **Bản Đặc Tả Yêu Cầu Sản Phẩm
 Tài liệu được thiết kế nhằm mục đích hướng dẫn cho các AI Agent hoặc Lập trình viên khác nắm rõ chính xác yêu cầu chức năng (Functional Requirements), hợp đồng dữ liệu (State Contracts), luồng tương tác người dùng (User Flows) và tiêu chí nghiệm thu (Acceptance Criteria) khi triển khai hoặc mở rộng các tính năng này.
 
 > [!NOTE]
-> Tài liệu này tập trung vào khía cạnh Yêu cầu Chức năng & Tương tác Người dùng (PRD & UX Specs). Về chi tiết cấu trúc thư mục, sơ đồ kiến trúc hệ thống và mã nguồn mẫu, vui lòng tham khảo [architecture_guide.md](file:///Users/thaihuynhquang/Desktop/learning/AI_Engineer_LangChain_Roadmap_2026/docs/architecture_guide.md). Về quy chuẩn thiết kế UI, hệ thống Design Tokens và quy định dùng SVG Icons, vui lòng tham khảo [ui_system_design_guide.md](file:///Users/thaihuynhquang/Desktop/learning/AI_Engineer_LangChain_Roadmap_2026/docs/ui_system_design_guide.md).
+> Tài liệu này tập trung vào khía cạnh Yêu cầu Chức năng & Tương tác Người dùng (PRD & UX Specs). Về chi tiết cấu trúc thư mục, sơ đồ kiến trúc hệ thống và mã nguồn mẫu, vui lòng tham khảo [architecture_guide.md](file:///Users/thaihuynhquang/Desktop/learning/AI_Engineer_LangChain_Roadmap_2026/docs/architecture_guide.md) và [project_structure.md](file:///Users/thaihuynhquang/Desktop/learning/AI_Engineer_LangChain_Roadmap_2026/docs/project_structure.md). Về quy chuẩn thiết kế UI, hệ thống Design Tokens và quy định dùng SVG Icons, vui lòng tham khảo [ui_system_design_guide.md](file:///Users/thaihuynhquang/Desktop/learning/AI_Engineer_LangChain_Roadmap_2026/docs/ui_system_design_guide.md).
 
 ---
 

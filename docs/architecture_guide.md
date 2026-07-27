@@ -33,55 +33,16 @@ Tài liệu này tổng hợp toàn bộ kiến trúc kỹ thuật, công nghệ
 
 ## 3. Cấu trúc Thư mục Dự án (Project Directory Structure)
 
-```text
-├── .github/
-│   └── workflows/          # GitHub Actions deployment workflow (static build & deploy to GitHub Pages)
-├── docs/                   # Thư mục chứa toàn bộ tài liệu hướng dẫn & lộ trình (Markdown)
-│   ├── architecture_guide.md   # File hướng dẫn kiến trúc & tái tạo repo (File này)
-│   ├── ui_system_design_guide.md # File hướng dẫn hệ thống giao diện UI & bố cục layout
-│   ├── online_learning_guide.md# Tài liệu hướng dẫn khóa học online miễn phí
-│   ├── resources.md            # Danh sách tài nguyên học tập chi tiết
-│   ├── schedule.md             # Chi tiết lịch trình Pomodoro mẫu
-│   └── tech_stack.md           # Chi tiết các lớp công nghệ AI Engineer
-├── index.html              # HTML Shell (Header, Navigation Tabs, 5 View Containers, Toast container)
-├── package.json            # npm scripts (dev, build, preview, typecheck) & devDependencies (typescript, vite)
-├── tsconfig.json           # Cấu hình TypeScript compiler options
-├── vite.config.ts          # Cấu hình Vite bundler (khai báo base: './' cho relative assets path)
-└── src/
-    ├── actions/
-    │   └── backup.ts       # Xử lý Export JSON sao lưu, Import JSON khôi phục và Reset tiến độ
-    ├── constants.ts        # Định nghĩa hằng số STORAGE_KEY, THEME_KEY và ROUTE_IDS
-    ├── data/
-    │   └── planData.ts     # PURE DATA MODEL - Chứa toàn bộ nội dung lộ trình (META_DATA, SPRINT_MODULES, POMODORO_SCHEDULE, FREE_RESOURCES, TECH_STACK_LAYERS)
-    ├── main.ts             # BOOTSTRAP - Khởi tạo app, theme, router, event listeners & render loop
-    ├── progress.ts         # PURE DOMAIN LOGIC - Tính toán % hoàn thành (Deliverables 60% + Pomodoros 40%), giờ học, task tiếp theo
-    ├── renderer.ts         # CENTRAL OBSERVER RENDERER - Đăng ký listener và kích hoạt renderAll() cho các Custom Element views
-    ├── router.ts           # HASH ROUTER - Điều hướng hash (#/dashboard), chuyển tab và lưu tab active vào localStorage
-    ├── state/
-    │   └── storage.ts      # STATE STORE - Quản lý singleton AppState, load/save/reset state và lưu Pomodoro sessions
-    ├── styles/             # HỆ THỐNG CSS LAYERED
-    │   ├── main.css        # CSS entry point import các partials theo chỉ thị @layer (reset, base, components, views, utilities)
-    │   ├── _tokens.css     # CSS Custom Properties (Colors, Dark/Light mode variables, Spacing, Typography)
-    │   ├── _reset-base.css # CSS Reset & Base styling
-    │   ├── _header.css     # Style cho Header & Brand bar
-    │   ├── _tabs.css       # Style cho Navigation Tab bar
-    │   ├── _main-layout.css# Style cho Main container layout
-    │   ├── _views.css      # Style cho tất cả các Custom View Components (Dashboard, Roadmap, Schedule, Resources, Tech Stack)
-    │   └── _responsive.css # Media queries cho Mobile/Tablet layout
-    ├── toast.ts            # Utility hiển thị thông báo Toast nhanh trên màn hình
-    ├── types/
-    │   └── appState.ts     # TypeScript Interfaces (Task, ResourceItem, SprintModule, PomodoroSlot, DailyScheduleDay, TechStackLayer, AppState, PomodoroTimerSettings, PomodoroSessionLog)
-    ├── utils/              # CÁC TIỆN ÍCH THUẦN
-    │   ├── audio.ts        # Bộ tổng hợp âm thanh chuông báo bằng Web Audio API
-    │   ├── icons.ts        # Từ điển chứa toàn bộ mã SVG Icons giao diện
-    │   └── notification.ts # Utility gửi thông báo đẩy qua Web Notification API
-    └── views/              # CUSTOM ELEMENTS (LIGHT DOM VIEWS)
-        ├── roadmap-view-dashboard.ts  # <roadmap-view-dashboard> - View tổng quan tiến độ, stats, sprint hiện tại & next task
-        ├── roadmap-view-roadmap.ts    # <roadmap-view-roadmap> - View danh sách 5 Sprints, deliverables checklist & resources
-        ├── roadmap-view-schedule.ts   # <roadmap-view-schedule> - View đếm giờ Pomodoro tương tác & lịch trình học theo ngày/tuần
-        ├── roadmap-view-resources.ts  # <roadmap-view-resources> - View danh mục tài nguyên miễn phí hỗ trợ lọc theo loại
-        └── roadmap-view-techstack.ts  # <roadmap-view-techstack> - View sơ đồ các lớp công nghệ AI Engineer 2026
-```
+Chi tiết sơ đồ cây thư mục toàn bộ dự án và mô tả vai trò của từng mô-đun/tập tin đã được tách thành tài liệu độc lập tại **[project_structure.md](file:///Users/thaihuynhquang/Desktop/learning/AI_Engineer_LangChain_Roadmap_2026/docs/project_structure.md)**.
+
+### Sơ lược các khối chức năng chính:
+- **`docs/`**: Hệ thống tài liệu kỹ thuật, quy chuẩn UI/UX, kiến trúc, lộ trình tự học và cấu trúc dự án.
+- **`public/`**: Tài nguyên tĩnh (`favicon.svg`).
+- **`src/data/`**: Pure Data Model (`planData.ts`) - Nơi lưu trữ 100% dữ liệu nghiệp vụ tĩnh.
+- **`src/state/`**: State Store (`storage.ts`) - Quản lý `localStorage` & singleton `AppState`.
+- **`src/views/`**: Native Web Components (`<roadmap-view-*>`) quản lý hiển thị 5 tab UI.
+- **`src/styles/`**: Hệ thống CSS phân tầng (`@layer`) kết hợp CSS Custom Properties (`_tokens.css`).
+- **`src/actions/`**, **`src/utils/`**, **`src/types/`**: Các utility thuần, type interfaces và tác vụ backup/restore.
 
 ---
 
