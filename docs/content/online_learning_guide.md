@@ -2,8 +2,8 @@
 ## Combo 2 Khóa Học: LangChain/LangGraph + MCP & Autonomous Agents
 
 Hướng dẫn này cung cấp khung lộ trình học tập Master Curriculum được tích hợp 100% từ **2 Khóa Học Trọng Tâm**:
-1. 📹 **Khóa 1 (Core Engine & Production)**: [Agentic AI Systems: Build & Deploy with LangChain/LangGraph](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html)
-2. 📹 **Khóa 2 (MCP Protocol & Multi-Framework Expansion)**: [Building Autonomous Agentic AI Systems for Beginners HandsOn](file:///Users/thaihuynhquang/Desktop/learning/Building_Autonomous_Agentic_AI_Systems_for_Beginners_HandsOn/video_zip/package/overview.html)
+1. 📹 **Khóa 1 (Core Engine & Production)**: [Agentic AI Systems: Build & Deploy with LangChain/LangGraph](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814)
+2. 📹 **Khóa 2 (MCP Protocol & Multi-Framework Expansion)**: [Building Autonomous Agentic AI Systems for Beginners HandsOn](https://www.packtpub.com/en-us/product/building-autonomous-agentic-ai-systems-for-beginners-handson-9781807609818)
 
 Lộ trình bao gồm **8 Module chuyên sâu**, kết hợp giữa **Lý thuyết bài giảng** $\rightarrow$ **Hands-on Demos & Bài tập** $\rightarrow$ **4 Dự án thực tế lớn (Projects)**.
 
@@ -33,7 +33,7 @@ Lộ trình bao gồm **8 Module chuyên sâu**, kết hợp giữa **Lý thuy�
   * Kiến trúc LCEL (LangChain Expression Language) & Runnable Chains: Batch execution, Realtime streaming, Schema inspection, Pipe operator (`|`).
   * Cấu hình Đa nhà cung cấp LLM (Multi Providers), Prompt Templates, Structured Outputs & Output Parsers.
 * **2. Tài nguyên Tra cứu Chuẩn**:
-  * 📹 **Khóa học**: [Khóa 1 Overview](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html) (Chapter 1-2) & [Khóa 2 Overview](file:///Users/thaihuynhquang/Desktop/learning/Building_Autonomous_Agentic_AI_Systems_for_Beginners_HandsOn/video_zip/package/overview.html) (Chapter 2-3).
+  * 📹 **Khóa học**: [Khóa 1 Overview](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) (Chapter 1-2) & [Khóa 2 Overview](https://www.packtpub.com/en-us/product/building-autonomous-agentic-ai-systems-for-beginners-handson-9781807609818) (Chapter 2-3).
   * 📖 **LangChain Overview**: [https://python.langchain.com/docs/introduction/](https://python.langchain.com/docs/introduction/).
 * **3. Nhiệm vụ Thực hành & Dự án**:
   - Bài tập tự giải: *Build Your First Chain* & *Create a Multi-model Setup*.
@@ -50,7 +50,7 @@ Lộ trình bao gồm **8 Module chuyên sâu**, kết hợp giữa **Lý thuy�
   * Giới thiệu **Smolagents** (Hugging Face) & Demo Weather Agent, SQL Agent bằng Smolagents (*Khóa 2 - Chapter 4*).
   * Tạo Agent dạng Low-code/No-code với **n8n** (*Khóa 2 - Chapter 4*).
 * **2. Tài nguyên Tra cứu Chuẩn**:
-  * 📹 **Khóa học**: [Khóa 1 Chapter 3](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html) & [Khóa 2 Chapter 4](file:///Users/thaihuynhquang/Desktop/learning/Building_Autonomous_Agentic_AI_Systems_for_Beginners_HandsOn/video_zip/package/overview.html).
+  * 📹 **Khóa học**: [Khóa 1 Chapter 3](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) & [Khóa 2 Chapter 4](https://www.packtpub.com/en-us/product/building-autonomous-agentic-ai-systems-for-beginners-handson-9781807609818).
   * 📖 **LCEL Concepts**: [https://python.langchain.com/docs/concepts/#lcel](https://python.langchain.com/docs/concepts/#lcel).
 * **3. Nhiệm vụ Thực hành**:
   - Viết chuỗi xử lý đa nhánh kết hợp `RunnablePassthrough` và `RunnableParallel`.
@@ -67,7 +67,7 @@ Lộ trình bao gồm **8 Module chuyên sâu**, kết hợp giữa **Lý thuy�
   * Thực hành: Xây dựng AI Agent chạy trên nền MCP Server.
   * Triển khai: **Docker MCP với Agentic AI**.
 * **2. Tài nguyên Tra cứu Chuẩn**:
-  * 📹 **Khóa học**: [Khóa 2 Chapter 5 - Getting Started with MCP](file:///Users/thaihuynhquang/Desktop/learning/Building_Autonomous_Agentic_AI_Systems_for_Beginners_HandsOn/video_zip/package/overview.html).
+  * 📹 **Khóa học**: [Khóa 2 Chapter 5 - Getting Started with MCP](https://www.packtpub.com/en-us/product/building-autonomous-agentic-ai-systems-for-beginners-handson-9781807609818).
   * 🔌 **Model Context Protocol Docs**: [https://modelcontextprotocol.io/](https://modelcontextprotocol.io/).
 * **3. Nhiệm vụ Thực hành**:
   - Viết 1 FastMCP Server cung cấp Tool truy vấn dữ liệu hoặc hệ thống.
@@ -84,7 +84,7 @@ Lộ trình bao gồm **8 Module chuyên sâu**, kết hợp giữa **Lý thuy�
   * Embeddings: OpenAI Embedding, Free Embedding models, Embedding Caching.
   * Vector Stores với **ChromaDB**: Setup, Similarity Search with Scores, Metadata Filtering, Persistence, VectorStore as Retriever.
 * **2. Tài nguyên Tra cứu Chuẩn**:
-  * 📹 **Khóa học**: [Khóa 1 Chapter 4](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
+  * 📹 **Khóa học**: [Khóa 1 Chapter 4](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814).
   * 📖 **ChromaDB Docs**: [https://docs.trychroma.com/](https://docs.trychroma.com/).
 * **3. Nhiệm vụ Thực hành**:
   - Bài tập tự giải: *Vector Stores Exercise & Solution*.
@@ -101,7 +101,7 @@ Lộ trình bao gồm **8 Module chuyên sâu**, kết hợp giữa **Lý thuy�
   * Agentic RAG với CrewAI (*Khóa 2 - Chapter 7*).
   * Memory Patterns: Conversation Memory, Multiple Sessions Memory, Message Trimming, Windowed Memory, Summary Memory, Persistent Memory.
 * **2. Tài nguyên Tra cứu Chuẩn**:
-  * 📹 **Khóa học**: [Khóa 1 Chapter 5](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html) & [Khóa 2 Chapter 7](file:///Users/thaihuynhquang/Desktop/learning/Building_Autonomous_Agentic_AI_Systems_for_Beginners_HandsOn/video_zip/package/overview.html).
+  * 📹 **Khóa học**: [Khóa 1 Chapter 5](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) & [Khóa 2 Chapter 7](https://www.packtpub.com/en-us/product/building-autonomous-agentic-ai-systems-for-beginners-handson-9781807609818).
   * 📖 **LangChain RAG Tutorial**: [https://python.langchain.com/docs/tutorials/rag/](https://python.langchain.com/docs/tutorials/rag/).
 * **3. Nhiệm vụ Thực hành & Dự án**:
   - 🛠️ **Project 2: AI Research Assistant** — Xây dựng trợ lý nghiên cứu AI hoàn chỉnh với Document Indexing, Memory đa phiên, Multi-Query Retrieval và Structured Output.
@@ -117,7 +117,7 @@ Lộ trình bao gồm **8 Module chuyên sâu**, kết hợp giữa **Lý thuy�
   * Vòng lặp & Tự sửa lỗi (Cycles & Loops): Self-Correcting Code Writer, Iterative Research Agent.
   * Human in the Loop & Persistence: Interrupt for Approval, Checkpointing Deep Dive, Checkpoint Internals.
 * **2. Tài nguyên Tra cứu Chuẩn**:
-  * 📹 **Khóa học**: [Khóa 1 Chapter 6](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
+  * 📹 **Khóa học**: [Khóa 1 Chapter 6](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814).
   * 📖 **LangGraph Official Docs**: [https://langchain-ai.github.io/langgraph/](https://langchain-ai.github.io/langgraph/).
 * **3. Nhiệm vụ Thực hành**:
   - Bài tập tự giải: *Build Your First Node*.
@@ -135,7 +135,7 @@ Lộ trình bao gồm **8 Module chuyên sâu**, kết hợp giữa **Lý thuy�
   * Cloud & Cross-Cloud Agents: AWS Monitoring Multi-Agent & Cross-Cloud Agent với AWS + Google Cloud (*Khóa 2 - Chapter 6*).
   * Agentic Design Patterns: Single-agent & Multi-agent patterns (*Khóa 2 - Chapter 9*).
 * **2. Tài nguyên Tra cứu Chuẩn**:
-  * 📹 **Khóa học**: [Khóa 1 Chapter 7](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html) & [Khóa 2 Chapter 6 & 9](file:///Users/thaihuynhquang/Desktop/learning/Building_Autonomous_Agentic_AI_Systems_for_Beginners_HandsOn/video_zip/package/overview.html).
+  * 📹 **Khóa học**: [Khóa 1 Chapter 7](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) & [Khóa 2 Chapter 6 & 9](https://www.packtpub.com/en-us/product/building-autonomous-agentic-ai-systems-for-beginners-handson-9781807609818).
   * 📖 **LangGraph Multi-Agent Concepts**: [https://langchain-ai.github.io/langgraph/concepts/multi_agent/](https://langchain-ai.github.io/langgraph/concepts/multi_agent/).
 * **3. Nhiệm vụ Thực hành & Dự án**:
   - 🛠️ **Project 3: Multi-Agent Research System** — Xây dựng hệ thống nghiên cứu đa agent từ con số 0 với State Schema custom và Send API.
@@ -152,7 +152,7 @@ Lộ trình bao gồm **8 Module chuyên sâu**, kết hợp giữa **Lý thuy�
   * LLM Testing & Evaluation: Integration Testing, LLM-as-Judge Evaluation, Regression Testing, LangSmith Datasets.
   * Resilience & Error Handling: Circuit Breaker, Fallback Chain, Graph-Based Retry, Model Router, Semantic Caching.
 * **2. Tài nguyên Tra cứu Chuẩn**:
-  * 📹 **Khóa học**: [Khóa 1 Chapter 8](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html) & [Khóa 2 Chapter 8](file:///Users/thaihuynhquang/Desktop/learning/Building_Autonomous_Agentic_AI_Systems_for_Beginners_HandsOn/video_zip/package/overview.html).
+  * 📹 **Khóa học**: [Khóa 1 Chapter 8](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) & [Khóa 2 Chapter 8](https://www.packtpub.com/en-us/product/building-autonomous-agentic-ai-systems-for-beginners-handson-9781807609818).
   * 📖 **LangSmith Docs**: [https://docs.smith.langchain.com/](https://docs.smith.langchain.com/).
   * 📖 **FastAPI Tutorial**: [https://fastapi.tiangolo.com/tutorial/](https://fastapi.tiangolo.com/tutorial/).
   * 📖 **Render Deployment Docs**: [https://render.com/docs/](https://render.com/docs/).

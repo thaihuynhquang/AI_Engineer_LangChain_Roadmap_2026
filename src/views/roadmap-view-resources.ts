@@ -31,10 +31,10 @@ export class RoadmapViewResources extends HTMLElement {
         <div class="section-header">
           <div>
             <div class="section-title section-title-flex">
-              ${ICONS.bookOpen} Thư Viện Tài Nguyên Học Tập & Tra Cứu (100% Online Free)
+              ${ICONS.bookOpen} Thư Viện Tài Nguyên Học Tập & Tra Cứu
             </div>
             <div class="section-subtitle-muted">
-              Danh sách khóa học video miễn phí từ DeepLearning.AI & tài liệu official docs 2026.
+              Danh sách khóa học video từ Packt Publishing & tài liệu official docs 2026.
             </div>
           </div>
         </div>

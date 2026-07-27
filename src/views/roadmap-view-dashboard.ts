@@ -60,9 +60,9 @@ export class RoadmapViewDashboard extends HTMLElement {
         <div class="progress-card">
           <div class="progress-header">
             <div>
-              <div class="progress-title">Tiến Độ Dự Án Enterprise Knowledge AI Assistant</div>
+              <div class="progress-title">Tiến Độ Dự Án Agentic AI Master Systems</div>
               <div class="metric-subtitle">
-                Mục tiêu: Tuần 1-5 (150 Pomodoro thực chiến, 100% Online Free Resources)
+                Mục tiêu: Tuần 1-${META_DATA.totalWeeks} (${META_DATA.totalPomodoros} Pomodoro thực chiến, 100% Online Resources)
               </div>
             </div>
             <div class="progress-percentage">${stats.overallPercentage}%</div>
@@ -103,7 +103,7 @@ export class RoadmapViewDashboard extends HTMLElement {
         <!-- Sprint Progress Overview List -->
         <div class="section-header">
           <div class="section-title section-title-flex">
-            ${ICONS.roadmap} Tiến Độ Từng Sprint (5 Modules)
+            ${ICONS.roadmap} Tiến Độ Từng Module (${SPRINT_MODULES.length} Modules)
           </div>
         </div>
 

@@ -23,7 +23,7 @@ export class RoadmapViewRoadmap extends HTMLElement {
         <div class="section-header section-header--margin">
           <div>
             <div class="section-title section-title-flex">
-              ${ICONS.roadmap} Lộ Trình Chi Tiết 5 Sprints (Deliverables & Tasks)
+              ${ICONS.roadmap} Lộ Trình Chi Tiết ${SPRINT_MODULES.length} Master Modules (Deliverables & Tasks)
             </div>
             <div class="section-subtitle-muted">
               Tích chọn từng nhiệm vụ thực hành khi bạn hoàn thành code & test thành công.
