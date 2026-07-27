@@ -1,120 +1,135 @@
-# 🚀 Hướng Dẫn Lộ Trình Tự Học & Thực Hành 100% Online (2026)
-## Enterprise Knowledge AI Assistant Project
+# 🚀 Hướng Dẫn Lộ Trình Tự Học Agentic AI (2026)
+## Agentic AI Systems: Build & Deploy with LangChain/LangGraph
 
-Bộ hướng dẫn này **thay thế hoàn toàn cuốn sách** *Generative AI with LangChain*, cung cấp cho bạn một **Pedagogical Framework (Khung lộ trình sư phạm)** được cấu trúc mạch lạc từ cơ bản đến nâng cao. Mỗi Module kết hợp chính xác giữa **Lý thuyết/Video bài giảng miễn phí** $\rightarrow$ **Tài liệu chuẩn (Docs 2026)** $\rightarrow$ **Nhiệm vụ gõ code thực tế (Deliverables)**.
+Hướng dẫn này cung cấp khung lộ trình học tập được chuẩn hóa 100% theo khóa học **Agentic AI Systems: Build & Deploy with LangChain/LangGraph** (Packt Publishing). Lộ trình bao gồm **7 Module chuyên sâu** đi từ nền tảng đến sản xuất thực tế, kết hợp giữa **Lý thuyết bài giảng** $\rightarrow$ **Hands-on Demos & Bài tập** $\rightarrow$ **4 Dự án thực tế lớn (Projects)**.
 
 ---
 
-## 🗺️ Bức Tranh Tổng Quan Lộ Trình (Unified Curriculum)
+## 🗺️ Bức Tranh Tổng Quan Lộ Trình (7 Modules)
 
 ```
-[Module 1: LLM APIs & Async Backend] ──► [Module 2: Advanced RAG & pgvector]
-                                                      │
-[Module 5: LLMOps & Production]      ◄── [Module 4: Fullstack Web UI] ◄── [Module 3: LangGraph & MCP Agents]
+[Module 1: LangChain Foundations] ──► [Module 2: Chain Patterns] ──► [Module 3: Loaders, Splitters & ChromaDB]
+                                                                                      │
+[Module 7: Production Deployment] ◄── [Module 6: Multi-Agent Systems] ◄── [Module 5: LangGraph Deep Dive] ◄── [Module 4: Advanced RAG & Memory]
 ```
 
 ---
 
-## 📚 Hướng Dẫn Chi Tiết Theo Từng Module
+## 📚 Hướng Dẫn Chi Tiết Theo 7 Module
 
-### 🟢 Module 1: Core LLM APIs, Prompting & FastAPI Async Backend
-> **Mục tiêu**: Nắm vững cơ chế gọi LLM API, quản lý Prompt Template, Output Parsing và phát dòng dữ liệu (Streaming Response - SSE) bằng Python Backend.
+### 🟢 Module 1: LangChain Foundations - A Deep Dive
+> **Mục tiêu**: Nắm vững hệ sinh thái LangChain v1.0, kiến trúc LCEL, Runnable Chains, quản lý Multi-LLM provider, Prompt Templates và Output Parsers.
 
 * **1. Nội dung Kiến thức Cần nạp**:
-  * Cơ chế hoạt động của Chat Models (User, System, Assistant Messages).
-  * Prompt Templates & Few-shot Prompting.
-  * Server-Sent Events (SSE) & Async IO trong Python.
-* **2. Tài nguyên Học thay thế Sách (Miễn phí)**:
-  * 📹 **Khóa học**: [DeepLearning.AI: ChatGPT Prompt Engineering for Developers](https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/) *(Nắm tư duy prompt chuẩn)*.
-  * 📖 **Tài liệu tra cứu**: [FastAPI Tutorial: Async & Streaming Responses](https://fastapi.tiangolo.com/tutorial/) *(Cú pháp SSE backend)*.
-  * 📖 **Tài liệu LangChain**: [LangChain Python API Quickstart](https://python.langchain.com/docs/introduction/) *(Tạo prompt & stream tokens)*.
-* **3. Nhiệm vụ Thực hành (Sprint 1 Deliverables)**:
-  - Khởi tạo project Python (`pyproject.toml` hoặc `requirements.txt`), dùng `langchain-core` và `langchain-anthropic` / `langchain-openai`.
-  - Dựng API Endpoint với FastAPI: `POST /api/chat/stream`.
-  - Trả về kết quả streaming token-by-token về client qua SSE (`StreamingResponse`).
+  * Tổng quan hệ sinh thái LangChain & Thiết lập môi trường phát triển (Python, API Keys OpenAI & Anthropic).
+  * Kiến trúc LangChain V 1.0, LCEL (LangChain Expression Language) & Runnable Chains.
+  * Thao tác: Batch execution, Realtime streaming output, Schema inspection, Pipe operator (`|`).
+  * Cấu hình Đa nhà cung cấp LLM (Multi Providers), Prompt Templates, Structured Outputs & Output Parsers.
+* **2. Tài nguyên Tra cứu**:
+  * 📹 **Khóa học chính**: [Overview & Chapter 1-2](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
+  * 📖 **Tài liệu tra cứu**: [LangChain Python Docs](https://python.langchain.com/docs/introduction/).
+* **3. Nhiệm vụ Thực hành & Dự án (Deliverables & Project)**:
+  - Bài tập tự giải: *Build Your First Chain with LangChain* & *Create a Multi-model Setup*.
+  - 🛠️ **Project 1: Smart Q&A Bot** — Xây dựng ứng dụng Hỏi-Đáp thông minh hỗ trợ đa mô hình và structured output.
 
 ---
 
-### 🟡 Module 2: Advanced RAG System & PostgreSQL (`pgvector`)
-> **Mục tiêu**: Xây dựng hệ thống tra cứu tri thức doanh nghiệp từ file PDF/Markdown với kỹ thuật RAG tự sửa lỗi, Hybrid Search và Reranking.
+### 🟡 Module 2: Chain Patterns
+> **Mục tiêu**: Làm chủ các mẫu thiết kế chuỗi xử lý (Chain Patterns), chạy song song, truyền dữ liệu linh hoạt và kỹ thuật Debugging.
 
 * **1. Nội dung Kiến thức Cần nạp**:
-  * Chunking Strategies (`RecursiveCharacterTextSplitter`).
-  * Vector Embeddings & Similarity Search (Cosine, Inner Product).
-  * **pgvector**: HNSW Index & Full-Text Search của PostgreSQL.
-  * Advanced RAG: Query Rewriting, Hybrid Search (Vector + BM25), Cross-Encoder Reranking.
-* **2. Tài nguyên Học thay thế Sách (Miễn phí)**:
-  * 📹 **Khóa học 1**: [DeepLearning.AI: Building Agentic RAG with LlamaIndex](https://www.deeplearning.ai/short-courses/building-agentic-rag-with-llamaindex/) *(RAG tự sửa lỗi & routing)*.
-  * 📹 **Khóa học 2**: [DeepLearning.AI: Preprocessing Unstructured Data for LLM Applications](https://www.deeplearning.ai/short-courses/preprocessing-unstructured-data-for-llm-applications/) *(Xử lý & chunking tài liệu)*.
-  * 📖 **Tài liệu tra cứu**: [LangChain RAG Conceptual Guide](https://python.langchain.com/docs/concepts/rag/) *(Mẫu thiết kế Retriever)*.
-  * 📖 **DB Docs**: [pgvector GitHub & Documentation](https://github.com/pgvector/pgvector) *(Cú pháp HNSW index & SQL vector)*.
-* **3. Nhiệm vụ Thực hành (Sprint 2 Deliverables)**:
-  - Chạy PostgreSQL với `pgvector` extension bằng Docker Compose.
-  - Viết pipeline Ingestion: Đọc file PDF/Markdown $\rightarrow$ Split text $\rightarrow$ Embed $\rightarrow$ Lưu vào `pgvector`.
-  - Viết pipeline Retrieval:
-    1. **Query Rewriter**: Dùng LLM viết lại câu hỏi gốc để tìm kiếm rộng hơn.
-    2. **Hybrid Search**: Kết hợp Vector Search + Full-text search Postgres.
-    3. **Reranker**: Dùng mô hình Rerank (ví dụ: Cohere / Flashrank) lọc lấy Top-K đoạn văn bản phù hợp nhất.
+  * Basic Chains & Parallel Chains (Chạy song song nhiều nhánh LLM).
+  * `RunnablePassthrough`: Truyền dữ liệu nguyên bản qua chuỗi xử lý.
+  * Chain Branching: Phân nhánh điều kiện dựa trên dữ liệu đầu vào.
+  * Debugging: Kỹ thuật kiểm thử và phát hiện lỗi trong chuỗi LangChain.
+* **2. Tài nguyên Tra cứu**:
+  * 📹 **Khóa học chính**: [Chapter 3 - Chain Patterns](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
+  * 📖 **Tài liệu tra cứu**: [LangChain Runnable Expression Language Guide](https://python.langchain.com/docs/concepts/lcel/).
+* **3. Nhiệm vụ Thực hành (Deliverables)**:
+  - Viết chuỗi xử lý đa nhánh kết hợp `RunnablePassthrough` và `RunnableParallel`.
+  - Thiết lập cơ chế Debug log cho các chuỗi phức tạp.
 
 ---
 
-### 🔴 Module 3: Stateful Agentic Workflows với LangGraph & MCP
-> **Mục tiêu**: Biến RAG đơn thuần thành AI Agent có khả năng lập kế hoạch (Planning), gọi công cụ qua chuẩn giao thức Model Context Protocol (MCP) và duy trì trạng thái.
+### 🟠 Module 3: Document Loading, Chunking & Embeddings (Loaders, Splitters, Vector Stores)
+> **Mục tiêu**: Xử lý đa dạng định dạng tài liệu, kỹ thuật cắt đoạn văn bản (Text Splitting) và lưu trữ vector với ChromaDB.
 
 * **1. Nội dung Kiến thức Cần nạp**:
-  * Khái niệm Graph-based Control Flow: Nodes, Edges, `StateGraph`, Conditional Edges.
-  * State Management & Persistence (Checkpointer / Memory).
-  * Model Context Protocol (MCP): Server/Client architecture, Tools, Resources, Prompts.
-  * Human-in-the-loop (Tạm dừng luồng để con người phê duyệt).
-* **2. Tài nguyên Học thay thế Sách (Miễn phí)**:
-  * 📹 **Khóa học 1**: [DeepLearning.AI: AI Agents in LangGraph](https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/) *(Xây dựng Stateful Agents)*.
-  * 🎓 **Khóa học 2**: [LangGraph Academy](https://academy.langchain.com/) *(Khóa video chính thức của LangChain)*.
-  * 📖 **Tài liệu LangGraph**: [LangGraph Official Documentation](https://langchain-ai.github.io/langgraph/) *(Design Patterns chuẩn)*.
-  * 🔌 **Tài liệu MCP**: [Model Context Protocol Docs](https://modelcontextprotocol.io) & [FastMCP Python SDK](https://github.com/jlowin/fastmcp).
-* **3. Nhiệm vụ Thực hành (Sprint 3 Deliverables)**:
-  - Dựng 1 **FastMCP Server** độc lập cung cấp Tool (ví dụ: Tool truy vấn database SQL hoặc gọi GitHub API).
-  - Viết LangGraph `StateGraph` Agent trong Backend Python:
-    - Node 1: Plan & Decide (Xác định cần tra cứu RAG hay gọi MCP Tool).
-    - Node 2: Execute Tool (Kết nối MCP Server qua SSE/Stdio transport để gọi Tool).
-    - Node 3: Synthesize Response (Tổng hợp câu trả lời cuối cùng).
-  - Tích hợp Checkpointer để ghi nhớ lịch sử hội thoại dạng State.
+  * Document Loaders: `TextLoader`, `WebLoader`, `LazyLoader`, PDF Loader.
+  * Text Splitting Deep Dive: `RecursiveCharacterTextSplitter`, Chunk Overlap, `MarkdownHeaderSplitter`, `CodeSplitter`.
+  * Embeddings: OpenAI Embedding, Free Embedding models, Embedding Caching.
+  * Vector Stores với **ChromaDB**: Setup, Similarity Search with Scores, Metadata Filtering, Persistence, VectorStore as Retriever.
+* **2. Tài nguyên Tra cứu**:
+  * 📹 **Khóa học chính**: [Chapter 4 - Document Loading, Chunking & Embeddings](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
+  * 📖 **DB Docs**: [ChromaDB Documentation](https://docs.trychroma.com/).
+* **3. Nhiệm vụ Thực hành (Deliverables)**:
+  - Bài tập tự giải: *Vector Stores Exercise & Solution*.
+  - Xây dựng pipeline Ingestion trích xuất tài liệu từ Web/PDF, cắt nhỏ tối ưu và lưu vào ChromaDB với bộ lọc Metadata.
 
 ---
 
-### 🔵 Module 4: Real-time Web UI & Integration (Next.js + Vercel AI SDK)
-> **Mục tiêu**: Thiết kế giao diện Web hiện đại, mượt mà, hỗ trợ render Markdown, hiển thị trạng thái suy luận từng bước của Agent và câu trả lời Real-time.
+### 🔴 Module 4: RAG and Memory - A Comprehensive Dive
+> **Mục tiêu**: Xây dựng hệ thống RAG nâng cao và tích hợp bộ nhớ hội thoại đa phiên (Conversation Memory).
 
 * **1. Nội dung Kiến thức Cần nạp**:
-  * Next.js App Router (React Server Components, Client Components).
-  * Vercel AI SDK (`useChat`, `streamText`).
-  * CSS Styling với Tailwind CSS & Shadcn/ui.
-* **2. Tài nguyên Học thay thế Sách (Miễn phí)**:
-  * 📖 **Tài liệu 1**: [Vercel AI SDK Official Documentation](https://sdk.vercel.ai/docs).
-  * 📖 **Tài liệu 2**: [Vercel AI SDK Stream Protocol](https://sdk.vercel.ai/docs/ai-sdk-ui/stream-protocol).
-  * 📖 **Tài liệu 3**: [Next.js Official Documentation](https://nextjs.org/docs).
-* **3. Nhiệm vụ Thực hành (Sprint 4 Deliverables)**:
-  - Khởi tạo Web Client với Next.js 14+ (App Router) + Tailwind CSS + Shadcn/ui.
-  - Sử dụng React Hook `useChat` kết nối với API Streaming từ FastAPI Backend.
-  - UI Components:
-    - Chat Message bubble với Markdown Syntax Highlighting.
-    - Status Badge hiển thị hành động Agent (VD: *"🔍 Agent đang truy vấn pgvector..."*, *"🛠️ Agent đang gọi FastMCP Tool..."*).
+  * RAG Pipeline Architecture: Basic RAG, RAG with Resources, RAG with Fallback, RAG with Structured Outputs.
+  * Advanced RAG Strategies: Multi-Query Retriever, Contextual Compression, Hybrid Search, Parent Document Retriever, kết hợp Multi-Query & Compression.
+  * Memory Patterns: Conversation Memory Basics, Multiple Sessions Memory, Message Trimming, Windowed Memory, Summary Memory, Persistent Memory.
+* **2. Tài nguyên Tra cứu**:
+  * 📹 **Khóa học chính**: [Chapter 5 - RAG and Memory](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
+  * 📖 **Tài liệu LangChain**: [LangChain Memory & RAG Guides](https://python.langchain.com/docs/concepts/rag/).
+* **3. Nhiệm vụ Thực hành & Dự án (Deliverables & Project)**:
+  - Bài tập tự giải: *RAG Pipeline Exercise* & *Persistent Memory Exercise*.
+  - 🛠️ **Project 2: AI Research Assistant** — Xây dựng trợ lý nghiên cứu AI hoàn chỉnh với Document Indexing, Memory đa phiên, Multi-Query Retrieval và Structured Output.
 
 ---
 
-### 🟣 Module 5: Production LLMOps, Tracing, Evaluation & Deployment
-> **Mục tiêu**: Giám sát hiệu năng, theo dõi token/chi phí, kiểm thử tự động chất lượng câu trả lời và đóng gói hệ thống sản xuất.
+### 🔵 Module 5: LangGraph - A Full Deep Dive
+> **Mục tiêu**: Chuyển đổi từ chuỗi tuyến tính sang đồ thị luồng điều khiển (StateGraph), quản lý trạng thái, vòng lặp tự sửa lỗi và can thiệp từ con người.
 
 * **1. Nội dung Kiến thức Cần nạp**:
-  * Tracing & Observability (Span, Latency, Token Usage).
-  * Evaluation Metrics: Context Precision, Context Recall, Answer Faithfulness (phát hiện Hallucination).
-  * Containerization với Docker Compose.
-* **2. Tài nguyên Học thay thế Sách (Miễn phí)**:
-  * 📹 **Khóa học**: [DeepLearning.AI: Evaluating and Debugging Generative AI](https://www.deeplearning.ai/short-courses/evaluating-debugging-generative-ai/) *(Đánh giá mô hình)*.
-  * 📖 **Tài liệu Tracing**: [LangSmith Documentation](https://docs.smith.langchain.com/) hoặc [Langfuse Open-source Docs](https://langfuse.com/docs).
-* **3. Nhiệm vụ Thực hành (Sprint 5 Deliverables)**:
-  - Gắn Tracing SDK (`langsmith` hoặc `langfuse`) vào FastAPI backend.
-  - Xây dựng Test Suite (Dataset 20-30 câu hỏi mẫu) để đánh giá tự động chỉ số RAG accuracy và Hallucination rate.
-  - Viết file `docker-compose.yml` khởi chạy đồng thời: Frontend Next.js + Backend FastAPI + Postgres pgvector + Langfuse.
+  * Trụ cột LangGraph: `StateGraph`, Reducers, Accumulating State, Message State (Chat pattern).
+  * Multi-Node Pipelines & Routing: Edges, Conditional Edges, Literal Routing, Multipath Routing.
+  * Vòng lặp & Tự sửa lỗi (Cycles & Loops): Self-Correcting Code Writer, Iterative Research Agent.
+  * Human in the Loop & Persistence: Interrupt for Approval, Checkpointing Deep Dive, Checkpoint Internals.
+* **2. Tài nguyên Tra cứu**:
+  * 📹 **Khóa học chính**: [Chapter 6 - LangGraph Full Deep Dive](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
+  * 📖 **Tài liệu LangGraph**: [LangGraph Docs](https://langchain-ai.github.io/langgraph/).
+* **3. Nhiệm vụ Thực hành (Deliverables)**:
+  - Bài tập tự giải: *Build Your First Node*.
+  - Xây dựng luồng Agent tự sửa mã nguồn (Self-Correcting Code Writer) với tính năng phê duyệt từ con người (Human Interrupt).
+
+---
+
+### 🟣 Module 6: Multi-Agent Systems with LangGraph and LangChain
+> **Mục tiêu**: Thiết kế hệ thống Đa Agent phối hợp phân cấp, làm chủ các giao thức truyền tin và mô hình ReAct.
+
+* **1. Nội dung Kiến thức Cần nạp**:
+  * ReAct Pattern & Tool Calling Agent (Custom tools với Error Handling).
+  * Điều phối Agent: Supervisor Agent, Agent Handoffs, Map-Reduce Strategy.
+  * Giao tiếp giữa các Agent: Reducers, Message Passing Pattern, Shared Field State, Blackboard Iterative Refinement.
+  * Hierarchical Architecture: Single Department Isolation, Hierarchical Routing, Tracing.
+* **2. Tài nguyên Tra cứu**:
+  * 📹 **Khóa học chính**: [Chapter 7 - Multi-Agent Systems](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
+* **3. Nhiệm vụ Thực hành & Dự án (Deliverables & Project)**:
+  - 🛠️ **Project 3: Multi-Agent Research System** — Xây dựng hệ thống nghiên cứu đa agent từ con số 0 với State Schema custom và Send API.
+
+---
+
+### 🟤 Module 7: Production Deployment - Deploying AI Agents
+> **Mục tiêu**: Bảo mật hệ thống, giám sát với LangSmith, kiểm thử tự động, tối ưu chi phí và triển khai API Production lên Cloud (Render).
+
+* **1. Nội dung Kiến thức Cần nạp**:
+  * Observability: LangSmith Setup & Testing Traces.
+  * Security & Defense in Depth: PII Detection, Prompt Injection Attack Defense, LLM Guard (Smart Bouncer), Output Validator.
+  * LLM Testing & Evaluation: Integration Testing, LLM-as-Judge Evaluation, Regression Testing, LangSmith Datasets, LLM Testing Pyramid.
+  * Resilience & Error Handling: Retry Decorator, Circuit Breaker, Fallback Chain, Graph-Based Retry.
+  * Cost Optimization: Model Router, Semantic Caching, Token Budgeting.
+* **2. Tài nguyên Tra cứu**:
+  * 📹 **Khóa học chính**: [Chapter 8 - Production Deployment](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
+  * 📖 **Platform Docs**: [LangSmith Docs](https://docs.smith.langchain.com/) & [Render Deployment Docs](https://render.com/docs).
+* **3. Nhiệm vụ Thực hành & Dự án (Deliverables & Project)**:
+  - 🛠️ **Project 4: Production-Ready API (Final Project)** — Đóng gói hệ thống LangGraph Agent + FastAPI + Security Layer + Production Cache & Monitoring + Dockerization + Triển khai thành công lên Cloud **Render**.
 
 ---
 
@@ -125,7 +140,7 @@ Mỗi ngày dành ra **1.5 - 2 tiếng** thực hành theo chu trình 3 bước:
 ```
 ┌────────────────────────────────┐    ┌────────────────────────────────┐    ┌────────────────────────────────┐
 │  BƯỚC 1: NẠP LÝ THUYẾT (30m)   │ ──►│ BƯỚC 2: XEM CODE PATTERN (15m) │ ──►│  BƯỚC 3: GÕ CODE & TEST (75m)  │
-│  Xem video short course hoặc   │    │  Đọc Official Docs để lấy mẫu  │    │  Viết code vào dự án local và  │
-│  đọc tài liệu conceptual docs.  │    │  code chuẩn năm 2026.          │    │  commit kết quả lên GitHub.    │
+│  Xem video bài giảng trong     │    │  Xem hướng dẫn code hands-on   │    │  Thực hành gõ code, giải bài   │
+│  gói khóa học local.           │    │  và mẫu thiết kế chuẩn.        │    │  tập & hoàn thiện Project.     │
 └────────────────────────────────┘    └────────────────────────────────┘    └────────────────────────────────┘
 ```

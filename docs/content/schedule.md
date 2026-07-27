@@ -1,5 +1,5 @@
 # ⏱️ Thời Khóa Biểu Custom Pomodoro (50m Focus - 5m Short Break - 20m Long Break)
-## Enterprise Knowledge AI Assistant Project
+## Lộ Trình 7 Module Theo Khóa Học Agentic AI Systems
 
 - **Quy tắc Pomodoro**:
   - **Mỗi Pomodoro**: 50 phút Tập Trung (Focus).
@@ -9,7 +9,6 @@
   - **Ca Chiều**: 1:00 PM – 5:00 PM (4 Pomodoros | 240 phút).
   - **Ca Tối**: 10:00 PM – 12:00 AM (2 Pomodoros | 120 phút).
 - **Tổng dung lượng công việc**: **6 Pomodoros / ngày** (5 tiếng tập trung + 1 tiếng nghỉ/wrap-up) $\rightarrow$ **30 Pomodoros / tuần**.
-- **Tổng thời lượng dự án**: **5 Tuần** (150 Pomodoros thực hành thực chiến).
 
 ---
 
@@ -19,145 +18,164 @@
 ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
 │ 🌞 CA CHIỀU (13:00 - 17:00 | 4 POMODOROS): FOCUS LEARNING & HEAVY CODING                     │
 ├──────────────────┬───────────────────────────────────────────────────────────────────────────┤
-│ 🍅 Pomodoro 1    │ 13:00 - 13:50 (50m) | 🎓 Nạp Lý Thuyết (Video DeepLearning.AI / Docs)     │
+│ 🍅 Pomodoro 1    │ 13:00 - 13:50 (50m) | 🎓 Nạp Lý Thuyết (Xem Video bài giảng khóa học)      │
 │ ☕ Short Break 1 │ 13:50 - 13:55 (5m)  | Nghỉ ngắn (thư giãn mắt, uống nước)                │
 ├──────────────────┼───────────────────────────────────────────────────────────────────────────┤
-│ 🍅 Pomodoro 2    │ 13:55 - 14:45 (50m) | 📖 Tra Cứu Code Pattern 2026 & Architecture         │
+│ 🍅 Pomodoro 2    │ 13:55 - 14:45 (50m) | 📖 Xem Hands-on Demo & Code Pattern Trong Khóa Học     │
 │ 🛑 LONG BREAK 1  │ 14:45 - 15:05 (20m) | 🌿 NGHỈ GIẢI LAO DÀI (Đứng dậy vận động, ăn nhẹ)     │
 ├──────────────────┼───────────────────────────────────────────────────────────────────────────┤
-│ 🍅 Pomodoro 3    │ 15:05 - 15:55 (50m) | 💻 Heavy Coding 1 (Core Backend / DB / Agent Graph)  │
+│ 🍅 Pomodoro 3    │ 15:05 - 15:55 (50m) | 💻 Heavy Coding 1 (Tự gõ lại Code & Giải Exercise)    │
 │ ☕ Short Break 2 │ 15:55 - 16:00 (5m)  | Nghỉ ngắn                                         │
 ├──────────────────┼───────────────────────────────────────────────────────────────────────────┤
-│ 🍅 Pomodoro 4    │ 16:00 - 16:50 (50m) | 🛠️ Heavy Coding 2 & Test API Endpoints               │
-│ 🌆 Afternoon End │ 16:50 - 17:00 (10m) | Tổng kết ca chiều & chuẩn bị nghỉ ca tối           │
+│ 🍅 Pomodoro 4    │ 16:00 - 16:50 (50m) | 🛠️ Heavy Coding 2 & Build Section Projects             │
+│ <ctrl42> Afternoon End │ 16:50 - 17:00 (10m) | Tổng kết ca chiều & chuẩn bị nghỉ ca tối           │
 ├──────────────────┴───────────────────────────────────────────────────────────────────────────┤
-│ 🌙 CA TỐI (22:00 - 24:00 | 2 POMODOROS): UI INTEGRATION, REFACTORING & GIT COMMIT            │
+│ 🌙 CA TỐI (22:00 - 24:00 | 2 POMODOROS): INTEGRATION, REFACTORING & GIT COMMIT                │
 ├──────────────────┬───────────────────────────────────────────────────────────────────────────┤
-│ 🍅 Pomodoro 5    │ 22:00 - 22:50 (50m) | 🔧 UI Integration & Debugging (Next.js / SSE Chat)   │
+│ 🍅 Pomodoro 5    │ 22:00 - 22:50 (50m) | 🔧 Code Refactoring & Testing (Unit/Integration Test)  │
 │ ☕ Short Break 3 │ 22:50 - 22:55 (5m)  | Nghỉ ngắn giữa ca tối                             │
 ├──────────────────┼───────────────────────────────────────────────────────────────────────────┤
-│ 🍅 Pomodoro 6    │ 22:55 - 23:45 (50m) | 🧹 Refactoring, Test Suite & Write Clean Code         │
+│ 🍅 Pomodoro 6    │ 22:55 - 23:45 (50m) | 🧹 Code Cleanup & Solution Verification              │
 │ 🚀 Night Wrap-up │ 23:45 - 24:00 (15m) | Push Git Commit lên GitHub & tắt máy nghỉ ngơi 💤    │
 └──────────────────┴───────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🗓️ Lộ Trình Phân Chịu 150 Pomodoros Trong 5 Tuần (5-Week Master Plan)
+## 🗓️ Lộ Trình Chi Tiết Phân Bổ Theo 7 Module
 
 ---
 
-### 🟢 TUẦN 1: SPRINT 1 / MODULE 1 – FastAPI Backend & LLM API Streaming (30 Pomodoros)
-* **Thứ 2**:
-  - 🍅 *P1*: Học khái niệm API Chat Models & System/User Prompts.
-  - 🍅 *P2*: Setup môi trường Python 3.11+ với `uv`/`poetry`, cài đặt FastAPI & `langchain-core`.
-  - 🍅 *P3-P4*: Viết Prompt Templates & giao tiếp thử với API Claude 3.5/3.7 hoặc OpenAI.
-  - 🍅 *P5-P6*: Viết Unit test đơn giản & commit code cơ bản.
-* **Thứ 3**:
-  - 🍅 *P1*: Đọc tài liệu Async IO & Server-Sent Events (SSE) trong FastAPI.
-  - 🍅 *P2*: Nghiên cứu class `StreamingResponse` của FastAPI.
-  - 🍅 *P3-P4*: Viết API Endpoint `POST /api/chat/stream` trả dòng dữ liệu token-by-token.
-  - 🍅 *P5-P6*: Test API bằng Postman/curl và xử lý các ngoại lệ (Timeout, Rate limit).
-* **Thứ 4**:
-  - 🍅 *P1-P2*: Tối ưu hóa memory & connection pooling cho FastAPI server.
-  - 🍅 *P3-P4*: Thêm middleware CORS, logging và quản lý API Keys bằng `.env`.
-  - 🍅 *P5-P6*: Chạy stress-test nhẹ cho streaming response.
-* **Thứ 5**:
-  - 🍅 *P1-P2*: Viết Pydantic Models kiểm soát dữ liệu đầu vào/đầu ra (Output Parsers).
-  - 🍅 *P3-P4*: Chuẩn hóa format JSON trả về client.
-  - 🍅 *P5-P6*: Review code & refactor backend logic.
-* **Thứ 6**:
-  - 🍅 *P1-P4*: Kiểm thử toàn bộ Sprint 1 backend & viết tài liệu API docs (Swagger).
-  - 🍅 *P5-P6*: Commit Tuần 1 lên GitHub (`feat: complete fastapi streaming backend`).
+### 🟢 MODULE 1 – LangChain Foundations & Project 1: Smart Q&A Bot
+* **Ngày 1 (Cơ sở & Setup)**:
+  - 🍅 *P1-P2*: Xem video *Introduction, Prerequisites, Ecosystem Overview & Setup Development Environment*.
+  - 🍅 *P3-P4*: Cấu hình API Keys (OpenAI & Anthropic), cài đặt thư viện Python (`langchain-core`, `langchain-openai`, `langchain-anthropic`).
+  - 🍅 *P5-P6*: Thực hành khởi tạo mô hình và kiểm tra kết nối API thành công.
+* **Ngày 2 (LCEL & Runnable Chains)**:
+  - 🍅 *P1-P2*: Xem bài giảng *The V 1.0 Architecture*, *LCEL and Runnable Chains*, *Batch Execution & Realtime Streaming*.
+  - 🍅 *P3-P4*: Gõ code thực hành LCEL, test streaming tokens và schema inspection.
+  - 🍅 *P5-P6*: Giải bài tập: *Your Turn - Build Your First Chain with LangChain* & so sánh đáp án.
+* **Ngày 3 (Pipe Operator & Output Parsers)**:
+  - 🍅 *P1-P2*: Xem video *LCEL - The Pipe Operator*, *Why Output Parsers*, *Prompt Templates & Messages Deep Dive*.
+  - 🍅 *P3-P4*: Gõ code thực hành Prompt Messages và Output Parsers / Structured Outputs.
+  - 🍅 *P5-P6*: Giải bài tập *Create a Multi-model Setup*.
+* **Ngày 4 & 5 (Project 1: Smart Q&A Bot)**:
+  - 🍅 *P1-P4*: Xem bài giảng *Smart Q&A Bot Architecture* và xây dựng **Project 1 - Smart Q&A Bot**.
+  - 🍅 *P5-P6*: Đánh giá, thêm các khâu hoàn thiện cuối cùng (*Final Touches*) và commit GitHub.
 
 ---
 
-### 🟡 TUẦN 2: SPRINT 2 / MODULE 2 – Advanced RAG & PostgreSQL (`pgvector`) (30 Pomodoros)
-* **Thứ 2**:
-  - 🍅 *P1*: Đọc khóa *Preprocessing Data for LLMs*.
-  - 🍅 *P2*: Setup PostgreSQL với `pgvector` extension bằng Docker Compose.
-  - 🍅 *P3-P4*: Khởi tạo bảng SQL và tạo chỉ mục `HNSW` tối ưu hóa Vector Search.
-  - 🍅 *P5-P6*: Test kết nối SQLAlchemy / asyncpg từ FastAPI tới Postgres.
-* **Thứ 3**:
-  - 🍅 *P1*: Đọc tài liệu `RecursiveCharacterTextSplitter` và Document Loaders.
-  - 🍅 *P2-P4*: Viết pipeline Ingestion: Đọc file PDF/Markdown $\rightarrow$ Split text $\rightarrow$ Embed $\rightarrow$ Lưu `pgvector`.
-  - 🍅 *P5-P6*: Test lưu thử 10-20 tài liệu mẫu và kiểm tra số lượng vector trong DB.
-* **Thứ 4**:
-  - 🍅 *P1*: Đọc khóa *Building Agentic RAG*.
-  - 🍅 *P2-P4*: Viết module **Query Rewriter** dùng LLM tối ưu câu hỏi người dùng trước khi truy vấn.
-  - 🍅 *P5-P6*: Test thử nghiệm kết quả trước và sau khi rewrite query.
-* **Thứ 5**:
-  - 🍅 *P1-P2*: Thiết kế **Hybrid Search** (kết hợp Vector Similarity + Postgres Full-Text Search).
-  - 🍅 *P3-P4*: Tích hợp mô hình Rerank (Flashrank/Cohere) lọc lấy Top-K đoạn ngữ cảnh chính xác nhất.
-  - 🍅 *P5-P6*: Đấu nối RAG pipeline vào FastAPI endpoint.
-* **Thứ 6**:
-  - 🍅 *P1-P4*: Benchmark đo độ trễ (Latency) và độ chính xác của RAG retrieval.
-  - 🍅 *P5-P6*: Commit Tuần 2 lên GitHub (`feat: add pgvector hybrid search and reranking RAG`).
+### 🟡 MODULE 2 – Chain Patterns
+* **Ngày 1**:
+  - 🍅 *P1-P2*: Xem video *Chains, RAG and Memory & Chain Patterns Overview* & *Basic and Parallel Chains*.
+  - 🍅 *P3-P4*: Gõ code mẫu chuỗi song song (Parallel Chains) thực hiện xử lý nhiều prompt cùng lúc.
+  - 🍅 *P5-P6*: Kiểm thử độ trễ và định dạng đầu ra của các nhánh song song.
+* **Ngày 2**:
+  - 🍅 *P1-P2*: Xem video *Demo Passthrough Runnable*, *Chain Branching* và *Debugging*.
+  - 🍅 *P3-P4*: Thực hành sử dụng `RunnablePassthrough` để truyền nguyên vẹn dữ liệu đầu vào.
+  - 🍅 *P5-P6*: Xây dựng phân nhánh chuỗi (Chain Branching) dựa trên phân loại câu hỏi và thêm debug logging.
 
 ---
 
-### 🔴 TUẦN 3: SPRINT 3 / MODULE 3 – LangGraph & Model Context Protocol (MCP) (30 Pomodoros)
-* **Thứ 2**:
-  - 🍅 *P1*: Học khóa *AI Agents in LangGraph*. Đọc tài liệu `StateGraph`, Nodes, Edges.
-  - 🍅 *P2-P4*: Khởi tạo luồng suy luận LangGraph cơ bản (State definition, Router node).
-  - 🍅 *P5-P6*: Test chạy thử nghiệm một vòng lặp Agent đơn giản.
-* **Thứ 3**:
-  - 🍅 *P1*: Đọc [Model Context Protocol Docs](https://modelcontextprotocol.io).
-  - 🍅 *P2-P4*: Dựng một **FastMCP Server** bằng Python cung cấp Tool truy vấn SQL DB hoặc GitHub API.
-  - 🍅 *P5-P6*: Test chạy độc lập MCP Server qua Transport (Stdio/SSE).
-* **Thứ 4**:
-  - 🍅 *P1-P2*: Kết nối LangGraph Agent với MCP Server qua giao thức MCP.
-  - 🍅 *P3-P4*: Cho phép Agent tự động chọn Tool (RAG Search vs MCP Tool Execution).
-  - 🍅 *P5-P6*: Xử lý trường hợp Tool gọi bị lỗi (Tool Execution Error Handling).
-* **Thứ 5**:
-  - 🍅 *P1-P2*: Tích hợp Checkpointer (Postgres Memory) cho phép lưu giữ trạng thái hội thoại (State Persistence).
-  - 🍅 *P3-P4*: Thêm tính năng Human-in-the-loop (Tạm dừng luồng xin phê duyệt từ người dùng).
-  - 🍅 *P5-P6*: Test hội thoại nhiều lượt (Multi-turn conversations).
-* **Thứ 6**:
-  - 🍅 *P1-P4*: Refactor toàn bộ luồng Agent Graph & dọn dẹp MCP Client interface.
-  - 🍅 *P5-P6*: Commit Tuần 3 lên GitHub (`feat: build langgraph agent with fastmcp tool integration`).
+### 🟠 MODULE 3 – Document Loading, Chunking & Embeddings (Loaders, Splitters, Vector Stores)
+* **Ngày 1 (Document Loaders)**:
+  - 🍅 *P1-P2*: Xem bài giảng *LangChain Document Loaders*, *TextLoaders*, *WebLoader*, *Lazy Loader* & *PDF Loader*.
+  - 🍅 *P3-P4*: Viết script nạp dữ liệu từ tệp văn bản, trang web và tệp PDF.
+  - 🍅 *P5-P6*: Đánh giá cấu trúc `Document` object thu được.
+* **Ngày 2 (Text Splitting & Chunking)**:
+  - 🍅 *P1-P2*: Xem bài giảng *Why Chunking Matters*, *RecursiveCharacterTextSplitter*, *MarkdownHeaderSplitter*, *CodeSplitter*.
+  - 🍅 *P3-P4*: Thực hành so sánh các kích thước chunk (Chunk Comparison) và tầm quan trọng của Overlap trong code.
+  - 🍅 *P5-P6*: Viết module tự động cắt tài liệu PDF thành các chunk tối ưu.
+* **Ngày 3 & 4 (Embeddings & ChromaDB)**:
+  - 🍅 *P1-P2*: Xem phần *Vector and Embeddings Overview*, *OpenAI Embedding*, *Free Embedding Models*, *Embedding Caching*.
+  - 🍅 *P3-P4*: Cài đặt và thực hành với **ChromaDB**: *Chroma Basics*, *Similarity Search with Scores*, *Metadata Filtering*, *Persistence*.
+  - 🍅 *P5-P6*: Giải bài tập *Vector Stores Exercise & Solution* và gắn Vector Store làm Retriever cho Chain.
 
 ---
 
-### 🔵 TUẦN 4: SPRINT 4 / MODULE 4 – Web UI Real-time (Next.js + Vercel AI SDK) (30 Pomodoros)
-* **Thứ 2**:
-  - 🍅 *P1*: Đọc Vercel AI SDK Docs & Next.js App Router Docs.
-  - 🍅 *P2-P4*: Khởi tạo Next.js 14+ với Tailwind CSS & Shadcn/ui. Dựng khung Chat Interface.
-  - 🍅 *P5-P6*: Thêm các UI components cơ bản (Sidebar, Chat window, Input bar).
-* **Thứ 3**:
-  - 🍅 *P1-P2*: Cấu hình React Hook `useChat` từ Vercel AI SDK.
-  - 🍅 *P3-P4*: Đấu nối API SSE từ FastAPI Backend (Tuần 1 & 3) vào Next.js Frontend.
-  - 🍅 *P5-P6*: Test streaming phản hồi câu chữ hiển thị thời gian thực trên màn hình.
-* **Thứ 4**:
-  - 🍅 *P1-P2*: Tích hợp Markdown Renderer (`react-markdown` + `remark-gfm`).
-  - 🍅 *P3-P4*: Thêm Syntax Highlighting cho các khối code và nút Copy Code Block.
-  - 🍅 *P5-P6*: Test hiển thị bảng biểu, danh sách và định dạng văn bản phức tạp.
-* **Thứ 5**:
-  - 🍅 *P1-P2*: Xây dựng UI Status Indicator hiển thị trạng thái của Agent (VD: *"Agent đang tìm kiếm tài liệu..."*, *"Agent đang gọi MCP Tool..."*).
-  - 🍅 *P3-P4*: Thêm hỗ trợ tải lên file PDF/Markdown trực tiếp từ giao diện Chat UI.
-  - 🍅 *P5-P6*: Tối ưu hóa UI Autoscroll & Mobile Responsive layout.
-* **Thứ 6**:
-  - 🍅 *P1-P4*: Kiểm thử toàn bộ trải nghiệm người dùng (UX/UI testing & Edge cases).
-  - 🍅 *P5-P6*: Commit Tuần 4 lên GitHub (`feat: complete nextjs chat interface with vercel ai sdk`).
+### 🔴 MODULE 4 – RAG and Memory & Project 2: AI Research Assistant
+* **Ngày 1 (RAG Pipeline Foundations)**:
+  - 🍅 *P1-P2*: Xem bài giảng *RAG Architecture & Best Practices*, *Basic RAG Pipeline*, *RAG with Fallback*, *RAG with Structured Outputs*.
+  - 🍅 *P3-P4*: Thực hành gõ code các đường ống RAG cơ bản và RAG tự sửa lỗi khi thiếu ngữ cảnh.
+  - 🍅 *P5-P6*: Giải bài tập *RAG Pipeline Exercise*.
+* **Ngày 2 (Advanced RAG Strategies)**:
+  - 🍅 *P1-P2*: Xem bài giảng *From Basic RAG to Advanced RAG*: *Multi-Query Retriever*, *Contextual Compression*, *Hybrid Search*, *Parent Document Retriever*.
+  - 🍅 *P3-P4*: Thực hành gõ code nâng cao kết hợp Multi-Query Retriever và Contextual Compression.
+  - 🍅 *P5-P6*: Đo đạc chất lượng kết quả tra cứu của Advanced RAG so với RAG thông thường.
+* **Ngày 3 (Memory in LangChain)**:
+  - 🍅 *P1-P2*: Xem video bài giảng *Memory Full Overview*, *Conversation Memory*, *Multiple Sessions Memory*, *Message Trimming*, *Windowed Memory*, *Summary Memory*.
+  - 🍅 *P3-P4*: Thực hành gõ code lưu giữ lịch sử hội thoại đa phiên và tóm tắt tin nhắn cũ.
+  - 🍅 *P5-P6*: Giải bài tập *Persistent Memory Exercise*.
+* **Ngày 4 & 5 (Project 2: AI Research Assistant)**:
+  - 🍅 *P1-P4*: Thực hành từng bước xây dựng **Project: AI Research Assistant**:
+    - Part 1: Indexing Documents.
+    - Part 2: LLM Prompt & Output Parser.
+    - Part 3: Adding Memory.
+    - Part 4: Multi-Query Implementation.
+    - Part 5: Structured Output - Final Part.
+  - 🍅 *P5-P6*: Kiểm thử toàn bộ trợ lý nghiên cứu AI và commit kết quả lên GitHub.
 
 ---
 
-### 🟣 TUẦN 5: SPRINT 5 / MODULE 5 – LLMOps, Tracing & Production Deployment (30 Pomodoros)
-* **Thứ 2**:
-  - 🍅 *P1*: Đọc LangSmith Docs / Langfuse Docs.
-  - 🍅 *P2-P4*: Tích hợp Tracing SDK vào FastAPI Backend để đo Latency, Span & Token cost.
-  - 🍅 *P5-P6*: Kiểm tra Dashboard hiển thị Trace log của Agent.
-* **Thứ 3**:
-  - 🍅 *P1*: Đọc khóa *Evaluating & Debugging Generative AI Models*.
-  - 🍅 *P2-P4*: Viết Evaluation Test Suite (20-30 câu hỏi) đo Context Recall, Answer Faithfulness và Hallucination rate bằng Ragas / DeepEval.
-  - 🍅 *P5-P6*: Chạy tự động test suite và xuất báo cáo chất lượng.
-* **Thứ 4**:
-  - 🍅 *P1-P2*: Viết `Dockerfile` cho Frontend (Next.js) và Backend (FastAPI).
-  - 🍅 *P3-P4*: Viết `docker-compose.yml` ghép nối Frontend + Backend + Postgres `pgvector` + Langfuse.
-  - 🍅 *P5-P6*: Test khởi chạy toàn bộ hệ thống bằng 1 lệnh `docker compose up`.
-* **Thứ 5**:
-  - 🍅 *P1-P4*: Chạy End-to-End testing trên Docker environment, khắc phục các lỗi mạng/biến môi trường.
-  - 🍅 *P5-P6*: Tối ưu hóa dung lượng Docker images & build time.
-* **Thứ 6**:
-  - 🍅 *P1-P4*: Cập nhật tài liệu `README.md` chính của dự án, chụp ảnh màn hình & quay video ngắn demo sản phẩm.
-  - 🍅 *P5-P6*: Push Commit hoàn thành dự án (`feat: complete enterprise knowledge ai assistant v1.0`) 🚀.
+### 🔵 MODULE 5 – LangGraph - A Full Deep Dive
+* **Ngày 1 (StateGraph & Reducers)**:
+  - 🍅 *P1-P2*: Xem video bài giảng *LangGraph and Its Pillars*, *First Simple Graph*, *Understanding Reducers and Accumulating State*, *Message State - The Chat Pattern*.
+  - 🍅 *P3-P4*: Khởi tạo đồ thị `StateGraph` đầu tiên, viết Reducer tích lũy tin nhắn.
+  - 🍅 *P5-P6*: Giải bài tập *Build Your First Node*.
+* **Ngày 2 (Routing & Conditional Edges)**:
+  - 🍅 *P1-P2*: Xem bài giảng *Edges and Conditional Edges*, *Basic Routing*, *Conditional Looping*, *Multipath Routing*.
+  - 🍅 *P3-P4*: Thực hành cấu hình các đường đi điều kiện (Conditional Edges) giữa các node trong đồ thị.
+  - 🍅 *P5-P6*: Chạy thử nghiệm luồng rẽ nhánh linh hoạt dựa trên phản hồi của LLM.
+* **Ngày 3 (Cycles, Loops & Self-Correction)**:
+  - 🍅 *P1-P2*: Xem bài giảng *Cycles and Loops - Self-Correcting Code Writer*, *Iterative Research Agent with Loops*.
+  - 🍅 *P3-P4*: Thực hành xây dựng Agent viết code tự sửa lỗi (lặp lại đến khi code hợp lệ).
+  - 🍅 *P5-P6*: Kiểm thử khả năng thoát khỏi vòng lặp vô hạn bằng giới hạn số lượt (recursion limit).
+* **Ngày 4 (Human in the Loop & Checkpointing)**:
+  - 🍅 *P1-P2*: Xem bài giảng *Human in the Loop Overview*, *Interrupt for Approval*, *Checkpointing Deep Dive*, *Checkpoint Internals*.
+  - 🍅 *P3-P4*: Thực hành tạo điểm dừng (Interrupt) chờ con người duyệt hành động và lưu trạng thái vào Checkpointer.
+  - 🍅 *P5-P6*: Tổng kết các nguyên lý cốt lõi của LangGraph.
+
+---
+
+### 🟣 MODULE 6 – Multi-Agent Systems & Project 3: Multi-Agent Research System
+* **Ngày 1 (Tool Calling & ReAct Pattern)**:
+  - 🍅 *P1-P2*: Xem bài giảng *Multi-Agents and the ReAct Pattern*, *Tool Calling Agent*, *Custom Tool with Error Handling*.
+  - 🍅 *P3-P4*: Thực hành định nghĩa các Tool tùy chỉnh có xử lý ngoại lệ chuẩn cho Agent.
+  - 🍅 *P5-P6*: Test khả năng tự chọn Tool của Agent.
+* **Ngày 2 (Supervisor & Communication Patterns)**:
+  - 🍅 *P1-P2*: Xem bài giảng *The Supervisor Agent*, *Agent Handoffs in LangGraph*, *Map-Reduce Strategy*, *Message Passing Pattern*, *Shared Field State*, *Blackboard Iterative Refinement*.
+  - 🍅 *P3-P4*: Thực hành mô hình Supervisor Agent điều phối các Agent con và chuyển giao nhiệm vụ (Handoffs).
+  - 🍅 *P5-P6*: Thao tác với Reducers trong giao tiếp giữa các agent.
+* **Ngày 3 (Hierarchical Architecture)**:
+  - 🍅 *P1-P2*: Xem bài giảng *Hierarchical Architecture Deep Dive*, *Single Department in Isolation*, *Hierarchical Routing and Full Tracing*.
+  - 🍅 *P3-P4*: Xây dựng hệ thống Đa Agent phân cấp nhiều phòng ban.
+  - 🍅 *P5-P6*: Tracing toàn bộ luồng trao đổi giữa các tầng Agent.
+* **Ngày 4 & 5 (Project 3: Multi-Agent Research System)**:
+  - 🍅 *P1-P4*: Thực hành xây dựng **Section Project: Multi-Agent Research System**:
+    - State Schema & Send API setup.
+    - Xây dựng hệ thống nghiên cứu đa agent hoàn chỉnh từ con số 0.
+  - 🍅 *P5-P6*: Review tổng kết phần Multi-Agent Systems & commit code lên GitHub.
+
+---
+
+### 🟤 MODULE 7 – Production Deployment - Deploying AI Agents & Project 4 (Final)
+* **Ngày 1 (Observability & Security)**:
+  - 🍅 *P1-P2*: Xem bài giảng *Observability Deep Dive*, *LangSmith Setup & Testing Traces*, *PII, Security Categories & Prompt Injection Attacks*.
+  - 🍅 *P3-P4*: Tích hợp LangSmith tracing, viết lớp bảo vệ *Defense in Depth*, *LLM Guard - Smart Bouncer* và *Output Validator*.
+  - 🍅 *P5-P6*: Test khả năng chặn tấn công Prompt Injection và phát hiện PII.
+* **Ngày 2 (LLM Testing & Evaluation)**:
+  - 🍅 *P1-P2*: Xem bài giảng *LLM Testing and Unit Tests*, *Integration Testing*, *LLM-as-Judge Evaluation*, *Regression Testing*, *LangSmith Datasets*, *LLM Testing Pyramid*.
+  - 🍅 *P3-P4*: Viết bộ test suite đánh giá chất lượng Agent bằng mô hình giám khảo (LLM-as-Judge).
+  - 🍅 *P5-P6*: Chạy kiểm thử tự động trên bộ dataset mẫu.
+* **Ngày 3 (Resilience & Cost Optimization)**:
+  - 🍅 *P1-P2*: Xem bài giảng *Error Handling & Retry Decorator*, *Circuit Breaker*, *Fallback Chain*, *Graph-Based Retry*, *Model Router*, *Semantic Caching*, *Token Budgeting*.
+  - 🍅 *P3-P4*: Thực hành cài đặt Circuit Breaker, Semantic Caching để tiết kiệm chi phí token và Model Router tự động chuyển đổi mô hình.
+  - 🍅 *P5-P6*: Kiểm thử các kịch bản sự cố API (Rate limit, Timeout).
+* **Ngày 4 & 5 (Project 4: Final Production-Ready LangGraph API & Render Deployment)**:
+  - 🍅 *P1-P4*: Thực hành xây dựng **Project 4 (Final)**:
+    - Scaffold ứng dụng Production API.
+    - Tích hợp Security Layer & Production Cache & Monitoring.
+    - Đấu nối LangGraph Agent Brain vào khung **FastAPI**.
+    - Viết `Dockerfile` & containerize toàn bộ hệ thống.
+    - Triển khai trực tiếp ứng dụng lên Cloud **Render**.
+  - 🍅 *P5-P6*: Đón chào API Live thành công, tổng kết toàn bộ khóa học & Push commit cuối cùng! 🚀

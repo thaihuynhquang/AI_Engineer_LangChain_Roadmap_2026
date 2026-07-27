@@ -1,86 +1,80 @@
 # 📚 Thư Viện Tài Nguyên Học Tập & Tra Cứu Chuẩn 2026
-## Enterprise Knowledge AI Assistant Project
+## Agentic AI Systems: Build & Deploy with LangChain/LangGraph
 
-Tập hợp đầy đủ và cập nhật 100% theo lộ trình 5 Module trong tệp [online_learning_guide.md](./online_learning_guide.md). Các tài nguyên được phân loại trực tiếp theo từng giai đoạn phát triển dự án.
+Tập hợp đầy đủ tài nguyên bài giảng video và tài liệu tra cứu chính thức được phân loại 100% theo **7 Module** trong tệp [online_learning_guide.md](./online_learning_guide.md) và [schedule.md](./schedule.md).
 
 ---
 
-## 🟢 Module 1: Core LLM APIs, Prompting & FastAPI Async Backend
+## 🎓 Khóa Học Video Trọng Tâm (Primary Course)
+* 📹 **Agentic AI Systems: Build & Deploy with LangChain/LangGraph**
+  * **Tác giả / Nhà xuất bản**: Packt Publishing (ISBN 9781807780814)
+  * **Đường dẫn tệp tổng quan local**: [overview.html](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html)
+  * **Mô tả**: Giáo trình video chính thức thực hành từ nền tảng LangChain v1.0, LCEL, Advanced RAG, ChromaDB, Memory, LangGraph Deep Dive, Multi-Agent Systems đến Triển khai Production với FastAPI, Docker và Cloud Render.
 
-* 🎓 **[Khóa học Video Miễn phí] ChatGPT Prompt Engineering for Developers**:
-  * *Nội dung*: Nắm vững tư duy viết Prompt chuẩn, Few-shot Prompting và Structured Output cho LLM.
-  * *URL*: [deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/](https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/)
-* ⚡ **[Docs Tra Cứu] FastAPI Official Tutorial (Async & Streaming)**:
-  * *Nội dung*: Hướng dẫn lập trình Python Async/Await và phát dòng dữ liệu qua `StreamingResponse` (Server-Sent Events - SSE).
-  * *URL*: [fastapi.tiangolo.com/tutorial/](https://fastapi.tiangolo.com/tutorial/)
+---
+
+## 🟢 Module 1: LangChain Foundations - A Deep Dive
+* 📹 **Khóa học chính**: *Agentic AI Systems (Chapter 1 & 2 - LangChain Foundations)*.
 * 🦜 **[Docs Tra Cứu] LangChain Python Core Quickstart**:
-  * *Nội dung*: Cú pháp kết nối API OpenAI/Anthropic, khởi tạo Prompt Templates và Output Parsers.
+  * *Nội dung*: Cú pháp kết nối API OpenAI/Anthropic, khởi tạo Prompt Templates, LCEL và Output Parsers.
   * *URL*: [python.langchain.com/docs/introduction/](https://python.langchain.com/docs/introduction/)
 
 ---
 
-## 🟡 Module 2: Advanced RAG System & PostgreSQL (`pgvector`)
-
-* 🎓 **[Khóa học Video Miễn phí 1] Building Agentic RAG with LlamaIndex**:
-  * *Nội dung*: Kỹ thuật RAG tự sửa lỗi (Self-Corrective RAG), Query Rewriting và Document Routing.
-  * *URL*: [deeplearning.ai/short-courses/building-agentic-rag-with-llamaindex/](https://www.deeplearning.ai/short-courses/building-agentic-rag-with-llamaindex/)
-* 🎓 **[Khóa học Video Miễn phí 2] Preprocessing Unstructured Data for LLM Applications**:
-  * *Nội dung*: Phương pháp parse, làm sạch và chia nhỏ văn bản (Chunking Strategies) từ PDF/Markdown.
-  * *URL*: [deeplearning.ai/short-courses/preprocessing-unstructured-data-for-llm-applications/](https://www.deeplearning.ai/short-courses/preprocessing-unstructured-data-for-llm-applications/)
-* 🐘 **[Docs Tra Cứu] `pgvector` Extension Documentation**:
-  * *Nội dung*: Cú pháp SQL tạo bảng Vector, đánh chỉ mục HNSW/IVFFlat và thực hiện Hybrid Search trên PostgreSQL.
-  * *URL*: [github.com/pgvector/pgvector](https://github.com/pgvector/pgvector)
-* 📖 **[Docs Tra Cứu] LangChain RAG Conceptual & How-To Guides**:
-  * *Nội dung*: Mẫu thiết kế Retriever nâng cao (Context Compression, Multi-query Retriever, Cross-encoder Reranking).
-  * *URL*: [python.langchain.com/docs/concepts/rag/](https://python.langchain.com/docs/concepts/rag/)
+## 🟡 Module 2: Chain Patterns
+* 📹 **Khóa học chính**: *Agentic AI Systems (Chapter 3 - Chain Patterns)*.
+* 🔗 **[Docs Tra Cứu] LangChain Expression Language (LCEL) Conceptual Guide**:
+  * *Nội dung*: Mẫu thiết kế chuỗi song song (`RunnableParallel`), truyền dữ liệu (`RunnablePassthrough`), rẽ nhánh và Debugging.
+  * *URL*: [python.langchain.com/docs/concepts/lcel/](https://python.langchain.com/docs/concepts/lcel/)
 
 ---
 
-## 🔴 Module 3: Stateful Agentic Workflows với LangGraph & MCP
+## 🟠 Module 3: Document Loading, Chunking & Embeddings
+* 📹 **Khóa học chính**: *Agentic AI Systems (Chapter 4 - Loaders, Splitters, Vector Stores)*.
+* 🟣 **[Docs Tra Cứu] ChromaDB Official Documentation**:
+  * *Nội dung*: Hướng dẫn khởi tạo Vector Database, Similarity Search with Scores, Metadata Filtering và Persistence.
+  * *URL*: [docs.trychroma.com](https://docs.trychroma.com/)
+* 📖 **[Docs Tra Cứu] LangChain Document Loaders & Text Splitters**:
+  * *Nội dung*: Hướng dẫn trích xuất tệp PDF/Web và các chiến lược cắt đoạn văn bản (`RecursiveCharacterTextSplitter`, `MarkdownHeaderSplitter`).
+  * *URL*: [python.langchain.com/docs/concepts/document_loaders/](https://python.langchain.com/docs/concepts/document_loaders/)
 
-* 🎓 **[Khóa học Video Miễn phí 1] AI Agents in LangGraph (by Harrison Chase)**:
-  * *Nội dung*: Xây dựng Agentic Workflows có trạng thái (Stateful Agents), quản lý Memory và Human-in-the-loop.
-  * *URL*: [deeplearning.ai/short-courses/ai-agents-in-langgraph/](https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/)
-* 🎓 **[Khóa học Video Miễn phí 2] LangGraph Academy**:
-  * *Nội dung*: Chương trình đào tạo video chính thức của LangChain về kiến trúc đồ thị `StateGraph` từ cơ bản đến nâng cao.
-  * *URL*: [academy.langchain.com](https://academy.langchain.com/)
-* 🔌 **[Docs Tra Cứu] Model Context Protocol (MCP) Official Docs**:
-  * *Nội dung*: Chuẩn giao thức của Anthropic giúp Agent kết nối an toàn với Tools, Databases và APIs ngoại vi.
-  * *URL*: [modelcontextprotocol.io](https://modelcontextprotocol.io)
-* 🐍 **[Docs Tra Cứu] FastMCP Python SDK GitHub**:
-  * *Nội dung*: Thư viện Python giúp dựng MCP Server cực nhanh chỉ với cú pháp Decorator tương tự FastAPI.
-  * *URL*: [github.com/jlowin/fastmcp](https://github.com/jlowin/fastmcp)
+---
+
+## 🔴 Module 4: RAG and Memory - A Comprehensive Dive
+* 📹 **Khóa học chính**: *Agentic AI Systems (Chapter 5 - RAG and Memory)*.
+* 📖 **[Docs Tra Cứu] LangChain Advanced RAG Guides**:
+  * *Nội dung*: Multi-Query Retriever, Contextual Compression, Hybrid Search, Parent Document Retriever.
+  * *URL*: [python.langchain.com/docs/concepts/rag/](https://python.langchain.com/docs/concepts/rag/)
+* 🧠 **[Docs Tra Cứu] LangChain Memory Integration Guides**:
+  * *Nội dung*: Quản lý bộ nhớ hội thoại đa phiên, Windowed Memory, Summary Memory và Persistent Memory.
+  * *URL*: [python.langchain.com/docs/concepts/memory/](https://python.langchain.com/docs/concepts/memory/)
+
+---
+
+## 🔵 Module 5: LangGraph - A Full Deep Dive
+* 📹 **Khóa học chính**: *Agentic AI Systems (Chapter 6 - LangGraph Full Deep Dive)*.
 * 📘 **[Docs Tra Cứu] LangGraph Official Documentation**:
-  * *Nội dung*: Các Mẫu kiến trúc Agent chuẩn (Supervisor pattern, State persistence, Time-travel debugging).
+  * *Nội dung*: Cấu trúc `StateGraph`, Reducers, Edges, Conditional Edges, Cycles/Loops tự sửa lỗi, Human-in-the-loop và Checkpointing.
   * *URL*: [langchain-ai.github.io/langgraph/](https://langchain-ai.github.io/langgraph/)
 
 ---
 
-## 🔵 Module 4: Real-time Web UI & Integration (Next.js + Vercel AI SDK)
-
-* 🚀 **[Docs Tra Cứu] Vercel AI SDK Documentation**:
-  * *Nội dung*: Thư viện React Hooks chuẩn (`useChat`, `streamText`) để kết nối Next.js với LLM Streaming backend.
-  * *URL*: [sdk.vercel.ai/docs](https://sdk.vercel.ai/docs)
-* 🔗 **[Docs Tra Cứu] Vercel AI SDK Stream Protocol (FastAPI Integration)**:
-  * *Nội dung*: Hướng dẫn định dạng giao thức Streaming (Stream Protocol) kết nối Next.js với FastAPI Python Server qua SSE.
-  * *URL*: [sdk.vercel.ai/docs/ai-sdk-ui/stream-protocol](https://sdk.vercel.ai/docs/ai-sdk-ui/stream-protocol)
-* 🌐 **[Docs Tra Cứu] Next.js Official Documentation**:
-  * *Nội dung*: Hướng dẫn sử dụng App Router, React Server Components và Server Actions.
-  * *URL*: [nextjs.org/docs](https://nextjs.org/docs)
+## 🟣 Module 6: Multi-Agent Systems with LangGraph and LangChain
+* 📹 **Khóa học chính**: *Agentic AI Systems (Chapter 7 - Multi-Agent Systems)*.
+* 🤝 **[Docs Tra Cứu] LangGraph Multi-Agent Architecture Patterns**:
+  * *Nội dung*: Supervisor Pattern, Agent Handoffs, Map-Reduce, Message Passing, Shared State và Hierarchical Multi-Agent Systems.
+  * *URL*: [langchain-ai.github.io/langgraph/concepts/multi_agent/](https://langchain-ai.github.io/langgraph/concepts/multi_agent/)
 
 ---
 
-## 🟣 Module 5: Production LLMOps, Tracing, Evaluation & Deployment
-
-* 🎓 **[Khóa học Video Miễn phí] Evaluating and Debugging Generative AI**:
-  * *Nội dung*: Đo đạc độ chính xác của RAG, phát hiện Hallucination và kiểm thử tự động với Weights & Biases / Ragas.
-  * *URL*: [deeplearning.ai/short-courses/evaluating-debugging-generative-ai/](https://www.deeplearning.ai/short-courses/evaluating-debugging-generative-ai/)
-* 🔍 **[Docs Tra Cứu] LangSmith Documentation**:
-  * *Nội dung*: Tracing toàn bộ luồng suy luận của LangChain/LangGraph, theo dõi chi phí Token và Latency.
+## 🟤 Module 7: Production Deployment - Deploying AI Agents
+* 📹 **Khóa học chính**: *Agentic AI Systems (Chapter 8 - Production Deployment)*.
+* 🔍 **[Docs Tra Cứu] LangSmith Observability & Tracing**:
+  * *Nội dung*: Giám sát vệt suy luận (Traces), phân tích Latency, Token Usage và quản lý Datasets.
   * *URL*: [docs.smith.langchain.com](https://docs.smith.langchain.com/)
-* 🛡️ **[Docs Tra Cứu] Langfuse Open-Source LLMOps Docs**:
-  * *Nội dung*: Giải pháp Tracing & Observability mã nguồn mở có thể tự host (Self-hosted) bằng Docker Compose.
-  * *URL*: [langfuse.com/docs](https://langfuse.com/docs)
-* 🐳 **[Docs Tra Cứu] Docker Compose Documentation**:
-  * *Nội dung*: Đóng gói multi-container ứng dụng Fullstack (Next.js + FastAPI + Postgres + Langfuse).
-  * *URL*: [docs.docker.com/compose/](https://docs.docker.com/compose/)
+* ⚡ **[Docs Tra Cứu] FastAPI Official Documentation**:
+  * *Nội dung*: Dựng Web API Production cho Python Agent.
+  * *URL*: [fastapi.tiangolo.com](https://fastapi.tiangolo.com/)
+* ☁️ **[Docs Tra Cứu] Render Cloud Deployment Guides**:
+  * *Nội dung*: Triển khai ứng dụng Dockerized API lên dịch vụ Cloud Render.
+  * *URL*: [render.com/docs](https://render.com/docs)
