@@ -36,7 +36,7 @@ Tài liệu này tổng hợp toàn bộ kiến trúc kỹ thuật, công nghệ
 Chi tiết sơ đồ cây thư mục toàn bộ dự án và mô tả vai trò của từng mô-đun/tập tin đã được tách thành tài liệu độc lập tại **[project_structure.md](./project_structure.md)**.
 
 ### Sơ lược các khối chức năng chính:
-- **`docs/`**: Hệ thống tài liệu kỹ thuật, quy chuẩn UI/UX, kiến trúc, lộ trình tự học và cấu trúc dự án.
+- **`docs/`**: Thư mục tài liệu kỹ thuật (`docs/guides/`) và tài liệu nội dung các trang web (`docs/content/`).
 - **`public/`**: Tài nguyên tĩnh (`favicon.svg`).
 - **`src/data/`**: Pure Data Model (`planData.ts`) - Nơi lưu trữ 100% dữ liệu nghiệp vụ tĩnh.
 - **`src/state/`**: State Store (`storage.ts`) - Quản lý `localStorage` & singleton `AppState`.

@@ -11,15 +11,17 @@ Tài liệu này mô tả chi tiết sơ đồ tổ chức cây thư mục, vai 
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml              # Workflow GitHub Actions tự động build & deploy ứng dụng lên GitHub Pages
-├── docs/                           # Thư mục tài liệu kỹ thuật & hướng dẫn lộ trình học tập (Markdown)
-│   ├── architecture_guide.md       # Hướng dẫn kiến trúc tổng thể, tech stack, design patterns & blueprint tái tạo
-│   ├── interactive_components_guide.md # Tài liệu Yêu cầu Chức năng (PRD) & Quy chuẩn Tương tác UX
-│   ├── online_learning_guide.md    # Tài liệu lộ trình khóa học online miễn phí chi tiết theo 5 Modules
-│   ├── project_structure.md        # File sơ đồ & giải thích chi tiết cấu trúc thư mục dự án (File này)
-│   ├── resources.md                # Danh mục chi tiết các tài nguyên, công cụ & tài liệu tham khảo miễn phí
-│   ├── schedule.md                 # Lịch trình học tập mẫu & phân bổ thời gian Pomodoro theo tuần/ngày
-│   ├── tech_stack.md               # Sơ đồ & phân tích 5 lớp công nghệ AI Engineer chuẩn 2026
-│   └── ui_system_design_guide.md   # Quy chuẩn thiết kế hệ thống UI, CSS Layers, Tokens & SVG Icons
+├── docs/                           # Thư mục tài liệu kỹ thuật, hướng dẫn & nội dung ứng dụng (Markdown)
+│   ├── content/                    # Tài liệu lưu trữ nội dung dữ liệu của các trang Web (Web Page Content)
+│   │   ├── online_learning_guide.md# Tài liệu lộ trình khóa học online miễn phí chi tiết theo 5 Modules
+│   │   ├── resources.md            # Danh mục chi tiết các tài nguyên, công cụ & tài liệu tham khảo miễn phí
+│   │   ├── schedule.md             # Lịch trình học tập mẫu & phân bổ thời gian Pomodoro theo tuần/ngày
+│   │   └── tech_stack.md           # Sơ đồ & phân tích 5 lớp công nghệ AI Engineer chuẩn 2026
+│   └── guides/                     # Tài liệu hướng dẫn phát triển & tái tạo repo cho AI Agent / Developer
+│       ├── architecture_guide.md   # Hướng dẫn kiến trúc tổng thể, tech stack, design patterns & blueprint tái tạo
+│       ├── interactive_components_guide.md # Tài liệu Yêu cầu Chức năng (PRD) & Quy chuẩn Tương tác UX
+│       ├── project_structure.md    # File sơ đồ & giải thích chi tiết cấu trúc thư mục dự án (File này)
+│       └── ui_system_design_guide.md # Quy chuẩn thiết kế hệ thống UI, CSS Layers, Tokens & SVG Icons
 ├── public/                         # Thư mục tài nguyên tĩnh (Static Assets - không qua bundler compilation)
 │   └── favicon.svg                 # Biểu tượng Favicon SVG của ứng dụng Web
 ├── src/                            # Mã nguồn ứng dụng TypeScript
@@ -73,15 +75,19 @@ Tài liệu này mô tả chi tiết sơ đồ tổ chức cây thư mục, vai 
 - **`.github/workflows/deploy.yml`**: Tự động hóa luồng CI/CD với GitHub Actions. Mỗi khi `push` code lên branch `main`, workflow sẽ chạy `npm ci`, `npm run build` và deploy thư mục `dist/` lên GitHub Pages.
 
 ### 2.2. Thư mục `docs/`
-Chứa toàn bộ hệ thống tài liệu kỹ thuật, lộ trình và quy chuẩn thiết kế của dự án dưới dạng Markdown:
+Được chia thành 2 thư mục con rõ ràng theo mục đích sử dụng:
+
+#### 📂 `docs/guides/` (Tài liệu hướng dẫn phát triển & tái tạo repo cho AI Agent / Developer)
 - **`architecture_guide.md`**: Bản thiết kế chi tiết (Master Blueprint) về kiến trúc ứng dụng, tech stack, các thiết kế mẫu (Design Patterns) và checklist tái tạo dự án.
 - **`interactive_components_guide.md`**: Tài liệu PRD & UX Specs chi tiết mô tả cơ chế tương tác, state machine và trải nghiệm người dùng trên các thành phần UI.
-- **`online_learning_guide.md`**: Hướng dẫn chi tiết 5 Module học tập miễn phí online, danh sách video khóa học & bài tập thực hành.
 - **`project_structure.md`**: Tài liệu hiện tại, cung cấp sơ đồ cây thư mục và vai trò chi tiết của từng tập tin.
+- **`ui_system_design_guide.md`**: Cẩm nang thiết kế UI, hệ thống biến CSS (Tokens), cấu trúc CSS Layers và từ điển SVG Icons.
+
+#### 📂 `docs/content/` (Tài liệu nội dung dữ liệu của các trang Web)
+- **`online_learning_guide.md`**: Hướng dẫn chi tiết 5 Module học tập miễn phí online, danh sách video khóa học & bài tập thực hành.
 - **`resources.md`**: Danh mục tài nguyên miễn phí phục vụ học tập (Cheat sheets, repositories, documentation links).
 - **`schedule.md`**: Chi tiết lịch học mẫu 4 tuần, phân bổ các phiên đếm giờ Pomodoro theo từng ngày.
 - **`tech_stack.md`**: Phân tích chuyên sâu 5 lớp công nghệ AI Engineer chuẩn 2026 (Model Layer, Agent Framework, RAG & Vector DB, LLMOps, Client Integration).
-- **`ui_system_design_guide.md`**: Cẩm nang thiết kế UI, hệ thống biến CSS (Tokens), cấu trúc CSS Layers và từ điển SVG Icons.
 
 ### 2.3. Thư mục `public/`
 Chứa các tập tin tài nguyên tĩnh giữ nguyên cấu trúc khi build, không bị Vite gom nhóm hoặc nén mã nguồn:
