@@ -25,9 +25,10 @@ Hướng dẫn này cung cấp khung lộ trình học tập được chuẩn h�
   * Kiến trúc LangChain V 1.0, LCEL (LangChain Expression Language) & Runnable Chains.
   * Thao tác: Batch execution, Realtime streaming output, Schema inspection, Pipe operator (`|`).
   * Cấu hình Đa nhà cung cấp LLM (Multi Providers), Prompt Templates, Structured Outputs & Output Parsers.
-* **2. Tài nguyên Tra cứu**:
+* **2. Tài nguyên Tra cứu Chuẩn**:
   * 📹 **Khóa học chính**: [Overview & Chapter 1-2](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
-  * 📖 **Tài liệu tra cứu**: [LangChain Python Docs](https://python.langchain.com/docs/introduction/).
+  * 📖 **LangChain Core Overview**: [https://python.langchain.com/docs/introduction/](https://python.langchain.com/docs/introduction/).
+  * 📖 **LangChain Core Concepts**: [https://python.langchain.com/docs/concepts/](https://python.langchain.com/docs/concepts/).
 * **3. Nhiệm vụ Thực hành & Dự án (Deliverables & Project)**:
   - Bài tập tự giải: *Build Your First Chain with LangChain* & *Create a Multi-model Setup*.
   - 🛠️ **Project 1: Smart Q&A Bot** — Xây dựng ứng dụng Hỏi-Đáp thông minh hỗ trợ đa mô hình và structured output.
@@ -42,9 +43,10 @@ Hướng dẫn này cung cấp khung lộ trình học tập được chuẩn h�
   * `RunnablePassthrough`: Truyền dữ liệu nguyên bản qua chuỗi xử lý.
   * Chain Branching: Phân nhánh điều kiện dựa trên dữ liệu đầu vào.
   * Debugging: Kỹ thuật kiểm thử và phát hiện lỗi trong chuỗi LangChain.
-* **2. Tài nguyên Tra cứu**:
+* **2. Tài nguyên Tra cứu Chuẩn**:
   * 📹 **Khóa học chính**: [Chapter 3 - Chain Patterns](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
-  * 📖 **Tài liệu tra cứu**: [LangChain Runnable Expression Language Guide](https://python.langchain.com/docs/concepts/lcel/).
+  * 📖 **LCEL Concepts**: [https://python.langchain.com/docs/concepts/#lcel](https://python.langchain.com/docs/concepts/#lcel).
+  * 📖 **LangChain How-To Guides**: [https://python.langchain.com/docs/how_to/](https://python.langchain.com/docs/how_to/).
 * **3. Nhiệm vụ Thực hành (Deliverables)**:
   - Viết chuỗi xử lý đa nhánh kết hợp `RunnablePassthrough` và `RunnableParallel`.
   - Thiết lập cơ chế Debug log cho các chuỗi phức tạp.
@@ -59,9 +61,10 @@ Hướng dẫn này cung cấp khung lộ trình học tập được chuẩn h�
   * Text Splitting Deep Dive: `RecursiveCharacterTextSplitter`, Chunk Overlap, `MarkdownHeaderSplitter`, `CodeSplitter`.
   * Embeddings: OpenAI Embedding, Free Embedding models, Embedding Caching.
   * Vector Stores với **ChromaDB**: Setup, Similarity Search with Scores, Metadata Filtering, Persistence, VectorStore as Retriever.
-* **2. Tài nguyên Tra cứu**:
+* **2. Tài nguyên Tra cứu Chuẩn**:
   * 📹 **Khóa học chính**: [Chapter 4 - Document Loading, Chunking & Embeddings](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
-  * 📖 **DB Docs**: [ChromaDB Documentation](https://docs.trychroma.com/).
+  * 📖 **ChromaDB Official Docs**: [https://docs.trychroma.com/](https://docs.trychroma.com/).
+  * 📖 **Document Loaders & Text Splitters How-To**: [https://python.langchain.com/docs/how_to/#document-loaders](https://python.langchain.com/docs/how_to/#document-loaders).
 * **3. Nhiệm vụ Thực hành (Deliverables)**:
   - Bài tập tự giải: *Vector Stores Exercise & Solution*.
   - Xây dựng pipeline Ingestion trích xuất tài liệu từ Web/PDF, cắt nhỏ tối ưu và lưu vào ChromaDB với bộ lọc Metadata.
@@ -75,9 +78,11 @@ Hướng dẫn này cung cấp khung lộ trình học tập được chuẩn h�
   * RAG Pipeline Architecture: Basic RAG, RAG with Resources, RAG with Fallback, RAG with Structured Outputs.
   * Advanced RAG Strategies: Multi-Query Retriever, Contextual Compression, Hybrid Search, Parent Document Retriever, kết hợp Multi-Query & Compression.
   * Memory Patterns: Conversation Memory Basics, Multiple Sessions Memory, Message Trimming, Windowed Memory, Summary Memory, Persistent Memory.
-* **2. Tài nguyên Tra cứu**:
+* **2. Tài nguyên Tra cứu Chuẩn**:
   * 📹 **Khóa học chính**: [Chapter 5 - RAG and Memory](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
-  * 📖 **Tài liệu LangChain**: [LangChain Memory & RAG Guides](https://python.langchain.com/docs/concepts/rag/).
+  * 📖 **LangChain RAG Tutorial**: [https://python.langchain.com/docs/tutorials/rag/](https://python.langchain.com/docs/tutorials/rag/).
+  * 📖 **Retrieval Concepts**: [https://python.langchain.com/docs/concepts/#retrieval](https://python.langchain.com/docs/concepts/#retrieval).
+  * 📖 **Memory Concepts**: [https://python.langchain.com/docs/concepts/#memory](https://python.langchain.com/docs/concepts/#memory).
 * **3. Nhiệm vụ Thực hành & Dự án (Deliverables & Project)**:
   - Bài tập tự giải: *RAG Pipeline Exercise* & *Persistent Memory Exercise*.
   - 🛠️ **Project 2: AI Research Assistant** — Xây dựng trợ lý nghiên cứu AI hoàn chỉnh với Document Indexing, Memory đa phiên, Multi-Query Retrieval và Structured Output.
@@ -92,9 +97,10 @@ Hướng dẫn này cung cấp khung lộ trình học tập được chuẩn h�
   * Multi-Node Pipelines & Routing: Edges, Conditional Edges, Literal Routing, Multipath Routing.
   * Vòng lặp & Tự sửa lỗi (Cycles & Loops): Self-Correcting Code Writer, Iterative Research Agent.
   * Human in the Loop & Persistence: Interrupt for Approval, Checkpointing Deep Dive, Checkpoint Internals.
-* **2. Tài nguyên Tra cứu**:
+* **2. Tài nguyên Tra cứu Chuẩn**:
   * 📹 **Khóa học chính**: [Chapter 6 - LangGraph Full Deep Dive](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
-  * 📖 **Tài liệu LangGraph**: [LangGraph Docs](https://langchain-ai.github.io/langgraph/).
+  * 📖 **LangGraph Official Docs**: [https://langchain-ai.github.io/langgraph/](https://langchain-ai.github.io/langgraph/).
+  * 📖 **LangGraph How-To Guides**: [https://langchain-ai.github.io/langgraph/how-tos/](https://langchain-ai.github.io/langgraph/how-tos/).
 * **3. Nhiệm vụ Thực hành (Deliverables)**:
   - Bài tập tự giải: *Build Your First Node*.
   - Xây dựng luồng Agent tự sửa mã nguồn (Self-Correcting Code Writer) với tính năng phê duyệt từ con người (Human Interrupt).
@@ -109,8 +115,9 @@ Hướng dẫn này cung cấp khung lộ trình học tập được chuẩn h�
   * Điều phối Agent: Supervisor Agent, Agent Handoffs, Map-Reduce Strategy.
   * Giao tiếp giữa các Agent: Reducers, Message Passing Pattern, Shared Field State, Blackboard Iterative Refinement.
   * Hierarchical Architecture: Single Department Isolation, Hierarchical Routing, Tracing.
-* **2. Tài nguyên Tra cứu**:
+* **2. Tài nguyên Tra cứu Chuẩn**:
   * 📹 **Khóa học chính**: [Chapter 7 - Multi-Agent Systems](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
+  * 📖 **LangGraph Multi-Agent Concepts**: [https://langchain-ai.github.io/langgraph/concepts/multi_agent/](https://langchain-ai.github.io/langgraph/concepts/multi_agent/).
 * **3. Nhiệm vụ Thực hành & Dự án (Deliverables & Project)**:
   - 🛠️ **Project 3: Multi-Agent Research System** — Xây dựng hệ thống nghiên cứu đa agent từ con số 0 với State Schema custom và Send API.
 
@@ -125,9 +132,11 @@ Hướng dẫn này cung cấp khung lộ trình học tập được chuẩn h�
   * LLM Testing & Evaluation: Integration Testing, LLM-as-Judge Evaluation, Regression Testing, LangSmith Datasets, LLM Testing Pyramid.
   * Resilience & Error Handling: Retry Decorator, Circuit Breaker, Fallback Chain, Graph-Based Retry.
   * Cost Optimization: Model Router, Semantic Caching, Token Budgeting.
-* **2. Tài nguyên Tra cứu**:
+* **2. Tài nguyên Tra cứu Chuẩn**:
   * 📹 **Khóa học chính**: [Chapter 8 - Production Deployment](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
-  * 📖 **Platform Docs**: [LangSmith Docs](https://docs.smith.langchain.com/) & [Render Deployment Docs](https://render.com/docs).
+  * 📖 **LangSmith Official Docs**: [https://docs.smith.langchain.com/](https://docs.smith.langchain.com/).
+  * 📖 **FastAPI Official Tutorial**: [https://fastapi.tiangolo.com/tutorial/](https://fastapi.tiangolo.com/tutorial/).
+  * 📖 **Render Deployment Docs**: [https://render.com/docs/](https://render.com/docs/).
 * **3. Nhiệm vụ Thực hành & Dự án (Deliverables & Project)**:
   - 🛠️ **Project 4: Production-Ready API (Final Project)** — Đóng gói hệ thống LangGraph Agent + FastAPI + Security Layer + Production Cache & Monitoring + Dockerization + Triển khai thành công lên Cloud **Render**.
 
