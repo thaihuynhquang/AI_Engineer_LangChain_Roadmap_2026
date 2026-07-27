@@ -1,7 +1,7 @@
 # 📚 Thư Viện Tài Nguyên Học Tập & Tra Cứu Chuẩn 2026
 ## Enterprise Knowledge AI Assistant Project
 
-Tập hợp đầy đủ và cập nhật 100% theo lộ trình 5 Module trong tệp [online_learning_guide.md](file:///Users/thaihuynhquang/Desktop/learning/AI_Engineer_LangChain_Roadmap_2026/online_learning_guide.md). Các tài nguyên được phân loại trực tiếp theo từng giai đoạn phát triển dự án.
+Tập hợp đầy đủ và cập nhật 100% theo lộ trình 5 Module trong tệp [online_learning_guide.md](./online_learning_guide.md). Các tài nguyên được phân loại trực tiếp theo từng giai đoạn phát triển dự án.
 
 ---
 

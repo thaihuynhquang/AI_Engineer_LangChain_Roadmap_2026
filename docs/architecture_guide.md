@@ -33,7 +33,7 @@ Tài liệu này tổng hợp toàn bộ kiến trúc kỹ thuật, công nghệ
 
 ## 3. Cấu trúc Thư mục Dự án (Project Directory Structure)
 
-Chi tiết sơ đồ cây thư mục toàn bộ dự án và mô tả vai trò của từng mô-đun/tập tin đã được tách thành tài liệu độc lập tại **[project_structure.md](file:///Users/thaihuynhquang/Desktop/learning/AI_Engineer_LangChain_Roadmap_2026/docs/project_structure.md)**.
+Chi tiết sơ đồ cây thư mục toàn bộ dự án và mô tả vai trò của từng mô-đun/tập tin đã được tách thành tài liệu độc lập tại **[project_structure.md](./project_structure.md)**.
 
 ### Sơ lược các khối chức năng chính:
 - **`docs/`**: Hệ thống tài liệu kỹ thuật, quy chuẩn UI/UX, kiến trúc, lộ trình tự học và cấu trúc dự án.

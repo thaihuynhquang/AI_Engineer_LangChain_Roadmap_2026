@@ -2,7 +2,7 @@
 
 Tài liệu này là **Bản quy chuẩn Thiết kế Giao diện (UI System Design Guide)** dành cho các AI Agent và lập trình viên. Mục đích của tài liệu là mô tả chi tiết ngôn ngữ thiết kế (Design Language), hệ thống Design Tokens, quy chuẩn bộ thành phần UI (Component Dictionary), **vị trí layout và cách các UI Components kết hợp với nhau trên từng Trang (Page/View)**.
 
-Tài liệu này tập trung 100% vào khía cạnh **Giao diện người dùng (UI), Styling và Bố cục Layout**. Các phần liên quan tới Kiến trúc phần mềm, State Store và Data Flow được quy hoạch riêng tại [architecture_guide.md](file:///Users/thaihuynhquang/Desktop/learning/AI_Engineer_LangChain_Roadmap_2026/docs/architecture_guide.md).
+Tài liệu này tập trung 100% vào khía cạnh **Giao diện người dùng (UI), Styling và Bố cục Layout**. Các phần liên quan tới Kiến trúc phần mềm, State Store và Data Flow được quy hoạch riêng tại [architecture_guide.md](./architecture_guide.md).
 
 ---
 
