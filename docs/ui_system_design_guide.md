@@ -131,7 +131,8 @@ src/styles/
 - **Vị trí**: Cố định góc dưới bên phải màn hình (`position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 1000;`).
 - **Visual**: Trượt nhẹ từ dưới lên (`translateY(0)`), phân loại màu viền trái 4px: Emerald (Success), Sky (Info), Amber (Warning), Rose (Error).
 
-### 3.10. Quy chuẩn Icon SVG (`src/utils/icons.ts`)
+### 3.10. Quy chuẩn Icon SVG & Quy Định Cấm Dùng Emoji (`src/utils/icons.ts`)
+- **Quy định cấm dùng Emoji cho Giao diện Web**: Mọi biểu tượng (Icons) và nhãn nút bấm (Button Labels) trên giao diện ứng dụng web **BẮT BUỘC** sử dụng hình vẽ SVG thuần từ Từ điển Icon (`src/utils/icons.ts`), tuyệt đối không dùng ký tự emoji hệ thống để đảm bảo tính đồng nhất thẩm mỹ, độ sắc nét và khả năng tùy chỉnh màu sắc qua CSS Variables trên mọi thiết bị và hệ điều hành.
 - Tất cả Icon là chuỗi SVG chuẩn, sử dụng `stroke="currentColor"` (hoặc `fill="currentColor"`) để tự động đổi màu theo màu chữ CSS của phần tử cha, đi kèm thuộc tính `aria-hidden="true"`.
 
 ---
@@ -353,6 +354,7 @@ Trang Báo cáo Kiến trúc Công nghệ gồm các Thẻ Kiến trúc tham chi
 3. **Bao bọc Khối Cuộn cho Bảng & Thanh Tab**: Luôn khai báo `overflow-x: auto` cho `.nav-tabs-container` và `.table-wrapper` để tránh làm vỡ khung màn hình ngang di động.
 4. **Giữ Tính Đồng Nhất Cho Icon SVG**: Luôn dùng `stroke="currentColor"` hoặc `fill="currentColor"` trong file `src/utils/icons.ts` để Icon ăn theo màu chữ của phần tử chứa nó.
 5. **Hiệu Ứng Hover Nhẹ Nhàng**: Chỉ sử dụng `transform: translateY(-1px)` hoặc `translateY(-2px)` đi kèm `transition: all var(--transition-fast)` để tạo cảm giác phản hồi tự nhiên, tránh hiệu ứng chuyển động quá mạnh gây xao nhãng.
+6. **Cấm Dùng Emoji Cho Web Icons**: Mọi biểu tượng (Icons) và nhãn nút bấm trên giao diện ứng dụng web **BẮT BUỘC** sử dụng hình vẽ SVG thuần trong từ điển `src/utils/icons.ts`, tuyệt đối không sử dụng ký tự emoji hệ thống.
 
 ---
 
