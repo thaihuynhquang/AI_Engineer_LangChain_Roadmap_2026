@@ -1,198 +1,198 @@
 # PRODUCT REQUIREMENT DOCUMENT (PRD): INTERACTIVE UI COMPONENTS & USER FLOW SPECIFICATIONS
 
-Tài liệu này đóng vai trò là **Bản Đặc Tả Yêu Cầu Sản Phẩm (PRD - Product Requirement Document)** và Hướng dẫn Quy trình Tương tác Người dùng cho toàn bộ các tính năng tương tác (Interactive Features) trong ứng dụng **AI Engineer Roadmap & Focus Tracker**. 
+This document serves as the **Product Requirement Document (PRD)** and User Interaction Specification for all interactive features within the **AI Engineer Roadmap & Focus Tracker** application.
 
-Tài liệu được thiết kế nhằm mục đích hướng dẫn cho các AI Agent hoặc Lập trình viên khác nắm rõ chính xác yêu cầu chức năng (Functional Requirements), hợp đồng dữ liệu (State Contracts), luồng tương tác người dùng (User Flows) và tiêu chí nghiệm thu (Acceptance Criteria) khi triển khai hoặc mở rộng các tính năng này.
+It is designed to provide AI Agents and developers with explicit functional requirements, state contracts, user interaction flows, and acceptance criteria necessary for implementing or extending these features.
 
 > [!NOTE]
-> Tài liệu này tập trung vào khía cạnh Yêu cầu Chức năng & Tương tác Người dùng (PRD & UX Specs). Về chi tiết cấu trúc thư mục, sơ đồ kiến trúc hệ thống và mã nguồn mẫu, vui lòng tham khảo [architecture_guide.md](./architecture_guide.md) và [project_structure.md](./project_structure.md). Về quy chuẩn thiết kế UI, hệ thống Design Tokens và quy định dùng SVG Icons, vui lòng tham khảo [ui_system_design_guide.md](./ui_system_design_guide.md).
+> This document focuses on Functional Requirements & User Interaction (PRD & UX Specs). For architecture details, directory structures, and code patterns, refer to [architecture_guide.md](./architecture_guide.md) and [project_structure.md](./project_structure.md). For UI design standards, design tokens, and SVG icon guidelines, refer to [ui_system_design_guide.md](./ui_system_design_guide.md).
 
 ---
 
-## 1. Mục Đích & Quy Tắc Thiết Kế Tương Tác (Design Principles)
+## 1. Purpose & Interactive Design Principles
 
-1. **Phản hồi tức thì (Instant Reactive Feedback)**: Mọi thao tác tương tác của người dùng (Check, Switch Tab, Start Timer, Bookmark, Theme Toggle) phải lập tức phản hồi trên giao diện không có độ trễ và không cần nạp lại trang (Zero Page Reload).
-2. **Đồng bộ dữ liệu hai chiều (State-Driven Persistence)**: Tất cả trạng thái tương tác phải được lưu vết ngay lập tức vào bộ nhớ tạm toàn cục (State Store) và tự động đồng bộ xuống lưu trữ cục bộ (Local Storage).
-3. **Trọng số tiến độ minh bạch (Weighted Progress Model)**: Tiến độ hoàn thành ứng dụng được tính dựa trên 2 nguồn tương tác chính:
-   - **60% Trọng số**: Việc tích chọn hoàn thành các nhiệm vụ thực hành (Deliverable Tasks).
-   - **40% Trọng số**: Số lượng phiên tập trung Pomodoro đã hoàn thành tích lũy (Pomodoro Sessions).
-
----
-
-## 2. Đặc Tả Chức Năng Toàn Cục & Navigation Bar (PRD-01)
-
-### 2.1. Chức Năng Chuyển Đổi Giao Diện Sáng/Tối (Theme Switcher)
-- **User Story**: Là một học viên, tôi muốn chuyển đổi giao diện giữa chế độ Tối (Dark) và Sáng (Light) để học tập thoải mái trong các điều kiện ánh sáng khác nhau.
-- **Thành phần giao diện**: `Theme Toggle Component` nằm trên thanh Header.
-- **Sự kiện kích hoạt (Trigger)**: Người dùng nhấn (Click) vào Nút Chuyển Đổi Theme.
-- **Yêu cầu chức năng & Luồng xử lý**:
-  1. Lấy trạng thái `theme` hiện tại từ `State Store` (`'dark'` hoặc `'light'`).
-  2. Đổi giá trị theme sang trạng thái ngược lại.
-  3. Gán thuộc tính `data-theme` trên thẻ gốc `<html>` của document.
-  4. Đổi hình ảnh biểu tượng SVG (Biểu tượng SVG Mặt Trời khi ở chế độ Dark, SVG Mặt Trăng khi ở chế độ Light).
-  5. Lưu giá trị theme mới vào `Local Storage`.
-- **Tiêu chí nghiệm thu (Acceptance Criteria - AC)**:
-  - [ ] Trạng thái Theme được duy trì chính xác sau khi reload trang (F5).
-  - [ ] Các CSS Custom Properties tự động chuyển đổi mượt mà giữa Dark và Light mode.
-
-### 2.2. Chức Năng Sao Lưu Tiến Độ (Export Backup)
-- **User Story**: Là một học viên, tôi muốn xuất dữ liệu tiến độ học tập và lịch sử Pomodoro ra file sao lưu để cất giữ an toàn.
-- **Thành phần giao diện**: `Export Action Component` trên Header bar.
-- **Sự kiện kích hoạt (Trigger)**: Người dùng nhấn vào nút Export.
-- **Yêu cầu chức năng & Luồng xử lý**:
-  1. Đọc dữ liệu `AppState` hiện tại từ `State Store` và định dạng thành chuỗi JSON.
-  2. Tạo đối tượng Blob tải xuống với tên file có định dạng: `ai-engineer-roadmap-backup-YYYY-MM-DD.json`.
-  3. Tự động kích hoạt luồng tải xuống của trình duyệt.
-  4. Hiển thị thông báo Toast thành công.
-- **Tiêu chí nghiệm thu (AC)**:
-  - [ ] File `.json` tải về có cấu trúc hợp lệ chứa đủ các trường `checked`, `resourceFlags`, `activeTab`, `theme`, `pomodoroSettings`, `pomodoroSessions`.
-
-### 2.3. Chức Năng Khôi Phục Tiến Độ (Import Backup)
-- **User Story**: Là một học viên, tôi muốn nhập file sao lưu JSON để khôi phục tiến độ học tập khi đổi thiết bị hoặc trình duyệt.
-- **Thành phần giao diện**: `Import Action Component` trên Header bar.
-- **Sự kiện kích hoạt (Trigger)**: Người dùng nhấn vào nút Import.
-- **Yêu cầu chức năng & Luồng xử lý**:
-  1. Hiển thị hộp thoại chọn file của hệ điều hành (chỉ chấp nhận `.json`).
-  2. Đọc nội dung file và kiểm tra tính hợp lệ của cấu trúc JSON.
-  3. **Nếu file hợp lệ**: Khôi phục dữ liệu vào `State Store`, cập nhật thuộc tính theme, ghi vào `Local Storage`, kích hoạt re-render toàn bộ giao diện và hiển thị Toast thông báo thành công.
-  4. **Nếu file lỗi/hỏng**: Bắt lỗi và hiển thị Toast thông báo lỗi, giữ nguyên trạng thái hiện tại không làm hỏng ứng dụng.
-- **Tiêu chí nghiệm thu (AC)**:
-  - [ ] File hỏng hoặc không đúng định dạng JSON sẽ bị từ chối và không làm sập ứng dụng.
-
-### 2.4. Chức Năng Đặt Lại Tiến Độ (Progress Reset)
-- **User Story**: Là một học viên, tôi muốn xóa toàn bộ tiến độ cũ để bắt đầu lại lộ trình từ đầu.
-- **Thành phần giao diện**: `Reset Action Component` trên Header bar.
-- **Sự kiện kích hoạt (Trigger)**: Người dùng nhấn vào nút Reset.
-- **Yêu cầu chức năng & Luồng xử lý**:
-  1. Hiển thị cửa sổ cảnh báo xác nhận (Confirmation Dialog) để tránh thao tác nhầm.
-  2. Nếu người dùng chọn **Đồng ý**: Xóa sạch danh sách nhiệm vụ đã check, xóa đánh dấu tài nguyên, xóa lịch sử phiên Pomodoro, đưa cài đặt Pomodoro về mặc định (`25/5`), lưu `Local Storage` và làm mới giao diện về 0%.
-- **Tiêu chí nghiệm thu (AC)**:
-  - [ ] Phần trăm tiến độ trên Navigation Badge và Dashboard ngay lập tức quay về 0%.
-
-### 2.5. Chức Năng Điều Hướng Tab & Hiển Thị Tiến Độ Động (Hash Router & Navigation Badge)
-- **User Story**: Là một học viên, tôi muốn chuyển đổi nhanh giữa các trang view và luôn nhìn thấy phần trăm tiến độ tổng thể của mình trên thanh điều hướng.
-- **Thành phần giao diện**: `Navigation Bar Component`.
-- **Sự kiện kích hoạt (Trigger)**: Người dùng nhấn vào các thẻ Tab hoặc thao tác nút Back/Forward của trình duyệt.
-- **Yêu cầu chức năng & Luồng xử lý**:
-  1. Cập nhật Hash URL dạng `#/view-name` (`dashboard`, `roadmap`, `schedule`, `resources`, `techstack`).
-  2. Đánh dấu class active trên Tab được chọn và ẩn/hiển thị container view tương ứng.
-  3. **Navigation Badge (`#badge-overall-pct`)**: Nằm trên Tab Dashboard, tự động tính toán và hiển thị % tiến độ tổng thể theo công thức trọng số (`Deliverables 60% + Pomodoros 40%`) mỗi khi có bất kỳ thay đổi trạng thái nào.
-- **Tiêu chí nghiệm thu (AC)**:
-  - [ ] Khi truy cập trực tiếp URL chứa Hash (ví dụ `#/schedule`), ứng dụng mở đúng trang Tab tương ứng.
+1. **Instant Reactive Feedback**: All user interactions (Checking tasks, switching tabs, starting timers, bookmarking resources, toggling themes) must immediately reflect on the UI with zero latency and zero page reloads.
+2. **State-Driven Persistence**: Every interactive state change must instantly update the global state store and automatically persist to client-side `localStorage`.
+3. **Weighted Progress Model**: Overall progress percentage is computed from 2 primary interaction sources:
+   - **60% Weight**: Completing practical tasks (Deliverable Tasks).
+   - **40% Weight**: Accumulating completed Pomodoro focus sessions (Pomodoro Sessions).
 
 ---
 
-## 3. Đặc Tả Tương Tác Trang Dashboard (PRD-02)
+## 2. Global Features & Navigation Bar Specifications (PRD-01)
 
-### 3.1. Chức Năng Đánh Dấu Nhanh Nhiệm Vụ Tiếp Theo (Quick Finish Next Task)
-- **User Story**: Là một học viên, tôi muốn hoàn thành nhanh nhiệm vụ tiếp theo ngay tại trang chủ Dashboard mà không cần tìm kiếm trong lộ trình chi tiết.
-- **Thành phần giao diện**: `Dashboard View Component` (Thẻ "Nhiệm Vụ Tiếp Theo Cần Làm").
-- **Sự kiện kích hoạt (Trigger)**: Người dùng nhấn vào nút **"Đánh dấu hoàn thành task này"** (chứa biểu tượng SVG Check).
-- **Yêu cầu chức năng & Luồng xử lý**:
-  1. Thư viện tính toán tiến độ (`Progress Engine Module`) tự động tìm kiếm nhiệm vụ thực hành đầu tiên chưa hoàn thành trong danh sách 5 Sprints.
-  2. Hiển thị thông tin tên nhiệm vụ và module tương ứng kèm một nút bấm mang thuộc tính `data-task-id`.
-  3. Khi nhấp nút, gọi hàm thay đổi trạng thái `toggleChecked(taskId)` trong `State Store`.
-  4. Giao diện Dashboard tự động cập nhật sang Task kế tiếp hoặc chuyển sang trạng thái thông báo hoàn thành 100%.
-- **Tiêu chí nghiệm thu (AC)**:
-  - [ ] Nhấn nút lập tức cập nhật trạng thái Task thành công và tính lại % tiến độ tổng thể.
+### 2.1. Theme Switcher (Dark/Light Mode)
+- **User Story**: As a learner, I want to toggle between Dark and Light themes so I can study comfortably under different lighting conditions.
+- **UI Component**: `Theme Toggle Component` located on the Header bar.
+- **Trigger**: User clicks the Theme Toggle Button.
+- **Functional Requirements & Flow**:
+  1. Retrieve current `theme` from `State Store` (`'dark'` or `'light'`).
+  2. Toggle theme value to the opposite state.
+  3. Apply `data-theme` attribute to the root `<html>` element.
+  4. Swap SVG icon (Sun SVG icon for Dark mode, Moon SVG icon for Light mode).
+  5. Persist new theme preference in `localStorage`.
+- **Acceptance Criteria (AC)**:
+  - [ ] Theme state persists accurately across browser reloads (F5).
+  - [ ] CSS Custom Properties transition smoothly between Dark and Light themes.
 
----
+### 2.2. Export Backup
+- **User Story**: As a learner, I want to export my progress data and Pomodoro history into a backup file to keep it safe.
+- **UI Component**: `Export Action Component` on the Header bar.
+- **Trigger**: User clicks the Export button.
+- **Functional Requirements & Flow**:
+  1. Read current `AppState` from `State Store` and format into a JSON string.
+  2. Create a downloadable Blob object with filename format: `ai-engineer-roadmap-backup-YYYY-MM-DD.json`.
+  3. Automatically trigger browser download.
+  4. Display success toast notification.
+- **Acceptance Criteria (AC)**:
+  - [ ] Downloaded `.json` file contains valid state fields (`checked`, `resourceFlags`, `activeTab`, `theme`, `pomodoroSettings`, `pomodoroSessions`).
 
-## 4. Đặc Tả Tương Tác Trang Roadmap Sprints (PRD-03)
+### 2.3. Import Backup
+- **User Story**: As a learner, I want to import a JSON backup file to restore my study progress when changing devices or browsers.
+- **UI Component**: `Import Action Component` on the Header bar.
+- **Trigger**: User clicks the Import button.
+- **Functional Requirements & Flow**:
+  1. Display OS file picker (accepting `.json` only).
+  2. Read file content and validate JSON schema structure.
+  3. **If valid**: Restore data into `State Store`, update theme attribute, write to `localStorage`, trigger full UI re-render, and show success toast.
+  4. **If invalid/corrupted**: Catch error, display error toast, and keep current state intact without crashing the application.
+- **Acceptance Criteria (AC)**:
+  - [ ] Corrupted or invalid JSON files are rejected cleanly without breaking application execution.
 
-### 4.1. Danh Sách Checkbox Nhiệm Vụ Thực Hành (Deliverables Checklist)
-- **User Story**: Là một học viên, tôi muốn tích chọn các nhiệm vụ thực hành (Deliverables) khi viết code xong để ghi nhận tiến độ.
-- **Thành phần giao diện**: `Roadmap View Component` (Danh sách nhiệm vụ trong 5 Sprints).
-- **Sự kiện kích hoạt (Trigger)**: Người dùng click vào Checkbox của một nhiệm vụ.
-- **Yêu cầu chức năng & Luồng xử lý**:
-  1. Mỗi checkbox được gán một `data-task-id` duy nhất và cố định.
-  2. Bắt sự kiện `change`: Đảo ngược trạng thái boolean trong `checked[taskId]` thuộc `State Store`.
-  3. Áp dụng hiệu ứng thị giác: Thêm hiệu ứng chữ gạch ngang, mờ nền cho nhiệm vụ đã hoàn thành.
-  4. Cập nhật chỉ số nhiệm vụ đã xong (`completed/total`) trên header của Sprint tương ứng.
-- **Tiêu chí nghiệm thu (AC)**:
-  - [ ] Trạng thái tích chọn được lưu trữ bền vững trong `Local Storage`.
-  - [ ] Tiến độ nhiệm vụ thực hành đóng góp đúng 60% vào tổng tiến độ ứng dụng.
+### 2.4. Progress Reset
+- **User Story**: As a learner, I want to clear all progress to restart the roadmap from scratch.
+- **UI Component**: `Reset Action Component` on the Header bar.
+- **Trigger**: User clicks the Reset button.
+- **Functional Requirements & Flow**:
+  1. Display confirmation dialog to prevent accidental triggers.
+  2. If user selects **Confirm**: Clear checked tasks, reset resource bookmarks, wipe Pomodoro session history, restore default timer settings (`25/5`), save to `localStorage`, and reset UI progress to 0%.
+- **Acceptance Criteria (AC)**:
+  - [ ] Progress percentage badges on Navigation Bar and Dashboard instantly return to 0%.
 
----
-
-## 5. Đặc Tả Tương Tác Bộ Đếm Giờ Pomodoro & Lịch Trình (PRD-04)
-
-### 5.1. Bộ Chuyển Chế Độ Timer (Focus / Short Break / Long Break)
-- **Thành phần giao diện**: `Schedule View Component` (Nhóm nút Chế độ Timer).
-- **Yêu cầu**: Chuyển đổi giữa 3 chế độ: **Focus (Tập trung)**, **Short Break (Nghỉ ngắn)**, và **Long Break (Nghỉ dài)** (kèm biểu tượng SVG Target và SVG Clock).
-- **Hành vi**: Tạm dừng timer nếu đang chạy, nạp thời gian đếm lùi tương ứng với cấu hình của chế độ được chọn, cập nhật vòng tròn tiến độ SVG và tiêu đề trình duyệt.
-
-### 5.2. Bộ Chọn Preset & Tùy Chỉnh Thời Gian Custom
-- **Thành phần giao diện**: `Schedule View Component` (Nhóm nút Preset & Khối Input Custom).
-- **Các tùy chọn Preset**:
-  - `25/5`: 25 phút Tập trung / 5 phút Nghỉ.
-  - `50/5`: 50 phút Tập trung sâu / 5 phút Nghỉ.
-  - `Custom`: Thời gian tự chọn.
-- **Khối Input Custom**: Chỉ xuất hiện khi chọn preset `Custom`. Nhập số phút Tập trung (1-120 phút) và Nghỉ (1-60 phút), nhấn nút **"Áp dụng"** để ghi nhận vào `pomodoroSettings`.
-
-### 5.3. Dropdown Liên Kết Phiên Pomodoro Với Nhiệm Vụ Học Tập
-- **Thành phần giao diện**: `Schedule View Component` (Dropdown chọn Task).
-- **Yêu cầu**: Cho phép người dùng gắn một nhiệm vụ cụ thể từ lộ trình vào phiên Pomodoro chuẩn bị chạy. Khi phiên kết thúc, thông tin Task này sẽ được lưu vào lịch sử nhật ký.
-
-### 5.4. Bộ Đếm Ngược & Vòng Tròn Tiến Độ SVG (Timer Engine)
-- **Thành phần giao diện**: `Schedule View Component` (Đồng hồ đếm ngược & SVG Progress Ring).
-- **Bộ nút điều khiển**:
-  - **Bắt Đầu / Tạm Dừng**: Chạy hoặc dừng bộ đếm `1000ms`. Đổi biểu tượng SVG Play/Pause.
-  - **Đặt Lại**: Đưa thời gian đếm lùi về giá trị ban đầu.
-  - **Bỏ Qua**: Chuyển sang phiên tiếp theo (Focus -> Break hoặc Break -> Focus).
-- **Tối ưu hiển thị**:
-  - Cập nhật trực tiếp DOM văn bản chữ số (`MM:SS`) và giá trị `strokeDashoffset` của vòng tròn SVG mỗi giây mà **không re-render lại trang**.
-  - Tiêu đề tab trình duyệt tự động cập nhật liên tục: `(MM:SS) Focus` hoặc `(MM:SS) Break`.
-- **Xử lý khi hoàn tất phiên Tập trung**:
-  - Phát âm thanh chuông báo (nếu bật).
-  - Gửi thông báo đẩy Web Notification (nếu được cấp quyền).
-  - Tự động lưu 1 log vào `pomodoroSessions` (Mỗi phiên ghi nhận cộng điểm đóng góp vào **40% trọng số** tiến độ tổng).
-  - Tự động chuyển sang nghỉ dài sau mỗi 4 phiên tập trung liên tiếp.
-
-### 5.5. Cấu Hình Âm Thanh, Thông Báo & Tự Động Nghỉ
-- **Thành phần giao diện**: `Schedule View Component` (Hàng Checkbox Cấu hình).
-- **Âm thanh chuông báo**: Sử dụng bộ tổng hợp âm thanh Web Audio API (không cần file mp3 tĩnh).
-- **Thông báo trình duyệt**: Xin quyền `Notification.requestPermission()`. Nếu bị từ chối, tự động bỏ tích checkbox và hiển thị cảnh báo Toast.
-- **Tự động nghỉ**: Tự động kích hoạt timer đếm lùi giờ nghỉ ngay khi hết giờ tập trung.
-
-### 5.6. Nhật Ký Lịch Sử Phiên & Nút Xóa Phiên
-- **Thành phần giao diện**: `Schedule View Component` (Danh sách Nhật ký phiên).
-- **Yêu cầu**: Hiển thị danh sách các phiên Pomodoro đã hoàn thành gần đây. Cho phép nhấn nút Xóa (chứa biểu tượng SVG Trash) để loại bỏ phiên khỏi lịch sử (tự động tính toán lại điểm tích lũy Pomodoro trên Dashboard).
+### 2.5. Hash Router & Dynamic Navigation Badge
+- **User Story**: As a learner, I want to quickly navigate between views and view my overall progress percentage on the navigation bar.
+- **UI Component**: `Navigation Bar Component`.
+- **Trigger**: User clicks tab links or uses browser Back/Forward navigation buttons.
+- **Functional Requirements & Flow**:
+  1. Update URL Hash using format `#/view-name` (`dashboard`, `roadmap`, `schedule`, `resources`, `techstack`).
+  2. Toggle active class on selected tab link and toggle visibility of matching view containers.
+  3. **Navigation Badge (`#badge-overall-pct`)**: Displayed on Dashboard tab, automatically computes and renders overall weighted progress (`Deliverables 60% + Pomodoros 40%`) whenever state changes.
+- **Acceptance Criteria (AC)**:
+  - [ ] Accessing a direct URL Hash (e.g. `#/schedule`) activates and displays the correct view tab.
 
 ---
 
-## 6. Đặc Tả Tương Tác Trang Free Resources (PRD-05)
+## 3. Dashboard View Specifications (PRD-02)
 
-### 6.1. Bộ Lọc Tài Nguyên Theo Module
-- **Thành phần giao diện**: `Resources View Component` (Thanh nút lọc).
-- **Yêu cầu**: Nút "Tất Cả Modules" và các nút từ "Module 1" đến "Module 5". Khi nhấn nút nào, danh sách tài nguyên bên dưới chỉ hiển thị các tài liệu/khóa học thuộc Module đó.
-
-### 6.2. Đánh Dấu Yêu Thích Tài Nguyên (Bookmark Star)
-- **Thành phần giao diện**: `Resources View Component` (Nút ngôi sao SVG trên mỗi thẻ tài nguyên).
-- **Yêu cầu**: Khi nhấn nút ngôi sao, đảo trạng thái lưu trong `resourceFlags[resourceId]`. Đổi biểu tượng giữa SVG Ngôi sao viền (`starOutline`) và SVG Ngôi sao vàng đặc (`starFilled`).
-
-### 6.3. Mở Liên Kết Ngoại Khối
-- **Thành phần giao diện**: `Resources View Component` (Nút Mở Link với SVG External Link).
-- **Yêu cầu**: Mở URL tài liệu/khóa học trong tab trình duyệt mới an toàn với thuộc tính `target="_blank" rel="noopener noreferrer"`.
+### 3.1. Quick Finish Next Task
+- **User Story**: As a learner, I want to quickly complete my next task directly from the Dashboard home without searching through the roadmap.
+- **UI Component**: `Dashboard View Component` ("Next Recommended Task" card).
+- **Trigger**: User clicks **"Mark Task Complete"** button (containing check SVG icon).
+- **Functional Requirements & Flow**:
+  1. Progress calculation module (`Progress Engine Module`) scans 5 Sprints for the first incomplete deliverable task.
+  2. Render task title and module details alongside a action button bound with `data-task-id`.
+  3. Upon click, invoke `toggleChecked(taskId)` in `State Store`.
+  4. Dashboard automatically updates to recommend the subsequent task or displays a 100% completion state.
+- **Acceptance Criteria (AC)**:
+  - [ ] Clicking the button immediately updates task completion state and recalculates overall progress %.
 
 ---
 
-## 7. Ma Trận Tiêu Chí Nghiệm Thu & Tương Tác Component (Acceptance Matrix)
+## 4. Roadmap Sprints View Specifications (PRD-03)
 
-| Mã PRD | Chức Năng | Component / Module Quản Lý | Sự Kiện (Event) | Hợp Đồng Trạng Thái (State Contract) | Tiêu Chí Nghiệm Thu (AC) |
+### 4.1. Deliverables Checklist
+- **User Story**: As a learner, I want to check off practical deliverables when finishing code exercises to record my progress.
+- **UI Component**: `Roadmap View Component` (Task list within 5 Sprints).
+- **Trigger**: User clicks a task checkbox.
+- **Functional Requirements & Flow**:
+  1. Each checkbox is assigned a unique static `data-task-id`.
+  2. On `change` event: Toggle boolean state in `checked[taskId]` within `State Store`.
+  3. Apply visual feedback: Add strikethrough styling and background dimming to finished task cards.
+  4. Update completed task counter (`completed/total`) on the sprint header.
+- **Acceptance Criteria (AC)**:
+  - [ ] Checked states persist reliably in `localStorage`.
+  - [ ] Deliverable task completion contributes 60% weight to overall progress.
+
+---
+
+## 5. Pomodoro Timer & Schedule Specifications (PRD-04)
+
+### 5.1. Timer Mode Switch
+- **UI Component**: `Schedule View Component` (Timer Mode Button Group).
+- **Requirements**: Switch between 3 timer modes: **Focus**, **Short Break**, and **Long Break** (with Target and Clock SVG icons).
+- **Behavior**: Pause timer if running, load duration corresponding to selected mode settings, update SVG progress ring and browser title.
+
+### 5.2. Preset Selector & Custom Timer Inputs
+- **UI Component**: `Schedule View Component` (Preset Buttons & Custom Inputs).
+- **Preset Options**:
+  - `25/5`: 25 min Focus / 5 min Break.
+  - `50/5`: 50 min Deep Focus / 5 min Break.
+  - `Custom`: User-defined duration.
+- **Custom Input Block**: Visible when `Custom` preset is selected. Enter Focus duration (1-120 min) and Break duration (1-60 min), then click **"Apply"** to save to `pomodoroSettings`.
+
+### 5.3. Task Selector Dropdown
+- **UI Component**: `Schedule View Component` (Task Selection Dropdown).
+- **Requirements**: Allow linking a specific roadmap task to an upcoming Pomodoro session. When the session finishes, the task info is saved to session history logs.
+
+### 5.4. Countdown Timer & SVG Progress Ring Engine
+- **UI Component**: `Schedule View Component` (Digital Countdown & SVG Progress Ring).
+- **Control Buttons**:
+  - **Start / Pause**: Run or pause 1000ms countdown loop. Swap Play/Pause SVG icons.
+  - **Reset**: Reset countdown to initial duration.
+  - **Skip**: Advance to next mode (Focus -> Break or Break -> Focus).
+- **Display Optimization**:
+  - Directly update digital text (`MM:SS`) and SVG ring `strokeDashoffset` every second **without full page re-renders**.
+  - Browser tab title updates continuously: `(MM:SS) Focus` or `(MM:SS) Break`.
+- **Focus Session Completion Logic**:
+  - Play audio chime (if enabled).
+  - Trigger Web Notification alert (if permission granted).
+  - Automatically append session log to `pomodoroSessions` (Each session contributes towards **40% weight** of overall progress).
+  - Auto-switch to long break after every 4 consecutive focus sessions.
+
+### 5.5. Audio, Notifications & Auto-Break Configuration
+- **UI Component**: `Schedule View Component` (Settings Checkboxes).
+- **Audio Chime**: Utilizes Web Audio API sound synthesis (no static mp3 files required).
+- **Browser Notifications**: Requests permission via `Notification.requestPermission()`. If denied, automatically uncheck box and display warning toast.
+- **Auto-Break**: Automatically starts break timer as soon as focus countdown finishes.
+
+### 5.6. Session History Log & Delete Actions
+- **UI Component**: `Schedule View Component` (Session History List).
+- **Requirements**: Display list of recently completed Pomodoro sessions. Allow clicking Delete button (Trash SVG icon) to remove session from history (automatically recalculates Pomodoro score on Dashboard).
+
+---
+
+## 6. Free Resources View Specifications (PRD-05)
+
+### 6.1. Resource Module Filter
+- **UI Component**: `Resources View Component` (Filter Button Group).
+- **Requirements**: "All Modules" button plus buttons for "Module 1" through "Module 5". Clicking a filter limits resource cards to those belonging to the selected module.
+
+### 6.2. Resource Bookmark Star
+- **UI Component**: `Resources View Component` (Star SVG button on resource cards).
+- **Requirements**: Toggle bookmark state stored in `resourceFlags[resourceId]`. Swap icon between SVG Star Outline (`starOutline`) and SVG Solid Star (`starFilled`).
+
+### 6.3. External Link Opener
+- **UI Component**: `Resources View Component` (Open Link button with External Link SVG icon).
+- **Requirements**: Open resource link safely in a new browser tab with `target="_blank" rel="noopener noreferrer"`.
+
+---
+
+## 7. Acceptance Criteria & Component Interaction Matrix
+
+| PRD Code | Feature | Managing Component / Module | Event | State Contract | Acceptance Criteria (AC) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **PRD-01.1** | Theme Switcher | Theme Toggle Component | `click` | `setThemeState()` | Đổi attribute `data-theme`, cập nhật SVG Icon, lưu theme lâu dài. |
-| **PRD-01.2** | Export Backup | Export Action Component | `click` | `exportStateJSON()` | Tải xuống file `.json` chứa chính xác dữ liệu state hiện tại. |
-| **PRD-01.3** | Import Backup | Import Action Component | `click` | `importState()` | Validate JSON, khôi phục state thành công, báo Toast rõ ràng. |
-| **PRD-01.4** | Progress Reset | Reset Action Component | `click` | `resetProgress()` | Hỏi xác nhận trước khi xóa, đưa tiến độ học & lịch sử về 0%. |
-| **PRD-01.5** | Hash Router | Navigation Bar Component | `hashchange` | `setActiveTabState()` | Đồng bộ URL Hash `#/routeId`, bật active tab UI và cập nhật % badge. |
-| **PRD-02.1** | Quick Finish Task | Dashboard View Component | `click` | `toggleChecked()` | Tích hoàn thành Task tiếp theo ngay tại Dashboard. |
-| **PRD-03.1** | Task Checkbox | Roadmap View Component | `change` | `toggleChecked()` | Lưu vết hoàn thành Task (60% weight), đổi kiểu chữ gạch ngang. |
-| **PRD-04.1** | Timer Mode Switch | Schedule View Component | `click` | `switchMode()` | Đổi chế độ Focus / Short Break / Long Break và thời lượng tương ứng. |
-| **PRD-04.2** | Preset & Custom | Schedule View Component | `click` | `setProfile()` | Lưu cấu hình thời gian Pomodoro vào `pomodoroSettings`. |
-| **PRD-04.3** | Task Selector | Schedule View Component | `change` | `selectedTaskId` | Gán Task ID vào phiên Pomodoro để lưu nhật ký. |
-| **PRD-04.4** | Focus Timer Engine | Schedule View Component | `click` / `interval` | `addPomodoroSession()` | Chạy 1s/bước, cập nhật SVG ring, cộng điểm tích lũy Pomodoro (40% weight). |
-| **PRD-04.5** | Audio & Notif | Schedule View Component | `click` / `change` | `updatePomodoroSettings()` | Phát chuông đếm giờ qua Web Audio API & gửi Web Notification. |
-| **PRD-04.6** | Delete Session Log | Schedule View Component | `click` | `removePomodoroSession()` | Xóa phiên khỏi nhật ký, tính toán lại % tích lũy trên Dashboard. |
-| **PRD-05.1** | Resource Filter | Resources View Component | `click` | `selectedModuleId` | Lọc các thẻ tài nguyên hiển thị theo từng Module. |
-| **PRD-05.2** | Resource Bookmark | Resources View Component | `click` | `toggleResourceFlag()` | Đánh dấu/bỏ đánh dấu SVG ngôi sao vàng đặc yêu thích tài nguyên. |
+| **PRD-01.1** | Theme Switcher | Theme Toggle Component | `click` | `setThemeState()` | Toggles `data-theme`, updates SVG icon, persists theme. |
+| **PRD-01.2** | Export Backup | Export Action Component | `click` | `exportStateJSON()` | Downloads `.json` file containing exact current state. |
+| **PRD-01.3** | Import Backup | Import Action Component | `click` | `importState()` | Validates JSON, restores state cleanly, shows toast notification. |
+| **PRD-01.4** | Progress Reset | Reset Action Component | `click` | `resetProgress()` | Prompts confirmation, resets progress % and history to 0. |
+| **PRD-01.5** | Hash Router | Navigation Bar Component | `hashchange` | `setActiveTabState()` | Syncs URL Hash `#/routeId`, toggles active tab UI, updates badge %. |
+| **PRD-02.1** | Quick Finish Task | Dashboard View Component | `click` | `toggleChecked()` | Checks off next recommended task directly on Dashboard. |
+| **PRD-03.1** | Task Checkbox | Roadmap View Component | `change` | `toggleChecked()` | Persists completion state (60% weight), applies strikethrough style. |
+| **PRD-04.1** | Timer Mode Switch | Schedule View Component | `click` | `switchMode()` | Switches between Focus / Short Break / Long Break modes. |
+| **PRD-04.2** | Preset & Custom | Schedule View Component | `click` | `setProfile()` | Saves timer duration configurations to `pomodoroSettings`. |
+| **PRD-04.3** | Task Selector | Schedule View Component | `change` | `selectedTaskId` | Links Task ID to Pomodoro session history log. |
+| **PRD-04.4** | Focus Timer Engine | Schedule View Component | `click` / `interval` | `addPomodoroSession()` | Runs 1s countdown, updates SVG ring, adds Pomodoro points (40% weight). |
+| **PRD-04.5** | Audio & Notif | Schedule View Component | `click` / `change` | `updatePomodoroSettings()` | Synthesizes chime via Web Audio API & dispatches Web Notification. |
+| **PRD-04.6** | Delete Session Log | Schedule View Component | `click` | `removePomodoroSession()` | Removes session from history log, recalculates Dashboard progress %. |
+| **PRD-05.1** | Resource Filter | Resources View Component | `click` | `selectedModuleId` | Filters visible resource cards by selected Module. |
+| **PRD-05.2** | Resource Bookmark | Resources View Component | `click` | `toggleResourceFlag()` | Toggles solid yellow SVG star bookmark on resource card. |

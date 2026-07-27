@@ -1,25 +1,25 @@
-# Hướng Dẫn Deploy Vite SPA lên GitHub Pages
+# Vite SPA GitHub Pages Deployment Guide
 
-Hướng dẫn cấu hình CI/CD tự động build và deploy ứng dụng Vite & TypeScript lên GitHub Pages qua GitHub Actions.
-
----
-
-## 1. Yêu cầu Tiền đề (Prerequisites)
-
-Truy cập **Settings** ➔ **Pages** trên GitHub repository:
-- **Source**: Chọn **GitHub Actions** (thay vì *Deploy from a branch*).
+Guide to configuring automated CI/CD to build and deploy a Vite & TypeScript application to GitHub Pages via GitHub Actions.
 
 ---
 
-## 2. Cấu hình Vite (`vite.config.ts`)
+## 1. Prerequisites
 
-Đặt `base: './'` để static assets được nạp đúng theo đường dẫn tương đối (tránh lỗi trang trắng/404):
+Navigate to **Settings** ➔ **Pages** in your GitHub repository:
+- **Source**: Select **GitHub Actions** (instead of *Deploy from a branch*).
+
+---
+
+## 2. Vite Configuration (`vite.config.ts`)
+
+Set `base: './'` so static assets are loaded correctly using relative paths (preventing blank page / 404 errors):
 
 ```typescript
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: './', // Đường dẫn tương đối giúp static assets load đúng trên GitHub Pages
+  base: './', // Relative path ensures static assets load correctly on GitHub Pages
   build: {
     outDir: 'dist',
     sourcemap: true,
@@ -29,9 +29,9 @@ export default defineConfig({
 
 ---
 
-## 3. Cấu hình GitHub Actions (`.github/workflows/deploy.yml`)
+## 3. GitHub Actions Configuration (`.github/workflows/deploy.yml`)
 
-Tạo hoặc cập nhật file `.github/workflows/deploy.yml`:
+Create or update the `.github/workflows/deploy.yml` file:
 
 ```yaml
 name: Deploy to GitHub Pages
@@ -95,12 +95,11 @@ jobs:
 
 ---
 
-## 4. Xử lý Lỗi Thường Gặp (Troubleshooting)
+## 4. Troubleshooting Common Issues
 
-| Sự cố | Nguyên nhân | Cách xử lý |
+| Issue | Cause | Solution |
 | :--- | :--- | :--- |
-| **Trang trắng / Lỗi 404 assets** | Thiếu `base: './'` trong `vite.config.ts` | Thêm `base: './'` vào `vite.config.ts` |
-| **Lỗi 403 / Permission denied** | Thiếu `permissions` trong `deploy.yml` hoặc chưa chọn Source: GitHub Actions | Cập nhật `permissions` và cấu hình GitHub Settings ➔ Pages |
-| **Build fail tại `npm run build`** | Lỗi TypeScript / typecheck | Chạy `npm run typecheck` local để sửa lỗi trước khi push |
-| **Workflow không tự chạy** | Nhánh push không khớp (`master`/`main`) hoặc file sửa không thuộc `paths` | Kiểm tra tên nhánh chính và danh sách `paths` trong `deploy.yml` |
-
+| **Blank page / Asset 404 error** | Missing `base: './'` in `vite.config.ts` | Add `base: './'` to `vite.config.ts` |
+| **403 Error / Permission denied** | Missing `permissions` block in `deploy.yml` or Source not set to GitHub Actions | Update `permissions` in `deploy.yml` and check GitHub Settings ➔ Pages |
+| **Build failure at `npm run build`** | TypeScript / typecheck errors | Run `npm run typecheck` locally to fix errors before pushing |
+| **Workflow does not trigger automatically** | Branch mismatch (`master`/`main`) or pushed files not matching `paths` filter | Check your primary branch name and the `paths` list in `deploy.yml` |

@@ -1,106 +1,106 @@
-# ARCHITECTURE & REPLICATION GUIDE (HƯỚNG DẪN KIẾN TRÚC & TÁI TẠO REPO)
+# ARCHITECTURE & REPLICATION GUIDE
 
-Tài liệu này tổng hợp toàn bộ kiến trúc kỹ thuật, công nghệ (Tech Stack), các thiết kế mẫu (Design Patterns), cấu trúc thư mục (Project Structure), luồng xử lý dữ liệu (Data Flow) và quản lý bộ nhớ của kho mã nguồn này. Dữ liệu này được thiết kế như một **bản thiết kế chi tiết (Master Blueprint)** giúp bất kỳ AI Agent hoặc lập trình viên nào có thể hiểu rõ, bảo trì, hoặc tái tạo (clone) lại cấu trúc ứng dụng cho bất kỳ dự án theo dõi lộ trình nào khác (ví dụ: *Web Dev Tracker, DevOps Journey, Data Engineering Roadmap...*).
-
----
-
-## 1. Tổng quan Kiến trúc (Architectural Overview)
-
-Ứng dụng là một **Single Page Application (SPA)** phục vụ việc theo dõi tiến độ học tập và thực hành (Roadmap & Sprint Journey Tracker).
-
-- **Triết lý cốt lõi**: Lightweight, zero-framework runtime overhead, cực kỳ nhanh, mô-đun hóa bằng **Vanilla TypeScript** kết hợp **Custom Elements (Web Components - Light DOM)** và **Layered Vanilla CSS**.
-- **Data-Driven Architecture**: 100% dữ liệu nội dung (Sprints, Modules, Tasks, Deliverables, Schedule, Resources, Tech Stack) được tách bạch hoàn toàn trong `src/data/planData.ts`. Giao diện UI chỉ đọc dữ liệu và render.
-- **Centralized State Store & Client-side Persistence**: Quản lý state tập trung tại `src/state/storage.ts`. Tự động lưu vết tiến độ người dùng, chủ đề giao diện và lịch sử phiên Pomodoro vào `localStorage` với tính năng Export/Import dữ liệu định dạng JSON để sao lưu.
-- **Observer-Driven Reactive Loop**: Đồng bộ trạng thái tự động giữa State Store và các Custom Elements active mà không dùng Virtual DOM hay thư viện reactive bên ngoài.
-- **Integrated Pomodoro Engine**: Tích hợp bộ đếm giờ Pomodoro tương tác với âm thanh tổng hợp bằng Web Audio API và thông báo đẩy (Browser Notifications).
+This document summarizes the complete technical architecture, technology stack, design patterns, project directory structure, data flow, and state management of this codebase. It is designed as a **Master Blueprint** to enable any AI Agent or software developer to thoroughly understand, maintain, or clone/replicate this roadmap tracker application for any other learning journey (e.g., *Web Dev Tracker, DevOps Journey, Data Engineering Roadmap...*).
 
 ---
 
-## 2. Tech Stack Chi Tiết
+## 1. Architectural Overview
 
-| Thành phần | Công nghệ sử dụng | Vai trò & Lý do lựa chọn |
+The application is a **Single Page Application (SPA)** designed for tracking learning progress and practice tasks (Roadmap & Sprint Journey Tracker).
+
+- **Core Philosophy**: Lightweight, zero-framework runtime overhead, ultra-fast, modularized using **Vanilla TypeScript** combined with **Custom Elements (Web Components - Light DOM)** and **Layered Vanilla CSS**.
+- **Data-Driven Architecture**: 100% of business content data (Sprints, Modules, Tasks, Deliverables, Schedule, Resources, Tech Stack) is completely decoupled in `src/data/planData.ts`. The UI layer strictly reads data and renders views.
+- **Centralized State Store & Client-side Persistence**: Centralized state management in `src/state/storage.ts`. User progress, theme preference, and Pomodoro session logs are automatically persisted to `localStorage`, with built-in JSON Import/Export support for backups.
+- **Observer-Driven Reactive Loop**: Automatic state synchronization between the State Store and active Custom Elements without requiring a Virtual DOM or external reactive libraries.
+- **Integrated Pomodoro Engine**: Interactive Pomodoro countdown timer with Web Audio API sound synthesis and browser push notifications.
+
+---
+
+## 2. Tech Stack Details
+
+| Component | Technology Used | Role & Selection Rationale |
 | :--- | :--- | :--- |
-| **Bundler & Dev Server** | **Vite 6.4+** | HMR tốc độ cực cao, hỗ trợ TypeScript out-of-the-box, build static assets gọn nhẹ. |
-| **Ngôn ngữ** | **TypeScript 5.8+** | Đảm bảo Type Safety với Strict Mode (`tsc --noEmit`), tối ưu autocompletion cho data models. |
-| **UI Framework** | **Vanilla Web Components (Light DOM)** | Kế thừa `HTMLElement` không dùng Shadow DOM để dễ dàng dùng chung CSS Tokens và Utility Classes toàn cục. |
-| **Styling** | **Vanilla CSS (`@layer` + CSS Variables)** | Quản lý CSS bằng `@layer` tránh xung đột độ ưu tiên (Specificity Wars). Dùng CSS Custom Properties hỗ trợ Dark/Light mode. |
-| **State Management** | **Centralized Store + Observer Re-render** | Quản lý state tập trung tại `src/state/storage.ts`. Tự động đồng bộ `localStorage` và trigger `renderAll()` cho các active views. |
-| **Router** | **Hash Router (`#/route`)** | Client-side routing nhẹ dựa trên `window.onhashchange`, đồng bộ giữa URL hash, UI tab active và `localStorage`. |
-| **Icons & Audio** | **SVG Dictionary + Web Audio API** | Render SVG icons tập trung tại `src/utils/icons.ts`. Phát âm thanh báo hiệu Pomodoro không cần file mp3 tĩnh nhờ `src/utils/audio.ts`. |
-| **Deployment** | **GitHub Actions + GitHub Pages** | Workflow tự động build thư mục `dist/` và deploy lên GitHub Pages với `base: './'` trong `vite.config.ts`. Chi tiết hướng dẫn tại **[github_pages_deployment_guide.md](./github_pages_deployment_guide.md)**. |
+| **Bundler & Dev Server** | **Vite 6.4+** | Ultra-fast HMR, out-of-the-box TypeScript support, lightweight static asset bundling. |
+| **Language** | **TypeScript 5.8+** | Strict Type Safety (`tsc --noEmit`), optimal autocompletion for data models. |
+| **UI Framework** | **Vanilla Web Components (Light DOM)** | Extends `HTMLElement` without Shadow DOM to easily share global CSS Tokens and Utility Classes. |
+| **Styling** | **Vanilla CSS (`@layer` + CSS Variables)** | Structured with `@layer` directives to eliminate specificity wars. Uses CSS Custom Properties for Dark/Light theme switching. |
+| **State Management** | **Centralized Store + Observer Re-render** | Centralized state management in `src/state/storage.ts`. Automatically syncs with `localStorage` and triggers `renderAll()` for active views. |
+| **Router** | **Hash Router (`#/route`)** | Lightweight client-side routing based on `window.onhashchange`, synchronizing URL hash, active UI tab, and `localStorage`. |
+| **Icons & Audio** | **SVG Dictionary + Web Audio API** | Centralized SVG icon rendering in `src/utils/icons.ts`. Synthesizes audio notifications without external mp3 files via `src/utils/audio.ts`. |
+| **Deployment** | **GitHub Actions + GitHub Pages** | Automated workflow that builds the `dist/` directory and deploys to GitHub Pages with `base: './'` in `vite.config.ts`. See **[github_pages_deployment_guide.md](./github_pages_deployment_guide.md)** for details. |
 
 ---
 
-## 3. Cấu trúc Thư mục Dự án (Project Directory Structure)
+## 3. Project Directory Structure
 
-Chi tiết sơ đồ cây thư mục toàn bộ dự án và mô tả vai trò của từng mô-đun/tập tin đã được tách thành tài liệu độc lập tại **[project_structure.md](./project_structure.md)**.
+A detailed directory tree diagram and description of each module/file is documented independently in **[project_structure.md](./project_structure.md)**.
 
-### Sơ lược các khối chức năng chính:
-- **`docs/`**: Thư mục tài liệu kỹ thuật (`docs/guides/`) và tài liệu nội dung các trang web (`docs/content/`).
-- **`public/`**: Tài nguyên tĩnh (`favicon.svg`).
-- **`src/data/`**: Pure Data Model (`planData.ts`) - Nơi lưu trữ 100% dữ liệu nghiệp vụ tĩnh.
-- **`src/state/`**: State Store (`storage.ts`) - Quản lý `localStorage` & singleton `AppState`.
-- **`src/views/`**: Native Web Components (`<roadmap-view-*>`) quản lý hiển thị 5 tab UI.
-- **`src/styles/`**: Hệ thống CSS phân tầng (`@layer`) kết hợp CSS Custom Properties (`_tokens.css`).
-- **`src/actions/`**, **`src/utils/`**, **`src/types/`**: Các utility thuần, type interfaces và tác vụ backup/restore.
+### High-level Overview of Main Modules:
+- **`docs/`**: Technical guides (`docs/guides/`) and web page content documents (`docs/content/`).
+- **`public/`**: Static assets (`favicon.svg`).
+- **`src/data/`**: Pure Data Model (`planData.ts`) - Contains 100% of static business data.
+- **`src/state/`**: State Store (`storage.ts`) - Manages `localStorage` & singleton `AppState`.
+- **`src/views/`**: Native Web Components (`<roadmap-view-*>`) managing the 5 UI tabs.
+- **`src/styles/`**: Layered CSS system (`@layer`) combined with CSS Custom Properties (`_tokens.css`).
+- **`src/actions/`**, **`src/utils/`**, **`src/types/`**: Pure utilities, type interfaces, and backup/restore handlers.
 
 ---
 
 ## 4. Core Design Patterns & Architecture Principles
 
-### Pattern 1: Data-Driven UI Architecture (Kiến trúc Giao diện Dựa trên Dữ liệu)
-- **Nguyên tắc**: Tách 100% dữ liệu nghiệp vụ ra khỏi giao diện UI. Dữ liệu tĩnh nằm tại `src/data/planData.ts`.
-- **Primary Key Constraint**: Mỗi Task, Resource, hay Schedule slot **BẮT BUỘC** có một `id` duy nhất (ví dụ: `s1-t1`, `res-1`, `w1d1-p1`).
-- **Cảnh báo quan trọng cho AI Agent**: Không bao giờ đổi tên hoặc thay đổi `id` của nhiệm vụ đã tạo trong `planData.ts` vì `id` chính là chìa khóa primary key lưu trữ trạng thái checked của người dùng trong `localStorage`.
+### Pattern 1: Data-Driven UI Architecture
+- **Principle**: Decouple 100% of business data from the UI layer. Static data resides in `src/data/planData.ts`.
+- **Primary Key Constraint**: Every Task, Resource, or Schedule slot **MUST** have a unique static `id` (e.g., `s1-t1`, `res-1`, `w1d1-p1`).
+- **Critical Warning for AI Agents**: Never rename or modify existing item `id`s in `planData.ts` because `id` serves as the primary key for persisting user completion state in `localStorage`.
 
 ### Pattern 2: Light-DOM Custom Elements Pattern & Lifecycle Management
-Các view sử dụng trực tiếp chuẩn **Custom Elements API** native của trình duyệt:
+Views directly utilize the browser's native **Custom Elements API**:
 ```typescript
 export class RoadmapViewDashboard extends HTMLElement {
   private boundRefresh = this.refresh.bind(this);
 
   connectedCallback(): void {
-    // Đăng ký render listener khi element được add vào DOM
+    // Register render listener when element is attached to DOM
     registerRenderListener(this.boundRefresh);
     this.refresh();
   }
 
   disconnectedCallback(): void {
-    // BẮT BUỘC hủy đăng ký khi element bị tháo khỏi DOM để tránh Memory Leak
+    // MUST unregister listener when element is detached from DOM to prevent memory leaks
     unregisterRenderListener(this.boundRefresh);
   }
 
   refresh(): void {
-    // 1. Lấy dữ liệu mới nhất từ storage & progress engine
+    // 1. Fetch latest data from state storage & progress engine
     const stats = calculateProgress();
-    // 2. Tạo chuỗi HTML & cập nhật innerHTML
-    // 3. Gắn event listeners cho các phần tử tương tác vừa tạo
+    // 2. Generate HTML string & update innerHTML
+    // 3. Attach event listeners to newly rendered interactive elements
   }
 }
 customElements.define("roadmap-view-dashboard", RoadmapViewDashboard);
 ```
 
 ### Pattern 3: Unidirectional Data Flow & Observer Re-render Loop
-Ứng dụng duy trì luồng dữ liệu một chiều minh bạch giữa State Store và Renderer:
+The application maintains a transparent unidirectional data flow between the State Store and Renderers:
 
 ```mermaid
 graph LR
-    UserAction[Hành động người dùng Check/Timer] --> MutateState[Thay đổi State trong storage.ts]
+    UserAction[User Action Check/Timer] --> MutateState[Mutate State in storage.ts]
     MutateState --> SaveStorage[saveState -> localStorage]
-    SaveStorage --> TriggerRender[renderAll trong renderer.ts]
-    TriggerRender --> RefreshViews[Gọi view.refresh trên các Custom Elements active]
+    SaveStorage --> TriggerRender[renderAll in renderer.ts]
+    TriggerRender --> RefreshViews[Invoke view.refresh on active Custom Elements]
 ```
 
 ### Pattern 4: Weighted Progress Calculation Engine (`src/progress.ts`)
-Tiến độ phần trăm tổng thể được tính bằng công thức trọng số kết hợp:
+Overall progress percentage is computed using a weighted formula:
 \[
 \text{Overall Percentage} = (\text{Deliverables Completion \%} \times 0.6) + (\text{Pomodoros Completion \%} \times 0.4)
 \]
-- Tự động xác định Sprint hiện tại (Sprint đầu tiên chưa hoàn thành 100%).
-- Tìm kiếm nhiệm vụ kế tiếp (Next Task) chưa hoàn thành để gợi ý cho người dùng.
+- Automatically identifies the active Sprint (the first Sprint not yet 100% complete).
+- Finds the next pending task (Next Task) to recommend to the user.
 
-### Pattern 5: Modular Layered CSS System với CSS Custom Properties
-CSS được cấu trúc bằng chỉ thị `@layer` để kiểm soát thứ tự ưu tiên tuyệt đối:
+### Pattern 5: Modular Layered CSS System with CSS Custom Properties
+CSS is structured using `@layer` directives to enforce strict specificity order:
 ```css
 @layer reset, base, components, views, utilities;
 
@@ -112,7 +112,7 @@ CSS được cấu trúc bằng chỉ thị `@layer` để kiểm soát thứ t�
 @import "./_views.css" layer(views);
 @import "./_responsive.css" layer(utilities);
 ```
-- Quản lý **Dark/Light Theme** thông qua thuộc tính `data-theme` trên thẻ `<html>`:
+- Manages **Dark/Light Theme** via the `data-theme` attribute on the `<html>` tag:
   ```css
   :root {
     --bg-main: #0b0f19;
@@ -126,71 +126,71 @@ CSS được cấu trúc bằng chỉ thị `@layer` để kiểm soát thứ t�
 
 ---
 
-## 5. Blueprint Từng Bước Để AI Agent Clone/Tái Tạo Repo
+## 5. Step-by-Step Blueprint for AI Agents to Clone/Replicate Repo
 
-Nếu bạn là một AI Agent được giao nhiệm vụ tạo mới một dự án tương tự cho một chủ đề khác, hãy tuân thủ nghiêm ngặt **Yêu cầu Tiền đề** và thực hiện theo đúng **8 bước** dưới đây:
+If you are an AI Agent tasked with building a new repository for a different subject, follow these **Prerequisites** and execute the **8 steps** below:
 
 > [!IMPORTANT]
-> **Yêu cầu Bắt buộc Tiền đề cho AI Agent (Mandatory Documentation Analysis)**:
-> Trước khi khởi tạo hoặc viết bất kỳ đoạn code nào, AI Agent **BẮT BUỘC** phải đọc và phân tích toàn bộ 5 tài liệu kỹ thuật thuộc thư mục **`docs/guides/`** để đảm bảo tính chính xác 100% khi clone/tái tạo repo:
-> 1. **[architecture_guide.md](./architecture_guide.md)**: Nắm vững kiến trúc Data-Driven, Observer Pattern, State Store & Progress Engine.
-> 2. **[project_structure.md](./project_structure.md)**: Nắm vững cây thư mục chuẩn và vị trí/vai trò của từng tập tin.
-> 3. **[ui_system_design_guide.md](./ui_system_design_guide.md)**: Nắm vững hệ thống CSS Tokens (`_tokens.css`), CSS Layers (`@layer`), Dark/Light mode & SVG Dictionary.
-> 4. **[interactive_components_guide.md](./interactive_components_guide.md)**: Nắm vững PRD, UX Specs, Web Components lifecycle & cơ chế tương tác state.
-> 5. **[github_pages_deployment_guide.md](./github_pages_deployment_guide.md)**: Nắm vững quy trình cấu hình CI/CD tự động build & deploy lên GitHub Pages qua GitHub Actions.
+> **Mandatory Documentation Analysis for AI Agents**:
+> Before initializing or writing any code, the AI Agent **MUST** read and analyze all 5 technical documentation guides in **`docs/guides/`** to ensure 100% accuracy when cloning/replicating the repository:
+> 1. **[architecture_guide.md](./architecture_guide.md)**: Master the Data-Driven architecture, Observer Pattern, State Store, and Progress Engine.
+> 2. **[project_structure.md](./project_structure.md)**: Understand the standard directory tree and file responsibilities.
+> 3. **[ui_system_design_guide.md](./ui_system_design_guide.md)**: Understand the CSS Tokens (`_tokens.css`), CSS Layers (`@layer`), Dark/Light themes, and SVG Dictionary.
+> 4. **[interactive_components_guide.md](./interactive_components_guide.md)**: Master PRD specs, UX specifications, Web Component lifecycle, and state interaction.
+> 5. **[github_pages_deployment_guide.md](./github_pages_deployment_guide.md)**: Master CI/CD setup for automated build and GitHub Pages deployment via GitHub Actions.
 
 ---
 
-### Bước 1: Khởi tạo Repo & Cấu hình Build Environment
-1. Khởi tạo `package.json` với các scripts:
+### Step 1: Initialize Repository & Configure Build Environment
+1. Initialize `package.json` with scripts:
    - `"dev": "vite"`
    - `"build": "tsc --noEmit && vite build"`
    - `"preview": "vite preview"`
    - `"typecheck": "tsc --noEmit"`
-2. Cài đặt `devDependencies`: `typescript` và `vite`.
-3. Tạo file `vite.config.ts` bắt buộc khai báo `base: './'` để static assets hoạt động đúng khi deploy trên GitHub Pages (Tham khảo **[github_pages_deployment_guide.md](./github_pages_deployment_guide.md)**).
+2. Install `devDependencies`: `typescript` and `vite`.
+3. Create `vite.config.ts` specifying `base: './'` to ensure static assets resolve correctly on GitHub Pages (See **[github_pages_deployment_guide.md](./github_pages_deployment_guide.md)**).
 
-### Bước 2: Xây dựng Core Types & State Store
-1. Tạo `src/types/appState.ts` định nghĩa interfaces cho data models và `AppState` (`checked`, `resourceFlags`, `activeTab`, `theme`, `pomodoroSettings`, `pomodoroSessions`).
-2. Tạo `src/constants.ts` chứa `STORAGE_KEY`, `THEME_KEY`, `ROUTE_IDS`.
-3. Tạo `src/state/storage.ts` quản lý singleton `AppState`, cung cấp `loadState()`, `saveState()`, `setThemeState()`, `addPomodoroSession()`.
+### Step 2: Build Core Types & State Store
+1. Create `src/types/appState.ts` defining interfaces for data models and `AppState` (`checked`, `resourceFlags`, `activeTab`, `theme`, `pomodoroSettings`, `pomodoroSessions`).
+2. Create `src/constants.ts` holding `STORAGE_KEY`, `THEME_KEY`, and `ROUTE_IDS`.
+3. Create `src/state/storage.ts` managing singleton `AppState`, providing `loadState()`, `saveState()`, `setThemeState()`, and `addPomodoroSession()`.
 
-### Bước 3: Định nghĩa Data Model Mới (`src/data/planData.ts`)
-1. Thiết kế dữ liệu theo cấu trúc chuẩn: `META_DATA`, `SPRINT_MODULES`, `POMODORO_SCHEDULE`, `FREE_RESOURCES`, `TECH_STACK_LAYERS`.
-2. Gán ID tĩnh duy nhất cho tất cả các nhiệm vụ, tài nguyên và slot đếm giờ (Theo quy chuẩn tại **[architecture_guide.md](./architecture_guide.md)**).
+### Step 3: Define New Data Model (`src/data/planData.ts`)
+1. Structure business data following standard schemas: `META_DATA`, `SPRINT_MODULES`, `POMODORO_SCHEDULE`, `FREE_RESOURCES`, `TECH_STACK_LAYERS`.
+2. Assign unique static IDs to all tasks, resources, and schedule slots (As specified in **[architecture_guide.md](./architecture_guide.md)**).
 
-### Bước 4: Xây dựng Domain Progress Engine (`src/progress.ts`)
-1. Viết pure function `calculateProgress()` dựa trên `state.checked`, `state.pomodoroSessions` và `PLAN_DATA`.
-2. Tính toán tổng thể %, % từng Sprint, tổng số giờ hoàn thành/còn lại, xác định Sprint hiện tại và gợi ý Task tiếp theo.
+### Step 4: Build Domain Progress Engine (`src/progress.ts`)
+1. Implement pure function `calculateProgress()` utilizing `state.checked`, `state.pomodoroSessions`, and `PLAN_DATA`.
+2. Compute overall %, Sprint %, total completed/remaining hours, determine active Sprint, and recommend the Next Task.
 
-### Bước 5: Cài đặt Router & Central Renderer
-1. Create `src/renderer.ts`: Cung cấp callback pattern `registerRenderListener()` và `renderAll()`.
-2. Create `src/router.ts`: Đọc/Ghi hash location (`window.location.hash`), chuyển đổi tab UI active và lưu vết tab cuối vào `localStorage`.
+### Step 5: Implement Router & Central Renderer
+1. Create `src/renderer.ts`: Provide callback pattern `registerRenderListener()` and `renderAll()`.
+2. Create `src/router.ts`: Read/Write hash location (`window.location.hash`), handle active tab switching, and persist last active tab to `localStorage`.
 
-### Bước 6: Xây dựng Custom Element Views (`src/views/`)
-1. Mỗi Tab tạo một Custom Element kế thừa `HTMLElement` (ví dụ `roadmap-view-dashboard.ts`, `roadmap-view-roadmap.ts`).
-2. Tham khảo quy chuẩn UX & Component Lifecycle tại **[interactive_components_guide.md](./interactive_components_guide.md)**.
-3. Viết phương thức `refresh()` thực hiện re-render HTML và gán event listeners.
-4. Đăng ký Web Component: `customElements.define("roadmap-view-dashboard", RoadmapViewDashboard)`.
+### Step 6: Create Custom Element Views (`src/views/`)
+1. Create a Custom Element extending `HTMLElement` for each tab (e.g., `roadmap-view-dashboard.ts`, `roadmap-view-roadmap.ts`).
+2. Adhere to UX standards & Component Lifecycle defined in **[interactive_components_guide.md](./interactive_components_guide.md)**.
+3. Implement `refresh()` method to re-render HTML and re-bind event listeners.
+4. Register Web Component: `customElements.define("roadmap-view-dashboard", RoadmapViewDashboard)`.
 
-### Bước 7: Hoàn thiện HTML Shell, Design System & Bootstrap
-1. Cấu hình `index.html` chứa `<header>`, thanh `<nav class="nav-tabs">`, các container view `<roadmap-view-*>` và script bootstrap.
-2. Xây dựng bộ CSS Token (`_tokens.css`) và các CSS Layers (`main.css`) dựa theo **[ui_system_design_guide.md](./ui_system_design_guide.md)**.
-3. Khai báo `src/main.ts` kết nối tất cả các thành phần: load state ➔ apply theme ➔ gán event listener ➔ init router ➔ thực thi `renderAll()`.
+### Step 7: Finalize HTML Shell, Design System & Bootstrap
+1. Configure `index.html` containing `<header>`, navigation bar `<nav class="nav-tabs">`, view containers `<roadmap-view-*>`, and bootstrap script.
+2. Build CSS Token system (`_tokens.css`) and CSS Layers (`main.css`) based on **[ui_system_design_guide.md](./ui_system_design_guide.md)**.
+3. Write `src/main.ts` to wire all modules: load state ➔ apply theme ➔ attach event listeners ➔ init router ➔ trigger initial `renderAll()`.
 
-### Bước 8: Thiết lập CI/CD & Auto Deployment qua GitHub Actions
-1. Tạo thư mục và file workflow `.github/workflows/deploy.yml`.
-2. Cấu hình các triggers, permissions (`pages: write`, `id-token: write`), Node v22, `npm ci`, `npm run build` và deploy artifact `dist/`.
-3. Bật tính năng Pages với **Source: GitHub Actions** trong Repository Settings (Tham khảo chi tiết tại **[github_pages_deployment_guide.md](./github_pages_deployment_guide.md)**).
+### Step 8: Set Up CI/CD & Auto Deployment via GitHub Actions
+1. Create directory and workflow file `.github/workflows/deploy.yml`.
+2. Configure triggers, permissions (`pages: write`, `id-token: write`), Node v22, `npm ci`, `npm run build`, and deploy `dist/` artifact.
+3. Enable Pages with **Source: GitHub Actions** under Repository Settings (See details in **[github_pages_deployment_guide.md](./github_pages_deployment_guide.md)**).
 
 ---
 
-## 6. Checklist Kiểm Thử Tiến Độ Tái Tạo (Verification Checklist)
+## 6. Verification Checklist
 
-- [ ] `npm run typecheck` chạy thành công không có lỗi TypeScript.
-- [ ] `npm run build` tạo thành công thư mục `dist/` với đường dẫn tương đối (`./assets/...`).
-- [ ] Workflow `.github/workflows/deploy.yml` tự động build và deploy ứng dụng lên GitHub Pages thành công.
-- [ ] Khi tích/bỏ tích checkbox công việc, phần trăm tiến độ trên Dashboard và Navigation Badge được cập nhật tức thì.
-- [ ] Khi F5 (Reload trang), toàn bộ trạng thái checked, cài đặt theme và tab active được giữ nguyên.
-- [ ] Bộ đếm giờ Pomodoro chạy mượt mà, phát âm thanh báo khi kết thúc và lưu lịch sử phiên.
-- [ ] Tính năng Export JSON tải về file sao lưu hợp lệ và Import JSON khôi phục chính xác trạng thái.
+- [ ] `npm run typecheck` executes successfully with zero TypeScript errors.
+- [ ] `npm run build` generates the `dist/` directory using relative asset paths (`./assets/...`).
+- [ ] `.github/workflows/deploy.yml` automatically builds and deploys the app to GitHub Pages successfully.
+- [ ] Toggling task checkboxes immediately updates progress percentages on Dashboard and Navigation Badge.
+- [ ] Reloading the page (F5) preserves checked tasks, theme settings, and active tab state.
+- [ ] Pomodoro timer runs smoothly, plays alert audio on completion, and records session history.
+- [ ] Export JSON downloads a valid backup file, and Import JSON accurately restores application state.
