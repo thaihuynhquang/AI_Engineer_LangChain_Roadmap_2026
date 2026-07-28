@@ -40,6 +40,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 * **3. Nhiệm vụ Thực hành & Dự án**:
   - Bài tập tự giải: *Build Your First Chain* & *Create a Multi-model Setup*.
   - 🛠️ **Project 1: Smart Q&A Bot** — Xây dựng ứng dụng Hỏi-Đáp thông minh hỗ trợ đa mô hình và structured output.
+  - 🗂️ **Mock Interview Preparation**: Tạo bộ Flashcards trên Gemini Notebook với các **Keywords bắt buộc**: `LCEL`, `RunnableSequence`, `RunnableParallel`, `Batch vs Streaming`, `Pipe operator (|)`, `Schema Inspection`, `Multi-LLM Setup (OpenAI/Anthropic)`, `PromptTemplates`, `Structured Output (Pydantic / JsonOutputParser)`.
 
 ---
 
@@ -54,6 +55,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
   * 📖 **LCEL Concepts**: [https://python.langchain.com/docs/concepts/#lcel](https://python.langchain.com/docs/concepts/#lcel).
 * **3. Nhiệm vụ Thực hành**:
   - Viết chuỗi xử lý đa nhánh kết hợp `RunnablePassthrough` và `RunnableParallel`.
+  - 🗂️ **Mock Interview Preparation**: Tạo bộ Flashcards trên Gemini Notebook với các **Keywords bắt buộc**: `RunnablePassthrough`, `RunnableParallel`, `RunnableLambda`, `RunnableBranch`, `Chain Fallbacks`, `Dynamic Chain Composition`, `LangChain Callbacks & Handlers`, `Chain Debugging (set_debug / set_verbose)`, `Async Execution (astream, abatch, ainvoke)`.
 
 ---
 
@@ -71,6 +73,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 * **3. Nhiệm vụ Thực hành**:
   - Viết 1 FastMCP Server cung cấp Tool truy vấn dữ liệu hoặc hệ thống.
   - Kết nối Agent gọi MCP Tool qua giao thức MCP.
+  - 🗂️ **Mock Interview Preparation**: Tạo bộ Flashcards trên Gemini Notebook với các **Keywords bắt buộc**: `MCP Architecture (Host, Client, Server)`, `FastMCP Python SDK`, `MCP Tools & Resources & Prompts`, `Transports (StdioTransport, SSETransport)`, `MCP Handshake & Protocol Specs`, `Tool Schema Registration`.
 
 ---
 
@@ -88,6 +91,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 * **3. Nhiệm vụ Thực hành**:
   - Bài tập tự giải: *Vector Stores Exercise & Solution*.
   - Viết pipeline Ingestion trích xuất bảng từ PDF bằng LlamaParse và lưu vào Vector Database.
+  - 🗂️ **Mock Interview Preparation**: Tạo bộ Flashcards trên Gemini Notebook với các **Keywords bắt buộc**: `Document Loaders (TextLoader, PyPDFLoader, LazyLoader)`, `LlamaParse (Multimodal Parsing, Table Extraction)`, `Text Splitting (RecursiveCharacterTextSplitter, Chunk Overlap, Chunk Size)`, `Specialized Splitters (MarkdownHeaderSplitter, CodeSplitter)`, `Vector Stores (ChromaDB)`, `Similarity Search vs MMR`, `Metadata Filtering & Persistence`.
 
 ---
 
@@ -104,6 +108,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
   * 📹 **Khóa học bổ sung miễn phí**: BugBytes — [LangChain and PGVector - Retrieval Augmented Generation](https://youtu.be/GYwhDkwCdt8) & [Tài liệu hướng dẫn kèm Code](https://bugbytes.io/posts/retrieval-augmented-generation-with-langchain-and-pgvector/).
 * **3. Nhiệm vụ Thực hành & Dự án**:
   - 🛠️ **Project 2: AI Research Assistant** — Xây dựng trợ lý nghiên cứu AI hoàn chỉnh với Document Indexing, Memory đa phiên, Multi-Query Retrieval và `pgvector` backend.
+  - 🗂️ **Mock Interview Preparation**: Tạo bộ Flashcards trên Gemini Notebook với các **Keywords bắt buộc**: `Multi-Query Retriever`, `Contextual Compression`, `Hybrid Search (Dense + Sparse/BM25)`, `Parent Document Retriever`, `PostgreSQL + pgvector (HNSW Index, IVFFlat Index)`, `Distance Metrics (L2, Cosine, Inner Product)`, `Memory Patterns (ConversationBuffer, Summary, Windowed, Session Persistence)`.
 
 ---
 
@@ -120,6 +125,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 * **3. Nhiệm vụ Thực hành**:
   - Cài đặt Ollama chạy mô hình DeepSeek/Llama local.
   - Cấu hình vLLM Server và tạo LangChain LLM Client kết nối vLLM endpoint.
+  - 🗂️ **Mock Interview Preparation**: Tạo bộ Flashcards trên Gemini Notebook với các **Keywords bắt buộc**: `Open-Source LLMs (Llama 3.3, DeepSeek-R1/V3)`, `Ollama Local Serving`, `vLLM Architecture`, `PagedAttention`, `Continuous Batching`, `KV Cache Management`, `Quantization (AWQ, GPTQ, GGUF)`, `Function Calling Fine-Tuning`, `smolagents`.
 
 ---
 
@@ -137,6 +143,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 * **3. Nhiệm vụ Thực hành**:
   - Bài tập tự giải: *Build Your First Node*.
   - Xây dựng luồng Agent tự sửa mã nguồn (Self-Correcting Code Writer) với tính năng Human Interrupt.
+  - 🗂️ **Mock Interview Preparation**: Tạo bộ Flashcards trên Gemini Notebook với các **Keywords bắt buộc**: `StateGraph`, `State Schema (TypedDict / Pydantic)`, `Reducers (add_messages)`, `Nodes & Edges`, `Conditional Edges & Routing`, `Cycles & Self-Correcting Code Writer Pattern`, `Human-in-the-Loop (Interrupt for Approval)`, `Checkpointing (MemorySaver, SqliteSaver)`, `Time Travel & State Replay`.
 
 ---
 
@@ -153,6 +160,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
   * 🆓 **Khóa học bổ sung miễn phí**: Hugging Face — [The Context Course (Unit 4: Sub-agents)](https://huggingface.co/learn/context-course/unit4/introduction) (Thiết kế và điều phối sub-agents chuyên biệt).
 * **3. Nhiệm vụ Thực hành & Dự án**:
   - 🛠️ **Project 3: Multi-Agent Research System** — Xây dựng hệ thống nghiên cứu đa agent từ con số 0 với State Schema custom và Send API.
+  - 🗂️ **Mock Interview Preparation**: Tạo bộ Flashcards trên Gemini Notebook với các **Keywords bắt buộc**: `CrewAI (Agents, Tasks, Crew, Sequential vs Hierarchical Process)`, `LangGraph Multi-Agent Patterns`, `Supervisor Agent`, `Agent Handoffs (Command / goto)`, `Map-Reduce Sub-graphs`, `Message Passing & Shared Field State`, `Blackboard Refinement Pattern`, `Multi-Agent Tracing`.
 
 ---
 
@@ -169,6 +177,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
   * 📖 **Docs Tra cứu**: [Vercel AI SDK Docs](https://sdk.vercel.ai/docs).
 * **3. Nhiệm vụ Thực hành**:
   - Dựng giao diện Chatbot UI chuyên nghiệp với luồng Streaming Response thời gian thực kết nối với Agent Backend.
+  - 🗂️ **Mock Interview Preparation**: Tạo bộ Flashcards trên Gemini Notebook với các **Keywords bắt buộc**: `Next.js 15 App Router`, `Vercel AI SDK (useChat, useCompletion)`, `HTTP Streaming Response (SSE / Data Streams)`, `Generative UI & Tool Calling UI Components`, `FastAPI Backend Integration`, `CORS & Middleware`, `Realtime Token Streaming`.
 
 ---
 
@@ -187,6 +196,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
   * 🆓 **Khóa học bổ sung miễn phí**: Hugging Face — [The Context Course (Unit 5: Hooks)](https://huggingface.co/learn/context-course/unit5/introduction) (Tự động hóa & giám sát vòng đời Agent) & [AI Agents Course (Bonus Unit 2: Agent Observability)](https://huggingface.co/learn/agents-course/bonus-unit2/introduction).
 * **3. Nhiệm vụ Thực hành & Dự án**:
   - 🛠️ **Project 4: Production-Ready Full-Stack AI System (Final Project)** — Đóng gói LangGraph Agent + FastAPI + Security Layer + Next.js UI + Dockerization + Triển khai thành công lên Cloud **Render**.
+  - 🗂️ **Mock Interview Preparation**: Tạo bộ Flashcards trên Gemini Notebook với các **Keywords bắt buộc**: `LangSmith Tracing & Observability`, `Prompt Injection Defense`, `PII Detection & Anonymization`, `LLM Guard / Guardrails`, `RAG & Agent Evaluation (Ragas, Arize AI, TruLens)`, `Metrics (Faithfulness, Answer Relevance, Context Recall/Precision)`, `LLM-as-a-Judge`, `Circuit Breaker & Fallback Chain`, `Model Router & Semantic Caching`, `Docker Containerization`, `Render Cloud Deployment`.
 
 ---
 

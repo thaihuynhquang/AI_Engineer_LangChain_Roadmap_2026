@@ -53,6 +53,7 @@
   - *Ngày 2*: Thực hành LCEL, Runnable Chains, Realtime Streaming & Schema Inspection (*Packt Chap 2*).
   - *Ngày 3*: Thực hành Prompt Templates, Messages, Output Parsers & Multi-model setup.
   - *Ngày 4 & 5*: Xây dựng **Project 1 - Smart Q&A Bot**.
+  - 🗂️ *Mock Interview*: Tạo bộ Flashcards qua Gemini Notebook tổng hợp kiến thức & câu hỏi phỏng vấn cho Module 1.
 
 ---
 
@@ -61,6 +62,7 @@
 - **Nội dung thực hành**:
   - *Ngày 1*: Basic Chains & Parallel Chains (*Packt Chap 3*).
   - *Ngày 2*: `RunnablePassthrough`, Chain Branching & Debugging chuỗi.
+  - 🗂️ *Mock Interview*: Tạo bộ Flashcards qua Gemini Notebook tổng hợp kiến thức & câu hỏi phỏng vấn cho Module 2.
 
 ---
 
@@ -70,6 +72,7 @@
   - *Ngày 1*: Nạp kiến trúc Model Context Protocol (MCP Client/Server).
   - *Ngày 2*: Viết **FastMCP Server** bằng Python cung cấp Tool custom.
   - *Ngày 3*: Kết nối Agent gọi MCP Tool qua Stdio & SSE Transports.
+  - 🗂️ *Mock Interview*: Tạo bộ Flashcards qua Gemini Notebook tổng hợp kiến thức & câu hỏi phỏng vấn cho Module 3.
 
 ---
 
@@ -80,6 +83,7 @@
   - *Ngày 2*: Parse bảng biểu và PDF phức tạp với **LlamaParse**.
   - *Ngày 3*: Text Splitting Deep Dive (`RecursiveCharacterTextSplitter`, Overlap, Markdown, Code Splitters).
   - *Ngày 4*: Embeddings & **ChromaDB** (Similarity Search with Scores, Metadata Filtering, Persistence).
+  - 🗂️ *Mock Interview*: Tạo bộ Flashcards qua Gemini Notebook tổng hợp kiến thức & câu hỏi phỏng vấn cho Module 4.
 
 ---
 
@@ -90,6 +94,7 @@
   - *Ngày 2*: Thiết lập CSDL Production **`pgvector` (PostgreSQL)**, HNSW indexing & Hybrid search.
   - *Ngày 3*: Memory Patterns (Conversation, Session, Windowed, Summary, Persistent Memory).
   - *Ngày 4 & 5*: Xây dựng **Project 2: AI Research Assistant** (Document Indexing, Memory, Multi-Query, `pgvector`).
+  - 🗂️ *Mock Interview*: Tạo bộ Flashcards qua Gemini Notebook tổng hợp kiến thức & câu hỏi phỏng vấn cho Module 5.
 
 ---
 
@@ -98,6 +103,7 @@
 - **Nội dung thực hành**:
   - *Ngày 1*: Cài đặt và thực hành chạy mô hình open-source (Llama 3.3, DeepSeek) với **Ollama** dưới local.
   - *Ngày 2*: Triển khai **vLLM Inference Server** (PagedAttention, Continuous Batching) và kết nối với LangChain client.
+  - 🗂️ *Mock Interview*: Tạo bộ Flashcards qua Gemini Notebook tổng hợp kiến thức & câu hỏi phỏng vấn cho Module 6.
 
 ---
 
@@ -108,6 +114,7 @@
   - *Ngày 2*: Edges & Conditional Edges, Routing & Multipath Routing.
   - *Ngày 3*: Vòng lặp tự sửa lỗi (Cycles & Self-Correcting Code Writer).
   - *Ngày 4*: Human in the Loop (Interrupt for Approval) & Checkpointing.
+  - 🗂️ *Mock Interview*: Tạo bộ Flashcards qua Gemini Notebook tổng hợp kiến thức & câu hỏi phỏng vấn cho Module 7.
 
 ---
 
@@ -118,6 +125,7 @@
   - *Ngày 2*: Đa Agent với LangGraph (Supervisor Agent, Handoffs, Map-Reduce, Message Passing) (*Packt Chap 7*).
   - *Ngày 3*: Hierarchical Architecture & Agent Tracing.
   - *Ngày 4 & 5*: Xây dựng **Project 3: Multi-Agent Research System** (State Schema, Send API).
+  - 🗂️ *Mock Interview*: Tạo bộ Flashcards qua Gemini Notebook tổng hợp kiến thức & câu hỏi phỏng vấn cho Module 8.
 
 ---
 
@@ -126,6 +134,7 @@
 - **Nội dung thực hành**:
   - *Ngày 1*: Setup Next.js 15, Vercel AI SDK, TailwindCSS & Shadcn/ui.
   - *Ngày 2*: Xây dựng giao diện Chatbot UI hỗ trợ HTTP Streaming Response kết nối với Agent Backend FastAPI.
+  - 🗂️ *Mock Interview*: Tạo bộ Flashcards qua Gemini Notebook tổng hợp kiến thức & câu hỏi phỏng vấn cho Module 9.
 
 ---
 
@@ -136,3 +145,4 @@
   - *Ngày 2*: Đánh giá RAG & Agent với **Arize AI / Ragas** (Faithfulness, Answer Relevance, Context Recall).
   - *Ngày 3*: Error Handling, Circuit Breaker, Model Router, Semantic Caching & Token Budgeting.
   - *Ngày 4 & 5*: Xây dựng **Project 4: Production Full-Stack AI System (Next.js + FastAPI + LangGraph + Docker + Render Cloud Deployment)**! 🚀
+  - 🗂️ *Mock Interview*: Tạo bộ Flashcards qua Gemini Notebook tổng hợp kiến thức & câu hỏi phỏng vấn cho Module 10.
