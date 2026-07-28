@@ -1,97 +1,94 @@
 # 📚 Thư Viện Tài Nguyên Học Tập & Tra Cứu Chuẩn 2026
-## Agentic AI Master Curriculum (Combo 2 Khóa Học)
+## Agentic AI Master Curriculum (Khóa Packt + Top Khóa Học Miễn Phí)
 
-Tập hợp đầy đủ tài nguyên bài giảng video và tài liệu tra cứu chính thức được phân loại 100% theo **8 Master Modules** trong tệp [online_learning_guide.md](./online_learning_guide.md) và [schedule.md](./schedule.md).
+Tập hợp đầy đủ tài nguyên bài giảng video và tài liệu tra cứu chính thức được phân loại 100% theo **10 Master Modules** trong tệp [online_learning_guide.md](./online_learning_guide.md) và [schedule.md](./schedule.md).
 
 ---
 
-## 🎓 2 Khóa Học Video Trọng Tâm (Primary Courses)
+## 🎓 Khóa Học Video Trọng Tâm & Danh Sách Khóa Miễn Phí (Primary & Supplemental Courses)
 
-1. 📹 **Khóa 1 (Core Engine & Production)**: **Agentic AI Systems: Build & Deploy with LangChain/LangGraph**
-   * **Nhà xuất bản**: Packt Publishing (ISBN 9781807780814)
-   * **URL Khóa Học**: [Packt Publishing Course 1](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814)
-   * **Nội dung chủ lực**: LangChain v1.0, LCEL, Advanced RAG, ChromaDB, Memory, LangGraph Deep Dive, Security (LLM Guard), FastAPI, Docker & Cloud Render.
+### 📹 Khóa Học Video Packt (Primary Local Course)
+* 📹 **[Khóa Packt (Core Engine & Production)]**: **Agentic AI Systems: Build & Deploy with LangChain/LangGraph**
+  * **Nhà xuất bản**: Packt Publishing (ISBN 9781807780814)
+  * **URL Tổng Quan Local**: [overview.html](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html)
+  * **Nội dung chủ lực**: LangChain v1.0, LCEL, Advanced RAG, ChromaDB, Memory, LangGraph Deep Dive, Security (LLM Guard), FastAPI, Docker & Cloud Render.
 
-2. 📹 **Khóa 2 (MCP Protocol & Multi-Framework Expansion)**: **Building Autonomous Agentic AI Systems for Beginners HandsOn**
-   * **Nhà xuất bản**: Packt Publishing (ISBN 9781807609818)
-   * **URL Khóa Học**: [Packt Publishing Course 2](https://www.packtpub.com/en-us/product/building-autonomous-agentic-ai-systems-for-beginners-handson-9781807609818)
-   * **Nội dung chủ lực**: Model Context Protocol (MCP Server, Docker MCP), Smolagents, CrewAI Multi-Agent, Low-code n8n, Cloud Agents (AWS & Google Cloud).
+### 🆓 Danh Sách Các Khóa Học Bổ Sung Miễn Phí (100% Free Supplemental Courses)
+1. **[Evaluating AI Agents]** (DeepLearning.AI & Arize AI) — [Link](https://learn.deeplearning.ai/courses/evaluating-ai-agents) (RAG & Agent Evaluation, LLM-as-a-Judge).
+2. **[Multi AI Agent Systems with crewAI]** (DeepLearning.AI & CrewAI) — [Link](https://learn.deeplearning.ai/courses/multi-ai-agent-systems-with-crewai) (Giảng dạy bởi João Moura - Sáng lập CrewAI).
+3. **[Fast & Efficient LLM Inference with vLLM]** (DeepLearning.AI & Red Hat) — [Course Link](https://www.deeplearning.ai/courses/fast-and-efficient-llm-inference-with-vllm) & [vLLM Docs](https://docs.vllm.ai/) (Tối ưu & Phục vụ mô hình open-source thông lượng cao bằng PagedAttention & Continuous Batching).
+4. **[Building Agentic RAG with LlamaIndex]** (DeepLearning.AI) — [Link](https://learn.deeplearning.ai/courses/building-agentic-rag-with-llamaindex) (LlamaParse & Parse PDF/Tables phức tạp).
+5. **[Vercel AI SDK & Next.js AI Course]** (Vercel Official & freeCodeCamp) — [freeCodeCamp Video](https://www.youtube.com/watch?v=WKIjkxxNH0c) ("Build a Support Agent with Vercel AI SDK") & [Developers Digest Tutorial](https://www.developersdigest.tech/tutorials/eWs50bhFvMY) ("Agents 101: How to Build and Deploy Anything with AI Agents").
+6. **[Open Source AI & Agents Course]** (Hugging Face Learn) — [Link](https://huggingface.co/learn) (Mô hình open-source & Ollama local serving).
+7. **[Postgres & pgvector for LangChain RAG Course]** (BugBytes) — [BugBytes Video Tutorial](https://youtu.be/GYwhDkwCdt8) & [Code & Article Guide](https://bugbytes.io/posts/retrieval-augmented-generation-with-langchain-and-pgvector/) (Hướng dẫn cài đặt `pgvector`, tích hợp LangChain, tạo vector embeddings và làm RAG pipeline với CSDL PostgreSQL).
+8. **[Model Context Protocol (MCP) Official Specs]** (Anthropic MCP) — [Link](https://modelcontextprotocol.io/) (Chuẩn giao thức kết nối Tool mới nhất).
 
 ---
 
 ## 🟢 Module 1: LangChain & Agentic Foundations
-* 📹 **Bài giảng Khóa 1**: [Agentic AI Systems (Chapter 1-2)](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814).
-* 📹 **Bài giảng Khóa 2**: [Autonomous Agentic AI Systems (Chapter 2-3)](https://www.packtpub.com/en-us/product/building-autonomous-agentic-ai-systems-for-beginners-handson-9781807609818).
-* 🦜 **[Docs Tra Cứu] LangChain Python Core Overview**:
-  * *URL*: [https://python.langchain.com/docs/introduction/](https://python.langchain.com/docs/introduction/)
-* 📖 **[Docs Tra Cứu] LangChain Core Concepts**:
-  * *URL*: [https://python.langchain.com/docs/concepts/](https://python.langchain.com/docs/concepts/)
+* 📹 **Bài giảng chính**: [Agentic AI Systems (Chapter 1-2)](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
+* 🦜 **[Docs Tra Cứu] LangChain Python Core Overview**: [https://python.langchain.com/docs/introduction/](https://python.langchain.com/docs/introduction/).
+* 📖 **[Docs Tra Cứu] LangChain Core Concepts**: [https://python.langchain.com/docs/concepts/](https://python.langchain.com/docs/concepts/).
 
 ---
 
-## 🟡 Module 2: Chain Patterns & Lightweight Agent Frameworks
-* 📹 **Bài giảng Khóa 1**: [Agentic AI Systems (Chapter 3 - Chain Patterns)](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814).
-* 📹 **Bài giảng Khóa 2**: [Autonomous Agentic AI Systems (Chapter 4 - Smolagents & n8n)](https://www.packtpub.com/en-us/product/building-autonomous-agentic-ai-systems-for-beginners-handson-9781807609818).
-* 🔗 **[Docs Tra Cứu] LangChain Expression Language (LCEL)**:
-  * *URL*: [https://python.langchain.com/docs/concepts/#lcel](https://python.langchain.com/docs/concepts/#lcel)
-* 📖 **[Docs Tra Cứu] Hugging Face Smolagents Documentation**:
-  * *URL*: [https://huggingface.co/docs/smolagents/](https://huggingface.co/docs/smolagents/)
+## 🟡 Module 2: Chain Patterns & Advanced LCEL
+* 📹 **Bài giảng chính**: [Agentic AI Systems (Chapter 3 - Chain Patterns)](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
+* 🔗 **[Docs Tra Cứu] LangChain Expression Language (LCEL)**: [https://python.langchain.com/docs/concepts/#lcel](https://python.langchain.com/docs/concepts/#lcel).
 
 ---
 
 ## 🔌 Module 3: Model Context Protocol (MCP) Deep Dive
-* 📹 **Bài giảng Khóa 2**: [Autonomous Agentic AI Systems (Chapter 5 - MCP)](https://www.packtpub.com/en-us/product/building-autonomous-agentic-ai-systems-for-beginners-handson-9781807609818).
-* 🔌 **[Docs Tra Cứu] Model Context Protocol Official Specification**:
-  * *URL*: [https://modelcontextprotocol.io/](https://modelcontextprotocol.io/)
-* 🐍 **[Docs Tra Cứu] FastMCP Python SDK GitHub**:
-  * *URL*: [https://github.com/jlowin/fastmcp](https://github.com/jlowin/fastmcp)
+* 🆓 **Tài liệu & Tutorials**: [Model Context Protocol Official Specification](https://modelcontextprotocol.io/).
+* 🐍 **[Docs Tra Cứu] FastMCP Python SDK GitHub**: [https://github.com/jlowin/fastmcp](https://github.com/jlowin/fastmcp).
 
 ---
 
-## 🟠 Module 4: Document Loading, Chunking & Embeddings
-* 📹 **Bài giảng Khóa 1**: [Agentic AI Systems (Chapter 4 - Chunking & ChromaDB)](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814).
-* 🟣 **[Docs Tra Cứu] ChromaDB Official Documentation**:
-  * *URL*: [https://docs.trychroma.com/](https://docs.trychroma.com/)
-* 📖 **[Docs Tra Cứu] Document Loaders & Splitters How-To**:
-  * *URL*: [https://python.langchain.com/docs/how_to/#document-loaders](https://python.langchain.com/docs/how_to/#document-loaders)
+## 🟠 Module 4: Data Ingestion, Complex Document AI & Vector Stores
+* 📹 **Bài giảng chính**: [Agentic AI Systems (Chapter 4 - Chunking & ChromaDB)](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
+* 🆓 **Khóa học miễn phí**: [Building Agentic RAG with LlamaIndex](https://learn.deeplearning.ai/courses/building-agentic-rag-with-llamaindex) (DeepLearning.AI & LlamaParse).
+* 🟣 **[Docs Tra Cứu] ChromaDB Official Documentation**: [https://docs.trychroma.com/](https://docs.trychroma.com/).
 
 ---
 
-## 🔴 Module 5: Advanced RAG and Memory Systems
-* 📹 **Bài giảng Khóa 1**: [Agentic AI Systems (Chapter 5 - Advanced RAG & Memory)](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814).
-* 📹 **Bài giảng Khóa 2**: [Autonomous Agentic AI Systems (Chapter 7 - Agentic RAG)](https://www.packtpub.com/en-us/product/building-autonomous-agentic-ai-systems-for-beginners-handson-9781807609818).
-* 📖 **[Docs Tra Cứu] LangChain RAG Tutorial**:
-  * *URL*: [https://python.langchain.com/docs/tutorials/rag/](https://python.langchain.com/docs/tutorials/rag/)
-* 🧠 **[Docs Tra Cứu] LangChain Retrieval & Memory Concepts**:
-  * *URL*: [https://python.langchain.com/docs/concepts/#retrieval](https://python.langchain.com/docs/concepts/#retrieval)
+## 🔴 Module 5: Advanced RAG, Production `pgvector` & Memory Systems
+* 📹 **Bài giảng chính**: [Agentic AI Systems (Chapter 5 - Advanced RAG & Memory)](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
+* 📹 **Khóa học BugBytes Video**: [LangChain and PGVector - Retrieval Augmented Generation](https://www.youtube.com/watch?v=3g6nZ1qWv-c).
+* 📖 **[Docs & Code Guide] BugBytes Article**: [Retrieval-Augmented Generation with LangChain and PGVector](https://bugbytes.io/posts/retrieval-augmented-generation-with-langchain-and-pgvector/).
+* 📖 **[Docs Tra Cứu] LangChain RAG Tutorial**: [https://python.langchain.com/docs/tutorials/rag/](https://python.langchain.com/docs/tutorials/rag/).
 
 ---
 
-## 🔵 Module 6: LangGraph - A Full Deep Dive
-* 📹 **Bài giảng Khóa 1**: [Agentic AI Systems (Chapter 6 - LangGraph Deep Dive)](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814).
-* 📘 **[Docs Tra Cứu] LangGraph Official Documentation**:
-  * *URL*: [https://langchain-ai.github.io/langgraph/](https://langchain-ai.github.io/langgraph/)
-* 🛠️ **[Docs Tra Cứu] LangGraph How-To Guides**:
-  * *URL*: [https://langchain-ai.github.io/langgraph/how-tos/](https://langchain-ai.github.io/langgraph/how-tos/)
+## ⚡ Module 6: Open-Source LLMs & High-Throughput Serving (vLLM & Ollama)
+* 🆓 **Khóa học miễn phí**: [Fast & Efficient LLM Inference with vLLM](https://www.deeplearning.ai/courses/fast-and-efficient-llm-inference-with-vllm) (DeepLearning.AI & Red Hat).
+* 📖 **[Docs Tra Cứu] vLLM Documentation & Quickstart**: [https://docs.vllm.ai/](https://docs.vllm.ai/).
+* 🆓 **Khóa học miễn phí**: [Open Source AI & Agents Course](https://huggingface.co/learn) (Hugging Face & Ollama).
 
 ---
 
-## 🟣 Module 7: Multi-Agent Architectures (CrewAI + LangGraph + Cloud Agents)
-* 📹 **Bài giảng Khóa 1**: [Agentic AI Systems (Chapter 7 - Multi-Agent LangGraph)](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814).
-* 📹 **Bài giảng Khóa 2**: [Autonomous Agentic AI Systems (Chapter 6 & 9 - CrewAI & Cloud Agents)](https://www.packtpub.com/en-us/product/building-autonomous-agentic-ai-systems-for-beginners-handson-9781807609818).
-* 🛶 **[Docs Tra Cứu] CrewAI Official Documentation**:
-  * *URL*: [https://docs.crewai.com/](https://docs.crewai.com/)
-* 🤝 **[Docs Tra Cứu] LangGraph Multi-Agent Architecture Concepts**:
-  * *URL*: [https://langchain-ai.github.io/langgraph/concepts/multi_agent/](https://langchain-ai.github.io/langgraph/concepts/multi_agent/)
+## 🔵 Module 7: LangGraph - A Full Deep Dive
+* 📹 **Bài giảng chính**: [Agentic AI Systems (Chapter 6 - LangGraph Deep Dive)](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
+* 📘 **[Docs Tra Cứu] LangGraph Official Documentation**: [https://langchain-ai.github.io/langgraph/](https://langchain-ai.github.io/langgraph/).
 
 ---
 
-## 🟤 Module 8: Production Deployment, Security & LLMOps
-* 📹 **Bài giảng Khóa 1**: [Agentic AI Systems (Chapter 8 - LangSmith & Security)](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814).
-* 📹 **Bài giảng Khóa 2**: [Autonomous Agentic AI Systems (Chapter 8 - Reflection & Safety)](https://www.packtpub.com/en-us/product/building-autonomous-agentic-ai-systems-for-beginners-handson-9781807609818).
-* 🔍 **[Docs Tra Cứu] LangSmith Observability & Tracing**:
-  * *URL*: [https://docs.smith.langchain.com/](https://docs.smith.langchain.com/)
-* ⚡ **[Docs Tra Cứu] FastAPI Official Tutorial**:
-  * *URL*: [https://fastapi.tiangolo.com/tutorial/](https://fastapi.tiangolo.com/tutorial/)
-* ☁️ **[Docs Tra Cứu] Render Cloud Deployment Guides**:
-  * *URL*: [https://render.com/docs/](https://render.com/docs/)
+## 🟣 Module 8: Multi-Agent Architectures (CrewAI + LangGraph Multi-Agent)
+* 📹 **Bài giảng chính**: [Agentic AI Systems (Chapter 7 - Multi-Agent LangGraph)](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
+* 🆓 **Khóa học miễn phí**: [Multi AI Agent Systems with crewAI](https://learn.deeplearning.ai/courses/multi-ai-agent-systems-with-crewai) (DeepLearning.AI & CrewAI).
+* 🛶 **[Docs Tra Cứu] CrewAI Official Documentation**: [https://docs.crewai.com/](https://docs.crewai.com/).
+
+---
+
+## 🌐 Module 9: Full-Stack Web AI Interface (Next.js & Vercel AI SDK)
+* 📹 **Khóa học freeCodeCamp Video**: [freeCodeCamp: Build a Support Agent with Vercel AI SDK](https://www.youtube.com/watch?v=WKIjkxxNH0c).
+* 📹 **Khóa học Developers Digest Video/Tutorial**: [Developers Digest: Agents 101 - Build & Deploy Anything with AI Agents](https://www.developersdigest.tech/tutorials/eWs50bhFvMY).
+* 📖 **[Docs Tra Cứu] Vercel AI SDK Documentation**: [https://sdk.vercel.ai/docs](https://sdk.vercel.ai/docs).
+
+---
+
+## 🟤 Module 10: Production Deployment, LLMOps, Security & Evaluation
+* 📹 **Bài giảng chính**: [Agentic AI Systems (Chapter 8 - LangSmith & Security)](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
+* 🆓 **Khóa học miễn phí**: [Evaluating AI Agents](https://learn.deeplearning.ai/courses/evaluating-ai-agents) (DeepLearning.AI & Arize AI).
+* 🔍 **[Docs Tra Cứu] LangSmith Observability & Tracing**: [https://docs.smith.langchain.com/](https://docs.smith.langchain.com/).
+* ⚡ **[Docs Tra Cứu] FastAPI Official Tutorial**: [https://fastapi.tiangolo.com/tutorial/](https://fastapi.tiangolo.com/tutorial/).
+* ☁️ **[Docs Tra Cứu] Render Cloud Deployment Guides**: [https://render.com/docs/](https://render.com/docs/).
