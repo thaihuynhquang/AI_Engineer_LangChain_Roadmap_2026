@@ -197,17 +197,3 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 * **3. Nhiệm vụ Thực hành**:
   - Dựng giao diện Chatbot UI chuyên nghiệp với luồng Streaming Response thời gian thực kết nối với Agent Backend.
   - 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `Next.js 15 App Router`, `Vercel AI SDK (useChat/useCompletion)`, `HTTP Streaming (SSE)`, `Generative UI & Tool Calling UI`, `FastAPI Integration`, `CORS`.
-
----
-
-## ⚡ Quy Trình Học & Gõ Code Hàng Ngày (Daily Execution Loop)
-
-Mỗi ngày dành ra **1.5 - 2 tiếng** thực hành theo chu trình 3 bước:
-
-```
-┌────────────────────────────────┐    ┌────────────────────────────────┐    ┌────────────────────────────────┐
-│  BƯỚC 1: NẠP LÝ THUYẾT (30m)   │ ──►│ BƯỚC 2: XEM CODE PATTERN (15m) │ ──►│  BƯỚC 3: GÕ CODE & TEST (75m)  │
-│  Xem video bài giảng trong     │    │  Xem hướng dẫn code hands-on   │    │  Thực hành gõ code, giải bài   │
-│  khóa học local & khóa free.   │    │  và mẫu thiết kế chuẩn.        │    │  tập & hoàn thiện Project.     │
-└────────────────────────────────┘    └────────────────────────────────┘    └────────────────────────────────┘
-```
