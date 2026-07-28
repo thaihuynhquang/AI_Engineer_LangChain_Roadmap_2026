@@ -19,9 +19,16 @@ Tập hợp đầy đủ tài nguyên bài giảng video và tài liệu tra c�
 3. **[Fast & Efficient LLM Inference with vLLM]** (DeepLearning.AI & Red Hat) — [Course Link](https://www.deeplearning.ai/courses/fast-and-efficient-llm-inference-with-vllm) & [vLLM Docs](https://docs.vllm.ai/) (Tối ưu & Phục vụ mô hình open-source thông lượng cao bằng PagedAttention & Continuous Batching).
 4. **[Building Agentic RAG with LlamaIndex]** (DeepLearning.AI) — [Link](https://learn.deeplearning.ai/courses/building-agentic-rag-with-llamaindex) (LlamaParse & Parse PDF/Tables phức tạp).
 5. **[Vercel AI SDK & Next.js AI Course]** (Vercel Official & freeCodeCamp) — [freeCodeCamp Video](https://www.youtube.com/watch?v=WKIjkxxNH0c) ("Build a Support Agent with Vercel AI SDK") & [Developers Digest Tutorial](https://www.developersdigest.tech/tutorials/eWs50bhFvMY) ("Agents 101: How to Build and Deploy Anything with AI Agents").
-6. **[Open Source AI & Agents Course]** (Hugging Face Learn) — [Link](https://huggingface.co/learn) (Mô hình open-source & Ollama local serving).
+6. **[AI Agents Course]** (Hugging Face Learn) — [Course Intro](https://huggingface.co/learn/agents-course/unit0/introduction):
+   * 🤖 **[smolagents Framework (Unit 2)]**: [https://huggingface.co/learn/agents-course/unit2/smolagents/introduction](https://huggingface.co/learn/agents-course/unit2/smolagents/introduction)
+   * 🎯 **[Fine-tuning LLM for Function Calling (Bonus Unit 1)]**: [https://huggingface.co/learn/agents-course/bonus-unit1/introduction](https://huggingface.co/learn/agents-course/bonus-unit1/introduction)
+   * 📊 **[Agent Observability & Evaluation (Bonus Unit 2)]**: [https://huggingface.co/learn/agents-course/bonus-unit2/introduction](https://huggingface.co/learn/agents-course/bonus-unit2/introduction)
 7. **[Postgres & pgvector for LangChain RAG Course]** (BugBytes) — [BugBytes Video Tutorial](https://youtu.be/GYwhDkwCdt8) & [Code & Article Guide](https://bugbytes.io/posts/retrieval-augmented-generation-with-langchain-and-pgvector/) (Hướng dẫn cài đặt `pgvector`, tích hợp LangChain, tạo vector embeddings và làm RAG pipeline với CSDL PostgreSQL).
 8. **[Model Context Protocol (MCP) Official Specs]** (Anthropic MCP) — [Link](https://modelcontextprotocol.io/) (Chuẩn giao thức kết nối Tool mới nhất).
+9. **[The Context Course]** (Hugging Face Learn) — [Course Intro](https://huggingface.co/learn/context-course/unit0/introduction):
+   * 🔌 **[Unit 2: Model Context Protocol (MCP)]**: [https://huggingface.co/learn/context-course/unit2/introduction](https://huggingface.co/learn/context-course/unit2/introduction)
+   * 🧩 **[Unit 4: Sub-agents Architecture]**: [https://huggingface.co/learn/context-course/unit4/introduction](https://huggingface.co/learn/context-course/unit4/introduction)
+   * 🪝 **[Unit 5: Hooks & Agent Lifecycle Automation]**: [https://huggingface.co/learn/context-course/unit5/introduction](https://huggingface.co/learn/context-course/unit5/introduction)
 
 ---
 
@@ -40,6 +47,7 @@ Tập hợp đầy đủ tài nguyên bài giảng video và tài liệu tra c�
 
 ## 🔌 Module 3: Model Context Protocol (MCP) Deep Dive
 * 🆓 **Tài liệu & Tutorials**: [Model Context Protocol Official Specification](https://modelcontextprotocol.io/).
+* 🆓 **Khóa học bổ sung**: [The Context Course (Unit 2: MCP)](https://huggingface.co/learn/context-course/unit2/introduction) (Hugging Face Learn).
 * 🐍 **[Docs Tra Cứu] FastMCP Python SDK GitHub**: [https://github.com/jlowin/fastmcp](https://github.com/jlowin/fastmcp).
 
 ---
@@ -62,7 +70,7 @@ Tập hợp đầy đủ tài nguyên bài giảng video và tài liệu tra c�
 ## ⚡ Module 6: Open-Source LLMs & High-Throughput Serving (vLLM & Ollama)
 * 🆓 **Khóa học miễn phí**: [Fast & Efficient LLM Inference with vLLM](https://www.deeplearning.ai/courses/fast-and-efficient-llm-inference-with-vllm) (DeepLearning.AI & Red Hat).
 * 📖 **[Docs Tra Cứu] vLLM Documentation & Quickstart**: [https://docs.vllm.ai/](https://docs.vllm.ai/).
-* 🆓 **Khóa học miễn phí**: [Open Source AI & Agents Course](https://huggingface.co/learn) (Hugging Face & Ollama).
+* 🆓 **Khóa học bổ sung**: Hugging Face — [smolagents Framework (Unit 2)](https://huggingface.co/learn/agents-course/unit2/smolagents/introduction) & [Fine-tuning for Function Calling (Bonus Unit 1)](https://huggingface.co/learn/agents-course/bonus-unit1/introduction).
 
 ---
 
@@ -75,6 +83,7 @@ Tập hợp đầy đủ tài nguyên bài giảng video và tài liệu tra c�
 ## 🟣 Module 8: Multi-Agent Architectures (CrewAI + LangGraph Multi-Agent)
 * 📹 **Bài giảng chính**: [Agentic AI Systems (Chapter 7 - Multi-Agent LangGraph)](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
 * 🆓 **Khóa học miễn phí**: [Multi AI Agent Systems with crewAI](https://learn.deeplearning.ai/courses/multi-ai-agent-systems-with-crewai) (DeepLearning.AI & CrewAI).
+* 🆓 **Khóa học bổ sung**: [The Context Course (Unit 4: Sub-agents)](https://huggingface.co/learn/context-course/unit4/introduction) (Hugging Face Learn).
 * 🛶 **[Docs Tra Cứu] CrewAI Official Documentation**: [https://docs.crewai.com/](https://docs.crewai.com/).
 
 ---
@@ -89,6 +98,7 @@ Tập hợp đầy đủ tài nguyên bài giảng video và tài liệu tra c�
 ## 🟤 Module 10: Production Deployment, LLMOps, Security & Evaluation
 * 📹 **Bài giảng chính**: [Agentic AI Systems (Chapter 8 - LangSmith & Security)](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
 * 🆓 **Khóa học miễn phí**: [Evaluating AI Agents](https://learn.deeplearning.ai/courses/evaluating-ai-agents) (DeepLearning.AI & Arize AI).
+* 🆓 **Khóa học bổ sung**: Hugging Face — [The Context Course (Unit 5: Hooks)](https://huggingface.co/learn/context-course/unit5/introduction) & [AI Agents Course (Bonus Unit 2: Agent Observability)](https://huggingface.co/learn/agents-course/bonus-unit2/introduction).
 * 🔍 **[Docs Tra Cứu] LangSmith Observability & Tracing**: [https://docs.smith.langchain.com/](https://docs.smith.langchain.com/).
 * ⚡ **[Docs Tra Cứu] FastAPI Official Tutorial**: [https://fastapi.tiangolo.com/tutorial/](https://fastapi.tiangolo.com/tutorial/).
 * ☁️ **[Docs Tra Cứu] Render Cloud Deployment Guides**: [https://render.com/docs/](https://render.com/docs/).

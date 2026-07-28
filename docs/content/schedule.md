@@ -65,7 +65,7 @@
 ---
 
 ### 🔌 MODULE 3 – Model Context Protocol (MCP) Deep Dive
-- **Nguồn bài giảng**: [Model Context Protocol Official Docs & Tutorials](https://modelcontextprotocol.io/) (100% Free)
+- **Nguồn bài giảng**: [Model Context Protocol Official Docs](https://modelcontextprotocol.io/) + [Hugging Face The Context Course (Unit 2: MCP)](https://huggingface.co/learn/context-course/unit2/introduction) (Free)
 - **Nội dung thực hành**:
   - *Ngày 1*: Nạp kiến trúc Model Context Protocol (MCP Client/Server).
   - *Ngày 2*: Viết **FastMCP Server** bằng Python cung cấp Tool custom.
@@ -94,7 +94,7 @@
 ---
 
 ### ⚡ MODULE 6 – Open-Source LLMs & High-Throughput Serving (vLLM & Ollama)
-- **Nguồn bài giảng**: [DeepLearning.AI vLLM Course](https://www.deeplearning.ai/courses/fast-and-efficient-llm-inference-with-vllm) + [Hugging Face Open Source Course](https://huggingface.co/learn) (Free)
+- **Nguồn bài giảng**: [DeepLearning.AI vLLM Course](https://www.deeplearning.ai/courses/fast-and-efficient-llm-inference-with-vllm) + Hugging Face [smolagents (Unit 2)](https://huggingface.co/learn/agents-course/unit2/smolagents/introduction) & [Fine-tuning (Bonus Unit 1)](https://huggingface.co/learn/agents-course/bonus-unit1/introduction) (Free)
 - **Nội dung thực hành**:
   - *Ngày 1*: Cài đặt và thực hành chạy mô hình open-source (Llama 3.3, DeepSeek) với **Ollama** dưới local.
   - *Ngày 2*: Triển khai **vLLM Inference Server** (PagedAttention, Continuous Batching) và kết nối với LangChain client.
@@ -112,7 +112,7 @@
 ---
 
 ### 🟣 MODULE 8 – Multi-Agent Architectures (CrewAI + LangGraph) & Project 3
-- **Nguồn bài giảng**: [Khóa Packt Chap 7](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html) + [DeepLearning.AI CrewAI Course](https://learn.deeplearning.ai/courses/multi-ai-agent-systems-with-crewai) (Free)
+- **Nguồn bài giảng**: [Khóa Packt Chap 7](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html) + [DeepLearning.AI CrewAI Course](https://learn.deeplearning.ai/courses/multi-ai-agent-systems-with-crewai) + [Hugging Face The Context Course (Unit 4: Sub-agents)](https://huggingface.co/learn/context-course/unit4/introduction) (Free)
 - **Nội dung thực hành**:
   - *Ngày 1*: Thực hành xây dựng Multi-Agent với **CrewAI** (Agents, Tasks, Crew, Hierarchical process).
   - *Ngày 2*: Đa Agent với LangGraph (Supervisor Agent, Handoffs, Map-Reduce, Message Passing) (*Packt Chap 7*).
@@ -130,7 +130,7 @@
 ---
 
 ### 🟤 MODULE 10 – Production Deployment, LLMOps, Security & Project 4 (Final Project)
-- **Nguồn bài giảng**: [Khóa Packt Chap 8](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html) + [DeepLearning.AI Evaluating AI Agents](https://learn.deeplearning.ai/courses/evaluating-ai-agents) (Free)
+- **Nguồn bài giảng**: [Khóa Packt Chap 8](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html) + [DeepLearning.AI Evaluating AI Agents](https://learn.deeplearning.ai/courses/evaluating-ai-agents) + Hugging Face [Context Course (Unit 5: Hooks)](https://huggingface.co/learn/context-course/unit5/introduction) & [Agents Course (Bonus Unit 2)](https://huggingface.co/learn/agents-course/bonus-unit2/introduction) (Free)
 - **Nội dung thực hành**:
   - *Ngày 1*: LangSmith Tracing & Security Layer (PII Detection, Prompt Injection Defense, LLM Guard).
   - *Ngày 2*: Đánh giá RAG & Agent với **Arize AI / Ragas** (Faithfulness, Answer Relevance, Context Recall).

@@ -67,6 +67,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 * **2. Tài nguyên Tra cứu & Bài giảng**:
   * 🆓 **Khóa học / Documentation miễn phí**: [Model Context Protocol Official Specification & Tutorials](https://modelcontextprotocol.io/).
   * 🐍 **FastMCP Python SDK**: [https://github.com/jlowin/fastmcp](https://github.com/jlowin/fastmcp).
+  * 🆓 **Khóa học bổ sung miễn phí**: Hugging Face — [The Context Course (Unit 2: MCP)](https://huggingface.co/learn/context-course/unit2/introduction) (Thực hành kết nối công cụ qua Model Context Protocol).
 * **3. Nhiệm vụ Thực hành**:
   - Viết 1 FastMCP Server cung cấp Tool truy vấn dữ liệu hoặc hệ thống.
   - Kết nối Agent gọi MCP Tool qua giao thức MCP.
@@ -115,7 +116,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
   * Tích hợp mô hình mã nguồn mở vào chuỗi LangChain/LangGraph.
 * **2. Tài nguyên Tra cứu & Bài giảng**:
   * 🆓 **Khóa học bổ sung miễn phí**: DeepLearning.AI & Red Hat — [Fast & Efficient LLM Inference with vLLM](https://www.deeplearning.ai/courses/fast-and-efficient-llm-inference-with-vllm) & [vLLM Docs](https://docs.vllm.ai/).
-  * 🆓 **Khóa học bổ sung miễn phí**: Hugging Face — [Open Source AI & Agents Course](https://huggingface.co/learn).
+  * 🆓 **Khóa học bổ sung miễn phí**: Hugging Face — [AI Agents Course: smolagents](https://huggingface.co/learn/agents-course/unit2/smolagents/introduction) (Làm chủ framework smolagents) & [Bonus Unit 1: Fine-tuning for Function Calling](https://huggingface.co/learn/agents-course/bonus-unit1/introduction).
 * **3. Nhiệm vụ Thực hành**:
   - Cài đặt Ollama chạy mô hình DeepSeek/Llama local.
   - Cấu hình vLLM Server và tạo LangChain LLM Client kết nối vLLM endpoint.
@@ -149,6 +150,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 * **2. Tài nguyên Tra cứu & Bài giảng**:
   * 📹 **Khóa học chính**: [Packt Chapter 7](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
   * 🆓 **Khóa học bổ sung miễn phí**: DeepLearning.AI — [Multi AI Agent Systems with crewAI](https://learn.deeplearning.ai/courses/multi-ai-agent-systems-with-crewai) (giảng dạy trực tiếp bởi João Moura - Sáng lập CrewAI).
+  * 🆓 **Khóa học bổ sung miễn phí**: Hugging Face — [The Context Course (Unit 4: Sub-agents)](https://huggingface.co/learn/context-course/unit4/introduction) (Thiết kế và điều phối sub-agents chuyên biệt).
 * **3. Nhiệm vụ Thực hành & Dự án**:
   - 🛠️ **Project 3: Multi-Agent Research System** — Xây dựng hệ thống nghiên cứu đa agent từ con số 0 với State Schema custom và Send API.
 
@@ -182,6 +184,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 * **2. Tài nguyên Tra cứu & Bài giảng**:
   * 📹 **Khóa học chính**: [Packt Chapter 8](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
   * 🆓 **Khóa học bổ sung miễn phí**: DeepLearning.AI — [Evaluating AI Agents](https://learn.deeplearning.ai/courses/evaluating-ai-agents) (với Arize AI).
+  * 🆓 **Khóa học bổ sung miễn phí**: Hugging Face — [The Context Course (Unit 5: Hooks)](https://huggingface.co/learn/context-course/unit5/introduction) (Tự động hóa & giám sát vòng đời Agent) & [AI Agents Course (Bonus Unit 2: Agent Observability)](https://huggingface.co/learn/agents-course/bonus-unit2/introduction).
 * **3. Nhiệm vụ Thực hành & Dự án**:
   - 🛠️ **Project 4: Production-Ready Full-Stack AI System (Final Project)** — Đóng gói LangGraph Agent + FastAPI + Security Layer + Next.js UI + Dockerization + Triển khai thành công lên Cloud **Render**.
 
