@@ -2,7 +2,7 @@
 ## Khóa Packt LangChain/LangGraph + Các Khóa Học Bổ Sung Miễn Phí (100% Free)
 
 Hướng dẫn này cung cấp khung lộ trình học tập **Master Curriculum 10 Module** được tích hợp hoàn chỉnh giữa:
-1. 📹 **Khóa Packt (Core Engine & Production)**: [Agentic AI Systems: Build & Deploy with LangChain/LangGraph](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html) (Packt Publishing).
+1. 📹 **Khóa Packt (Core Engine & Production)**: [Agentic AI Systems: Build & Deploy with LangChain/LangGraph](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) (Packt Publishing).
 2. 🆓 **Các Khóa Học Miễn Phí Bổ Sung (Free Supplemental Courses)** từ **DeepLearning.AI**, **Vercel**, **freeCodeCamp**, **Hugging Face**, **Neon Postgres**, và **MCP Official Docs** để bù đắp các khoảng trống công nghệ (Web UI, `pgvector`, vLLM, LlamaParse, RAG Evals).
 
 Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuyết bài giảng** $\rightarrow$ **Hands-on Demos & Bài tập** $\rightarrow$ **4 Dự án thực tế lớn (Projects)**.
@@ -13,14 +13,14 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 
 ```
 [Module 1: LangChain Foundations] ──► [Module 2: Chain Patterns & LCEL] ──► [Module 3: Model Context Protocol (MCP)]
-                                                                                                  │
-[Module 6: Open-Source Models & vLLM] ◄── [Module 5: Advanced RAG & pgvector] ◄── [Module 4: Data Ingestion & LlamaParse]
+                                                                                                   │
+[Module 6: LangGraph Deep Dive]   ◄── [Module 5: Advanced RAG & pgvector] ◄── [Module 4: Data Ingestion & LlamaParse]
          │
          ▼
-[Module 7: LangGraph Deep Dive]   ──► [Module 8: Multi-Agent Systems (CrewAI)] ──► [Module 9: Full-Stack Web AI (Next.js)]
-                                                                                                  │
-                                                                                                  ▼
-                                                                     [Module 10: Production & LLMOps]
+[Module 7: Multi-Agent Systems (CrewAI)] ──► [Module 8: Production & LLMOps (Packt Chap 8)] ──► [Module 9: Open-Source LLMs (vLLM)]
+                                                                                                                 │
+                                                                                                                 ▼
+                                                                                   [Module 10: Full-Stack Web AI (Next.js)]
 ```
 
 ---
@@ -35,7 +35,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
   * Kiến trúc LCEL (LangChain Expression Language) & Runnable Chains: Batch execution, Realtime streaming, Schema inspection, Pipe operator (`|`).
   * Cấu hình Đa nhà cung cấp LLM (Multi Providers), Prompt Templates, Structured Outputs & Output Parsers.
 * **2. Tài nguyên Tra cứu & Bài giảng**:
-  * 📹 **Khóa học chính**: [Packt Overview](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html) (Chapter 1-2).
+  * 📹 **Khóa học chính**: [Packt Overview](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) (Chapter 1-2).
   * 📖 **LangChain Overview**: [https://python.langchain.com/docs/introduction/](https://python.langchain.com/docs/introduction/).
 * **3. Nhiệm vụ Thực hành & Dự án**:
   - Bài tập tự giải: *Build Your First Chain* & *Create a Multi-model Setup*.
@@ -51,7 +51,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
   * Basic Chains & Parallel Chains (Chạy song song nhiều nhánh LLM) (*Khóa Packt - Chapter 3*).
   * `RunnablePassthrough`, Chain Branching & Kỹ thuật Debugging chuỗi LangChain.
 * **2. Tài nguyên Tra cứu & Bài giảng**:
-  * 📹 **Khóa học chính**: [Packt Chapter 3](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
+  * 📹 **Khóa học chính**: [Packt Chapter 3](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814).
   * 📖 **LCEL Concepts**: [https://python.langchain.com/docs/concepts/#lcel](https://python.langchain.com/docs/concepts/#lcel).
 * **3. Nhiệm vụ Thực hành**:
   - Viết chuỗi xử lý đa nhánh kết hợp `RunnablePassthrough` và `RunnableParallel`.
@@ -86,7 +86,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
   * Text Splitting Deep Dive: `RecursiveCharacterTextSplitter`, Chunk Overlap, `MarkdownHeaderSplitter`, `CodeSplitter`.
   * Embeddings & Vector Store: OpenAI Embedding, Free Embeddings, ChromaDB (Similarity Search with Scores, Metadata Filtering, Persistence).
 * **2. Tài nguyên Tra cứu & Bài giảng**:
-  * 📹 **Khóa học chính**: [Packt Chapter 4](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
+  * 📹 **Khóa học chính**: [Packt Chapter 4](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814).
   * 🆓 **Khóa học bổ sung miễn phí**: DeepLearning.AI — [Building Agentic RAG with LlamaIndex](https://learn.deeplearning.ai/courses/building-agentic-rag-with-llamaindex) (Dạy LlamaParse & Complex Document Parsing).
 * **3. Nhiệm vụ Thực hành**:
   - Bài tập tự giải: *Vector Stores Exercise & Solution*.
@@ -104,7 +104,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
   * **Production Vector DB (`pgvector`)**: Cấu hình PostgreSQL với extension `pgvector`, HNSW/IVFFlat Indexing, kết hợp SQL & Vector search.
   * Memory Patterns: Conversation Memory, Multiple Sessions Memory, Message Trimming, Windowed Memory, Summary Memory, Persistent Memory.
 * **2. Tài nguyên Tra cứu & Bài giảng**:
-  * 📹 **Khóa học chính**: [Packt Chapter 5](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
+  * 📹 **Khóa học chính**: [Packt Chapter 5](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814).
   * 📹 **Khóa học bổ sung miễn phí**: BugBytes — [LangChain and PGVector - Retrieval Augmented Generation](https://youtu.be/GYwhDkwCdt8) & [Tài liệu hướng dẫn kèm Code](https://bugbytes.io/posts/retrieval-augmented-generation-with-langchain-and-pgvector/).
 * **3. Nhiệm vụ Thực hành & Dự án**:
   - 🛠️ **Project 2: AI Research Assistant** — Xây dựng trợ lý nghiên cứu AI hoàn chỉnh với Document Indexing, Memory đa phiên, Multi-Query Retrieval và `pgvector` backend.
@@ -112,7 +112,61 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 
 ---
 
-### ⚡ Module 6: Open-Source LLMs & High-Throughput Serving (vLLM & Ollama)
+### 🔵 Module 6: LangGraph - A Full Deep Dive
+> **Mục tiêu**: Chuyển đổi từ chuỗi tuyến tính sang đồ thị luồng điều khiển (StateGraph), quản lý trạng thái, vòng lặp tự sửa lỗi và can thiệp từ con người.
+
+* **1. Nội dung Kiến thức Cần nạp**:
+  * Trụ cột LangGraph: `StateGraph`, Reducers, Accumulating State, Message State (*Khóa Packt - Chapter 6*).
+  * Multi-Node Pipelines & Routing: Edges, Conditional Edges, Literal Routing, Multipath Routing.
+  * Vòng lặp & Tự sửa lỗi (Cycles & Loops): Self-Correcting Code Writer, Iterative Research Agent.
+  * Human in the Loop & Persistence: Interrupt for Approval, Checkpointing Deep Dive, Checkpoint Internals.
+* **2. Tài nguyên Tra cứu & Bài giảng**:
+  * 📹 **Khóa học chính**: [Packt Chapter 6](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814).
+  * 📖 **LangGraph Official Docs**: [https://langchain-ai.github.io/langgraph/](https://langchain-ai.github.io/langgraph/).
+* **3. Nhiệm vụ Thực hành**:
+  - Bài tập tự giải: *Build Your First Node*.
+  - Xây dựng luồng Agent tự sửa mã nguồn (Self-Correcting Code Writer) với tính năng Human Interrupt.
+  - 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `StateGraph`, `State Schema`, `Reducers`, `Nodes & Edges`, `Conditional Edges`, `Cycles & Self-Correcting Pattern`, `Human-in-the-Loop`, `Checkpointing`.
+
+---
+
+### 🟣 Module 7: Multi-Agent Architectures (CrewAI + LangGraph Multi-Agent)
+> **Mục tiêu**: Thiết kế hệ thống Đa Agent linh hoạt — so sánh giữa CrewAI (phân vai tác nhiệm nhanh) và LangGraph Multi-Agent (đồ thị phân cấp chi tiết).
+
+* **1. Nội dung Kiến thức Cần nạp**:
+  * Đa Agent với **CrewAI**: Agents, Tasks, Crew, Sequential & Hierarchical Processes.
+  * Đa Agent với **LangGraph**: Supervisor Agent, Agent Handoffs, Map-Reduce Strategy, Message Passing, Shared Field State, Blackboard Refinement (*Khóa Packt - Chapter 7*).
+  * Kiến trúc phân cấp (Hierarchical Architecture) & Tracing.
+* **2. Tài nguyên Tra cứu & Bài giảng**:
+  * 📹 **Khóa học chính**: [Packt Chapter 7](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814).
+  * 🆓 **Khóa học bổ sung miễn phí**: DeepLearning.AI — [Multi AI Agent Systems with crewAI](https://learn.deeplearning.ai/courses/multi-ai-agent-systems-with-crewai) (giảng dạy trực tiếp bởi João Moura - Sáng lập CrewAI).
+  * 🆓 **Khóa học bổ sung miễn phí**: Hugging Face — [The Context Course (Unit 4: Sub-agents)](https://huggingface.co/learn/context-course/unit4/introduction) (Thiết kế và điều phối sub-agents chuyên biệt).
+* **3. Nhiệm vụ Thực hành & Dự án**:
+  - 🛠️ **Project 3: Multi-Agent Research System** — Xây dựng hệ thống nghiên cứu đa agent từ con số 0 với State Schema custom và Send API.
+  - 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `CrewAI Framework`, `LangGraph Multi-Agent`, `Supervisor Agent`, `Agent Handoffs`, `Map-Reduce`, `Message Passing & Shared State`, `Blackboard Pattern`.
+
+---
+
+### 🟤 Module 8: Production Deployment, LLMOps, Security & Evaluation
+> **Mục tiêu**: Bảo mật hệ thống, đánh giá chất lượng RAG/Agent (Ragas/Arize), giám sát với LangSmith, tối ưu chi phí và triển khai API Production (FastAPI + Docker + Render).
+
+* **1. Nội dung Kiến thức Cần nạp**:
+  * Observability: LangSmith Setup & Testing Traces (*Khóa Packt - Chapter 8*).
+  * Security & Defense in Depth: PII Detection, Prompt Injection Attack Defense, LLM Guard (Smart Bouncer), Output Validator.
+  * **RAG & Agent Evaluation**: Sử dụng **Arize AI / Ragas / TruLens** đánh giá Faithfulness, Answer Relevance, Context Recall và LLM-as-a-Judge.
+  * Resilience & Error Handling: Circuit Breaker, Fallback Chain, Graph-Based Retry, Model Router, Semantic Caching.
+  * Triển khai API Production: Đóng gói FastAPI + LangGraph Agent với Docker và deploy lên Cloud (Render).
+* **2. Tài nguyên Tra cứu & Bài giảng**:
+  * 📹 **Khóa học chính**: [Packt Chapter 8](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814).
+  * 🆓 **Khóa học bổ sung miễn phí**: DeepLearning.AI — [Evaluating AI Agents](https://learn.deeplearning.ai/courses/evaluating-ai-agents) (với Arize AI).
+  * 🆓 **Khóa học bổ sung miễn phí**: Hugging Face — [The Context Course (Unit 5: Hooks)](https://huggingface.co/learn/context-course/unit5/introduction) (Tự động hóa & giám sát vòng đời Agent) & [AI Agents Course (Bonus Unit 2: Agent Observability)](https://huggingface.co/learn/agents-course/bonus-unit2/introduction).
+* **3. Nhiệm vụ Thực hành & Dự án**:
+  - 🛠️ **Project 4: Production-Ready Full-Stack AI System (Final Project)** — Đóng gói LangGraph Agent + FastAPI + Security Layer + Dockerization + Triển khai thành công lên Cloud **Render**.
+  - 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `LangSmith Tracing`, `Prompt Injection Defense`, `PII Detection`, `LLM Guardrails`, `RAG/Agent Evaluation (Ragas/Arize)`, `LLM-as-a-Judge`, `Docker & Render Deployment`.
+
+---
+
+### ⚡ Module 9: Open-Source LLMs & High-Throughput Serving (vLLM & Ollama)
 > **Mục tiêu**: Làm chủ các mô hình AI mã nguồn mở (Llama 3.3, DeepSeek-R1), tự phục vụ local với Ollama và triển khai high-throughput server với vLLM.
 
 * **1. Nội dung Kiến thức Cần nạp**:
@@ -129,42 +183,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 
 ---
 
-### 🔵 Module 7: LangGraph - A Full Deep Dive
-> **Mục tiêu**: Chuyển đổi từ chuỗi tuyến tính sang đồ thị luồng điều khiển (StateGraph), quản lý trạng thái, vòng lặp tự sửa lỗi và can thiệp từ con người.
-
-* **1. Nội dung Kiến thức Cần nạp**:
-  * Trụ cột LangGraph: `StateGraph`, Reducers, Accumulating State, Message State (*Khóa Packt - Chapter 6*).
-  * Multi-Node Pipelines & Routing: Edges, Conditional Edges, Literal Routing, Multipath Routing.
-  * Vòng lặp & Tự sửa lỗi (Cycles & Loops): Self-Correcting Code Writer, Iterative Research Agent.
-  * Human in the Loop & Persistence: Interrupt for Approval, Checkpointing Deep Dive, Checkpoint Internals.
-* **2. Tài nguyên Tra cứu & Bài giảng**:
-  * 📹 **Khóa học chính**: [Packt Chapter 6](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
-  * 📖 **LangGraph Official Docs**: [https://langchain-ai.github.io/langgraph/](https://langchain-ai.github.io/langgraph/).
-* **3. Nhiệm vụ Thực hành**:
-  - Bài tập tự giải: *Build Your First Node*.
-  - Xây dựng luồng Agent tự sửa mã nguồn (Self-Correcting Code Writer) với tính năng Human Interrupt.
-  - 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `StateGraph`, `State Schema`, `Reducers`, `Nodes & Edges`, `Conditional Edges`, `Cycles & Self-Correcting Pattern`, `Human-in-the-Loop`, `Checkpointing`.
-
----
-
-### 🟣 Module 8: Multi-Agent Architectures (CrewAI + LangGraph Multi-Agent)
-> **Mục tiêu**: Thiết kế hệ thống Đa Agent linh hoạt — so sánh giữa CrewAI (phân vai tác nhiệm nhanh) và LangGraph Multi-Agent (đồ thị phân cấp chi tiết).
-
-* **1. Nội dung Kiến thức Cần nạp**:
-  * Đa Agent với **CrewAI**: Agents, Tasks, Crew, Sequential & Hierarchical Processes.
-  * Đa Agent với **LangGraph**: Supervisor Agent, Agent Handoffs, Map-Reduce Strategy, Message Passing, Shared Field State, Blackboard Refinement (*Khóa Packt - Chapter 7*).
-  * Kiến trúc phân cấp (Hierarchical Architecture) & Tracing.
-* **2. Tài nguyên Tra cứu & Bài giảng**:
-  * 📹 **Khóa học chính**: [Packt Chapter 7](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
-  * 🆓 **Khóa học bổ sung miễn phí**: DeepLearning.AI — [Multi AI Agent Systems with crewAI](https://learn.deeplearning.ai/courses/multi-ai-agent-systems-with-crewai) (giảng dạy trực tiếp bởi João Moura - Sáng lập CrewAI).
-  * 🆓 **Khóa học bổ sung miễn phí**: Hugging Face — [The Context Course (Unit 4: Sub-agents)](https://huggingface.co/learn/context-course/unit4/introduction) (Thiết kế và điều phối sub-agents chuyên biệt).
-* **3. Nhiệm vụ Thực hành & Dự án**:
-  - 🛠️ **Project 3: Multi-Agent Research System** — Xây dựng hệ thống nghiên cứu đa agent từ con số 0 với State Schema custom và Send API.
-  - 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `CrewAI Framework`, `LangGraph Multi-Agent`, `Supervisor Agent`, `Agent Handoffs`, `Map-Reduce`, `Message Passing & Shared State`, `Blackboard Pattern`.
-
----
-
-### 🌐 Module 9: Full-Stack Web AI Interface (Next.js & Vercel AI SDK)
+### 🌐 Module 10: Full-Stack Web AI Interface (Next.js & Vercel AI SDK)
 > **Mục tiêu**: Xây dựng giao diện Web AI hiện đại, hỗ trợ HTTP Streaming Response (stream từng token), Chat UI, Generative UI và Tool Calling UI.
 
 * **1. Nội dung Kiến thức Cần nạp**:
@@ -178,25 +197,6 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 * **3. Nhiệm vụ Thực hành**:
   - Dựng giao diện Chatbot UI chuyên nghiệp với luồng Streaming Response thời gian thực kết nối với Agent Backend.
   - 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `Next.js 15 App Router`, `Vercel AI SDK (useChat/useCompletion)`, `HTTP Streaming (SSE)`, `Generative UI & Tool Calling UI`, `FastAPI Integration`, `CORS`.
-
----
-
-### 🟤 Module 10: Production Deployment, LLMOps, Security & Evaluation
-> **Mục tiêu**: Bảo mật hệ thống, đánh giá chất lượng RAG/Agent (Ragas/Arize), giám sát với LangSmith, tối ưu chi phí và triển khai API Production (FastAPI + Docker + Render).
-
-* **1. Nội dung Kiến thức Cần nạp**:
-  * Observability: LangSmith Setup & Testing Traces (*Khóa Packt - Chapter 8*).
-  * Security & Defense in Depth: PII Detection, Prompt Injection Attack Defense, LLM Guard (Smart Bouncer), Output Validator.
-  * **RAG & Agent Evaluation**: Sử dụng **Arize AI / Ragas / TruLens** đánh giá Faithfulness, Answer Relevance, Context Recall và LLM-as-a-Judge.
-  * Resilience & Error Handling: Circuit Breaker, Fallback Chain, Graph-Based Retry, Model Router, Semantic Caching.
-  * Triển khai API Production: Đóng gói FastAPI + LangGraph Agent với Docker và deploy lên Cloud (Render).
-* **2. Tài nguyên Tra cứu & Bài giảng**:
-  * 📹 **Khóa học chính**: [Packt Chapter 8](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html).
-  * 🆓 **Khóa học bổ sung miễn phí**: DeepLearning.AI — [Evaluating AI Agents](https://learn.deeplearning.ai/courses/evaluating-ai-agents) (với Arize AI).
-  * 🆓 **Khóa học bổ sung miễn phí**: Hugging Face — [The Context Course (Unit 5: Hooks)](https://huggingface.co/learn/context-course/unit5/introduction) (Tự động hóa & giám sát vòng đời Agent) & [AI Agents Course (Bonus Unit 2: Agent Observability)](https://huggingface.co/learn/agents-course/bonus-unit2/introduction).
-* **3. Nhiệm vụ Thực hành & Dự án**:
-  - 🛠️ **Project 4: Production-Ready Full-Stack AI System (Final Project)** — Đóng gói LangGraph Agent + FastAPI + Security Layer + Next.js UI + Dockerization + Triển khai thành công lên Cloud **Render**.
-  - 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `LangSmith Tracing`, `Prompt Injection Defense`, `PII Detection`, `LLM Guardrails`, `RAG/Agent Evaluation (Ragas/Arize)`, `LLM-as-a-Judge`, `Docker & Render Deployment`.
 
 ---
 

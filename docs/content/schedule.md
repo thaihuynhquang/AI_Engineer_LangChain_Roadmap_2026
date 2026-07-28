@@ -47,7 +47,7 @@
 ---
 
 ### 🟢 MODULE 1 – LangChain Foundations & Project 1: Smart Q&A Bot
-- **Nguồn bài giảng**: [Khóa Packt Chap 1-2](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html)
+- **Nguồn bài giảng**: [Khóa Packt Chap 1-2](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814)
 - **Nội dung thực hành**:
   - *Topic 1: Environment & API Keys*: Setup môi trường Python & API Keys OpenAI / Anthropic (*Packt Chap 2*).
   - *Topic 2: LCEL & Chain Basics*: Thực hành LCEL, Runnable Chains, Realtime Streaming & Schema Inspection (*Packt Chap 2*).
@@ -57,7 +57,7 @@
 ---
 
 ### 🟡 MODULE 2 – Chain Patterns & Advanced LCEL
-- **Nguồn bài giảng**: [Khóa Packt Chap 3](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html)
+- **Nguồn bài giảng**: [Khóa Packt Chap 3](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814)
 - **Nội dung thực hành**:
   - *Topic 1: Parallel Execution*: Basic Chains & Parallel Chains (*Packt Chap 3*).
   - *Topic 2: Advanced LCEL Patterns*: `RunnablePassthrough`, Chain Branching, Debugging chuỗi & Mock Interview bằng Flashcards (Gemini Notebook).
@@ -74,7 +74,7 @@
 ---
 
 ### 🟠 MODULE 4 – Data Ingestion, Complex Document AI & Vector Stores
-- **Nguồn bài giảng**: [Khóa Packt Chap 4](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html) + [DeepLearning.AI LlamaParse Course](https://learn.deeplearning.ai/courses/building-agentic-rag-with-llamaindex) (Free)
+- **Nguồn bài giảng**: [Khóa Packt Chap 4](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) + [DeepLearning.AI LlamaParse Course](https://learn.deeplearning.ai/courses/building-agentic-rag-with-llamaindex) (Free)
 - **Nội dung thực hành**:
   - *Topic 1: Document Ingestion*: Document Loaders (`TextLoader`, `WebLoader`, PDF Loader).
   - *Topic 2: Complex Document AI*: Parse bảng biểu và PDF phức tạp với **LlamaParse**.
@@ -84,7 +84,7 @@
 ---
 
 ### 🔴 MODULE 5 – Advanced RAG, Production `pgvector` & Project 2: AI Research Assistant
-- **Nguồn bài giảng**: [Khóa Packt Chap 5](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html) + [BugBytes Video Tutorial: LangChain & PGVector](https://www.youtube.com/watch?v=3g6nZ1qWv-c) (Free)
+- **Nguồn bài giảng**: [Khóa Packt Chap 5](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) + [BugBytes Video Tutorial: LangChain & PGVector](https://www.youtube.com/watch?v=3g6nZ1qWv-c) (Free)
 - **Nội dung thực hành**:
   - *Topic 1: Advanced RAG Strategies*: Basic RAG & Advanced RAG (Multi-Query, Compression, Hybrid Search, Parent Doc) (*Packt Chap 5*).
   - *Topic 2: Production Vector Database*: Thiết lập CSDL Production **`pgvector` (PostgreSQL)**, HNSW indexing & Hybrid search.
@@ -93,16 +93,8 @@
 
 ---
 
-### ⚡ MODULE 6 – Open-Source LLMs & High-Throughput Serving (vLLM & Ollama)
-- **Nguồn bài giảng**: [DeepLearning.AI vLLM Course](https://www.deeplearning.ai/courses/fast-and-efficient-llm-inference-with-vllm) + Hugging Face [smolagents (Unit 2)](https://huggingface.co/learn/agents-course/unit2/smolagents/introduction) & [Fine-tuning (Bonus Unit 1)](https://huggingface.co/learn/agents-course/bonus-unit1/introduction) (Free)
-- **Nội dung thực hành**:
-  - *Topic 1: Local LLM Execution*: Cài đặt và thực hành chạy mô hình open-source (Llama 3.3, DeepSeek) với **Ollama** dưới local.
-  - *Topic 2: High-Throughput Serving*: Triển khai **vLLM Inference Server** (PagedAttention, Continuous Batching) & Mock Interview bằng Flashcards (Gemini Notebook).
-
----
-
-### 🔵 MODULE 7 – LangGraph - A Full Deep Dive
-- **Nguồn bài giảng**: [Khóa Packt Chap 6](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html)
+### 🔵 MODULE 6 – LangGraph - A Full Deep Dive
+- **Nguồn bài giảng**: [Khóa Packt Chap 6](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814)
 - **Nội dung thực hành**:
   - *Topic 1: StateGraph Core*: `StateGraph`, Reducers, Message State & Chat Pattern.
   - *Topic 2: Routing & Multipath*: Edges & Conditional Edges, Routing & Multipath Routing.
@@ -111,8 +103,8 @@
 
 ---
 
-### 🟣 MODULE 8 – Multi-Agent Architectures (CrewAI + LangGraph) & Project 3
-- **Nguồn bài giảng**: [Khóa Packt Chap 7](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html) + [DeepLearning.AI CrewAI Course](https://learn.deeplearning.ai/courses/multi-ai-agent-systems-with-crewai) + [Hugging Face The Context Course (Unit 4: Sub-agents)](https://huggingface.co/learn/context-course/unit4/introduction) (Free)
+### 🟣 MODULE 7 – Multi-Agent Architectures (CrewAI + LangGraph) & Project 3
+- **Nguồn bài giảng**: [Khóa Packt Chap 7](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) + [DeepLearning.AI CrewAI Course](https://learn.deeplearning.ai/courses/multi-ai-agent-systems-with-crewai) + [Hugging Face The Context Course (Unit 4: Sub-agents)](https://huggingface.co/learn/context-course/unit4/introduction) (Free)
 - **Nội dung thực hành**:
   - *Topic 1: CrewAI Multi-Agent*: Thực hành xây dựng Multi-Agent với **CrewAI** (Agents, Tasks, Crew, Hierarchical process).
   - *Topic 2: LangGraph Multi-Agent*: Đa Agent với LangGraph (Supervisor Agent, Handoffs, Map-Reduce, Message Passing) (*Packt Chap 7*).
@@ -121,18 +113,26 @@
 
 ---
 
-### 🌐 MODULE 9 – Full-Stack Web AI Interface (Next.js & Vercel AI SDK)
-- **Nguồn bài giảng**: [freeCodeCamp Video](https://www.youtube.com/watch?v=WKIjkxxNH0c) ("Build a Support Agent with Vercel AI SDK") + [Developers Digest Tutorial](https://www.developersdigest.tech/tutorials/eWs50bhFvMY) ("Agents 101: Build and Deploy Anything with AI Agents") (Free)
-- **Nội dung thực hành**:
-  - *Topic 1: Next.js & AI SDK Setup*: Setup Next.js 15, Vercel AI SDK, TailwindCSS & Shadcn/ui.
-  - *Topic 2: Streaming Chat UI*: Xây dựng giao diện Chatbot UI HTTP Streaming kết nối FastAPI Backend & Mock Interview bằng Flashcards (Gemini Notebook).
-
----
-
-### 🟤 MODULE 10 – Production Deployment, LLMOps, Security & Project 4 (Final Project)
-- **Nguồn bài giảng**: [Khóa Packt Chap 8](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html) + [DeepLearning.AI Evaluating AI Agents](https://learn.deeplearning.ai/courses/evaluating-ai-agents) + Hugging Face [Context Course (Unit 5: Hooks)](https://huggingface.co/learn/context-course/unit5/introduction) & [Agents Course (Bonus Unit 2)](https://huggingface.co/learn/agents-course/bonus-unit2/introduction) (Free)
+### 🟤 MODULE 8 – Production Deployment, LLMOps, Security & Project 4 (Final Project)
+- **Nguồn bài giảng**: [Khóa Packt Chap 8](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) + [DeepLearning.AI Evaluating AI Agents](https://learn.deeplearning.ai/courses/evaluating-ai-agents) + Hugging Face [Context Course (Unit 5: Hooks)](https://huggingface.co/learn/context-course/unit5/introduction) & [Agents Course (Bonus Unit 2)](https://huggingface.co/learn/agents-course/bonus-unit2/introduction) (Free)
 - **Nội dung thực hành**:
   - *Topic 1: Observability & Security*: LangSmith Tracing & Security Layer (PII Detection, Prompt Injection Defense, LLM Guard).
   - *Topic 2: Agent Evaluation*: Đánh giá RAG & Agent với **Arize AI / Ragas** (Faithfulness, Answer Relevance, Context Recall).
   - *Topic 3: Resilience & Optimization*: Error Handling, Circuit Breaker, Model Router, Semantic Caching & Token Budgeting.
   - *Topic 4: Final Project & Cloud Deploy*: Xây dựng **Project 4: Production Full-Stack AI System (Next.js + FastAPI + Docker + Render)** & Mock Interview bằng Flashcards (Gemini Notebook)! 🚀
+
+---
+
+### ⚡ MODULE 9 – Open-Source LLMs & High-Throughput Serving (vLLM & Ollama)
+- **Nguồn bài giảng**: [DeepLearning.AI vLLM Course](https://www.deeplearning.ai/courses/fast-and-efficient-llm-inference-with-vllm) + Hugging Face [smolagents (Unit 2)](https://huggingface.co/learn/agents-course/unit2/smolagents/introduction) & [Fine-tuning (Bonus Unit 1)](https://huggingface.co/learn/agents-course/bonus-unit1/introduction) (Free)
+- **Nội dung thực hành**:
+  - *Topic 1: Local LLM Execution*: Cài đặt và thực hành chạy mô hình open-source (Llama 3.3, DeepSeek) với **Ollama** dưới local.
+  - *Topic 2: High-Throughput Serving*: Triển khai **vLLM Inference Server** (PagedAttention, Continuous Batching) & Mock Interview bằng Flashcards (Gemini Notebook).
+
+---
+
+### 🌐 MODULE 10 – Full-Stack Web AI Interface (Next.js & Vercel AI SDK)
+- **Nguồn bài giảng**: [freeCodeCamp Video](https://www.youtube.com/watch?v=WKIjkxxNH0c) ("Build a Support Agent with Vercel AI SDK") + [Developers Digest Tutorial](https://www.developersdigest.tech/tutorials/eWs50bhFvMY) ("Agents 101: Build and Deploy Anything with AI Agents") (Free)
+- **Nội dung thực hành**:
+  - *Topic 1: Next.js & AI SDK Setup*: Setup Next.js 15, Vercel AI SDK, TailwindCSS & Shadcn/ui.
+  - *Topic 2: Streaming Chat UI*: Xây dựng giao diện Chatbot UI HTTP Streaming kết nối FastAPI Backend & Mock Interview bằng Flashcards (Gemini Notebook).
