@@ -49,100 +49,90 @@
 ### 🟢 MODULE 1 – LangChain Foundations & Project 1: Smart Q&A Bot
 - **Nguồn bài giảng**: [Khóa Packt Chap 1-2](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html)
 - **Nội dung thực hành**:
-  - *Ngày 1*: Setup môi trường Python & API Keys OpenAI / Anthropic (*Packt Chap 2*).
-  - *Ngày 2*: Thực hành LCEL, Runnable Chains, Realtime Streaming & Schema Inspection (*Packt Chap 2*).
-  - *Ngày 3*: Thực hành Prompt Templates, Messages, Output Parsers & Multi-model setup.
-  - *Ngày 4 & 5*: Xây dựng **Project 1 - Smart Q&A Bot**.
-  - 🗂️ *Mock Interview*: Tạo bộ Flashcards qua Gemini Notebook tổng hợp kiến thức & câu hỏi phỏng vấn cho Module 1.
+  - *Topic 1: Environment & API Keys*: Setup môi trường Python & API Keys OpenAI / Anthropic (*Packt Chap 2*).
+  - *Topic 2: LCEL & Chain Basics*: Thực hành LCEL, Runnable Chains, Realtime Streaming & Schema Inspection (*Packt Chap 2*).
+  - *Topic 3: Multi-model & Parsers*: Thực hành Prompt Templates, Messages, Output Parsers & Multi-model setup.
+  - *Topic 4: Project & Review*: Xây dựng **Project 1 - Smart Q&A Bot** & Mock Interview bằng Flashcards (Gemini Notebook).
 
 ---
 
 ### 🟡 MODULE 2 – Chain Patterns & Advanced LCEL
 - **Nguồn bài giảng**: [Khóa Packt Chap 3](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html)
 - **Nội dung thực hành**:
-  - *Ngày 1*: Basic Chains & Parallel Chains (*Packt Chap 3*).
-  - *Ngày 2*: `RunnablePassthrough`, Chain Branching & Debugging chuỗi.
-  - 🗂️ *Mock Interview*: Tạo bộ Flashcards qua Gemini Notebook tổng hợp kiến thức & câu hỏi phỏng vấn cho Module 2.
+  - *Topic 1: Parallel Execution*: Basic Chains & Parallel Chains (*Packt Chap 3*).
+  - *Topic 2: Advanced LCEL Patterns*: `RunnablePassthrough`, Chain Branching, Debugging chuỗi & Mock Interview bằng Flashcards (Gemini Notebook).
 
 ---
 
 ### 🔌 MODULE 3 – Model Context Protocol (MCP) Deep Dive
 - **Nguồn bài giảng**: [Model Context Protocol Official Docs](https://modelcontextprotocol.io/) + [Hugging Face The Context Course (Unit 2: MCP)](https://huggingface.co/learn/context-course/unit2/introduction) (Free)
 - **Nội dung thực hành**:
-  - *Ngày 1*: Nạp kiến trúc Model Context Protocol (MCP Client/Server).
-  - *Ngày 2*: Viết **FastMCP Server** bằng Python cung cấp Tool custom.
-  - *Ngày 3*: Kết nối Agent gọi MCP Tool qua Stdio & SSE Transports.
-  - 🗂️ *Mock Interview*: Tạo bộ Flashcards qua Gemini Notebook tổng hợp kiến thức & câu hỏi phỏng vấn cho Module 3.
+  - *Topic 1: MCP Architecture*: Nạp kiến trúc Model Context Protocol (MCP Client/Server).
+  - *Topic 2: Custom MCP Server*: Viết **FastMCP Server** bằng Python cung cấp Tool custom.
+  - *Topic 3: Transports & Integration*: Kết nối Agent gọi MCP Tool qua Stdio & SSE Transports & Mock Interview bằng Flashcards (Gemini Notebook).
 
 ---
 
 ### 🟠 MODULE 4 – Data Ingestion, Complex Document AI & Vector Stores
 - **Nguồn bài giảng**: [Khóa Packt Chap 4](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html) + [DeepLearning.AI LlamaParse Course](https://learn.deeplearning.ai/courses/building-agentic-rag-with-llamaindex) (Free)
 - **Nội dung thực hành**:
-  - *Ngày 1*: Document Loaders (`TextLoader`, `WebLoader`, PDF Loader).
-  - *Ngày 2*: Parse bảng biểu và PDF phức tạp với **LlamaParse**.
-  - *Ngày 3*: Text Splitting Deep Dive (`RecursiveCharacterTextSplitter`, Overlap, Markdown, Code Splitters).
-  - *Ngày 4*: Embeddings & **ChromaDB** (Similarity Search with Scores, Metadata Filtering, Persistence).
-  - 🗂️ *Mock Interview*: Tạo bộ Flashcards qua Gemini Notebook tổng hợp kiến thức & câu hỏi phỏng vấn cho Module 4.
+  - *Topic 1: Document Ingestion*: Document Loaders (`TextLoader`, `WebLoader`, PDF Loader).
+  - *Topic 2: Complex Document AI*: Parse bảng biểu và PDF phức tạp với **LlamaParse**.
+  - *Topic 3: Text Splitting*: Text Splitting Deep Dive (`RecursiveCharacterTextSplitter`, Overlap, Markdown, Code Splitters).
+  - *Topic 4: Vector Store & Indexing*: Embeddings & **ChromaDB** (Similarity Search, Metadata Filtering, Persistence) & Mock Interview bằng Flashcards (Gemini Notebook).
 
 ---
 
 ### 🔴 MODULE 5 – Advanced RAG, Production `pgvector` & Project 2: AI Research Assistant
 - **Nguồn bài giảng**: [Khóa Packt Chap 5](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html) + [BugBytes Video Tutorial: LangChain & PGVector](https://www.youtube.com/watch?v=3g6nZ1qWv-c) (Free)
 - **Nội dung thực hành**:
-  - *Ngày 1*: Basic RAG & Advanced RAG (Multi-Query, Compression, Hybrid Search, Parent Doc) (*Packt Chap 5*).
-  - *Ngày 2*: Thiết lập CSDL Production **`pgvector` (PostgreSQL)**, HNSW indexing & Hybrid search.
-  - *Ngày 3*: Memory Patterns (Conversation, Session, Windowed, Summary, Persistent Memory).
-  - *Ngày 4 & 5*: Xây dựng **Project 2: AI Research Assistant** (Document Indexing, Memory, Multi-Query, `pgvector`).
-  - 🗂️ *Mock Interview*: Tạo bộ Flashcards qua Gemini Notebook tổng hợp kiến thức & câu hỏi phỏng vấn cho Module 5.
+  - *Topic 1: Advanced RAG Strategies*: Basic RAG & Advanced RAG (Multi-Query, Compression, Hybrid Search, Parent Doc) (*Packt Chap 5*).
+  - *Topic 2: Production Vector Database*: Thiết lập CSDL Production **`pgvector` (PostgreSQL)**, HNSW indexing & Hybrid search.
+  - *Topic 3: Memory Systems*: Memory Patterns (Conversation, Session, Windowed, Summary, Persistent Memory).
+  - *Topic 4: Project & Review*: Xây dựng **Project 2: AI Research Assistant** (`pgvector`, Memory) & Mock Interview bằng Flashcards (Gemini Notebook).
 
 ---
 
 ### ⚡ MODULE 6 – Open-Source LLMs & High-Throughput Serving (vLLM & Ollama)
 - **Nguồn bài giảng**: [DeepLearning.AI vLLM Course](https://www.deeplearning.ai/courses/fast-and-efficient-llm-inference-with-vllm) + Hugging Face [smolagents (Unit 2)](https://huggingface.co/learn/agents-course/unit2/smolagents/introduction) & [Fine-tuning (Bonus Unit 1)](https://huggingface.co/learn/agents-course/bonus-unit1/introduction) (Free)
 - **Nội dung thực hành**:
-  - *Ngày 1*: Cài đặt và thực hành chạy mô hình open-source (Llama 3.3, DeepSeek) với **Ollama** dưới local.
-  - *Ngày 2*: Triển khai **vLLM Inference Server** (PagedAttention, Continuous Batching) và kết nối với LangChain client.
-  - 🗂️ *Mock Interview*: Tạo bộ Flashcards qua Gemini Notebook tổng hợp kiến thức & câu hỏi phỏng vấn cho Module 6.
+  - *Topic 1: Local LLM Execution*: Cài đặt và thực hành chạy mô hình open-source (Llama 3.3, DeepSeek) với **Ollama** dưới local.
+  - *Topic 2: High-Throughput Serving*: Triển khai **vLLM Inference Server** (PagedAttention, Continuous Batching) & Mock Interview bằng Flashcards (Gemini Notebook).
 
 ---
 
 ### 🔵 MODULE 7 – LangGraph - A Full Deep Dive
 - **Nguồn bài giảng**: [Khóa Packt Chap 6](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html)
 - **Nội dung thực hành**:
-  - *Ngày 1*: `StateGraph`, Reducers, Message State & Chat Pattern.
-  - *Ngày 2*: Edges & Conditional Edges, Routing & Multipath Routing.
-  - *Ngày 3*: Vòng lặp tự sửa lỗi (Cycles & Self-Correcting Code Writer).
-  - *Ngày 4*: Human in the Loop (Interrupt for Approval) & Checkpointing.
-  - 🗂️ *Mock Interview*: Tạo bộ Flashcards qua Gemini Notebook tổng hợp kiến thức & câu hỏi phỏng vấn cho Module 7.
+  - *Topic 1: StateGraph Core*: `StateGraph`, Reducers, Message State & Chat Pattern.
+  - *Topic 2: Routing & Multipath*: Edges & Conditional Edges, Routing & Multipath Routing.
+  - *Topic 3: Self-Correcting Agent*: Vòng lặp tự sửa lỗi (Cycles & Self-Correcting Code Writer).
+  - *Topic 4: Persistence & Human Control*: Human in the Loop (Interrupt for Approval), Checkpointing & Mock Interview bằng Flashcards (Gemini Notebook).
 
 ---
 
 ### 🟣 MODULE 8 – Multi-Agent Architectures (CrewAI + LangGraph) & Project 3
 - **Nguồn bài giảng**: [Khóa Packt Chap 7](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html) + [DeepLearning.AI CrewAI Course](https://learn.deeplearning.ai/courses/multi-ai-agent-systems-with-crewai) + [Hugging Face The Context Course (Unit 4: Sub-agents)](https://huggingface.co/learn/context-course/unit4/introduction) (Free)
 - **Nội dung thực hành**:
-  - *Ngày 1*: Thực hành xây dựng Multi-Agent với **CrewAI** (Agents, Tasks, Crew, Hierarchical process).
-  - *Ngày 2*: Đa Agent với LangGraph (Supervisor Agent, Handoffs, Map-Reduce, Message Passing) (*Packt Chap 7*).
-  - *Ngày 3*: Hierarchical Architecture & Agent Tracing.
-  - *Ngày 4 & 5*: Xây dựng **Project 3: Multi-Agent Research System** (State Schema, Send API).
-  - 🗂️ *Mock Interview*: Tạo bộ Flashcards qua Gemini Notebook tổng hợp kiến thức & câu hỏi phỏng vấn cho Module 8.
+  - *Topic 1: CrewAI Multi-Agent*: Thực hành xây dựng Multi-Agent với **CrewAI** (Agents, Tasks, Crew, Hierarchical process).
+  - *Topic 2: LangGraph Multi-Agent*: Đa Agent với LangGraph (Supervisor Agent, Handoffs, Map-Reduce, Message Passing) (*Packt Chap 7*).
+  - *Topic 3: Hierarchical Tracing*: Hierarchical Architecture & Agent Tracing.
+  - *Topic 4: Project & Review*: Xây dựng **Project 3: Multi-Agent Research System** & Mock Interview bằng Flashcards (Gemini Notebook).
 
 ---
 
 ### 🌐 MODULE 9 – Full-Stack Web AI Interface (Next.js & Vercel AI SDK)
 - **Nguồn bài giảng**: [freeCodeCamp Video](https://www.youtube.com/watch?v=WKIjkxxNH0c) ("Build a Support Agent with Vercel AI SDK") + [Developers Digest Tutorial](https://www.developersdigest.tech/tutorials/eWs50bhFvMY) ("Agents 101: Build and Deploy Anything with AI Agents") (Free)
 - **Nội dung thực hành**:
-  - *Ngày 1*: Setup Next.js 15, Vercel AI SDK, TailwindCSS & Shadcn/ui.
-  - *Ngày 2*: Xây dựng giao diện Chatbot UI hỗ trợ HTTP Streaming Response kết nối với Agent Backend FastAPI.
-  - 🗂️ *Mock Interview*: Tạo bộ Flashcards qua Gemini Notebook tổng hợp kiến thức & câu hỏi phỏng vấn cho Module 9.
+  - *Topic 1: Next.js & AI SDK Setup*: Setup Next.js 15, Vercel AI SDK, TailwindCSS & Shadcn/ui.
+  - *Topic 2: Streaming Chat UI*: Xây dựng giao diện Chatbot UI HTTP Streaming kết nối FastAPI Backend & Mock Interview bằng Flashcards (Gemini Notebook).
 
 ---
 
 ### 🟤 MODULE 10 – Production Deployment, LLMOps, Security & Project 4 (Final Project)
 - **Nguồn bài giảng**: [Khóa Packt Chap 8](file:///Users/thaihuynhquang/Desktop/learning/Agentic-AI-Systems-Build-Deploy-with-LangChain-LangGraph/video_zip/package/overview.html) + [DeepLearning.AI Evaluating AI Agents](https://learn.deeplearning.ai/courses/evaluating-ai-agents) + Hugging Face [Context Course (Unit 5: Hooks)](https://huggingface.co/learn/context-course/unit5/introduction) & [Agents Course (Bonus Unit 2)](https://huggingface.co/learn/agents-course/bonus-unit2/introduction) (Free)
 - **Nội dung thực hành**:
-  - *Ngày 1*: LangSmith Tracing & Security Layer (PII Detection, Prompt Injection Defense, LLM Guard).
-  - *Ngày 2*: Đánh giá RAG & Agent với **Arize AI / Ragas** (Faithfulness, Answer Relevance, Context Recall).
-  - *Ngày 3*: Error Handling, Circuit Breaker, Model Router, Semantic Caching & Token Budgeting.
-  - *Ngày 4 & 5*: Xây dựng **Project 4: Production Full-Stack AI System (Next.js + FastAPI + LangGraph + Docker + Render Cloud Deployment)**! 🚀
-  - 🗂️ *Mock Interview*: Tạo bộ Flashcards qua Gemini Notebook tổng hợp kiến thức & câu hỏi phỏng vấn cho Module 10.
+  - *Topic 1: Observability & Security*: LangSmith Tracing & Security Layer (PII Detection, Prompt Injection Defense, LLM Guard).
+  - *Topic 2: Agent Evaluation*: Đánh giá RAG & Agent với **Arize AI / Ragas** (Faithfulness, Answer Relevance, Context Recall).
+  - *Topic 3: Resilience & Optimization*: Error Handling, Circuit Breaker, Model Router, Semantic Caching & Token Budgeting.
+  - *Topic 4: Final Project & Cloud Deploy*: Xây dựng **Project 4: Production Full-Stack AI System (Next.js + FastAPI + Docker + Render)** & Mock Interview bằng Flashcards (Gemini Notebook)! 🚀
