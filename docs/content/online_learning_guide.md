@@ -20,7 +20,7 @@ Lộ trình bao gồm **11 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 [Module 7: Production & LLMOps] ──► [Module 8: MCP Quick Integration] ──► [Module 9: Open-Source LLMs (vLLM)]
                                                                                                   │
                                                                                                   ▼
-[Module 11: Full-Stack Web AI (Next.js)] ◄── [Module 10: MCP Masterclass (Anthropic Official)] ◄──┘
+[Module 11: MCP Masterclass (Anthropic Official)] ◄── [Module 10: Full-Stack Web AI (Next.js)] ◄──┘
 ```
 
 ---
@@ -181,7 +181,24 @@ Lộ trình bao gồm **11 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 
 ---
 
-### 🎓 Module 10: Model Context Protocol (MCP) Masterclass (Anthropic Official Curriculum)
+### 🌐 Module 10: Full-Stack Web AI Interface (Next.js & Vercel AI SDK)
+> **Mục tiêu**: Xây dựng giao diện Web AI hiện đại, hỗ trợ HTTP Streaming Response (stream từng token), Chat UI, Generative UI và Tool Calling UI.
+
+* **1. Nội dung Kiến thức Cần nạp**:
+  * Khởi tạo dự án Web AI với Next.js 15 (App Router, TypeScript, TailwindCSS, Shadcn/ui).
+  * Tích hợp **Vercel AI SDK**: Hooks (`useChat`, `useCompletion`), Streaming text & Data streams.
+  * Kết nối Frontend Next.js với Backend Agent FastAPI / LangGraph.
+* **2. Tài nguyên Tra cứu & Bài giảng**:
+  * 📹 **Khóa freeCodeCamp**: [Build a Support Agent with Vercel AI SDK](https://www.youtube.com/watch?v=WKIjkxxNH0c) (Hướng dẫn tự dựng AI Support Agent với RAG, Tool Calling và Web Search).
+  * 📹 **Khóa 2 (Developers Digest)**: [Agents 101: Build and Deploy Anything with AI Agents](https://www.developersdigest.tech/tutorials/eWs50bhFvMY) (Hướng dẫn dựng Full-stack Next.js AI App + Vercel AI Gateway + CI/CD Deployment).
+  * 📖 **Docs Tra cứu**: [Vercel AI SDK Docs](https://sdk.vercel.ai/docs).
+* **3. Nhiệm vụ Thực hành**:
+  - Dựng giao diện Chatbot UI chuyên nghiệp với luồng Streaming Response thời gian thực kết nối với Agent Backend.
+  - 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `Next.js 15 App Router`, `Vercel AI SDK (useChat/useCompletion)`, `HTTP Streaming (SSE)`, `Generative UI & Tool Calling UI`, `FastAPI Integration`, `CORS`.
+
+---
+
+### 🎓 Module 11: Model Context Protocol (MCP) Masterclass (Anthropic Official Curriculum)
 > **Mục tiêu**: Làm chủ toàn diện chuẩn giao thức kết nối công cụ Model Context Protocol (MCP) từ kiến trúc nền tảng đến kỹ thuật nâng cao Production (Sampling, Roots, Progress, Transports & Security) dựa trên 2 khóa học chính thức từ Anthropic.
 
 * **1. Nội dung Kiến thức Cần nạp**:
@@ -202,20 +219,3 @@ Lộ trình bao gồm **11 Module chuyên sâu**, kết hợp giữa **Lý thuy�
   - Xây dựng 1 MCP Server hoàn chỉnh bằng Python SDK hỗ trợ full 3 Primitives (`Tools`, `Resources`, `Prompts`) kết hợp với **Sampling callback** và hỗ trợ `StreamableHTTP` transport.
   - Sử dụng **MCP Inspector** để kiểm tra và debug toàn bộ các luồng giao tiếp tin nhắn.
   - 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `MCP Architecture (Host/Client/Server)`, `Tools vs Resources vs Prompts`, `MCP Inspector`, `Sampling (Server-Initiated LLM Calls)`, `Progress Notifications`, `Roots (Filesystem Scoping)`, `stdio vs StreamableHTTP`, `OAuth CIMD`.
-
----
-
-### 🌐 Module 11: Full-Stack Web AI Interface (Next.js & Vercel AI SDK)
-> **Mục tiêu**: Xây dựng giao diện Web AI hiện đại, hỗ trợ HTTP Streaming Response (stream từng token), Chat UI, Generative UI và Tool Calling UI.
-
-* **1. Nội dung Kiến thức Cần nạp**:
-  * Khởi tạo dự án Web AI với Next.js 15 (App Router, TypeScript, TailwindCSS, Shadcn/ui).
-  * Tích hợp **Vercel AI SDK**: Hooks (`useChat`, `useCompletion`), Streaming text & Data streams.
-  * Kết nối Frontend Next.js với Backend Agent FastAPI / LangGraph.
-* **2. Tài nguyên Tra cứu & Bài giảng**:
-  * 📹 **Khóa freeCodeCamp**: [Build a Support Agent with Vercel AI SDK](https://www.youtube.com/watch?v=WKIjkxxNH0c) (Hướng dẫn tự dựng AI Support Agent với RAG, Tool Calling và Web Search).
-  * 📹 **Khóa 2 (Developers Digest)**: [Agents 101: Build and Deploy Anything with AI Agents](https://www.developersdigest.tech/tutorials/eWs50bhFvMY) (Hướng dẫn dựng Full-stack Next.js AI App + Vercel AI Gateway + CI/CD Deployment).
-  * 📖 **Docs Tra cứu**: [Vercel AI SDK Docs](https://sdk.vercel.ai/docs).
-* **3. Nhiệm vụ Thực hành**:
-  - Dựng giao diện Chatbot UI chuyên nghiệp với luồng Streaming Response thời gian thực kết nối với Agent Backend.
-  - 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `Next.js 15 App Router`, `Vercel AI SDK (useChat/useCompletion)`, `HTTP Streaming (SSE)`, `Generative UI & Tool Calling UI`, `FastAPI Integration`, `CORS`.

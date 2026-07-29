@@ -131,17 +131,17 @@
 
 ---
 
-### 🎓 MODULE 10 – Model Context Protocol (MCP) Masterclass (Anthropic Official Curriculum)
+### 🌐 MODULE 10 – Full-Stack Web AI Interface (Next.js & Vercel AI SDK)
+- **Nguồn bài giảng**: [freeCodeCamp Video](https://www.youtube.com/watch?v=WKIjkxxNH0c) ("Build a Support Agent with Vercel AI SDK") + [Developers Digest Tutorial](https://www.developersdigest.tech/tutorials/eWs50bhFvMY) ("Agents 101: Build and Deploy Anything with AI Agents") (Free)
+- **Nội dung thực hành**:
+  - *Topic 1: Next.js & AI SDK Setup*: Setup Next.js 15, Vercel AI SDK, TailwindCSS & Shadcn/ui.
+  - *Topic 2: Streaming Chat UI*: Xây dựng giao diện Chatbot UI HTTP Streaming kết nối FastAPI Backend & Mock Interview bằng Flashcards (Gemini Notebook).
+
+---
+
+### 🎓 MODULE 11 – Model Context Protocol (MCP) Masterclass (Anthropic Official Curriculum)
 - **Nguồn bài giảng**: [Anthropic Intro to MCP Course](https://anthropic.skilljar.com/introduction-to-model-context-protocol) + [Anthropic MCP Advanced Topics Course](https://anthropic.skilljar.com/model-context-protocol-advanced-topics) (Free)
 - **Nội dung thực hành**:
   - *Topic 1: MCP Core & 3 Primitives*: Viết MCP Server/Client hỗ trợ `Tools`, `Resources`, `Prompts` & Debug qua **MCP Inspector**.
   - *Topic 2: Advanced Primitives*: Thực hành `Sampling` (Server-initiated LLM call), `Progress Notifications` & `Roots` (Filesystem scoping).
   - *Topic 3: Transports & Security*: Triển khai `stdio` vs `StreamableHTTP`, OAuth CIMD & Mock Interview bằng Flashcards (Gemini Notebook).
-
----
-
-### 🌐 MODULE 11 – Full-Stack Web AI Interface (Next.js & Vercel AI SDK)
-- **Nguồn bài giảng**: [freeCodeCamp Video](https://www.youtube.com/watch?v=WKIjkxxNH0c) ("Build a Support Agent with Vercel AI SDK") + [Developers Digest Tutorial](https://www.developersdigest.tech/tutorials/eWs50bhFvMY) ("Agents 101: Build and Deploy Anything with AI Agents") (Free)
-- **Nội dung thực hành**:
-  - *Topic 1: Next.js & AI SDK Setup*: Setup Next.js 15, Vercel AI SDK, TailwindCSS & Shadcn/ui.
-  - *Topic 2: Streaming Chat UI*: Xây dựng giao diện Chatbot UI HTTP Streaming kết nối FastAPI Backend & Mock Interview bằng Flashcards (Gemini Notebook).
