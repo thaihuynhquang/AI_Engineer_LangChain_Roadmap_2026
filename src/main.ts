@@ -4,6 +4,7 @@ import './views/roadmap-view-roadmap';
 import './views/roadmap-view-schedule';
 import './views/roadmap-view-resources';
 import './views/roadmap-view-techstack';
+import './views/roadmap-view-quitcriteria';
 
 import { loadState, getState, setThemeState } from './state/storage';
 import { initRouter, navigateTo } from './router';

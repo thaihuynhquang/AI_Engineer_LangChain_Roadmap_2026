@@ -1,4 +1,4 @@
-import { SprintModule, DailyScheduleDay, TechStackLayer } from '../types/appState';
+import { SprintModule, DailyScheduleDay, TechStackLayer, QuitCriteriaData } from '../types/appState';
 
 export interface ProjectMeta {
   title: string;
@@ -1223,3 +1223,127 @@ export const TECH_STACK_LAYERS: TechStackLayer[] = [
     ]
   }
 ];
+
+export const QUIT_CRITERIA_DATA: QuitCriteriaData = {
+  title: "Quit Criteria & Decision Matrix",
+  subtitle: "Ma Trận Tra Cứu Ngưỡng Cảnh Báo (Trigger) & Hành Động Xoay Trục (Pivot Action) Cho 11 Modules",
+  docPath: "docs/content/quit_criteria_guide.md",
+  dailyProcess: [
+    {
+      stepNum: 1,
+      title: "Rà soát Đầu Ca",
+      description: "Kiểm tra định mức Pomodoro cho bài tập / task hiện tại.",
+      iconName: "clipboardCheck"
+    },
+    {
+      stepNum: 2,
+      title: "Đo đạc Pomodoro",
+      description: "Đếm chính xác số Pomodoro thực tế đã tiêu tốn cho task.",
+      iconName: "timer"
+    },
+    {
+      stepNum: 3,
+      title: "Đối chiếu Trigger",
+      description: "Nếu chạm ngưỡng > 150% định mức hoặc bị lỗi > 3 Poms, kích hoạt cảnh báo.",
+      iconName: "alertTriangle"
+    },
+    {
+      stepNum: 4,
+      title: "Thực thi Pivot",
+      description: "Tra cứu Ma trận Quyết định và thực hiện ngay hành động xoay trục không do dự.",
+      iconName: "cornerUpRight"
+    }
+  ],
+  decisionMatrix: [
+    {
+      moduleId: "mod-1",
+      moduleNum: 1,
+      moduleName: "Module 1: LangChain Foundations",
+      quotaPoms: 24,
+      trigger: "Mắc kẹt setup API Keys / LCEL > 4 Poms",
+      pivotAction: "Chuyển sang dùng OpenAI / Anthropic SDK thuần hoặc Google Colab."
+    },
+    {
+      moduleId: "mod-2",
+      moduleNum: 2,
+      moduleName: "Module 2: Chain Patterns & LCEL",
+      quotaPoms: 16,
+      trigger: "Lỗi chuỗi đa nhánh RunnableParallel > 3 Poms",
+      pivotAction: "Dùng code mẫu Runnable Sequence tuyến tính đơn giản."
+    },
+    {
+      moduleId: "mod-3",
+      moduleNum: 3,
+      moduleName: "Module 3: Data Ingestion & LlamaParse",
+      quotaPoms: 23,
+      trigger: "LlamaParse API lỗi parse PDF > 3 Poms",
+      pivotAction: "Dùng PyPDFLoader mặc định, bỏ qua parse bảng phức tạp."
+    },
+    {
+      moduleId: "mod-4",
+      moduleNum: 4,
+      moduleName: "Module 4: Advanced RAG & pgvector",
+      quotaPoms: 43,
+      trigger: "Lỗi CSDL PostgreSQL / pgvector > 6 Poms",
+      pivotAction: "Dùng Neon Postgres Cloud hoặc quay lại ChromaDB local."
+    },
+    {
+      moduleId: "mod-5",
+      moduleNum: 5,
+      moduleName: "Module 5: LangGraph Deep Dive",
+      quotaPoms: 30,
+      trigger: "Lỗi State Schema / Reducers > 5 Poms",
+      pivotAction: "Dùng MessageState mặc định của LangGraph."
+    },
+    {
+      moduleId: "mod-6",
+      moduleNum: 6,
+      moduleName: "Module 6: Multi-Agent Architectures",
+      quotaPoms: 52,
+      trigger: "Supervisor Agent bị lặp vô tận > 6 Poms",
+      pivotAction: "Giảm số Worker Agents xuống 2, bỏ Blackboard Pattern."
+    },
+    {
+      moduleId: "mod-7",
+      moduleNum: 7,
+      moduleName: "Module 7: Production LLMOps & Security",
+      quotaPoms: 66,
+      trigger: "Docker / Render Cloud deploy lỗi > 8 Poms",
+      pivotAction: "Triển khai FastAPI Local + ngrok demo, bỏ Render Cloud."
+    },
+    {
+      moduleId: "mod-8",
+      moduleNum: 8,
+      moduleName: "Module 8: MCP Quickstart",
+      quotaPoms: 16,
+      trigger: "FastMCP Transport SSE lỗi > 3 Poms",
+      pivotAction: "Chỉ dùng Stdio Transport đơn giản."
+    },
+    {
+      moduleId: "mod-9",
+      moduleNum: 9,
+      moduleName: "Module 9: Open-Source LLMs (vLLM)",
+      quotaPoms: 20,
+      trigger: "Máy local không đủ VRAM chạy vLLM > 3 Poms",
+      pivotAction: "Dùng Ollama local hoặc Groq API (Free Cloud Inference)."
+    },
+    {
+      moduleId: "mod-10",
+      moduleNum: 10,
+      moduleName: "Module 10: Full-Stack Web AI (Next.js)",
+      quotaPoms: 27,
+      trigger: "Next.js App Router / Tailwind lỗi > 5 Poms",
+      pivotAction: "Dùng Streamlit hoặc FastAPI HTML UI."
+    },
+    {
+      moduleId: "mod-11",
+      moduleNum: 11,
+      moduleName: "Module 11 (Tùy chọn): MCP Masterclass",
+      quotaPoms: 34,
+      trigger: "Bị chậm tiến độ tổng hợp > 1 tuần",
+      pivotAction: "HỦY BỎ MODULE 11 (OPTIONAL), tập trung hoàn thiện Project 4.",
+      isOptional: true
+    }
+  ]
+};
+

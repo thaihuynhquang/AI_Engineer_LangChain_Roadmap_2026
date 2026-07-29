@@ -52,7 +52,8 @@ This document provides a detailed overview of the directory structure, file resp
 │   │   ├── roadmap-view-roadmap.ts    # <roadmap-view-roadmap> - Detailed view for 5 Sprints, tasks & resources
 │   │   ├── roadmap-view-schedule.ts   # <roadmap-view-schedule> - Interactive Pomodoro timer & weekly schedule
 │   │   ├── roadmap-view-resources.ts  # <roadmap-view-resources> - Learning resource catalog with module filter
-│   │   └── roadmap-view-techstack.ts  # <roadmap-view-techstack> - Visual breakdown of 5 AI Engineer tech stack layers
+│   │   ├── roadmap-view-techstack.ts  # <roadmap-view-techstack> - Visual breakdown of 5 AI Engineer tech stack layers
+│   │   └── roadmap-view-quitcriteria.ts # <roadmap-view-quitcriteria> - Interactive 11-module decision matrix & 4-step daily process
 │   ├── constants.ts                # Shared constants (STORAGE_KEY, THEME_KEY, ROUTE_IDS)
 │   ├── main.ts                     # Application Bootstrap - Initializes theme, router, event listeners & render loop
 │   ├── progress.ts                 # Pure Domain Logic - Engine calculating progress %, study hours & next task

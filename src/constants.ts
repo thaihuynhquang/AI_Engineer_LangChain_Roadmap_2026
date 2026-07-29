@@ -7,6 +7,7 @@ export const ROUTE_IDS = {
   SCHEDULE: 'schedule',
   RESOURCES: 'resources',
   TECHSTACK: 'techstack',
+  QUITCRITERIA: 'quitcriteria',
 } as const;
 
 export type RouteId = typeof ROUTE_IDS[keyof typeof ROUTE_IDS];

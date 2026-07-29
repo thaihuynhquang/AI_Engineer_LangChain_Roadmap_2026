@@ -82,6 +82,31 @@ export interface PomodoroTimerSettings {
   notificationEnabled: boolean;
 }
 
+export interface ModuleQuitRule {
+  moduleId: string;
+  moduleNum: number;
+  moduleName: string;
+  quotaPoms: number;
+  trigger: string;
+  pivotAction: string;
+  isOptional?: boolean;
+}
+
+export interface QuitProcessStep {
+  stepNum: number;
+  title: string;
+  description: string;
+  iconName: string;
+}
+
+export interface QuitCriteriaData {
+  title: string;
+  subtitle: string;
+  docPath: string;
+  dailyProcess: QuitProcessStep[];
+  decisionMatrix: ModuleQuitRule[];
+}
+
 export interface AppState {
   checked: Record<string, boolean>;
   resourceFlags: Record<string, boolean>;
@@ -90,4 +115,5 @@ export interface AppState {
   pomodoroSettings?: PomodoroTimerSettings;
   pomodoroSessions?: PomodoroSessionLog[];
 }
+
 
