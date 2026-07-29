@@ -1,31 +1,31 @@
 # 🚀 Hướng Dẫn Lộ Trình Tự Học Agentic AI Master Curriculum (2026)
 ## Khóa Packt LangChain/LangGraph + Các Khóa Học Bổ Sung Miễn Phí (100% Free)
 
-Hướng dẫn này cung cấp khung lộ trình học tập **Master Curriculum 10 Module** được tích hợp hoàn chỉnh giữa:
+Hướng dẫn này cung cấp khung lộ trình học tập **Master Curriculum 11 Module** được tích hợp hoàn chỉnh giữa:
 1. 📹 **Khóa Packt (Core Engine & Production)**: [Agentic AI Systems: Build & Deploy with LangChain/LangGraph](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) (Packt Publishing).
-2. 🆓 **Các Khóa Học Miễn Phí Bổ Sung (Free Supplemental Courses)** từ **DeepLearning.AI**, **Vercel**, **freeCodeCamp**, **Hugging Face**, **Neon Postgres**, và **MCP Official Docs** để bù đắp các khoảng trống công nghệ (Web UI, `pgvector`, vLLM, LlamaParse, RAG Evals).
+2. 🆓 **Các Khóa Học Miễn Phí Bổ Sung (Free Supplemental Courses)** từ **Anthropic Academy**, **DeepLearning.AI**, **Vercel**, **freeCodeCamp**, **Hugging Face**, **Neon Postgres**, và **MCP Official Docs** để bù đắp các khoảng trống công nghệ (Web UI, `pgvector`, vLLM, LlamaParse, MCP Masterclass, RAG Evals).
 
-Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuyết bài giảng** $\rightarrow$ **Hands-on Demos & Bài tập** $\rightarrow$ **4 Dự án thực tế lớn (Projects)**.
+Lộ trình bao gồm **11 Module chuyên sâu**, kết hợp giữa **Lý thuyết bài giảng** $\rightarrow$ **Hands-on Demos & Bài tập** $\rightarrow$ **4 Dự án thực tế lớn (Projects)**.
 
 ---
 
-## 🗺️ Bức Tranh Tổng Quan Lộ Trình (10 Master Modules)
+## 🗺️ Bức Tranh Tổng Quan Lộ Trình (11 Master Modules)
 
 ```
 [Module 1: LangChain Foundations] ──► [Module 2: Chain Patterns & LCEL] ──► [Module 3: Data Ingestion & LlamaParse]
                                                                                                    │
-[Module 6: Multi-Agent (CrewAI)]  ◄── [Module 5: LangGraph Deep Dive]   ◄── [Module 4: Advanced RAG & pgvector]
+[Module 6: Multi-Agent Architectures] ◄── [Module 5: LangGraph Deep Dive] ◄── [Module 4: Advanced RAG & pgvector]
          │
          ▼
-[Module 7: Production & LLMOps (Packt Chap 8)] ──► [Module 8: Model Context Protocol (MCP)] ──► [Module 9: Open-Source LLMs (vLLM)]
-                                                                                                                 │
-                                                                                                                 ▼
-                                                                                   [Module 10: Full-Stack Web AI (Next.js)]
+[Module 7: Production & LLMOps] ──► [Module 8: MCP Quick Integration] ──► [Module 9: Open-Source LLMs (vLLM)]
+                                                                                                  │
+                                                                                                  ▼
+[Module 11: Full-Stack Web AI (Next.js)] ◄── [Module 10: MCP Masterclass (Anthropic Official)] ◄──┘
 ```
 
 ---
 
-## 📚 Hướng Dẫn Chi Tiết Theo 10 Module
+## 📚 Hướng Dẫn Chi Tiết Theo 11 Module
 
 ### 🟢 Module 1: LangChain & Agentic Foundations
 > **Mục tiêu**: Nắm vững kiến trúc LangChain v1.0, LCEL, Runnable Chains, quản lý Multi-LLM provider, Prompt Templates và Output Parsers.
@@ -148,21 +148,19 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 
 ---
 
-### 🔌 Module 8: Model Context Protocol (MCP) Deep Dive
-> **Mục tiêu**: Làm chủ chuẩn giao thức kết nối công cụ mở Model Context Protocol (MCP Client/Server Architecture).
+### 🔌 Module 8: Model Context Protocol (MCP) Integration Quickstart
+> **Mục tiêu**: Tích hợp nhanh giao thức kết nối công cụ mở Model Context Protocol (MCP) vào luồng phát triển AI Agent, tạo cầu nối kết nối Agent với các công cụ & nguồn dữ liệu bên ngoài.
 
 * **1. Nội dung Kiến thức Cần nạp**:
-  * Khái niệm & Cơ chế hoạt động của Model Context Protocol (MCP Host, Client, Server).
-  * Thực hành: **Tự viết một MCP Server** bằng Python với FastMCP SDK.
-  * Kết nối Agent gọi MCP Tool qua Stdio và SSE Transports.
+  * Khái niệm cơ bản MCP Client/Server & vị trí của MCP trong hệ sinh thái AI Agent.
+  * Thực hành tích hợp MCP Tool vào chuỗi Agent qua Stdio & SSE Transports bằng FastMCP SDK.
 * **2. Tài nguyên Tra cứu & Bài giảng**:
-  * 🆓 **Khóa học / Documentation miễn phí**: [Model Context Protocol Official Specification & Tutorials](https://modelcontextprotocol.io/).
-  * 🐍 **FastMCP Python SDK**: [https://github.com/jlowin/fastmcp](https://github.com/jlowin/fastmcp).
   * 🆓 **Khóa học bổ sung miễn phí**: Hugging Face — [The Context Course (Unit 2: MCP)](https://huggingface.co/learn/context-course/unit2/introduction) (Thực hành kết nối công cụ qua Model Context Protocol).
+  * 📖 **Docs & SDK**: [MCP Official Docs](https://modelcontextprotocol.io/) | [FastMCP Python SDK](https://github.com/jlowin/fastmcp).
 * **3. Nhiệm vụ Thực hành**:
-  - Viết 1 FastMCP Server cung cấp Tool truy vấn dữ liệu hoặc hệ thống.
-  - Kết nối Agent gọi MCP Tool qua giao thức MCP.
-  - 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `MCP Architecture (Host/Client/Server)`, `FastMCP Python SDK`, `MCP Tools & Resources & Prompts`, `Transports (Stdio/SSE)`, `MCP Handshake`.
+  - Viết 1 FastMCP Server đơn giản cung cấp Tool kết nối hệ thống/API.
+  - Tích hợp Agent gọi MCP Tool trong luồng xử lý LangChain.
+  - 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `MCP Integration`, `FastMCP SDK`, `MCP Tools & Resources`, `Stdio / SSE Transports`, `Agent Tool Connection`.
 
 ---
 
@@ -183,7 +181,31 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 
 ---
 
-### 🌐 Module 10: Full-Stack Web AI Interface (Next.js & Vercel AI SDK)
+### 🎓 Module 10: Model Context Protocol (MCP) Masterclass (Anthropic Official Curriculum)
+> **Mục tiêu**: Làm chủ toàn diện chuẩn giao thức kết nối công cụ Model Context Protocol (MCP) từ kiến trúc nền tảng đến kỹ thuật nâng cao Production (Sampling, Roots, Progress, Transports & Security) dựa trên 2 khóa học chính thức từ Anthropic.
+
+* **1. Nội dung Kiến thức Cần nạp**:
+  * **Phần 1: MCP Core & 3 Primitives (Anthropic Intro Course)**:
+    * Kiến trúc Host/Client/Server, cơ chế giao tiếp JSON-RPC & kiểm thử qua **MCP Inspector**.
+    * **3 Primitives cốt lõi**: `Tools` (hàm thực thi), `Resources` (truy xuất dữ liệu chuẩn hóa), `Prompts` (reusable prompt templates).
+    * Thực hành viết MCP Server & Client với Python SDK & FastMCP framework.
+  * **Phần 2: Advanced Primitives & Transports (Anthropic Advanced Course)**:
+    * **Advanced Primitives**: `Sampling` (Server-initiated LLM completions), `Progress Notifications` (thông báo tiến độ tác vụ), `Roots` (kiểm soát phạm vi truy cập hệ thống tệp).
+    * **Transports**: So sánh và triển khai giữa `stdio` (local process) và `StreamableHTTP` (giao tiếp qua mạng cho Cloud/Serverless).
+  * **Phần 3: Enterprise Auth & 2026 Specification**:
+    * Chuẩn OAuth Client ID Metadata Documents (CIMD), Header-based routing (`Mcp-Method`, `Mcp-Name`), MCP Apps (iframe UIs) và `io.modelcontextprotocol/tasks` extension.
+* **2. Tài nguyên Tra cứu & Bài giảng**:
+  * 🎓 **Khóa Anthropic Official 1 (Free)**: [Introduction to Model Context Protocol](https://anthropic.skilljar.com/introduction-to-model-context-protocol) (Học 3 Primitives cốt lõi, Client/Server Python SDK, MCP Inspector).
+  * 🎓 **Khóa Anthropic Official 2 (Free)**: [Model Context Protocol: Advanced Topics](https://anthropic.skilljar.com/model-context-protocol-advanced-topics) (Học Sampling, Progress, Roots, stdio vs StreamableHTTP).
+  * 📖 **Docs & Spec**: [MCP Official Spec](https://modelcontextprotocol.io/) | [FastMCP Python SDK](https://github.com/jlowin/fastmcp).
+* **3. Nhiệm vụ Thực hành**:
+  - Xây dựng 1 MCP Server hoàn chỉnh bằng Python SDK hỗ trợ full 3 Primitives (`Tools`, `Resources`, `Prompts`) kết hợp với **Sampling callback** và hỗ trợ `StreamableHTTP` transport.
+  - Sử dụng **MCP Inspector** để kiểm tra và debug toàn bộ các luồng giao tiếp tin nhắn.
+  - 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `MCP Architecture (Host/Client/Server)`, `Tools vs Resources vs Prompts`, `MCP Inspector`, `Sampling (Server-Initiated LLM Calls)`, `Progress Notifications`, `Roots (Filesystem Scoping)`, `stdio vs StreamableHTTP`, `OAuth CIMD`.
+
+---
+
+### 🌐 Module 11: Full-Stack Web AI Interface (Next.js & Vercel AI SDK)
 > **Mục tiêu**: Xây dựng giao diện Web AI hiện đại, hỗ trợ HTTP Streaming Response (stream từng token), Chat UI, Generative UI và Tool Calling UI.
 
 * **1. Nội dung Kiến thức Cần nạp**:

@@ -1,6 +1,6 @@
 # 📚 Thư Viện Tài Nguyên Học Tập (Master Curriculum 2026)
 
-Tổng hợp bài giảng video và tài liệu tra cứu chính thức theo **10 Master Modules** trong [online_learning_guide.md](./online_learning_guide.md).
+Tổng hợp bài giảng video và tài liệu tra cứu chính thức theo **11 Master Modules** trong [online_learning_guide.md](./online_learning_guide.md).
 
 > 🎓 **Khóa học video chính**: [Packt - Agentic AI Systems: Build & Deploy with LangChain/LangGraph](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) (ISBN 9781807780814)
 
@@ -52,7 +52,7 @@ Tổng hợp bài giảng video và tài liệu tra cứu chính thức theo **1
 
 ---
 
-### 🔌 Module 8: Model Context Protocol (MCP) Deep Dive
+### 🔌 Module 8: Model Context Protocol (MCP) Integration Quickstart
 * 🆓 **Free Course**: [Hugging Face: The Context Course (Unit 2 MCP)](https://huggingface.co/learn/context-course/unit2/introduction)
 * 📖 **Docs**: [MCP Official Spec](https://modelcontextprotocol.io/) | [FastMCP Python SDK GitHub](https://github.com/jlowin/fastmcp)
 
@@ -64,6 +64,13 @@ Tổng hợp bài giảng video và tài liệu tra cứu chính thức theo **1
 
 ---
 
-### 🌐 Module 10: Full-Stack Web AI Interface (Next.js & Vercel AI SDK)
+### 🎓 Module 10: Model Context Protocol (MCP) Masterclass (Anthropic Official Curriculum)
+* 🎓 **Anthropic Official Course 1**: [Introduction to Model Context Protocol](https://anthropic.skilljar.com/introduction-to-model-context-protocol) (3 Core Primitives, Python SDK, Inspector)
+* 🎓 **Anthropic Official Course 2**: [Model Context Protocol: Advanced Topics](https://anthropic.skilljar.com/model-context-protocol-advanced-topics) (Sampling, Progress, Roots, stdio vs StreamableHTTP)
+* 📖 **Docs**: [MCP Official Spec](https://modelcontextprotocol.io/) | [FastMCP Python SDK GitHub](https://github.com/jlowin/fastmcp)
+
+---
+
+### 🌐 Module 11: Full-Stack Web AI Interface (Next.js & Vercel AI SDK)
 * 🆓 **Free Course**: [freeCodeCamp: Build Support Agent with Vercel AI SDK](https://www.youtube.com/watch?v=WKIjkxxNH0c) | [Developers Digest: Agents 101 Tutorial](https://www.developersdigest.tech/tutorials/eWs50bhFvMY)
 * 📖 **Docs**: [Vercel AI SDK Documentation](https://sdk.vercel.ai/docs)

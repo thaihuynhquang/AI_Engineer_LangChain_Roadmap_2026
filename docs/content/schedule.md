@@ -1,5 +1,5 @@
 # ⏱️ Thời Khóa Biểu Custom Pomodoro (50m Focus - 5m Short Break - 20m Long Break)
-## Lộ Trình Master Curriculum 10 Module (Khóa Packt + Top Khóa Học Miễn Phí)
+## Lộ Trình Master Curriculum 11 Module (Khóa Packt + Top Khóa Học Miễn Phí)
 
 - **Quy tắc Pomodoro**:
   - **Mỗi Pomodoro**: 50 phút Tập Trung (Focus).
@@ -28,7 +28,7 @@
 │ ☕ Short Break 2 │ 15:55 - 16:00 (5m)  | Nghỉ ngắn                                         │
 ├──────────────────┼───────────────────────────────────────────────────────────────────────────┤
 │ 🍅 Pomodoro 4    │ 16:00 - 16:50 (50m) | 🛠️ Heavy Coding 2 & Build Projects (Project 1 - 4)       │
-│ 🌆 Afternoon End │ 16:50 - 17:00 (10m) | Tổng kết ca chiều & chuẩn bị nghỉ ca tối           │
+│ <ctrl42> Afternoon End │ 16:50 - 17:00 (10m) | Tổng kết ca chiều & chuẩn bị nghỉ ca tối           │
 ├──────────────────┴───────────────────────────────────────────────────────────────────────────┤
 │ 🌙 CA TỐI (22:00 - 24:00 | 2 POMODOROS): INTEGRATION, REFACTORING & GIT COMMIT                │
 ├──────────────────┬───────────────────────────────────────────────────────────────────────────┤
@@ -42,7 +42,7 @@
 
 ---
 
-## 🗓️ Lộ Trình Chi Tiết Phân Bổ Theo 10 Master Modules
+## 🗓️ Lộ Trình Chi Tiết Phân Bổ Theo 11 Master Modules
 
 ---
 
@@ -114,12 +114,12 @@
 
 ---
 
-### 🔌 MODULE 8 – Model Context Protocol (MCP) Deep Dive
-- **Nguồn bài giảng**: [Model Context Protocol Official Docs](https://modelcontextprotocol.io/) + [Hugging Face The Context Course (Unit 2: MCP)](https://huggingface.co/learn/context-course/unit2/introduction) (Free)
+### 🔌 MODULE 8 – Model Context Protocol (MCP) Integration Quickstart
+- **Nguồn bài giảng**: [Hugging Face The Context Course (Unit 2: MCP)](https://huggingface.co/learn/context-course/unit2/introduction) + [Model Context Protocol Official Docs](https://modelcontextprotocol.io/) (Free)
 - **Nội dung thực hành**:
-  - *Topic 1: MCP Architecture*: Nạp kiến trúc Model Context Protocol (MCP Client/Server).
-  - *Topic 2: Custom MCP Server*: Viết **FastMCP Server** bằng Python cung cấp Tool custom.
-  - *Topic 3: Transports & Integration*: Kết nối Agent gọi MCP Tool qua Stdio & SSE Transports & Mock Interview bằng Flashcards (Gemini Notebook).
+  - *Topic 1: MCP Integration*: Nạp khái niệm cơ bản MCP Client/Server & vị trí MCP trong Agent Ecosystem.
+  - *Topic 2: FastMCP Server*: Viết **FastMCP Server** bằng Python cung cấp Tool custom kết nối API/hệ thống.
+  - *Topic 3: Agent Integration*: Kết nối Agent gọi MCP Tool qua Stdio & SSE Transports & Mock Interview bằng Flashcards (Gemini Notebook).
 
 ---
 
@@ -131,7 +131,16 @@
 
 ---
 
-### 🌐 MODULE 10 – Full-Stack Web AI Interface (Next.js & Vercel AI SDK)
+### 🎓 MODULE 10 – Model Context Protocol (MCP) Masterclass (Anthropic Official Curriculum)
+- **Nguồn bài giảng**: [Anthropic Intro to MCP Course](https://anthropic.skilljar.com/introduction-to-model-context-protocol) + [Anthropic MCP Advanced Topics Course](https://anthropic.skilljar.com/model-context-protocol-advanced-topics) (Free)
+- **Nội dung thực hành**:
+  - *Topic 1: MCP Core & 3 Primitives*: Viết MCP Server/Client hỗ trợ `Tools`, `Resources`, `Prompts` & Debug qua **MCP Inspector**.
+  - *Topic 2: Advanced Primitives*: Thực hành `Sampling` (Server-initiated LLM call), `Progress Notifications` & `Roots` (Filesystem scoping).
+  - *Topic 3: Transports & Security*: Triển khai `stdio` vs `StreamableHTTP`, OAuth CIMD & Mock Interview bằng Flashcards (Gemini Notebook).
+
+---
+
+### 🌐 MODULE 11 – Full-Stack Web AI Interface (Next.js & Vercel AI SDK)
 - **Nguồn bài giảng**: [freeCodeCamp Video](https://www.youtube.com/watch?v=WKIjkxxNH0c) ("Build a Support Agent with Vercel AI SDK") + [Developers Digest Tutorial](https://www.developersdigest.tech/tutorials/eWs50bhFvMY) ("Agents 101: Build and Deploy Anything with AI Agents") (Free)
 - **Nội dung thực hành**:
   - *Topic 1: Next.js & AI SDK Setup*: Setup Next.js 15, Vercel AI SDK, TailwindCSS & Shadcn/ui.
