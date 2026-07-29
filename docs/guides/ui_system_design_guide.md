@@ -121,7 +121,8 @@ src/styles/
   - Completed Pomodoro session history table.
 
 ### 3.7. Resource Card Grid Component (`.resource-card`)
-- **Layout**: Learning resource card with category badge (`Video Course`, `Official Docs`, `Code Repo`), title, description, and external link button (`.btn-resource-primary`).
+- **Layout**: Learning resource card with category badge (`Video Course`, `Official Docs`, `Code Repo`), Module association badge (`Module X`), title, description, and external link button (`.btn-resource-primary`).
+- **Module Association Badge (`.task-tag--primary`)**: Displays the specific Module number (`Module 1`, `Module 8`, `Module 11`) adjacent to the resource type badge, preventing ambiguity when resources are referenced across multiple modules in the "All Modules" view.
 - **Star Bookmark Button (`.btn-flag-resource`)**: Star button at top-right corner to toggle favorite resources.
 
 ### 3.8. Tech Stack Ecosystem Layer Cards (`.tech-layer-card`, `.tech-table`)
@@ -268,7 +269,7 @@ The Pomodoro Timer & Schedule page combines an interactive countdown timer widge
 
 ---
 
-### 4.4. Page 4: Free Resources View (`<roadmap-view-resources>`)
+### 4.4. Page 4: Learning Resources View (`<roadmap-view-resources>`)
 
 The Learning Resources Library page features module filter tabs and a card grid displaying courses and documentation links.
 
@@ -281,7 +282,7 @@ The Learning Resources Library page features module filter tabs and a card grid 
 ├────────────────────────────────────────────────────────────────────────┤
 │ 2. RESOURCE CARDS GRID (.resources-grid: 3-column responsive grid)     │
 │ ┌──────────────────────────┐ ┌──────────────────────────┐             │
-│ │ [Video Course]       [⭐]│ │ [Official Docs]      [⭐]│             │
+│ │ [Video Course][Module 6] [⭐]│ │ [Official Docs][Module 8] [⭐]│            │
 │ │ DeepLearning.AI Agents   │ │ LangGraph Documentation  │             │
 │ │ 100% Free Course         │ │ Official Reference Guide │             │
 │ │ 🏷️ 100% Free             │ │ 🏷️ 100% Free             │             │
