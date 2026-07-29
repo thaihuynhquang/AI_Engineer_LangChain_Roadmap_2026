@@ -70,7 +70,7 @@ Tổng hợp bài giảng video và tài liệu tra cứu chính thức theo **1
 
 ---
 
-### 🎓 Module 11: Model Context Protocol (MCP) Masterclass (Anthropic Official Curriculum)
+### 🎓 Module 11 (Tùy chọn / Optional): Model Context Protocol (MCP) Masterclass (Anthropic Official Curriculum)
 * 🎓 **Anthropic Official Course 1**: [Introduction to Model Context Protocol](https://anthropic.skilljar.com/introduction-to-model-context-protocol) (3 Core Primitives, Python SDK, Inspector)
 * 🎓 **Anthropic Official Course 2**: [Model Context Protocol: Advanced Topics](https://anthropic.skilljar.com/model-context-protocol-advanced-topics) (Sampling, Progress, Roots, stdio vs StreamableHTTP)
 * 📖 **Docs**: [MCP Official Spec](https://modelcontextprotocol.io/) | [FastMCP Python SDK GitHub](https://github.com/jlowin/fastmcp)

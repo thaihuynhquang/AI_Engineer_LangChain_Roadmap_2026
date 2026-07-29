@@ -57,7 +57,7 @@
 | **Module 8** | MCP Integration Quickstart | 4 Poms | 10 Poms | 2 Poms | **16 Poms** (~2.7 ngày) |
 | **Module 9** | Open-Source LLMs & High-Throughput Serving (vLLM & Ollama) | 6 Poms | 12 Poms | 2 Poms | **20 Poms** (~3.3 ngày) |
 | **Module 10** | Full-Stack Web AI Interface (Next.js 15 & Vercel AI SDK) | 6 Poms | 18 Poms | 3 Poms | **27 Poms** (~4.5 ngày) |
-| **Module 11** | MCP Masterclass (Anthropic Official Curriculum) | 10 Poms | 20 Poms | 4 Poms | **34 Poms** (~5.7 ngày) |
+| **Module 11 (Tùy chọn)** | MCP Masterclass (Anthropic Official Curriculum) | 10 Poms | 20 Poms | 4 Poms | **34 Poms** (~5.7 ngày) |
 | **TỔNG CỘNG**| **11 Master Modules** | **77 Poms** | **244 Poms** | **30 Poms** | **351 Pomodoros** |
 
 ---
@@ -187,7 +187,7 @@
 
 ---
 
-### 🎓 TUẦN 12: Anthropic MCP Masterclass & Graduation (21 Pomodoros)
+### 🎓 TUẦN 12: Anthropic MCP Masterclass (Tùy chọn / Optional) & Graduation (21 Pomodoros)
 - **Nguồn tài nguyên**: [Anthropic Advanced MCP Course](https://anthropic.skilljar.com/model-context-protocol-advanced-topics) | [online_learning_guide.md#module-11](./online_learning_guide.md#-module-11-model-context-protocol-mcp-masterclass-anthropic-official-curriculum)
 - **Phân bổ tiến độ**:
   - **Ngày 56 – 58 (P331 – P345)**: *Module 11 Part 2: Advanced MCP Primitives & Transports*:

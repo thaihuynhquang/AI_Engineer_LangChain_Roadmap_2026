@@ -1,11 +1,11 @@
 # 🚀 Hướng Dẫn Lộ Trình Tự Học Agentic AI Master Curriculum (2026)
 ## Khóa Packt LangChain/LangGraph + Các Khóa Học Bổ Sung Miễn Phí (100% Free)
 
-Hướng dẫn này cung cấp khung lộ trình học tập **Master Curriculum 11 Module** được tích hợp hoàn chỉnh giữa:
+Hướng dẫn này cung cấp khung lộ trình học tập **Master Curriculum (10 Module Cốt Lõi + 1 Module Tùy Chọn)** được tích hợp hoàn chỉnh giữa:
 1. 📹 **Khóa Packt (Core Engine & Production)**: [Agentic AI Systems: Build & Deploy with LangChain/LangGraph](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) (Packt Publishing).
 2. 🆓 **Các Khóa Học Miễn Phí Bổ Sung (Free Supplemental Courses)** từ **Anthropic Academy**, **DeepLearning.AI**, **Vercel**, **freeCodeCamp**, **Hugging Face**, **Neon Postgres**, và **MCP Official Docs** để bù đắp các khoảng trống công nghệ (Web UI, `pgvector`, vLLM, LlamaParse, MCP Masterclass, RAG Evals).
 
-Lộ trình bao gồm **11 Module chuyên sâu**, kết hợp giữa **Lý thuyết bài giảng** $\rightarrow$ **Hands-on Demos & Bài tập** $\rightarrow$ **4 Dự án thực tế lớn (Projects)**.
+Lộ trình bao gồm **10 Module cốt lõi + 1 Module nâng cao tùy chọn (Module 11)**, kết hợp giữa **Lý thuyết bài giảng** $\rightarrow$ **Hands-on Demos & Bài tập** $\rightarrow$ **4 Dự án thực tế lớn (Projects)**.
 
 ---
 
@@ -20,7 +20,7 @@ Lộ trình bao gồm **11 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 [Module 7: Production & LLMOps] ──► [Module 8: MCP Quick Integration] ──► [Module 9: Open-Source LLMs (vLLM)]
                                                                                                   │
                                                                                                   ▼
-[Module 11: MCP Masterclass (Anthropic Official)] ◄── [Module 10: Full-Stack Web AI (Next.js)] ◄──┘
+[Module 11 (Tùy chọn): MCP Masterclass (Anthropic)] ◄── [Module 10: Full-Stack Web AI (Next.js)] ◄──┘
 ```
 
 ---
@@ -198,8 +198,10 @@ Lộ trình bao gồm **11 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 
 ---
 
-### 🎓 Module 11: Model Context Protocol (MCP) Masterclass (Anthropic Official Curriculum)
-> **Mục tiêu**: Làm chủ toàn diện chuẩn giao thức kết nối công cụ Model Context Protocol (MCP) từ kiến trúc nền tảng đến kỹ thuật nâng cao Production (Sampling, Roots, Progress, Transports & Security) dựa trên 2 khóa học chính thức từ Anthropic.
+### 🎓 Module 11 (Tùy chọn / Optional): Model Context Protocol (MCP) Masterclass (Anthropic Official Curriculum)
+> 💡 **Lưu ý giảm tải khối lượng**: Module này là **Tùy chọn (Optional)**. Kiến thức MCP cơ bản tích hợp vào Agent đã được phủ ở **Module 8**. Bạn có thể tạm thời bỏ qua Module 11 để hoàn thành lộ trình cốt lõi nhanh hơn và quay lại khi cần đào sâu chuẩn MCP nâng cao từ Anthropic.
+>
+> **Mục tiêu**: (Tùy chọn) Làm chủ toàn diện chuẩn giao thức kết nối công cụ Model Context Protocol (MCP) từ kiến trúc nền tảng đến kỹ thuật nâng cao Production (Sampling, Roots, Progress, Transports & Security) dựa trên 2 khóa học chính thức từ Anthropic.
 
 * **1. Nội dung Kiến thức Cần nạp**:
   * **Phần 1: MCP Core & 3 Primitives (Anthropic Intro Course)**:
