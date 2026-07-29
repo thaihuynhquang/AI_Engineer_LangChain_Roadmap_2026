@@ -19,8 +19,10 @@ export class RoadmapViewResources extends HTMLElement {
   refresh(): void {
     const { resourceFlags } = getState();
 
-    // Flatten all resources
-    const allResources = SPRINT_MODULES.flatMap((s) => s.resources);
+    // Flatten all resources with module metadata
+    const allResources = SPRINT_MODULES.flatMap((s) =>
+      s.resources.map((r) => ({ ...r, moduleNum: s.moduleNum }))
+    );
     const filteredResources =
       this.selectedModuleId === 'all'
         ? allResources
@@ -83,9 +85,14 @@ export class RoadmapViewResources extends HTMLElement {
                 <div class="resource-card">
                   <div>
                     <div class="resource-header-row">
-                      <span class="resource-type-badge resource-type-badge-dynamic" style="--badge-bg: ${badgeBg}; --badge-color: ${badgeColor};">
-                        ${typeIcon} ${typeLabel}
-                      </span>
+                      <div class="section-title-flex">
+                        <span class="resource-type-badge resource-type-badge-dynamic" style="--badge-bg: ${badgeBg}; --badge-color: ${badgeColor};">
+                          ${typeIcon} ${typeLabel}
+                        </span>
+                        <span class="task-tag task-tag--primary">
+                          Module ${res.moduleNum}
+                        </span>
+                      </div>
                       <button 
                         class="action-btn btn-flag-resource btn-reset-filter" 
                         data-res-id="${res.id}"
