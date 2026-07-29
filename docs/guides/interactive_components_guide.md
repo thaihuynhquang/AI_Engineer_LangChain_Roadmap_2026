@@ -74,11 +74,11 @@ It is designed to provide AI Agents and developers with explicit functional requ
 - **UI Component**: `Navigation Bar Component`.
 - **Trigger**: User clicks tab links or uses browser Back/Forward navigation buttons.
 - **Functional Requirements & Flow**:
-  1. Update URL Hash using format `#/view-name` (`dashboard`, `roadmap`, `schedule`, `resources`, `techstack`).
+  1. Update URL Hash using format `#/view-name` (`dashboard`, `roadmap`, `schedule`, `resources`, `techstack`, `quitcriteria`).
   2. Toggle active class on selected tab link and toggle visibility of matching view containers.
   3. **Navigation Badge (`#badge-overall-pct`)**: Displayed on Dashboard tab, automatically computes and renders overall weighted progress (`Deliverables 60% + Pomodoros 40%`) whenever state changes.
 - **Acceptance Criteria (AC)**:
-  - [ ] Accessing a direct URL Hash (e.g. `#/schedule`) activates and displays the correct view tab.
+  - [ ] Accessing a direct URL Hash (e.g. `#/quitcriteria`) activates and displays the correct view tab.
 
 ---
 
@@ -89,7 +89,7 @@ It is designed to provide AI Agents and developers with explicit functional requ
 - **UI Component**: `Dashboard View Component` ("Next Recommended Task" card).
 - **Trigger**: User clicks **"Mark Task Complete"** button (containing check SVG icon).
 - **Functional Requirements & Flow**:
-  1. Progress calculation module (`Progress Engine Module`) scans 5 Sprints for the first incomplete deliverable task.
+  1. Progress calculation module (`Progress Engine Module`) scans 11 Master Modules for the first incomplete deliverable task.
   2. Render task title and module details alongside a action button bound with `data-task-id`.
   3. Upon click, invoke `toggleChecked(taskId)` in `State Store`.
   4. Dashboard automatically updates to recommend the subsequent task or displays a 100% completion state.
@@ -102,7 +102,7 @@ It is designed to provide AI Agents and developers with explicit functional requ
 
 ### 4.1. Deliverables Checklist
 - **User Story**: As a learner, I want to check off practical deliverables when finishing code exercises to record my progress.
-- **UI Component**: `Roadmap View Component` (Task list within 5 Sprints).
+- **UI Component**: `Roadmap View Component` (Task list within 11 Master Modules).
 - **Trigger**: User clicks a task checkbox.
 - **Functional Requirements & Flow**:
   1. Each checkbox is assigned a unique static `data-task-id`.
@@ -165,7 +165,7 @@ It is designed to provide AI Agents and developers with explicit functional requ
 
 ### 6.1. Resource Module Filter
 - **UI Component**: `Resources View Component` (Filter Button Group).
-- **Requirements**: "All Modules" button plus buttons for "Module 1" through "Module 5". Clicking a filter limits resource cards to those belonging to the selected module.
+- **Requirements**: "All Modules" button plus filter buttons for "Module 1" through "Module 11". Clicking a filter limits resource cards to those belonging to the selected module.
 
 ### 6.2. Resource Bookmark Star
 - **UI Component**: `Resources View Component` (Star SVG button on resource cards).
@@ -177,7 +177,39 @@ It is designed to provide AI Agents and developers with explicit functional requ
 
 ---
 
-## 7. Acceptance Criteria & Component Interaction Matrix
+## 7. Quit Criteria & Decision Matrix Specifications (PRD-06)
+
+### 7.1. 4-Step Daily Protocol Ribbon
+- **User Story**: As a learner, I want to follow a daily 4-step protocol so I can recognize sunk cost traps early and execute timely pivots.
+- **UI Component**: `Quit Criteria View Component` (`.stepper-ribbon-card`).
+- **Functional Flow**:
+  1. Render 4 step blocks (`.ribbon-step` 1 to 4): (1) Nhận Diện, (2) Đánh Giá Định Mức, (3) Kiểm Tra Trigger, (4) Thực Thi Pivot.
+  2. Connect steps with arrow indicators (`.ribbon-arrow`).
+  3. Support horizontal scrolling (`overflow-x: auto`) for compact viewport responsiveness.
+
+### 7.2. Decision Matrix Module Cards
+- **User Story**: As a learner, I want to review explicit warning triggers and pivot actions for each module so I don't waste time on roadblock issues.
+- **UI Component**: `Quit Criteria View Component` (`.quit-matrix-grid`, `.quit-module-card`).
+- **Functional Flow**:
+  1. Iterate over 11 module decision objects in `QUIT_CRITERIA_DATA.decisionMatrix`.
+  2. Display Module Name, Quota Pomodoros badge, and Optional Tag (`.badge-optional-tag` for optional modules like Module 11).
+  3. Render Warning Trigger Box (`.quit-box--trigger`) with Amber warning icon and Pivot Action Box (`.quit-box--pivot`) with Corner-up-right action icon.
+
+### 7.3. Real-Time Module Search & Filtering
+- **User Story**: As a learner, I want to search across decision cards by module name or issue keyword to quickly locate relevant pivot instructions.
+- **UI Component**: `Quit Criteria View Component` (`#quit-search-input`).
+- **Trigger**: User types text into the search input field.
+- **Functional Requirements & Flow**:
+  1. Capture input string, trim whitespace, and convert to lowercase.
+  2. Filter `QUIT_CRITERIA_DATA.decisionMatrix` array by checking if `moduleName`, `trigger`, or `pivotAction` contains the query string.
+  3. Re-render filtered decision cards inside `#matrix-cards-grid`.
+  4. If zero matches found: Display an informative empty state banner (`.quit-empty-state`) prompting the user to adjust search keywords.
+- **Acceptance Criteria (AC)**:
+  - [ ] Search filtering responds instantaneously on input events without full page reloads.
+
+---
+
+## 8. Acceptance Criteria & Component Interaction Matrix
 
 | PRD Code | Feature | Managing Component / Module | Event | State Contract | Acceptance Criteria (AC) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -190,9 +222,12 @@ It is designed to provide AI Agents and developers with explicit functional requ
 | **PRD-03.1** | Task Checkbox | Roadmap View Component | `change` | `toggleChecked()` | Persists completion state (60% weight), applies strikethrough style. |
 | **PRD-04.1** | Timer Mode Switch | Schedule View Component | `click` | `switchMode()` | Switches between Focus / Short Break / Long Break modes. |
 | **PRD-04.2** | Preset & Custom | Schedule View Component | `click` | `setProfile()` | Saves timer duration configurations to `pomodoroSettings`. |
-| **PRD-04.3** | Task Selector | Schedule View Component | `change` | `selectedTaskId` | Links Task ID to Pomodoro session history log. |
+| **PRD-04.3** | Task Selector | Schedule View Component | `click` / `change` | `selectedTaskId` | Links Task ID to Pomodoro session history log. |
 | **PRD-04.4** | Focus Timer Engine | Schedule View Component | `click` / `interval` | `addPomodoroSession()` | Runs 1s countdown, updates SVG ring, adds Pomodoro points (40% weight). |
 | **PRD-04.5** | Audio & Notif | Schedule View Component | `click` / `change` | `updatePomodoroSettings()` | Synthesizes chime via Web Audio API & dispatches Web Notification. |
 | **PRD-04.6** | Delete Session Log | Schedule View Component | `click` | `removePomodoroSession()` | Removes session from history log, recalculates Dashboard progress %. |
-| **PRD-05.1** | Resource Filter | Resources View Component | `click` | `selectedModuleId` | Filters visible resource cards by selected Module. |
+| **PRD-05.1** | Resource Filter | Resources View Component | `click` | `selectedModuleId` | Filters visible resource cards by selected Module (Modules 1–11). |
 | **PRD-05.2** | Resource Bookmark | Resources View Component | `click` | `toggleResourceFlag()` | Toggles solid yellow SVG star bookmark on resource card. |
+| **PRD-06.1** | 4-Step Protocol | Quit Criteria View Component | render | None (Static UX) | Displays 4-step daily process ribbon connected by arrow steps. |
+| **PRD-06.2** | Decision Cards | Quit Criteria View Component | render | None (View render) | Renders 11 module decision cards with quota poms, triggers, and pivot actions. |
+| **PRD-06.3** | Real-Time Search | Quit Criteria View Component | `input` | `searchQuery` | Real-time query search filtering across 11 module cards with empty state fallback. |

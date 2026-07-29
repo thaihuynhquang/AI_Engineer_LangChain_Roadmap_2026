@@ -128,11 +128,23 @@ src/styles/
 ### 3.8. Tech Stack Ecosystem Layer Cards (`.tech-layer-card`, `.tech-table`)
 - **Layout**: Architectural layer cards (7 Layers) containing technology tables (`.tech-table`) with columns: Technology, System Role, Market Share, and Recommendation Badge (`.badge-primary-choice`).
 
-### 3.9. Toast Notification Widget Component (`.toast-container`, `.toast`)
+### 3.9. Quit Criteria Dashboard & Stepper Protocol Components (`.quitcriteria-container`, `.stepper-ribbon-card`, `.quit-matrix-grid`, `.quit-module-card`)
+- **Container Layout**: Flexbox block (`.quitcriteria-container`) with vertical gap `1.25rem`.
+- **4-Step Daily Protocol Stepper Ribbon (`.stepper-ribbon-card`)**:
+  - Horizontal step container (`.stepper-ribbon-steps`) with smooth horizontal scrolling (`overflow-x: auto`).
+  - Individual step items (`.ribbon-step`): Contains circular step number badge (`.ribbon-step-num`), bold step title (`.ribbon-step-title`), and description (`.ribbon-step-desc`). Connected by direction arrow separators (`.ribbon-arrow`).
+- **Control & Search Bar (`.quit-control-bar`, `.quit-search-input`)**:
+  - Flex wrapper containing search input field (`#quit-search-input`) with rounded pill border (`--radius-full`), real-time query filtering across 11 decision cards.
+- **Decision Matrix Cards Grid (`.quit-matrix-grid`, `.quit-module-card`)**:
+  - Responsive grid (`grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))`).
+  - Card Header (`.quit-card-header`): Module title (`.quit-module-name`), Optional tag badge (`.badge-optional-tag` with rose tint), and Quota Poms pill badge (`.quit-poms-badge`).
+  - Card Body (`.quit-card-body`): Warning Trigger Box (`.quit-box--trigger` with Amber warning icon) + Pivot Action Box (`.quit-box--pivot` with Corner-up-right action icon).
+
+### 3.10. Toast Notification Widget Component (`.toast-container`, `.toast`)
 - **Position**: Fixed at bottom-right corner (`position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 1000;`).
 - **Visual**: Slide-up animation (`translateY(0)`), color-coded left border (4px): Emerald (Success), Sky (Info), Amber (Warning), Rose (Error).
 
-### 3.10. SVG Icon Dictionary & Strict No-Emoji Rule (`src/utils/icons.ts`)
+### 3.11. SVG Icon Dictionary & Strict No-Emoji Rule (`src/utils/icons.ts`)
 - **Strict No-Emoji Rule for Web UI**: All icons and button labels across the web application **MUST** use pure inline SVG elements from the SVG Dictionary (`src/utils/icons.ts`). Using system emoji characters for web UI components is strictly prohibited to guarantee cross-platform visual consistency and CSS variable color customization.
 - All icons are pure SVG strings formatted with `stroke="currentColor"` (or `fill="currentColor"`) to match parent text color, accompanied by `aria-hidden="true"`.
 
@@ -148,7 +160,7 @@ The diagram below outlines the overall layout structure and component compositio
 │  [Logo Brand]                                   [Export][Import][Theme]│
 ├────────────────────────────────────────────────────────────────────────┤
 │                     NAVIGATION TAB BAR (.nav-tabs)                      │
-│  [Dashboard (Active)]  [Roadmap Sprints]  [Schedule]  [Resources] [Tech]│
+│ [Dashboard (Active)] [Roadmap] [Schedule] [Resources] [Tech] [Quit]   │
 ├────────────────────────────────────────────────────────────────────────┤
 │                                                                        │
 │                      MAIN VIEW CONTAINER (.app-main)                   │
@@ -189,11 +201,11 @@ The Overview page provides a high-level summary of learning progress, key metric
 ├────────────────────────────────────────────────────────────────────────┤
 │ 4. SPRINT PROGRESS OVERVIEW LIST (.sprint-list)                        │
 │ ┌────────────────────────────────────────────────────────────────────┐ │
-│ │ Sprint 1: Core Backend            [In Progress] 60% Progress Bar   │ │
+│ │ Module 1: LangChain Foundations   [In Progress] 60% Progress Bar   │ │
 │ ├────────────────────────────────────────────────────────────────────┤ │
-│ │ Sprint 2: Advanced RAG System     [Not Started] 0% Progress Bar    │ │
+│ │ Module 2: Prompt Eng & Parsers    [Not Started] 0% Progress Bar    │ │
 │ ├────────────────────────────────────────────────────────────────────┤ │
-│ │ Sprint 3: Agentic Workflows       [Not Started] 0% Progress Bar    │ │
+│ │ Module 3: Advanced RAG System     [Not Started] 0% Progress Bar    │ │
 │ └────────────────────────────────────────────────────────────────────┘ │
 └────────────────────────────────────────────────────────────────────────┘
 ```
@@ -202,31 +214,30 @@ The Overview page provides a high-level summary of learning progress, key metric
 
 ### 4.2. Page 2: Roadmap Sprints View (`<roadmap-view-roadmap>`)
 
-The Detailed Roadmap page displays all 5 Sprints, learning goals, and practical task checklists (Deliverables).
+The Detailed Roadmap page displays all 11 Master Modules across the 12-week schedule, learning goals, and practical task checklists (Deliverables).
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│ SECTION HEADER (Title "Detailed 5-Sprint Roadmap" + Subtitle)          │
+│ SECTION HEADER (Title "Detailed 11-Module Roadmap" + Subtitle)         │
 ├────────────────────────────────────────────────────────────────────────┤
-│ SPRINT LIST CONTAINER (.sprint-list: Stack of 5 Sprint Cards)          │
+│ SPRINT LIST CONTAINER (.sprint-list: Stack of 11 Module Cards)         │
 │                                                                        │
 │ ┌────────────────────────────────────────────────────────────────────┐ │
-│ │ SPRINT CARD HEADER                                                 │ │
-│ │ Sprint 1 Header • ⏱️ 30 Pomodoros (30h)    Status: 3/5 Tasks (60%)  │ │
+│ │ MODULE CARD HEADER                                                 │ │
+│ │ Module 1 Header • ⏱️ 24 Pomodoros (20h)    Status: 3/5 Tasks (60%) │ │
 │ ├────────────────────────────────────────────────────────────────────┤ │
-│ │ SPRINT CARD BODY                                                   │ │
+│ │ MODULE CARD BODY                                                   │ │
 │ │ 🎓 Learning Objectives & Skills:                                   │ │
-│ │   • Prompt Engineering, LangChain Core, FastAPI SSE Streaming...   │ │
+│ │   • Agentic AI Foundations, LCEL, Multi-LLM Provider, Smart Q&A Bot  │ │
 │ │                                                                    │ │
 │ │ 💻 Practical Tasks (Deliverables Checklist):                       │ │
-│ │   [x] Task 1.1: Initialize Python & FastAPI project [ 4 Poms ]      │ │
-│ │   [x] Task 1.2: Build LangChain Prompt Template     [ 6 Poms ]      │ │
-│ │   [ ] Task 1.3: Build SSE Token Streaming API       [ 8 Poms ]      │ │
-│ │   [ ] Task 1.4: Write Dockerfile for backend service[ 4 Poms ]      │ │
+│ │   [x] Task 1.1: Setup LangChain & Multi-LLM Providers [ 4 Poms ]   │ │
+│ │   [x] Task 1.2: Build LCEL Runnable Chain             [ 6 Poms ]   │ │
+│ │   [ ] Task 1.3: Build Streaming FastAPI Endpoint      [ 8 Poms ]   │ │
 │ └────────────────────────────────────────────────────────────────────┘ │
 │                                                                        │
 │ ┌────────────────────────────────────────────────────────────────────┐ │
-│ │ SPRINT CARD 2 (Structured identically to Sprint 1)                 │ │
+│ │ MODULE CARD 2 (Structured identically to Module 1)                 │ │
 │ └────────────────────────────────────────────────────────────────────┘ │
 └────────────────────────────────────────────────────────────────────────┘
 ```
@@ -235,7 +246,7 @@ The Detailed Roadmap page displays all 5 Sprints, learning goals, and practical 
 
 ### 4.3. Page 3: Pomodoro Schedule View (`<roadmap-view-schedule>`)
 
-The Pomodoro Timer & Schedule page combines an interactive countdown timer widget with daily/weekly focus schedules.
+The Pomodoro Timer & Schedule page combines an interactive countdown timer widget with daily/weekly focus schedules (12 Weeks / 351 Pomodoros).
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
@@ -250,12 +261,12 @@ The Pomodoro Timer & Schedule page combines an interactive countdown timer widge
 │ └──────────────────────────────────┘ └───────────────────────────────┘ │
 ├────────────────────────────────────────────────────────────────────────┤
 │ 2. WEEKLY SCHEDULE SECTION                                             │
-│  [Week 1 Tab]  [Week 2 Tab]  [Week 3 Tab] ...                          │
+│  [Week 1 Tab]  [Week 2 Tab]  ...  [Week 12 Tab]                        │
 │ ┌────────────────────────────────────────────────────────────────────┐ │
 │ │ DAYS GRID (.days-grid: Day cards representing Day 1, Day 2...)     │ │
 │ │ ┌──────────────────────┐ ┌──────────────────────┐                  │ │
-│ │ │ Day 1 (3 Pomodoros)  │ │ Day 2 (3 Pomodoros)  │ ...              │ │
-│ │ │ • P1: Prompt Eng     │ │ • P1: RAG Vector DB  │                  │ │
+│ │ │ Day 1 (6 Pomodoros)  │ │ Day 2 (6 Pomodoros)  │ ...              │ │
+│ │ │ • P1-3: Prompt Eng   │ │ • P1-3: Vector DBs   │                  │ │
 │ │ └──────────────────────┘ └──────────────────────┘                  │ │
 │ └────────────────────────────────────────────────────────────────────┘ │
 ├────────────────────────────────────────────────────────────────────────┤
@@ -271,19 +282,19 @@ The Pomodoro Timer & Schedule page combines an interactive countdown timer widge
 
 ### 4.4. Page 4: Learning Resources View (`<roadmap-view-resources>`)
 
-The Learning Resources Library page features module filter tabs and a card grid displaying courses and documentation links.
+The Learning Resources Library page features module filter tabs (Modules 1–11) and a card grid displaying courses, repos, and documentation links.
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
 │ SECTION HEADER (Title "Learning Resource Library" + Subtitle)          │
 ├────────────────────────────────────────────────────────────────────────┤
 │ 1. FILTER BAR CONTAINER (.filter-bar-container)                        │
-│ [ All Modules ] [ Module 1 ] [ Module 2 ] [ Module 3 ] ...             │
+│ [ All Modules ] [ Module 1 ] [ Module 2 ] ... [ Module 11 ]            │
 ├────────────────────────────────────────────────────────────────────────┤
 │ 2. RESOURCE CARDS GRID (.resources-grid: 3-column responsive grid)     │
 │ ┌──────────────────────────┐ ┌──────────────────────────┐             │
 │ │ [Video Course][Module 6] [⭐]│ │ [Official Docs][Module 8] [⭐]│            │
-│ │ DeepLearning.AI Agents   │ │ LangGraph Documentation  │             │
+│ │ DeepLearning.AI Agents   │ │ FastMCP Python SDK       │             │
 │ │ 100% Free Course         │ │ Official Reference Guide │             │
 │ │ 🏷️ 100% Free             │ │ 🏷️ 100% Free             │             │
 │ │ [ Open Link ↗ ]          │ │ [ Open Link ↗ ]          │             │
@@ -318,6 +329,39 @@ The Tech Stack Report page provides reference architecture cards and technical t
 │ ┌────────────────────────────────────────────────────────────────────┐ │
 │ │ Layer 2: Agent Orchestration Frameworks (Structured like Layer 1)  │ │
 │ └────────────────────────────────────────────────────────────────────┘ │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### 4.6. Page 6: Quit Criteria View (`<roadmap-view-quitcriteria>`)
+
+The Quit Criteria & Sunk Cost Management page presents the 4-step daily execution protocol ribbon alongside an interactive search-enabled decision matrix grid covering all 11 modules.
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│ SECTION HEADER (Title "Tiêu Chí Từ Bỏ & Quản Trị Chi Phí Chìm")       │
+├────────────────────────────────────────────────────────────────────────┤
+│ 1. 4-STEP PROTOCOL RIBBON CARD (.stepper-ribbon-card)                  │
+│ ┌────────────────────────────────────────────────────────────────────┐ │
+│ │ 📋 Quy Trình 4 Bước Thực Thi Hàng Ngày:                            │ │
+│ │ (1) Nhận Diện ➔ (2) Đánh Giá Định Mức ➔ (3) Kiểm Tra Trigger ➔ (4) Pivot │
+│ └────────────────────────────────────────────────────────────────────┘ │
+├────────────────────────────────────────────────────────────────────────┤
+│ 2. CONTROL BAR (.quit-control-bar)                                     │
+│                                  [ Search Input: "Tìm kiếm module..." ]│
+├────────────────────────────────────────────────────────────────────────┤
+│ 3. DECISION MATRIX CARDS GRID (.quit-matrix-grid: 11 Module Cards)     │
+│ ┌─────────────────────────────────┐ ┌────────────────────────────────┐ │
+│ │ Module 4: Advanced RAG System   │ │ Module 11: Production Deploy   │ │
+│ │ ⏱️ 43 Poms                        │ │ ⏱️ 22 Poms [Optional Module]   │ │
+│ │ ├───────────────────────────────┤ │ ├──────────────────────────────┤ │
+│ │ │ ⚠️ Trigger Kích Hoạt (Warning) │ │ │ ⚠️ Trigger Kích Hoạt (Warning)│ │
+│ │ │ Quá 15 Poms debug pgvector... │ │ │ Mắc kẹt CI/CD quá 10 Poms... │ │
+│ │ ├───────────────────────────────┤ │ ├──────────────────────────────┤ │
+│ │ │ ↗️ Pivot Action (Thực Thi)    │ │ │ ↗️ Pivot Action (Thực Thi)   │ │
+│ │ │ Đổi sang ChromaDB In-memory   │ │ │ Skip Mod 11, deploy Vercel   │ │
+│ └─────────────────────────────────┘ └────────────────────────────────┘ │
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
