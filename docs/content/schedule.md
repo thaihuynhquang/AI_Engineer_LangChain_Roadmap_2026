@@ -4,11 +4,12 @@
 - **Quy tắc Pomodoro**:
   - **Mỗi Pomodoro**: 50 phút Tập Trung (Focus).
   - **Nghỉ ngắn (Short Break)**: 5 phút sau mỗi lượt 50 phút.
-  - **Nghỉ dài (Long Break)**: 20 phút sau mỗi 2 lượt Pomodoro (Sau P2 và sau P4/P6).
+  - **Nghỉ dài (Long Break)**: 20 phút sau mỗi 2 lượt Pomodoro (Sau P2 và sau P4).
 - **Khung giờ làm việc**: Thứ 2 – Thứ 6 (Weekdays).
-  - **Ca Chiều**: 1:00 PM – 5:00 PM (4 Pomodoros | 240 phút).
-  - **Ca Tối**: 10:00 PM – 12:00 AM (2 Pomodoros | 120 phút).
-- **Tổng dung lượng công việc**: **6 Pomodoros / ngày** (5 tiếng tập trung + 1 tiếng nghỉ/wrap-up) $\rightarrow$ **30 Pomodoros / tuần**.
+  - **Ca Chiều**: 1:00 PM – 5:00 PM (4 Pomodoros | 240 phút = 200m Focus + 40m Break/Wrap-up).
+  - **Ca Tối**: 10:00 PM – 12:00 AM (2 Pomodoros | 120 phút = 100m Focus + 20m Break/Wrap-up).
+- **Tổng dung lượng công việc**: **6 Pomodoros / ngày** (5 tiếng tập trung + 1 tiếng nghỉ/wrap-up) $\rightarrow$ **30 Pomodoros / tuần** (25 tiếng focus pure/tuần).
+- **Tổng khối lượng toàn khóa**: **351 Pomodoros** ($\approx$ **12 Tuần / 3 Tháng / 58-60 Ngày học**).
 
 ---
 
@@ -18,130 +19,180 @@
 ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
 │ 🌞 CA CHIỀU (13:00 - 17:00 | 4 POMODOROS): FOCUS LEARNING & HEAVY CODING                     │
 ├──────────────────┬───────────────────────────────────────────────────────────────────────────┤
-│ 🍅 Pomodoro 1    │ 13:00 - 13:50 (50m) | 🎓 Nạp Lý Thuyết (Xem Video bài giảng Packt & Free)    │
+│ 🍅 Pomodoro 1    │ 13:00 - 13:50 (50m) | 🎓 Nạp Lý Thuyết & Xem Video / Đọc Docs            │
 │ ☕ Short Break 1 │ 13:50 - 13:55 (5m)  | Nghỉ ngắn (thư giãn mắt, uống nước)                │
 ├──────────────────┼───────────────────────────────────────────────────────────────────────────┤
-│ 🍅 Pomodoro 2    │ 13:55 - 14:45 (50m) | 📖 Xem Hands-on Demo & Code Pattern Trong Khóa Học     │
+│ 🍅 Pomodoro 2    │ 13:55 - 14:45 (50m) | 📖 Xem Hands-on Demo & Thử nghiệm Code Sample        │
 │ 🛑 LONG BREAK 1  │ 14:45 - 15:05 (20m) | 🌿 NGHỈ GIẢI LAO DÀI (Đứng dậy vận động, ăn nhẹ)     │
 ├──────────────────┼───────────────────────────────────────────────────────────────────────────┤
-│ 🍅 Pomodoro 3    │ 15:05 - 15:55 (50m) | 💻 Heavy Coding 1 (Tự gõ lại Code & Giải Exercise)    │
+│ 🍅 Pomodoro 3    │ 15:05 - 15:55 (50m) | 💻 Heavy Coding (Xây dựng Feature / Gõ Code từ đầu)     │
 │ ☕ Short Break 2 │ 15:55 - 16:00 (5m)  | Nghỉ ngắn                                         │
 ├──────────────────┼───────────────────────────────────────────────────────────────────────────┤
-│ 🍅 Pomodoro 4    │ 16:00 - 16:50 (50m) | 🛠️ Heavy Coding 2 & Build Projects (Project 1 - 4)       │
-│ <ctrl42> Afternoon End │ 16:50 - 17:00 (10m) | Tổng kết ca chiều & chuẩn bị nghỉ ca tối           │
+│ 🍅 Pomodoro 4    │ 16:00 - 16:50 (50m) | 🛠️ Projects Implementation (Project 1 - 4)             │
+│ 🌇 Afternoon End │ 16:50 - 17:00 (10m) | Tổng kết ca chiều & note tồn đọng ca tối            │
 ├──────────────────┴───────────────────────────────────────────────────────────────────────────┤
-│ 🌙 CA TỐI (22:00 - 24:00 | 2 POMODOROS): INTEGRATION, REFACTORING & GIT COMMIT                │
+│ 🌙 CA TỐI (22:00 - 24:00 | 2 POMODOROS): TESTING, REFACTORING & FLASHCARDS                    │
 ├──────────────────┬───────────────────────────────────────────────────────────────────────────┤
-│ 🍅 Pomodoro 5    │ 22:00 - 22:50 (5m)  | 🔧 Code Refactoring & Testing (Unit/Integration Test)  │
+│ 🍅 Pomodoro 5    │ 22:00 - 22:50 (50m) | 🔧 Code Refactoring & Write Unit/Integration Tests     │
 │ ☕ Short Break 3 │ 22:50 - 22:55 (5m)  | Nghỉ ngắn giữa ca tối                             │
 ├──────────────────┼───────────────────────────────────────────────────────────────────────────┤
-│ 🍅 Pomodoro 6    │ 22:55 - 23:45 (50m) | 🧹 Code Cleanup & Solution Verification              │
-│ 🚀 Night Wrap-up │ 23:45 - 24:00 (15m) | Push Git Commit lên GitHub & tắt máy nghỉ ngơi 💤    │
+│ 🍅 Pomodoro 6    │ 22:55 - 23:45 (50m) | 🗂️ Gemini Notebook Flashcards Review & Bug fixing    │
+│ 🚀 Night Wrap-up │ 23:45 - 24:00 (15m) | Push Git Commit lên GitHub & Tắt máy nghỉ ngơi 💤     │
 └──────────────────┴───────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🗓️ Lộ Trình Chi Tiết Phân Bổ Theo 11 Master Modules
+## 📊 Bảng Phân Bổ Tổng Quan Khối Lượng 11 Master Modules (351 Pomodoros)
+
+| Module | Tên Module & Nội dung chính | Bài giảng Video / Docs | Bài tập & Projects Thực hành | Flashcards & Review | Tổng Pomodoros |
+| :--- | :--- | :---: | :---: | :---: | :---: |
+| **Module 1** | LangChain Foundations & **Project 1 (Smart Q&A Bot)** | 5 Poms | 16 Poms (Project 1: 10 Poms) | 3 Poms | **24 Poms** (~4 ngày) |
+| **Module 2** | Chain Patterns & Advanced LCEL | 4 Poms | 10 Poms | 2 Poms | **16 Poms** (~2.7 ngày) |
+| **Module 3** | Data Ingestion, Complex Doc AI & Vector Stores | 6 Poms | 14 Poms | 3 Poms | **23 Poms** (~3.8 ngày) |
+| **Module 4** | Advanced RAG, `pgvector` & **Project 2 (AI Research Assistant)** | 8 Poms | 32 Poms (Project 2: 16 Poms) | 3 Poms | **43 Poms** (~7.2 ngày) |
+| **Module 5** | LangGraph - A Full Deep Dive | 8 Poms | 18 Poms | 4 Poms | **30 Poms** (~5 ngày) |
+| **Module 6** | Multi-Agent Architectures & **Project 3 (Multi-Agent System)** | 10 Poms | 38 Poms (Project 3: 20 Poms) | 4 Poms | **52 Poms** (~8.7 ngày) |
+| **Module 7** | Production LLMOps, Security & **Project 4 (Final Full-Stack)** | 10 Poms | 52 Poms (Project 4: 32 Poms) | 4 Poms | **66 Poms** (~11 ngày) |
+| **Module 8** | MCP Integration Quickstart | 4 Poms | 10 Poms | 2 Poms | **16 Poms** (~2.7 ngày) |
+| **Module 9** | Open-Source LLMs & High-Throughput Serving (vLLM & Ollama) | 6 Poms | 12 Poms | 2 Poms | **20 Poms** (~3.3 ngày) |
+| **Module 10** | Full-Stack Web AI Interface (Next.js 15 & Vercel AI SDK) | 6 Poms | 18 Poms | 3 Poms | **27 Poms** (~4.5 ngày) |
+| **Module 11** | MCP Masterclass (Anthropic Official Curriculum) | 10 Poms | 20 Poms | 4 Poms | **34 Poms** (~5.7 ngày) |
+| **TỔNG CỘNG**| **11 Master Modules** | **77 Poms** | **244 Poms** | **30 Poms** | **351 Pomodoros** |
 
 ---
 
-### 🟢 MODULE 1 – LangChain Foundations & Project 1: Smart Q&A Bot
-- **Nguồn bài giảng**: [Khóa Packt Chap 1-2](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814)
-- **Nội dung thực hành**:
-  - *Topic 1: Environment & API Keys*: Setup môi trường Python & API Keys OpenAI / Anthropic (*Packt Chap 2*).
-  - *Topic 2: LCEL & Chain Basics*: Thực hành LCEL, Runnable Chains, Realtime Streaming & Schema Inspection (*Packt Chap 2*).
-  - *Topic 3: Multi-model & Parsers*: Thực hành Prompt Templates, Messages, Output Parsers & Multi-model setup.
-  - *Topic 4: Project & Review*: Xây dựng **Project 1 - Smart Q&A Bot** & Mock Interview bằng Flashcards (Gemini Notebook).
+## 🗓️ Lộ Trình Chi Tiết 12 Tuần Học Tập (Week 1 $\rightarrow$ Week 12)
 
 ---
 
-### 🟡 MODULE 2 – Chain Patterns & Advanced LCEL
-- **Nguồn bài giảng**: [Khóa Packt Chap 3](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814)
-- **Nội dung thực hành**:
-  - *Topic 1: Parallel Execution*: Basic Chains & Parallel Chains (*Packt Chap 3*).
-  - *Topic 2: Advanced LCEL Patterns*: `RunnablePassthrough`, Chain Branching, Debugging chuỗi & Mock Interview bằng Flashcards (Gemini Notebook).
+### 🟢 TUẦN 1: LangChain Foundations & Project 1: Smart Q&A Bot (30 Pomodoros)
+- **Nguồn tài nguyên**: [Khóa Packt Chap 1-2](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) | [online_learning_guide.md#module-1](./online_learning_guide.md#🟢-module-1-langchain--agentic-foundations)
+- **Phân bổ tiến độ**:
+  - **Ngày 1 – 2 (P1 – P12)**: *Environment & LCEL Core*: Setup Python, OpenAI/Anthropic API keys. Thực hành LCEL, `RunnableSequence`, `RunnableParallel`, Batching & Streaming.
+  - **Ngày 3 (P13 – P18)**: *Multi-LLM & Parsers*: Prompt Templates, Chat Models, Structured Output & Parsers (`PydanticOutputParser`, `StrOutputParser`).
+  - **Ngày 4 – 5 (P19 – P30)**: *Project 1 & Review*:
+    - 🛠️ **Project 1: Smart Q&A Bot** (P19 – P28): Xây dựng ứng dụng Hỏi-Đáp hỗ trợ đa mô hình với structured response và error fallback.
+    - 🗂️ **Flashcards & Refactoring** (P29 – P30): Mock Interview qua Gemini Notebook với từ khóa Module 1.
 
 ---
 
-### 🟠 MODULE 3 – Data Ingestion, Complex Document AI & Vector Stores
-- **Nguồn bài giảng**: [Khóa Packt Chap 4](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) + [DeepLearning.AI LlamaParse Course](https://learn.deeplearning.ai/courses/building-agentic-rag-with-llamaindex) (Free)
-- **Nội dung thực hành**:
-  - *Topic 1: Document Ingestion*: Document Loaders (`TextLoader`, `WebLoader`, PDF Loader).
-  - *Topic 2: Complex Document AI*: Parse bảng biểu và PDF phức tạp với **LlamaParse**.
-  - *Topic 3: Text Splitting*: Text Splitting Deep Dive (`RecursiveCharacterTextSplitter`, Overlap, Markdown, Code Splitters).
-  - *Topic 4: Vector Store & Indexing*: Embeddings & **ChromaDB** (Similarity Search, Metadata Filtering, Persistence) & Mock Interview bằng Flashcards (Gemini Notebook).
+### 🟡 TUẦN 2: Advanced LCEL & Data Ingestion (30 Pomodoros)
+- **Nguồn tài nguyên**: [Khóa Packt Chap 3-4](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) + [DeepLearning.AI LlamaParse](https://learn.deeplearning.ai/courses/building-agentic-rag-with-llamaindex) | [online_learning_guide.md#module-2](./online_learning_guide.md#🟡-module-2-chain-patterns--advanced-lcel)
+- **Phân bổ tiến độ**:
+  - **Ngày 6 – 7 (P31 – P42)**: *Module 2: Advanced LCEL Patterns*: `RunnablePassthrough`, Chain Branching (`RunnableBranch`), Fallback chains, Async execution, Custom callbacks & Handlers, Chain Debugging.
+  - **Ngày 8 – 10 (P43 – P60)**: *Module 3: Document AI & Text Splitting*:
+    - Document Loaders (`TextLoader`, `WebLoader`, PDF Loaders).
+    - Complex Document Parsing với **LlamaParse** (Trích xuất bảng biểu & scanned PDF).
+    - Text Splitting Deep Dive (`RecursiveCharacterTextSplitter`, Overlap, MarkdownHeaderSplitter, CodeSplitter).
 
 ---
 
-### 🔴 MODULE 4 – Advanced RAG, Production `pgvector` & Project 2: AI Research Assistant
-- **Nguồn bài giảng**: [Khóa Packt Chap 5](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) + [BugBytes Video Tutorial: LangChain & PGVector](https://www.youtube.com/watch?v=3g6nZ1qWv-c) (Free)
-- **Nội dung thực hành**:
-  - *Topic 1: Advanced RAG Strategies*: Basic RAG & Advanced RAG (Multi-Query, Compression, Hybrid Search, Parent Doc) (*Packt Chap 5*).
-  - *Topic 2: Production Vector Database*: Thiết lập CSDL Production **`pgvector` (PostgreSQL)**, HNSW indexing & Hybrid search.
-  - *Topic 3: Memory Systems*: Memory Patterns (Conversation, Session, Windowed, Summary, Persistent Memory).
-  - *Topic 4: Project & Review*: Xây dựng **Project 2: AI Research Assistant** (`pgvector`, Memory) & Mock Interview bằng Flashcards (Gemini Notebook).
+### 🟠 TUẦN 3: Vector Stores & Production `pgvector` RAG (30 Pomodoros)
+- **Nguồn tài nguyên**: [Khóa Packt Chap 4-5](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) + [BugBytes PGVector Tutorial](https://youtu.be/GYwhDkwCdt8) | [online_learning_guide.md#module-3](./online_learning_guide.md#🟠-module-3-data-ingestion-complex-document-ai--vector-stores)
+- **Phân bổ tiến độ**:
+  - **Ngày 11 (P61 – P66)**: *ChromaDB & Indexing*: Embeddings, ChromaDB persistence, Similarity Search vs MMR, Metadata Filtering.
+  - **Ngày 12 – 14 (P67 – P84)**: *Module 4 Part 1: Advanced RAG Strategies*:
+    - Multi-Query Retriever, Contextual Compression, Hybrid Search, Parent Document Retriever.
+    - Setup PostgreSQL & Extension **`pgvector`** (HNSW & IVFFlat indexing, Cosine vs L2 distance, SQL + Vector hybrid query).
+  - **Ngày 15 (P85 – P90)**: *Memory Systems*: Conversation Memory, Multiple Sessions, Windowed, Summary & Persistent Memory patterns.
 
 ---
 
-### 🔵 MODULE 5 – LangGraph - A Full Deep Dive
-- **Nguồn bài giảng**: [Khóa Packt Chap 6](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814)
-- **Nội dung thực hành**:
-  - *Topic 1: StateGraph Core*: `StateGraph`, Reducers, Message State & Chat Pattern.
-  - *Topic 2: Routing & Multipath*: Edges & Conditional Edges, Routing & Multipath Routing.
-  - *Topic 3: Self-Correcting Agent*: Vòng lặp tự sửa lỗi (Cycles & Self-Correcting Code Writer).
-  - *Topic 4: Persistence & Human Control*: Human in the Loop (Interrupt for Approval), Checkpointing & Mock Interview bằng Flashcards (Gemini Notebook).
+### 🔴 TUẦN 4: Project 2 (AI Research Assistant) & LangGraph Foundations (30 Pomodoros)
+- **Nguồn tài nguyên**: [Khóa Packt Chap 5-6](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) | [online_learning_guide.md#module-4](./online_learning_guide.md#🔴-module-4-advanced-rag-production-pgvector--memory-systems)
+- **Phân bổ tiến độ**:
+  - **Ngày 16 – 18 (P91 – P108)**: 🛠️ **Project 2: AI Research Assistant** (16 Pomodoros + 2 Poms Refactor):
+    - Đóng gói Ingestion Pipeline, `pgvector` Storage, Multi-Query Retrieval, Session Memory & CLI/API Interface.
+  - **Ngày 19 – 20 (P109 – P120)**: *Module 5 Part 1: LangGraph Core*:
+    - Trụ cột LangGraph: `StateGraph`, Reducers, Accumulating State, Message State & Chat State pattern.
 
 ---
 
-### 🟣 MODULE 6 – Multi-Agent Architectures (CrewAI + LangGraph) & Project 3
-- **Nguồn bài giảng**: [Khóa Packt Chap 7](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) + [DeepLearning.AI CrewAI Course](https://learn.deeplearning.ai/courses/multi-ai-agent-systems-with-crewai) + [Hugging Face The Context Course (Unit 4: Sub-agents)](https://huggingface.co/learn/context-course/unit4/introduction) (Free)
-- **Nội dung thực hành**:
-  - *Topic 1: CrewAI Multi-Agent*: Thực hành xây dựng Multi-Agent với **CrewAI** (Agents, Tasks, Crew, Hierarchical process).
-  - *Topic 2: LangGraph Multi-Agent*: Đa Agent với LangGraph (Supervisor Agent, Handoffs, Map-Reduce, Message Passing) (*Packt Chap 7*).
-  - *Topic 3: Hierarchical Tracing*: Hierarchical Architecture & Agent Tracing.
-  - *Topic 4: Project & Review*: Xây dựng **Project 3: Multi-Agent Research System** & Mock Interview bằng Flashcards (Gemini Notebook).
+### 🔵 TUẦN 5: LangGraph Deep Dive & Multi-Agent Intro (30 Pomodoros)
+- **Nguồn tài nguyên**: [Khóa Packt Chap 6-7](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) | [online_learning_guide.md#module-5](./online_learning_guide.md#🔵-module-5-langgraph---a-full-deep-dive)
+- **Phân bổ tiến độ**:
+  - **Ngày 21 – 23 (P121 – P138)**: *LangGraph Advanced*:
+    - Conditional Edges, Routing & Multipath routing.
+    - Vòng lặp & Tự sửa lỗi (Cycles & Self-Correcting Code Writer Agent).
+    - Human-in-the-Loop & Persistence: Interrupt for Approval, Checkpoint internals & State inspection.
+  - **Ngày 24 – 25 (P139 – P150)**: *Module 6 Part 1: CrewAI Framework*:
+    - Agents, Tasks, Crew, Sequential & Hierarchical processes với **CrewAI** (theo khóa DeepLearning.AI).
 
 ---
 
-### 🟤 MODULE 7 – Production Deployment, LLMOps, Security & Project 4 (Final Project)
-- **Nguồn bài giảng**: [Khóa Packt Chap 8](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) + [DeepLearning.AI Evaluating AI Agents](https://learn.deeplearning.ai/courses/evaluating-ai-agents) + Hugging Face [Context Course (Unit 5: Hooks)](https://huggingface.co/learn/context-course/unit5/introduction) & [Agents Course (Bonus Unit 2)](https://huggingface.co/learn/agents-course/bonus-unit2/introduction) (Free)
-- **Nội dung thực hành**:
-  - *Topic 1: Observability & Security*: LangSmith Tracing & Security Layer (PII Detection, Prompt Injection Defense, LLM Guard).
-  - *Topic 2: Agent Evaluation*: Đánh giá RAG & Agent với **Arize AI / Ragas** (Faithfulness, Answer Relevance, Context Recall).
-  - *Topic 3: Resilience & Optimization*: Error Handling, Circuit Breaker, Model Router, Semantic Caching & Token Budgeting.
-  - *Topic 4: Final Project & Cloud Deploy*: Xây dựng **Project 4: Production Full-Stack AI System (Next.js + FastAPI + Docker + Render)** & Mock Interview bằng Flashcards (Gemini Notebook)! 🚀
+### 🟣 TUẦN 6: Multi-Agent Systems & Project 3 (30 Pomodoros)
+- **Nguồn tài nguyên**: [Khóa Packt Chap 7](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) + [DeepLearning.AI CrewAI](https://learn.deeplearning.ai/courses/multi-ai-agent-systems-with-crewai) | [online_learning_guide.md#module-6](./online_learning_guide.md#🟣-module-6-multi-agent-architectures-crewai--langgraph-multi-agent)
+- **Phân bổ tiến độ**:
+  - **Ngày 26 – 28 (P151 – P168)**: *LangGraph Multi-Agent Patterns*:
+    - Supervisor Agent Architecture, Agent Handoffs, Map-Reduce Strategy, Message Passing, Shared Field State, Blackboard Pattern.
+  - **Ngày 29 – 30 (P169 – P180)**: 🛠️ **Project 3: Multi-Agent Research System (Khởi động)**:
+    - Bắt đầu thiết kế Custom State Schema, Supervisor Node & Worker Nodes cho hệ thống nghiên cứu đa tác vụ.
 
 ---
 
-### 🔌 MODULE 8 – Model Context Protocol (MCP) Integration Quickstart
-- **Nguồn bài giảng**: [Hugging Face The Context Course (Unit 2: MCP)](https://huggingface.co/learn/context-course/unit2/introduction) + [Model Context Protocol Official Docs](https://modelcontextprotocol.io/) (Free)
-- **Nội dung thực hành**:
-  - *Topic 1: MCP Integration*: Nạp khái niệm cơ bản MCP Client/Server & vị trí MCP trong Agent Ecosystem.
-  - *Topic 2: FastMCP Server*: Viết **FastMCP Server** bằng Python cung cấp Tool custom kết nối API/hệ thống.
-  - *Topic 3: Agent Integration*: Kết nối Agent gọi MCP Tool qua Stdio & SSE Transports & Mock Interview bằng Flashcards (Gemini Notebook).
+### 🟣 TUẦN 7: Project 3 Completion & LLMOps/Security (30 Pomodoros)
+- **Nguồn tài nguyên**: [Khóa Packt Chap 7-8](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) | [online_learning_guide.md#module-7](./online_learning_guide.md#🟤-module-7-production-deployment-llmops-security--evaluation)
+- **Phân bổ tiến độ**:
+  - **Ngày 31 – 32 (P181 – P192)**: 🛠️ **Project 3: Multi-Agent Research System (Hoàn thiện)**:
+    - Hoàn thiện Send API, Map-Reduce synthesis node, Tracing và nghiệm thu Project 3.
+  - **Ngày 33 – 35 (P193 – P210)**: *Module 7 Part 1: LLMOps, Security & Guardrails*:
+    - Observability: Cấu hình LangSmith Tracing & Sub-agent tracking.
+    - Security Layer: PII Detection, Prompt Injection Attack Defense, LLM Guard, Output Validator.
 
 ---
 
-### ⚡ MODULE 9 – Open-Source LLMs & High-Throughput Serving (vLLM & Ollama)
-- **Nguồn bài giảng**: [DeepLearning.AI vLLM Course](https://www.deeplearning.ai/courses/fast-and-efficient-llm-inference-with-vllm) + Hugging Face [smolagents (Unit 2)](https://huggingface.co/learn/agents-course/unit2/smolagents/introduction) & [Fine-tuning (Bonus Unit 1)](https://huggingface.co/learn/agents-course/bonus-unit1/introduction) (Free)
-- **Nội dung thực hành**:
-  - *Topic 1: Local LLM Execution*: Cài đặt và thực hành chạy mô hình open-source (Llama 3.3, DeepSeek) với **Ollama** dưới local.
-  - *Topic 2: High-Throughput Serving*: Triển khai **vLLM Inference Server** (PagedAttention, Continuous Batching) & Mock Interview bằng Flashcards (Gemini Notebook).
+### 🟤 TUẦN 8: Agent Evaluation & Final Project Development (30 Pomodoros)
+- **Nguồn tài nguyên**: [Khóa Packt Chap 8](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) + [DeepLearning.AI Evaluating AI Agents](https://learn.deeplearning.ai/courses/evaluating-ai-agents) | [online_learning_guide.md#module-7](./online_learning_guide.md#🟤-module-7-production-deployment-llmops-security--evaluation)
+- **Phân bổ tiến độ**:
+  - **Ngày 36 – 37 (P211 – P222)**: *RAG & Agent Evaluation*:
+    - Đánh giá bằng **Arize AI / Ragas**: Faithfulness, Answer Relevance, Context Recall & LLM-as-a-Judge.
+    - Optimization & Resilience: Circuit Breaker, Graph Retry, Model Router, Semantic Caching.
+  - **Ngày 38 – 40 (P223 – P240)**: 🛠️ **Project 4: Production Full-Stack AI System (Backend Core)**:
+    - Xây dựng Backend LangGraph Agent + FastAPI Service + Security Layer.
 
 ---
 
-### 🌐 MODULE 10 – Full-Stack Web AI Interface (Next.js & Vercel AI SDK)
-- **Nguồn bài giảng**: [freeCodeCamp Video](https://www.youtube.com/watch?v=WKIjkxxNH0c) ("Build a Support Agent with Vercel AI SDK") + [Developers Digest Tutorial](https://www.developersdigest.tech/tutorials/eWs50bhFvMY) ("Agents 101: Build and Deploy Anything with AI Agents") (Free)
-- **Nội dung thực hành**:
-  - *Topic 1: Next.js & AI SDK Setup*: Setup Next.js 15, Vercel AI SDK, TailwindCSS & Shadcn/ui.
-  - *Topic 2: Streaming Chat UI*: Xây dựng giao diện Chatbot UI HTTP Streaming kết nối FastAPI Backend & Mock Interview bằng Flashcards (Gemini Notebook).
+### 🟤 TUẦN 9: Final Project Deployment & MCP Quickstart (30 Pomodoros)
+- **Nguồn tài nguyên**: [Khóa Packt Chap 8](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) + [HF Context Course MCP](https://huggingface.co/learn/context-course/unit2/introduction) | [online_learning_guide.md#module-8](./online_learning_guide.md#-module-8-model-context-protocol-mcp-integration-quickstart)
+- **Phân bổ tiến độ**:
+  - **Ngày 41 – 42 (P241 – P254)**: 🛠️ **Project 4: Dockerization & Cloud Deploy**:
+    - Đóng gói Docker Container, cấu hình Docker Compose, triển khai CI/CD API Backend lên Cloud **Render**.
+  - **Ngày 43 – 45 (P255 – P270)**: *Module 8: MCP Integration Quickstart*:
+    - Khái niệm MCP Client/Server, fastmcp SDK Python.
+    - Xây dựng FastMCP Server đơn giản cung cấp Tool API/Database.
+    - Kết nối LangChain Agent gọi MCP Tool qua Stdio & SSE Transports.
 
 ---
 
-### 🎓 MODULE 11 – Model Context Protocol (MCP) Masterclass (Anthropic Official Curriculum)
-- **Nguồn bài giảng**: [Anthropic Intro to MCP Course](https://anthropic.skilljar.com/introduction-to-model-context-protocol) + [Anthropic MCP Advanced Topics Course](https://anthropic.skilljar.com/model-context-protocol-advanced-topics) (Free)
-- **Nội dung thực hành**:
-  - *Topic 1: MCP Core & 3 Primitives*: Viết MCP Server/Client hỗ trợ `Tools`, `Resources`, `Prompts` & Debug qua **MCP Inspector**.
-  - *Topic 2: Advanced Primitives*: Thực hành `Sampling` (Server-initiated LLM call), `Progress Notifications` & `Roots` (Filesystem scoping).
-  - *Topic 3: Transports & Security*: Triển khai `stdio` vs `StreamableHTTP`, OAuth CIMD & Mock Interview bằng Flashcards (Gemini Notebook).
+### ⚡ TUẦN 10: Open-Source LLMs (vLLM/Ollama) & Next.js AI Setup (30 Pomodoros)
+- **Nguồn tài nguyên**: [DeepLearning.AI vLLM Course](https://www.deeplearning.ai/courses/fast-and-efficient-llm-inference-with-vllm) + [freeCodeCamp Vercel AI SDK](https://www.youtube.com/watch?v=WKIjkxxNH0c) | [online_learning_guide.md#module-9](./online_learning_guide.md#-module-9-open-source-llms--high-throughput-serving-vllm--ollama)
+- **Phân bổ tiến độ**:
+  - **Ngày 46 – 48 (P271 – P290)**: *Module 9: Open-Source LLMs & vLLM*:
+    - Chạy Ollama Local (Llama 3.3, DeepSeek-R1).
+    - Cấu hình **vLLM Server** (PagedAttention, Continuous Batching, Quantization). Kết nối LangChain LLM Client vào vLLM endpoint.
+  - **Ngày 49 – 50 (P291 – P300)**: *Module 10 Part 1: Next.js Web AI Setup*:
+    - Khởi tạo Next.js 15 App Router (TypeScript, TailwindCSS, Shadcn/ui). Setup Vercel AI SDK.
+
+---
+
+### 🌐 TUẦN 11: Full-Stack Web AI & Anthropic MCP Intro (30 Pomodoros)
+- **Nguồn tài nguyên**: [freeCodeCamp AI SDK](https://www.youtube.com/watch?v=WKIjkxxNH0c) + [Anthropic Intro to MCP](https://anthropic.skilljar.com/introduction-to-model-context-protocol) | [online_learning_guide.md#module-10](./online_learning_guide.md#-module-10-full-stack-web-ai-interface-nextjs--vercel-ai-sdk)
+- **Phân bổ tiến độ**:
+  - **Ngày 51 – 53 (P301 – P317)**: *Module 10 Part 2: Streaming Chat UI & Integration*:
+    - Xây dựng Streaming Chat UI với `useChat`, HTTP Streaming (SSE), Generative UI, Tool Calling UI. Kết nối Web Frontend với FastAPI/LangGraph Backend.
+  - **Ngày 54 – 55 (P318 – P330)**: *Module 11 Part 1: Anthropic MCP Core & 3 Primitives*:
+    - Kiến trúc Host/Client/Server, cơ chế JSON-RPC.
+    - 3 Primitives cốt lõi: `Tools`, `Resources`, `Prompts`. Thực hành với Python SDK & **MCP Inspector**.
+
+---
+
+### 🎓 TUẦN 12: Anthropic MCP Masterclass & Graduation (21 Pomodoros)
+- **Nguồn tài nguyên**: [Anthropic Advanced MCP Course](https://anthropic.skilljar.com/model-context-protocol-advanced-topics) | [online_learning_guide.md#module-11](./online_learning_guide.md#-module-11-model-context-protocol-mcp-masterclass-anthropic-official-curriculum)
+- **Phân bổ tiến độ**:
+  - **Ngày 56 – 58 (P331 – P345)**: *Module 11 Part 2: Advanced MCP Primitives & Transports*:
+    - Advanced Primitives: `Sampling` (Server-initiated LLM calls), `Progress Notifications`, `Roots` (Filesystem scoping).
+    - Transports: So sánh & triển khai `stdio` vs `StreamableHTTP` cho Cloud/Serverless.
+  - **Ngày 59 – 60 (P346 – P351)**: *Enterprise Specification, Review & Graduation*:
+    - OAuth CIMD (Client ID Metadata Documents), Header-based routing (`Mcp-Method`), MCP Apps.
+    - Tổng kết toàn bộ 11 Master Modules & 4 Projects. Đóng gói Portfolio Agentic AI Systems! 🚀
