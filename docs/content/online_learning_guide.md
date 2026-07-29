@@ -12,12 +12,12 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 ## 🗺️ Bức Tranh Tổng Quan Lộ Trình (10 Master Modules)
 
 ```
-[Module 1: LangChain Foundations] ──► [Module 2: Chain Patterns & LCEL] ──► [Module 3: Model Context Protocol (MCP)]
+[Module 1: LangChain Foundations] ──► [Module 2: Chain Patterns & LCEL] ──► [Module 3: Data Ingestion & LlamaParse]
                                                                                                    │
-[Module 6: LangGraph Deep Dive]   ◄── [Module 5: Advanced RAG & pgvector] ◄── [Module 4: Data Ingestion & LlamaParse]
+[Module 6: Multi-Agent (CrewAI)]  ◄── [Module 5: LangGraph Deep Dive]   ◄── [Module 4: Advanced RAG & pgvector]
          │
          ▼
-[Module 7: Multi-Agent Systems (CrewAI)] ──► [Module 8: Production & LLMOps (Packt Chap 8)] ──► [Module 9: Open-Source LLMs (vLLM)]
+[Module 7: Production & LLMOps (Packt Chap 8)] ──► [Module 8: Model Context Protocol (MCP)] ──► [Module 9: Open-Source LLMs (vLLM)]
                                                                                                                  │
                                                                                                                  ▼
                                                                                    [Module 10: Full-Stack Web AI (Next.js)]
@@ -59,25 +59,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 
 ---
 
-### 🔌 Module 3: Model Context Protocol (MCP) Deep Dive
-> **Mục tiêu**: Làm chủ chuẩn giao thức kết nối công cụ mở Model Context Protocol (MCP Client/Server Architecture).
-
-* **1. Nội dung Kiến thức Cần nạp**:
-  * Khái niệm & Cơ chế hoạt động của Model Context Protocol (MCP Host, Client, Server).
-  * Thực hành: **Tự viết một MCP Server** bằng Python với FastMCP SDK.
-  * Kết nối Agent gọi MCP Tool qua Stdio và SSE Transports.
-* **2. Tài nguyên Tra cứu & Bài giảng**:
-  * 🆓 **Khóa học / Documentation miễn phí**: [Model Context Protocol Official Specification & Tutorials](https://modelcontextprotocol.io/).
-  * 🐍 **FastMCP Python SDK**: [https://github.com/jlowin/fastmcp](https://github.com/jlowin/fastmcp).
-  * 🆓 **Khóa học bổ sung miễn phí**: Hugging Face — [The Context Course (Unit 2: MCP)](https://huggingface.co/learn/context-course/unit2/introduction) (Thực hành kết nối công cụ qua Model Context Protocol).
-* **3. Nhiệm vụ Thực hành**:
-  - Viết 1 FastMCP Server cung cấp Tool truy vấn dữ liệu hoặc hệ thống.
-  - Kết nối Agent gọi MCP Tool qua giao thức MCP.
-  - 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `MCP Architecture (Host/Client/Server)`, `FastMCP Python SDK`, `MCP Tools & Resources & Prompts`, `Transports (Stdio/SSE)`, `MCP Handshake`.
-
----
-
-### 🟠 Module 4: Data Ingestion, Complex Document AI & Vector Stores
+### 🟠 Module 3: Data Ingestion, Complex Document AI & Vector Stores
 > **Mục tiêu**: Xử lý đa dạng định dạng tài liệu (bao gồm PDF/Tables phức tạp với LlamaParse), kỹ thuật Text Splitting và lưu trữ vector với ChromaDB.
 
 * **1. Nội dung Kiến thức Cần nạp**:
@@ -95,7 +77,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 
 ---
 
-### 🔴 Module 5: Advanced RAG, Production `pgvector` & Memory Systems
+### 🔴 Module 4: Advanced RAG, Production `pgvector` & Memory Systems
 > **Mục tiêu**: Xây dựng hệ thống RAG nâng cao (Multi-Query, Compression, Hybrid, Parent Doc), tích hợp CSDL Vector Production `pgvector` và quản lý bộ nhớ.
 
 * **1. Nội dung Kiến thức Cần nạp**:
@@ -112,7 +94,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 
 ---
 
-### 🔵 Module 6: LangGraph - A Full Deep Dive
+### 🔵 Module 5: LangGraph - A Full Deep Dive
 > **Mục tiêu**: Chuyển đổi từ chuỗi tuyến tính sang đồ thị luồng điều khiển (StateGraph), quản lý trạng thái, vòng lặp tự sửa lỗi và can thiệp từ con người.
 
 * **1. Nội dung Kiến thức Cần nạp**:
@@ -130,7 +112,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 
 ---
 
-### 🟣 Module 7: Multi-Agent Architectures (CrewAI + LangGraph Multi-Agent)
+### 🟣 Module 6: Multi-Agent Architectures (CrewAI + LangGraph Multi-Agent)
 > **Mục tiêu**: Thiết kế hệ thống Đa Agent linh hoạt — so sánh giữa CrewAI (phân vai tác nhiệm nhanh) và LangGraph Multi-Agent (đồ thị phân cấp chi tiết).
 
 * **1. Nội dung Kiến thức Cần nạp**:
@@ -147,7 +129,7 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 
 ---
 
-### 🟤 Module 8: Production Deployment, LLMOps, Security & Evaluation
+### 🟤 Module 7: Production Deployment, LLMOps, Security & Evaluation
 > **Mục tiêu**: Bảo mật hệ thống, đánh giá chất lượng RAG/Agent (Ragas/Arize), giám sát với LangSmith, tối ưu chi phí và triển khai API Production (FastAPI + Docker + Render).
 
 * **1. Nội dung Kiến thức Cần nạp**:
@@ -163,6 +145,24 @@ Lộ trình bao gồm **10 Module chuyên sâu**, kết hợp giữa **Lý thuy�
 * **3. Nhiệm vụ Thực hành & Dự án**:
   - 🛠️ **Project 4: Production-Ready Full-Stack AI System (Final Project)** — Đóng gói LangGraph Agent + FastAPI + Security Layer + Dockerization + Triển khai thành công lên Cloud **Render**.
   - 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `LangSmith Tracing`, `Prompt Injection Defense`, `PII Detection`, `LLM Guardrails`, `RAG/Agent Evaluation (Ragas/Arize)`, `LLM-as-a-Judge`, `Docker & Render Deployment`.
+
+---
+
+### 🔌 Module 8: Model Context Protocol (MCP) Deep Dive
+> **Mục tiêu**: Làm chủ chuẩn giao thức kết nối công cụ mở Model Context Protocol (MCP Client/Server Architecture).
+
+* **1. Nội dung Kiến thức Cần nạp**:
+  * Khái niệm & Cơ chế hoạt động của Model Context Protocol (MCP Host, Client, Server).
+  * Thực hành: **Tự viết một MCP Server** bằng Python với FastMCP SDK.
+  * Kết nối Agent gọi MCP Tool qua Stdio và SSE Transports.
+* **2. Tài nguyên Tra cứu & Bài giảng**:
+  * 🆓 **Khóa học / Documentation miễn phí**: [Model Context Protocol Official Specification & Tutorials](https://modelcontextprotocol.io/).
+  * 🐍 **FastMCP Python SDK**: [https://github.com/jlowin/fastmcp](https://github.com/jlowin/fastmcp).
+  * 🆓 **Khóa học bổ sung miễn phí**: Hugging Face — [The Context Course (Unit 2: MCP)](https://huggingface.co/learn/context-course/unit2/introduction) (Thực hành kết nối công cụ qua Model Context Protocol).
+* **3. Nhiệm vụ Thực hành**:
+  - Viết 1 FastMCP Server cung cấp Tool truy vấn dữ liệu hoặc hệ thống.
+  - Kết nối Agent gọi MCP Tool qua giao thức MCP.
+  - 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `MCP Architecture (Host/Client/Server)`, `FastMCP Python SDK`, `MCP Tools & Resources & Prompts`, `Transports (Stdio/SSE)`, `MCP Handshake`.
 
 ---
 

@@ -18,43 +18,43 @@ Tổng hợp bài giảng video và tài liệu tra cứu chính thức theo **1
 
 ---
 
-### 🔌 Module 3: Model Context Protocol (MCP) Deep Dive
-* 🆓 **Free Course**: [Hugging Face: The Context Course (Unit 2 MCP)](https://huggingface.co/learn/context-course/unit2/introduction)
-* 📖 **Docs**: [MCP Official Spec](https://modelcontextprotocol.io/) | [FastMCP Python SDK GitHub](https://github.com/jlowin/fastmcp)
-
----
-
-### 🟠 Module 4: Data Ingestion, Document AI & Vector Stores
+### 🟠 Module 3: Data Ingestion, Document AI & Vector Stores
 * 📹 **Packt (Chap 4)**: [Agentic AI Systems](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814)
 * 🆓 **Free Course**: [DeepLearning.AI: Building Agentic RAG with LlamaIndex](https://learn.deeplearning.ai/courses/building-agentic-rag-with-llamaindex) (LlamaParse)
 * 📖 **Docs**: [ChromaDB Official Documentation](https://docs.trychroma.com/)
 
 ---
 
-### 🔴 Module 5: Advanced RAG, Production `pgvector` & Memory
+### 🔴 Module 4: Advanced RAG, Production `pgvector` & Memory
 * 📹 **Packt (Chap 5)**: [Agentic AI Systems](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814)
 * 🆓 **Free Course**: [BugBytes: LangChain & pgvector Video](https://youtu.be/GYwhDkwCdt8) ([Tài liệu & Code](https://bugbytes.io/posts/retrieval-augmented-generation-with-langchain-and-pgvector/))
 * 📖 **Docs**: [LangChain RAG Tutorial](https://python.langchain.com/docs/tutorials/rag/)
 
 ---
 
-### 🔵 Module 6: LangGraph - A Full Deep Dive
+### 🔵 Module 5: LangGraph - A Full Deep Dive
 * 📹 **Packt (Chap 6)**: [Agentic AI Systems](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814)
 * 📖 **Docs**: [LangGraph Official Documentation](https://langchain-ai.github.io/langgraph/)
 
 ---
 
-### 🟣 Module 7: Multi-Agent Architectures (CrewAI + LangGraph)
+### 🟣 Module 6: Multi-Agent Architectures (CrewAI + LangGraph)
 * 📹 **Packt (Chap 7)**: [Agentic AI Systems](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814)
 * 🆓 **Free Course**: [DeepLearning.AI: Multi AI Agent Systems with crewAI](https://learn.deeplearning.ai/courses/multi-ai-agent-systems-with-crewai) | [Hugging Face: Sub-agents](https://huggingface.co/learn/context-course/unit4/introduction)
 * 📖 **Docs**: [CrewAI Official Documentation](https://docs.crewai.com/)
 
 ---
 
-### 🟤 Module 8: Production Deployment, LLMOps, Security & Evaluation
+### 🟤 Module 7: Production Deployment, LLMOps, Security & Evaluation
 * 📹 **Packt (Chap 8)**: [Agentic AI Systems](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814)
 * 🆓 **Free Course**: [DeepLearning.AI: Evaluating AI Agents (Arize AI)](https://learn.deeplearning.ai/courses/evaluating-ai-agents) | [Hugging Face: Agent Hooks](https://huggingface.co/learn/context-course/unit5/introduction)
 * 📖 **Docs**: [LangSmith Docs](https://docs.smith.langchain.com/) | [FastAPI Tutorial](https://fastapi.tiangolo.com/tutorial/) | [Render Cloud Docs](https://render.com/docs/)
+
+---
+
+### 🔌 Module 8: Model Context Protocol (MCP) Deep Dive
+* 🆓 **Free Course**: [Hugging Face: The Context Course (Unit 2 MCP)](https://huggingface.co/learn/context-course/unit2/introduction)
+* 📖 **Docs**: [MCP Official Spec](https://modelcontextprotocol.io/) | [FastMCP Python SDK GitHub](https://github.com/jlowin/fastmcp)
 
 ---
 

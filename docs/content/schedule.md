@@ -64,16 +64,7 @@
 
 ---
 
-### 🔌 MODULE 3 – Model Context Protocol (MCP) Deep Dive
-- **Nguồn bài giảng**: [Model Context Protocol Official Docs](https://modelcontextprotocol.io/) + [Hugging Face The Context Course (Unit 2: MCP)](https://huggingface.co/learn/context-course/unit2/introduction) (Free)
-- **Nội dung thực hành**:
-  - *Topic 1: MCP Architecture*: Nạp kiến trúc Model Context Protocol (MCP Client/Server).
-  - *Topic 2: Custom MCP Server*: Viết **FastMCP Server** bằng Python cung cấp Tool custom.
-  - *Topic 3: Transports & Integration*: Kết nối Agent gọi MCP Tool qua Stdio & SSE Transports & Mock Interview bằng Flashcards (Gemini Notebook).
-
----
-
-### 🟠 MODULE 4 – Data Ingestion, Complex Document AI & Vector Stores
+### 🟠 MODULE 3 – Data Ingestion, Complex Document AI & Vector Stores
 - **Nguồn bài giảng**: [Khóa Packt Chap 4](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) + [DeepLearning.AI LlamaParse Course](https://learn.deeplearning.ai/courses/building-agentic-rag-with-llamaindex) (Free)
 - **Nội dung thực hành**:
   - *Topic 1: Document Ingestion*: Document Loaders (`TextLoader`, `WebLoader`, PDF Loader).
@@ -83,7 +74,7 @@
 
 ---
 
-### 🔴 MODULE 5 – Advanced RAG, Production `pgvector` & Project 2: AI Research Assistant
+### 🔴 MODULE 4 – Advanced RAG, Production `pgvector` & Project 2: AI Research Assistant
 - **Nguồn bài giảng**: [Khóa Packt Chap 5](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) + [BugBytes Video Tutorial: LangChain & PGVector](https://www.youtube.com/watch?v=3g6nZ1qWv-c) (Free)
 - **Nội dung thực hành**:
   - *Topic 1: Advanced RAG Strategies*: Basic RAG & Advanced RAG (Multi-Query, Compression, Hybrid Search, Parent Doc) (*Packt Chap 5*).
@@ -93,7 +84,7 @@
 
 ---
 
-### 🔵 MODULE 6 – LangGraph - A Full Deep Dive
+### 🔵 MODULE 5 – LangGraph - A Full Deep Dive
 - **Nguồn bài giảng**: [Khóa Packt Chap 6](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814)
 - **Nội dung thực hành**:
   - *Topic 1: StateGraph Core*: `StateGraph`, Reducers, Message State & Chat Pattern.
@@ -103,7 +94,7 @@
 
 ---
 
-### 🟣 MODULE 7 – Multi-Agent Architectures (CrewAI + LangGraph) & Project 3
+### 🟣 MODULE 6 – Multi-Agent Architectures (CrewAI + LangGraph) & Project 3
 - **Nguồn bài giảng**: [Khóa Packt Chap 7](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) + [DeepLearning.AI CrewAI Course](https://learn.deeplearning.ai/courses/multi-ai-agent-systems-with-crewai) + [Hugging Face The Context Course (Unit 4: Sub-agents)](https://huggingface.co/learn/context-course/unit4/introduction) (Free)
 - **Nội dung thực hành**:
   - *Topic 1: CrewAI Multi-Agent*: Thực hành xây dựng Multi-Agent với **CrewAI** (Agents, Tasks, Crew, Hierarchical process).
@@ -113,13 +104,22 @@
 
 ---
 
-### 🟤 MODULE 8 – Production Deployment, LLMOps, Security & Project 4 (Final Project)
+### 🟤 MODULE 7 – Production Deployment, LLMOps, Security & Project 4 (Final Project)
 - **Nguồn bài giảng**: [Khóa Packt Chap 8](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) + [DeepLearning.AI Evaluating AI Agents](https://learn.deeplearning.ai/courses/evaluating-ai-agents) + Hugging Face [Context Course (Unit 5: Hooks)](https://huggingface.co/learn/context-course/unit5/introduction) & [Agents Course (Bonus Unit 2)](https://huggingface.co/learn/agents-course/bonus-unit2/introduction) (Free)
 - **Nội dung thực hành**:
   - *Topic 1: Observability & Security*: LangSmith Tracing & Security Layer (PII Detection, Prompt Injection Defense, LLM Guard).
   - *Topic 2: Agent Evaluation*: Đánh giá RAG & Agent với **Arize AI / Ragas** (Faithfulness, Answer Relevance, Context Recall).
   - *Topic 3: Resilience & Optimization*: Error Handling, Circuit Breaker, Model Router, Semantic Caching & Token Budgeting.
   - *Topic 4: Final Project & Cloud Deploy*: Xây dựng **Project 4: Production Full-Stack AI System (Next.js + FastAPI + Docker + Render)** & Mock Interview bằng Flashcards (Gemini Notebook)! 🚀
+
+---
+
+### 🔌 MODULE 8 – Model Context Protocol (MCP) Deep Dive
+- **Nguồn bài giảng**: [Model Context Protocol Official Docs](https://modelcontextprotocol.io/) + [Hugging Face The Context Course (Unit 2: MCP)](https://huggingface.co/learn/context-course/unit2/introduction) (Free)
+- **Nội dung thực hành**:
+  - *Topic 1: MCP Architecture*: Nạp kiến trúc Model Context Protocol (MCP Client/Server).
+  - *Topic 2: Custom MCP Server*: Viết **FastMCP Server** bằng Python cung cấp Tool custom.
+  - *Topic 3: Transports & Integration*: Kết nối Agent gọi MCP Tool qua Stdio & SSE Transports & Mock Interview bằng Flashcards (Gemini Notebook).
 
 ---
 
