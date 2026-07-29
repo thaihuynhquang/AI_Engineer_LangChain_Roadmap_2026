@@ -20,23 +20,23 @@ export interface ProjectMeta {
 
 export const META_DATA: ProjectMeta = {
   title: "Agentic AI Master Curriculum 2026",
-  subtitle: "Combo 2 Khóa Học: LangChain/LangGraph + MCP & Autonomous Agents",
+  subtitle: "Combo Khóa Packt LangChain/LangGraph + Top Khóa Học Miễn Phí (Anthropic, DeepLearning.AI, Hugging Face, Vercel)",
   targetProject: "Agentic AI Master Systems - 4 Projects (Smart Q&A Bot, AI Research Assistant, Multi-Agent System, Cloud Render API)",
-  totalWeeks: 7,
-  totalPomodoros: 210,
-  totalHours: 175,
+  totalWeeks: 12,
+  totalPomodoros: 351,
+  totalHours: 293,
   hoursPerDay: 5,
   principles: [
     "Quy tắc Pomodoro 50/5/20: 50 phút Tập trung - 5 phút Nghỉ ngắn - 20 phút Nghỉ dài sau mỗi 2 Pomodoro.",
-    "Học qua 2 Khóa Học Master local: Khóa 1 (Build & Deploy with LangChain/LangGraph) + Khóa 2 (MCP Protocol & Autonomous Agents).",
-    "Hoàn thành 4 Dự án thực tế lớn: Smart Q&A Bot (Mod 1), AI Research Assistant (Mod 5), Multi-Agent System (Mod 7), Production API Cloud Render (Mod 8)."
+    "Lộ trình Master Curriculum 11 Module: Tích hợp Khóa Packt (LangChain/LangGraph) + Các khóa học miễn phí từ Anthropic Academy, DeepLearning.AI, Hugging Face, freeCodeCamp, Vercel AI SDK, BugBytes.",
+    "Hoàn thành 4 Dự án thực tế lớn: Smart Q&A Bot (Mod 1), AI Research Assistant (Mod 4), Multi-Agent System (Mod 6), Production API Cloud Render (Mod 7)."
   ],
   systemArchitecture: {
-    frontend: "Next.js (React) + Tailwind CSS + Vercel AI SDK + Shadcn/ui",
-    backend: "Python 3.11+ + FastAPI + LangChain v1.0 / LangGraph + Model Context Protocol (MCP / FastMCP)",
-    database: "ChromaDB & PostgreSQL với extension pgvector (Hybrid Search & Indexing)",
-    llms: "Anthropic Claude 3.5/3.7, Multi-provider LLMs (OpenAI, DeepSeek-R1, Google Gemini)",
-    observability: "LangSmith Tracing, LLM Guard / Security Layer, LLM-as-Judge Evaluation & Cloud Render"
+    frontend: "Next.js 15 (App Router) + Tailwind CSS + Vercel AI SDK (useChat) + Shadcn/ui",
+    backend: "Python 3.11+ + FastAPI + LangChain v1.0 / LangGraph + Model Context Protocol (FastMCP Python SDK)",
+    database: "ChromaDB & PostgreSQL với extension pgvector (HNSW / IVFFlat Indexing & Hybrid Search)",
+    llms: "Anthropic Claude 3.5/3.7, Open-Source LLMs (DeepSeek-R1/V3, Llama 3.3 via vLLM / Ollama), Multi-provider LLMs",
+    observability: "LangSmith Tracing, LLM Guard / Security Layer, RAG Evaluation (Arize AI / Ragas) & Cloud Render Deployment"
   }
 };
 
@@ -47,7 +47,7 @@ export const SPRINT_MODULES: SprintModule[] = [
     title: "Module 1: LangChain & Agentic Foundations",
     subtitle: "Nền Tảng Agentic AI, LCEL, Multi-LLM Provider & Project 1: Smart Q&A Bot",
     statusColor: "#22c55e",
-    duration: "5 Ngày (30 Pomodoros / 25h)",
+    duration: "4 Ngày (24 Pomodoros / 20h)",
     objectives: [
       "Phân biệt Agentic AI vs AI truyền thống & nắm vững các thành phần cốt lõi",
       "Cấu hình Đa nhà cung cấp LLM (OpenAI, Anthropic), Prompt Templates & Output Parsers",
@@ -55,8 +55,8 @@ export const SPRINT_MODULES: SprintModule[] = [
       "Hoàn thành Project 1: Smart Q&A Bot hỗ trợ đa mô hình"
     ],
     knowledgeToLoad: [
-      "Agentic AI Concepts & Architecture (Khóa 2 Chap 2-3)",
-      "LangChain v1.0 Setup, LCEL Runnable Chains & Pipe operator | (Khóa 1 Chap 2)",
+      "Agentic AI Concepts & Architecture (Khóa Packt - Chap 1-2)",
+      "LangChain v1.0 Setup, LCEL Runnable Chains & Pipe operator | (Khóa Packt - Chap 2)",
       "Multi-provider LLM Configuration, Prompt Templates & Structured Outputs"
     ],
     deliverables: [
@@ -64,24 +64,24 @@ export const SPRINT_MODULES: SprintModule[] = [
         id: "m1-t1",
         title: "Setup môi trường Python 3.11+ & API Keys",
         description: "Khởi tạo môi trường Python, cài đặt langchain, langchain-openai, langchain-anthropic và cấu hình API Keys.",
-        hoursEstimate: 5,
-        pomodoros: 6,
+        hoursEstimate: 3.3,
+        pomodoros: 4,
         tags: ["Setup", "Python", "API Keys"]
       },
       {
         id: "m1-t2",
         title: "Thực hành LCEL & Runnable Chains",
         description: "Viết các chuỗi LCEL cơ bản, thử nghiệm batch execution, realtime streaming và schema inspection.",
-        hoursEstimate: 5,
-        pomodoros: 6,
+        hoursEstimate: 3.3,
+        pomodoros: 4,
         tags: ["LCEL", "Runnable", "Streaming"]
       },
       {
         id: "m1-t3",
         title: "Cấu hình Multi-Model & Prompt Templates",
         description: "Tạo Prompt Templates, Messages (User, System, Assistant) và cấu hình chuyển đổi giữa OpenAI & Anthropic.",
-        hoursEstimate: 5,
-        pomodoros: 6,
+        hoursEstimate: 3.3,
+        pomodoros: 4,
         tags: ["Prompt", "MultiModel", "Parsers"]
       },
       {
@@ -94,11 +94,11 @@ export const SPRINT_MODULES: SprintModule[] = [
       },
       {
         id: "m1-t5",
-        title: "Hoàn thiện Project 1 & Code Cleanup",
-        description: "Kiểm thử các câu lệnh hỏi đáp, xử lý error handling và commit code Project 1.",
+        title: "Hoàn thiện Project 1, Code Refactoring & Gemini Flashcards",
+        description: "Kiểm thử các câu lệnh hỏi đáp, xử lý error handling, ôn tập Flashcards và commit code Project 1.",
         hoursEstimate: 5,
         pomodoros: 6,
-        tags: ["Project1", "Testing", "Git"]
+        tags: ["Project1", "Testing", "Flashcards"]
       }
     ],
     resources: [
@@ -122,19 +122,10 @@ export const SPRINT_MODULES: SprintModule[] = [
       },
       {
         id: "res-m1-3",
-        title: "Khóa 1: Agentic AI Systems (Chapter 1-2)",
+        title: "Khóa Packt: Agentic AI Systems (Chapter 1-2)",
         type: "course",
-        description: "Bài giảng video Packt về LangChain Setup & LCEL Foundations.",
+        description: "Bài giảng video Packt về Agentic Concepts, LangChain Setup & LCEL Foundations.",
         url: "https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814",
-        moduleId: "mod-1",
-        isFree: false
-      },
-      {
-        id: "res-m1-4",
-        title: "Khóa 2: Autonomous Agentic AI Systems (Chapter 2-3)",
-        type: "course",
-        description: "Bài giảng video Packt về Agentic AI Concepts & Architecture.",
-        url: "https://www.packtpub.com/en-us/product/building-autonomous-agentic-ai-systems-for-beginners-handson-9781807609818",
         moduleId: "mod-1",
         isFree: false
       }
@@ -143,44 +134,44 @@ export const SPRINT_MODULES: SprintModule[] = [
   {
     id: "mod-2",
     moduleNum: 2,
-    title: "Module 2: Chain Patterns & Lightweight Frameworks",
-    subtitle: "Parallel Chains, Smolagents & Low-code n8n Integration",
+    title: "Module 2: Chain Patterns & Advanced LCEL",
+    subtitle: "Parallel Chains, RunnablePassthrough, Branching & Kỹ thuật Debugging",
     statusColor: "#eab308",
-    duration: "3 Ngày (18 Pomodoros / 15h)",
+    duration: "2.7 Ngày (16 Pomodoros / 13.3h)",
     objectives: [
       "Làm chủ các mẫu thiết kế chuỗi xử lý: Parallel Chains, Passthrough & Branching",
-      "Thực hành phát triển Agent bằng framework siêu nhẹ Smolagents (Hugging Face)",
-      "Tìm hiểu và xây dựng Agent dạng Low-code/No-code với n8n"
+      "Áp dụng RunnableLambda, RunnableBranch, Fallback Chains & Async Execution",
+      "Nắm vững kỹ thuật Debugging chuỗi LangChain, Callbacks & Handlers"
     ],
     knowledgeToLoad: [
-      "Basic & Parallel Chains with RunnablePassthrough, RunnableParallel (Khóa 1 Chap 3)",
-      "Hugging Face Smolagents: Weather Agent & SQL Agent Demo (Khóa 2 Chap 4)",
-      "Low-code Agentic Workflows với n8n (Khóa 2 Chap 4)"
+      "Basic & Parallel Chains with RunnablePassthrough, RunnableParallel (Khóa Packt - Chap 3)",
+      "Chain Branching, Fallbacks & Dynamic Chain Composition",
+      "Callbacks, Handlers & Chain Debugging Kỹ thuật"
     ],
     deliverables: [
       {
         id: "m2-t1",
-        title: "Viết Parallel Chains & Branching Logic",
-        description: "Thực hành chạy song song các nhánh LLM kết hợp RunnablePassthrough và Debugging chuỗi LangChain.",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["LCEL", "Parallel", "Branching"]
+        title: "Viết Parallel Chains & RunnablePassthrough",
+        description: "Thực hành chạy song song các nhánh LLM kết hợp RunnablePassthrough và RunnableParallel.",
+        hoursEstimate: 4.2,
+        pomodoros: 5,
+        tags: ["LCEL", "Parallel", "Passthrough"]
       },
       {
         id: "m2-t2",
-        title: "Thực hành Weather & SQL Agent với Smolagents",
-        description: "Sử dụng framework Smolagents xây dựng Weather Agent và SQL Agent truy vấn dữ liệu.",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["Smolagents", "HuggingFace", "Agent"]
+        title: "Triển khai Branching Logic & Fallback Chains",
+        description: "Sử dụng RunnableBranch và cấu hình Fallback Chains để xử lý lỗi linh hoạt.",
+        hoursEstimate: 4.2,
+        pomodoros: 5,
+        tags: ["Branching", "Fallbacks", "Dynamic"]
       },
       {
         id: "m2-t3",
-        title: "Thực hành Low-code Agentic Workflow với n8n",
-        description: "Thiết lập workflow tự động hóa Agent dạng Low-code trên n8n.",
+        title: "Debug Chuỗi LangChain, Custom Callbacks & Handlers",
+        description: "Viết custom callbacks, handlers để log chi tiết quá trình thực thi và debug chuỗi LCEL.",
         hoursEstimate: 5,
         pomodoros: 6,
-        tags: ["n8n", "LowCode", "Workflow"]
+        tags: ["Callbacks", "Handlers", "Debugging"]
       }
     ],
     resources: [
@@ -195,28 +186,10 @@ export const SPRINT_MODULES: SprintModule[] = [
       },
       {
         id: "res-m2-2",
-        title: "Hugging Face Smolagents Documentation",
-        type: "docs",
-        description: "Framework Agent siêu nhẹ mã nguồn mở từ Hugging Face.",
-        url: "https://huggingface.co/docs/smolagents/",
-        moduleId: "mod-2",
-        isFree: true
-      },
-      {
-        id: "res-m2-3",
-        title: "Khóa 1: Agentic AI Systems (Chapter 3 - Chain Patterns)",
+        title: "Khóa Packt: Agentic AI Systems (Chapter 3 - Chain Patterns)",
         type: "course",
         description: "Video bài giảng Packt về Basic & Parallel Chains, RunnablePassthrough.",
         url: "https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814",
-        moduleId: "mod-2",
-        isFree: false
-      },
-      {
-        id: "res-m2-4",
-        title: "Khóa 2: Autonomous Agentic AI Systems (Chapter 4 - Smolagents & n8n)",
-        type: "course",
-        description: "Video bài giảng Packt về Smolagents (Weather & SQL Agent) và Low-code n8n.",
-        url: "https://www.packtpub.com/en-us/product/building-autonomous-agentic-ai-systems-for-beginners-handson-9781807609818",
         moduleId: "mod-2",
         isFree: false
       }
@@ -225,80 +198,81 @@ export const SPRINT_MODULES: SprintModule[] = [
   {
     id: "mod-3",
     moduleNum: 3,
-    title: "Module 3: Model Context Protocol (MCP) Deep Dive",
-    subtitle: "Chuẩn Giao Thức Kết Nối Tools 2026: FastMCP Server & Docker MCP",
-    statusColor: "#3b82f6",
-    duration: "4 Ngày (24 Pomodoros / 20h)",
+    title: "Module 3: Data Ingestion, Complex Document AI & Vector Stores",
+    subtitle: "Xử Lý Tài Liệu PDF/Scanned với LlamaParse, Text Splitting & ChromaDB",
+    statusColor: "#f97316",
+    duration: "3.8 Ngày (23 Pomodoros / 19.2h)",
     objectives: [
-      "Nắm vững kiến trúc Client/Server của Model Context Protocol (MCP)",
-      "Tự viết một FastMCP Server bằng Python cung cấp Custom Tools",
-      "Kết nối Agent gọi MCP Tools qua giao thức Stdio/SSE Transport",
-      "Đóng gói và triển khai Docker MCP với Agentic AI"
+      "Sử dụng các Document Loaders: TextLoader, WebLoader, LazyLoader, PDF Loader",
+      "Parse tài liệu phức tạp: Trích xuất bảng biểu & scanned PDF sang Markdown bằng LlamaParse",
+      "Làm chủ các chiến lược cắt đoạn (Chunking): RecursiveCharacterTextSplitter, Chunk Overlap, MarkdownHeaderSplitter",
+      "Xây dựng Vector Store với ChromaDB: Similarity Search with Scores, Metadata Filtering & Persistence"
     ],
     knowledgeToLoad: [
-      "MCP Architecture & Protocol Spec (Khóa 2 Chap 5)",
-      "FastMCP Python SDK & Tool Decorator Pattern",
-      "Dockerization cho MCP Server & Agent Connection"
+      "Document Loading & Parsing (Khóa Packt - Chap 4)",
+      "Complex Document Parsing với LlamaParse (DeepLearning.AI LlamaIndex course)",
+      "Text Splitting Strategies & Chunk Overlap Tuning",
+      "ChromaDB Architecture, Vector Retriever & Metadata Filtering"
     ],
     deliverables: [
       {
         id: "m3-t1",
-        title: "Nghiên cứu Kiến trúc & Giao thức MCP",
-        description: "Đọc specification MCP Client/Server, tìm hiểu Stdio & SSE Transport.",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["MCP", "Protocol", "Architecture"]
+        title: "Thực hành Document Loaders (Text, Web, PDF)",
+        description: "Sử dụng TextLoader, WebBaseLoader, PyPDFLoader để trích xuất văn bản từ nhiều nguồn.",
+        hoursEstimate: 4.2,
+        pomodoros: 5,
+        tags: ["Loaders", "PDF", "Ingestion"]
       },
       {
         id: "m3-t2",
-        title: "Tự viết FastMCP Server bằng Python",
-        description: "Xây dựng MCP Server cung cấp Tool truy vấn dữ liệu / hệ thống bằng FastMCP SDK.",
+        title: "Tích hợp LlamaParse trích xuất Bảng biểu & Scanned PDF",
+        description: "Sử dụng LlamaParse chuyển đổi bảng biểu phức tạp và PDF quét từ hình ảnh sang Markdown chuẩn.",
         hoursEstimate: 5,
         pomodoros: 6,
-        tags: ["FastMCP", "Python", "Server"]
+        tags: ["LlamaParse", "Tables", "ComplexDoc"]
       },
       {
         id: "m3-t3",
-        title: "Kết nối AI Agent với FastMCP Server",
-        description: "Viết Client Agent tự động kết nối và gọi Tools trên FastMCP Server qua Stdio/SSE.",
+        title: "Thực hành Text Splitting & Chunk Overlap",
+        description: "Thực nghiệm RecursiveCharacterTextSplitter, CodeSplitter và MarkdownHeaderSplitter.",
         hoursEstimate: 5,
         pomodoros: 6,
-        tags: ["MCP-Client", "ToolCalling", "Agent"]
+        tags: ["Chunking", "Splitter", "Overlap"]
       },
       {
         id: "m3-t4",
-        title: "Triển khai Docker MCP Server & Test E2E",
-        description: "Đóng gói MCP Server thành Docker Container và kiểm thử kết nối với Agent.",
+        title: "Cấu hình Vector Store ChromaDB & Metadata Filtering",
+        description: "Khởi tạo ChromaDB, tạo Embeddings, chạy Similarity Search với scores và áp dụng metadata filter.",
         hoursEstimate: 5,
         pomodoros: 6,
-        tags: ["Docker", "MCP", "Deployment"]
+        tags: ["ChromaDB", "Embeddings", "Metadata"]
       }
     ],
     resources: [
       {
         id: "res-m3-1",
-        title: "Model Context Protocol Official Specification",
+        title: "ChromaDB Official Documentation",
         type: "docs",
-        description: "Trang tài liệu chuẩn chính thức của MCP bởi Anthropic.",
-        url: "https://modelcontextprotocol.io/",
+        description: "Tài liệu hướng dẫn sử dụng Chroma Vector Database.",
+        url: "https://docs.trychroma.com/",
         moduleId: "mod-3",
         isFree: true
       },
       {
         id: "res-m3-2",
-        title: "FastMCP Python SDK GitHub",
-        type: "repo",
-        description: "SDK Python chính thức giúp dựng MCP Server cực nhanh.",
-        url: "https://github.com/jlowin/fastmcp",
+        title: "DeepLearning.AI: Building Agentic RAG with LlamaIndex (LlamaParse)",
+        type: "course",
+        description: "Khóa học miễn phí hướng dẫn trích xuất tài liệu phức tạp & bảng biểu bằng LlamaParse.",
+        url: "https://learn.deeplearning.ai/courses/building-agentic-rag-with-llamaindex",
         moduleId: "mod-3",
         isFree: true
       },
       {
         id: "res-m3-3",
-        title: "Khóa 2 (Chap 5 - Getting Started with MCP)",
+        title: "Khóa Packt: Agentic AI Systems (Chapter 4 - Document Ingestion)",
         type: "course",
-        description: "Video bài giảng chi tiết về MCP Server & Docker MCP.",
-        url: "https://www.packtpub.com/en-us/product/building-autonomous-agentic-ai-systems-for-beginners-handson-9781807609818",
+        description: "Video bài giảng về Document Ingestion, Chunking & ChromaDB.",
+        url: "https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814",
         moduleId: "mod-3",
         isFree: false
       }
@@ -307,79 +281,95 @@ export const SPRINT_MODULES: SprintModule[] = [
   {
     id: "mod-4",
     moduleNum: 4,
-    title: "Module 4: Document Loading, Chunking & Embeddings",
-    subtitle: "Xử Lý Tài Liệu PDF/Markdown, Text Splitting & ChromaDB Vector Store",
-    statusColor: "#f97316",
-    duration: "4 Ngày (24 Pomodoros / 20h)",
+    title: "Module 4: Advanced RAG, Production pgvector & Memory Systems",
+    subtitle: "Multi-Query RAG, Compression, Hybrid Search, pgvector & Project 2: AI Research Assistant",
+    statusColor: "#ef4444",
+    duration: "7.2 Ngày (43 Pomodoros / 35.8h)",
     objectives: [
-      "Sử dụng các Document Loaders: TextLoader, WebLoader, LazyLoader, PDF Loader",
-      "Làm chủ các chiến lược cắt đoạn (Chunking): RecursiveCharacterTextSplitter, Overlap, MarkdownHeaderSplitter",
-      "Cấu hình Embedding Models & Embedding Caching",
-      "Xây dựng Vector Store với ChromaDB: Similarity Search with Scores, Metadata Filtering & Persistence"
+      "Xây dựng Advanced RAG Pipeline: Multi-Query Retriever, Contextual Compression, Hybrid Search, Parent Doc",
+      "Triển khai CSDL Vector Production pgvector với PostgreSQL (HNSW & IVFFlat Indexing)",
+      "Làm chủ Memory Patterns: Multiple Sessions, Message Trimming, Summary & Persistent Memory",
+      "Hoàn thành Project 2: AI Research Assistant"
     ],
     knowledgeToLoad: [
-      "Document Loading & Parsing (Khóa 1 Chap 4)",
-      "Text Splitting Strategies & Overlap Tuning",
-      "ChromaDB Architecture, Vector Retriever & Metadata Filtering"
+      "Advanced RAG Architecture (Khóa Packt - Chap 5)",
+      "PostgreSQL + pgvector setup & HNSW/IVFFlat indexing (BugBytes course)",
+      "Memory Systems: Conversation, Windowed, Summary, Persistent Memory"
     ],
     deliverables: [
       {
         id: "m4-t1",
-        title: "Thực hành Document Loaders (PDF, Web, Text)",
-        description: "Sử dụng TextLoader, WebBaseLoader, PyPDFLoader để trích xuất văn bản từ nhiều nguồn.",
+        title: "Basic RAG Pipeline, Fallback & Structured Outputs",
+        description: "Xây dựng pipeline RAG cơ bản tích hợp fallback model và structured response.",
         hoursEstimate: 5,
         pomodoros: 6,
-        tags: ["Loaders", "PDF", "Ingestion"]
+        tags: ["RAG", "Fallback", "StructuredOutput"]
       },
       {
         id: "m4-t2",
-        title: "Thực hành Text Splitting & Chunk Overlap",
-        description: "Thực nghiệm RecursiveCharacterTextSplitter, CodeSplitter và MarkdownHeaderSplitter.",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["Chunking", "Splitter", "Text"]
+        title: "Triển khai Advanced RAG (Multi-Query, Compression, Hybrid Search)",
+        description: "Cài đặt Multi-Query Retriever, Contextual Compression, Hybrid Search và Parent Document Retriever.",
+        hoursEstimate: 6.7,
+        pomodoros: 8,
+        tags: ["MultiQuery", "Compression", "HybridSearch"]
       },
       {
         id: "m4-t3",
-        title: "Cấu hình Vector Store ChromaDB & Embeddings",
-        description: "Khởi tạo ChromaDB, tạo Embeddings (OpenAI / Free models), lưu trữ persistent vector storage.",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["ChromaDB", "Embeddings", "VectorStore"]
+        title: "Setup PostgreSQL & Extension pgvector (HNSW Index & Vector Query)",
+        description: "Thiết lập PostgreSQL, kích hoạt extension pgvector, tạo HNSW/IVFFlat index và truy vấn kết hợp SQL + Vector.",
+        hoursEstimate: 6.7,
+        pomodoros: 8,
+        tags: ["pgvector", "PostgreSQL", "HNSW"]
       },
       {
         id: "m4-t4",
-        title: "Triển khai VectorStore Retriever & Metadata Filtering",
-        description: "Viết query Similarity Search with Scores, áp dụng metadata filter và chuyển VectorStore thành Retriever.",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["Retriever", "SimilaritySearch", "Metadata"]
+        title: "Xây dựng Memory System đa phiên hội thoại & Summary Memory",
+        description: "Tích hợp Conversation Summary Memory, Message Trimming và lưu giữ session history.",
+        hoursEstimate: 4.2,
+        pomodoros: 5,
+        tags: ["Memory", "Sessions", "Summary"]
+      },
+      {
+        id: "m4-t5",
+        title: "Xây dựng Project 2: AI Research Assistant (Core Pipeline & pgvector)",
+        description: "Khởi tạo ứng dụng Trợ lý nghiên cứu AI với Ingestion pipeline, pgvector storage & Memory đa phiên.",
+        hoursEstimate: 6.7,
+        pomodoros: 8,
+        tags: ["Project2", "ResearchAssistant", "Core"]
+      },
+      {
+        id: "m4-t6",
+        title: "Hoàn thiện Project 2: AI Research Assistant (Multi-Query & Export)",
+        description: "Đấu nối Multi-Query Retrieval, render báo cáo dạng Markdown và hoàn thành testing.",
+        hoursEstimate: 6.7,
+        pomodoros: 8,
+        tags: ["Project2", "Testing", "Git"]
       }
     ],
     resources: [
       {
         id: "res-m4-1",
-        title: "ChromaDB Official Documentation",
+        title: "LangChain RAG Tutorial",
         type: "docs",
-        description: "Tài liệu hướng dẫn sử dụng Chroma Vector Database.",
-        url: "https://docs.trychroma.com/",
+        description: "Hướng dẫn toàn diện về RAG từ cơ bản đến nâng cao.",
+        url: "https://python.langchain.com/docs/tutorials/rag/",
         moduleId: "mod-4",
         isFree: true
       },
       {
         id: "res-m4-2",
-        title: "Document Loaders & Splitters How-To",
-        type: "docs",
-        description: "Hướng dẫn chọn và cấu hình Text Splitters chuẩn trong LangChain.",
-        url: "https://python.langchain.com/docs/how_to/#document-loaders",
+        title: "BugBytes: LangChain & pgvector Video & Code Guide",
+        type: "course",
+        description: "Hướng dẫn video và code thực hành kết hợp LangChain với PostgreSQL pgvector.",
+        url: "https://youtu.be/GYwhDkwCdt8",
         moduleId: "mod-4",
         isFree: true
       },
       {
         id: "res-m4-3",
-        title: "Khóa 1 (Chapter 4)",
+        title: "Khóa Packt: Agentic AI Systems (Chapter 5 - Advanced RAG & Memory)",
         type: "course",
-        description: "Video bài giảng về Document Ingestion, Chunking & ChromaDB.",
+        description: "Video bài giảng Packt về Advanced RAG, Context Compression & Memory Patterns.",
         url: "https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814",
         moduleId: "mod-4",
         isFree: false
@@ -389,97 +379,80 @@ export const SPRINT_MODULES: SprintModule[] = [
   {
     id: "mod-5",
     moduleNum: 5,
-    title: "Module 5: Advanced RAG & Memory Systems",
-    subtitle: "Multi-Query RAG, Contextual Compression, Memory & Project 2: AI Research Assistant",
-    statusColor: "#ef4444",
+    title: "Module 5: LangGraph - A Full Deep Dive",
+    subtitle: "StateGraph, Reducers, Conditional Edges, Self-Correcting Loops & Human-in-the-loop",
+    statusColor: "#8b5cf6",
     duration: "5 Ngày (30 Pomodoros / 25h)",
     objectives: [
-      "Xây dựng Advanced RAG Pipeline: Multi-Query Retriever, Contextual Compression, Hybrid Search, Parent Doc",
-      "Tích hợp Agentic RAG với CrewAI",
-      "Làm chủ Memory Patterns: Multiple Sessions, Message Trimming, Summary & Persistent Memory",
-      "Hoàn thành Project 2: AI Research Assistant"
+      "Làm chủ 3 trụ cột LangGraph: StateGraph, Reducers, Accumulating State & Message State",
+      "Thiết kế Multi-Node Pipelines & Routing: Edges, Conditional Edges, Multipath Routing",
+      "Xây dựng vòng lặp tự sửa lỗi (Cycles & Loops): Self-Correcting Code Writer Agent",
+      "Cấu hình Human-in-the-loop (Interrupt for Approval) & Checkpointer Persistence"
     ],
     knowledgeToLoad: [
-      "Advanced RAG Architecture (Khóa 1 Chap 5 & Khóa 2 Chap 7)",
-      "Memory Systems: Conversation, Windowed, Summary, Persistent Memory",
-      "Agentic RAG với CrewAI"
+      "StateGraph Architecture & State Reducers (Khóa Packt - Chap 6)",
+      "Control Flow: Routing, Cycles, Self-Correction Pattern",
+      "Persistence Internals & Human Approval Interrupts"
     ],
     deliverables: [
       {
         id: "m5-t1",
-        title: "Thực hành Basic RAG, Fallback & Structured Output",
-        description: "Xây dựng pipeline RAG cơ bản tích hợp fallback model và structured response.",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["RAG", "Fallback", "StructuredOutput"]
+        title: "Khởi tạo LangGraph StateGraph, Reducers & Message State",
+        description: "Định nghĩa Agent State, Reducers và tạo đồ thị đơn giản với Nodes và Edges.",
+        hoursEstimate: 5.8,
+        pomodoros: 7,
+        tags: ["LangGraph", "StateGraph", "Reducers"]
       },
       {
         id: "m5-t2",
-        title: "Triển khai Advanced RAG (Multi-Query & Hybrid Search)",
-        description: "Cài đặt Multi-Query Retriever, Contextual Compression và Hybrid Search (Vector + Keyword).",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["MultiQuery", "Compression", "HybridSearch"]
+        title: "Triển khai Routing & Conditional Edges",
+        description: "Xây dựng Router Node điều hướng luồng suy luận (Literal & Multipath Routing).",
+        hoursEstimate: 5.8,
+        pomodoros: 7,
+        tags: ["Routing", "ConditionalEdges", "ControlFlow"]
       },
       {
         id: "m5-t3",
-        title: "Xây dựng Memory System đa phiên hội thoại",
-        description: "Tích hợp Conversation Summary Memory, Message Trimming và lưu giữ session history.",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["Memory", "Sessions", "Summary"]
+        title: "Xây dựng Self-Correcting Code Writer Loop",
+        description: "Tạo vòng lặp tự sinh mã, chạy kiểm thử và tự động sửa lỗi code dựa trên error traceback.",
+        hoursEstimate: 6.7,
+        pomodoros: 8,
+        tags: ["SelfCorrecting", "Loops", "Agent"]
       },
       {
         id: "m5-t4",
-        title: "Xây dựng Project 2: AI Research Assistant (Phần 1)",
-        description: "Khởi tạo ứng dụng Trợ lý nghiên cứu AI với Ingestion pipeline & Memory đa phiên.",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["Project2", "ResearchAssistant", "Core"]
-      },
-      {
-        id: "m5-t5",
-        title: "Hoàn thiện Project 2: AI Research Assistant (Phần 2)",
-        description: "Đấu nối Multi-Query Retrieval, render báo cáo dạng Markdown và hoàn thành testing.",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["Project2", "Testing", "Git"]
+        title: "Tích hợp Human-in-the-loop & Checkpointing Persistence",
+        description: "Thêm tính năng tạm dừng chờ con người phê duyệt (Interrupt) và lưu checkpoint trạng thái đồ thị.",
+        hoursEstimate: 6.7,
+        pomodoros: 8,
+        tags: ["HumanInTheLoop", "Checkpointer", "Persistence"]
       }
     ],
     resources: [
       {
         id: "res-m5-1",
-        title: "LangChain RAG Tutorial",
+        title: "LangGraph Official Documentation",
         type: "docs",
-        description: "Hướng dẫn toàn diện về RAG từ cơ bản đến nâng cao.",
-        url: "https://python.langchain.com/docs/tutorials/rag/",
+        description: "Trang tài liệu chính thức của LangGraph framework.",
+        url: "https://langchain-ai.github.io/langgraph/",
         moduleId: "mod-5",
         isFree: true
       },
       {
         id: "res-m5-2",
-        title: "LangChain Retrieval & Memory Concepts",
+        title: "LangGraph How-To Guides",
         type: "docs",
-        description: "Khái niệm nâng cao về Retrieval Compression và Conversation Memory.",
-        url: "https://python.langchain.com/docs/concepts/#retrieval",
+        description: "Bộ hướng dẫn thực hành Persistence, Human-in-the-loop & Time-travel.",
+        url: "https://langchain-ai.github.io/langgraph/how-tos/",
         moduleId: "mod-5",
         isFree: true
       },
       {
         id: "res-m5-3",
-        title: "Khóa 1: Agentic AI Systems (Chapter 5 - Advanced RAG & Memory)",
+        title: "Khóa Packt: Agentic AI Systems (Chapter 6 - LangGraph Deep Dive)",
         type: "course",
-        description: "Video bài giảng Packt về Advanced RAG, Context Compression & Memory Patterns.",
+        description: "Video bài giảng chuyên sâu LangGraph Deep Dive.",
         url: "https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814",
-        moduleId: "mod-5",
-        isFree: false
-      },
-      {
-        id: "res-m5-4",
-        title: "Khóa 2: Autonomous Agentic AI Systems (Chapter 7 - Agentic RAG)",
-        type: "course",
-        description: "Video bài giảng Packt về Agentic RAG với CrewAI & Multiple Sessions Memory.",
-        url: "https://www.packtpub.com/en-us/product/building-autonomous-agentic-ai-systems-for-beginners-handson-9781807609818",
         moduleId: "mod-5",
         isFree: false
       }
@@ -488,79 +461,96 @@ export const SPRINT_MODULES: SprintModule[] = [
   {
     id: "mod-6",
     moduleNum: 6,
-    title: "Module 6: LangGraph - A Full Deep Dive",
-    subtitle: "StateGraph, Conditional Edges, Self-Correcting Loops & Human-in-the-loop",
-    statusColor: "#8b5cf6",
-    duration: "4 Ngày (24 Pomodoros / 20h)",
+    title: "Module 6: Multi-Agent Architectures (CrewAI + LangGraph Multi-Agent)",
+    subtitle: "CrewAI Role-Playing, Supervisor Pattern, Agent Handoffs & Project 3: Multi-Agent System",
+    statusColor: "#ec4899",
+    duration: "8.7 Ngày (52 Pomodoros / 43.3h)",
     objectives: [
-      "Làm chủ 3 trụ cột LangGraph: StateGraph, Reducers, Accumulating State & Message State",
-      "Thiết kế Multi-Node Pipelines & Routing: Edges, Conditional Edges, Multipath Routing",
-      "Xây dựng vòng lặp tự sửa lỗi (Cycles & Loops): Self-Correcting Code Writer",
-      "Cấu hình Human-in-the-loop (Interrupt for Approval) & Postgres Checkpointer"
+      "Xây dựng hệ thống Multi-Agent với CrewAI (Agents, Tasks, Crew, Sequential & Hierarchical)",
+      "Thiết kế Đa Agent trên LangGraph: Supervisor Pattern, Agent Handoffs, Map-Reduce & Shared State",
+      "Điều phối Sub-agents chuyên biệt & Tracing kiến trúc phân cấp",
+      "Hoàn thành Project 3: Multi-Agent Research System"
     ],
     knowledgeToLoad: [
-      "StateGraph Architecture & State Reducers (Khóa 1 Chap 6)",
-      "Control Flow: Routing, Cycles, Self-Correction Pattern",
-      "Persistence Internals & Human Approval Interrupts"
+      "CrewAI Multi-Agent Setup (DeepLearning.AI CrewAI Course)",
+      "LangGraph Multi-Agent Patterns: Supervisor, Handoffs, Map-Reduce (Khóa Packt - Chap 7)",
+      "Sub-agents design & coordination (Hugging Face Context Course Unit 4)"
     ],
     deliverables: [
       {
         id: "m6-t1",
-        title: "Khởi tạo LangGraph StateGraph & Message State",
-        description: "Định nghĩa Agent State, Reducers và tạo đồ thị đơn giản với Nodes và Edges.",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["LangGraph", "StateGraph", "Reducers"]
+        title: "Xây dựng Multi-Agent System với CrewAI",
+        description: "Cài đặt CrewAI, định nghĩa Agents (Researcher, Writer), Tasks và thực thi luồng làm việc.",
+        hoursEstimate: 8.3,
+        pomodoros: 10,
+        tags: ["CrewAI", "MultiAgent", "Tasks"]
       },
       {
         id: "m6-t2",
-        title: "Triển khai Routing & Conditional Edges",
-        description: "Xây dựng Router Node điều hướng luồng suy luận (Literal & Multipath Routing).",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["Routing", "ConditionalEdges", "ControlFlow"]
+        title: "Triển khai Supervisor Agent Pattern trên LangGraph",
+        description: "Tạo Supervisor Node phân phối công việc cho các Worker Agents và nhận kết quả phản hồi.",
+        hoursEstimate: 9.2,
+        pomodoros: 11,
+        tags: ["LangGraph", "Supervisor", "Handoffs"]
       },
       {
         id: "m6-t3",
-        title: "Xây dựng Self-Correcting Code Writer Loop",
-        description: "Tạo vòng lặp tự sinh mã, chạy kiểm thử và tự động sửa lỗi code dựa trên error traceback.",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["SelfCorrecting", "Loops", "Agent"]
+        title: "Thực hành Agent Handoffs, Shared Field State & Map-Reduce",
+        description: "Thiết kế luồng Handoff giữa các Agent, chia sẻ trạng thái chung và áp dụng Map-Reduce.",
+        hoursEstimate: 9.2,
+        pomodoros: 11,
+        tags: ["Handoffs", "SharedState", "MapReduce"]
       },
       {
         id: "m6-t4",
-        title: "Tích hợp Human-in-the-loop & Checkpointing",
-        description: "Thêm tính năng tạm dừng chờ con người phê duyệt (Interrupt) và lưu checkpoint trạng thái đồ thị.",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["HumanInTheLoop", "Checkpointer", "Persistence"]
+        title: "Xây dựng Project 3: Multi-Agent Research System (Phần 1)",
+        description: "Thiết kế Custom State Schema, Supervisor Node & Worker Nodes cho dự án nghiên cứu đa agent.",
+        hoursEstimate: 8.3,
+        pomodoros: 10,
+        tags: ["Project3", "MultiAgent", "Architecture"]
+      },
+      {
+        id: "m6-t5",
+        title: "Hoàn thiện Project 3: Multi-Agent Research System (Phần 2)",
+        description: "Áp dụng Send API cho Map-Reduce strategy, kiểm thử tích hợp và hoàn thiện dự án.",
+        hoursEstimate: 8.3,
+        pomodoros: 10,
+        tags: ["Project3", "SendAPI", "Git"]
       }
     ],
     resources: [
       {
         id: "res-m6-1",
-        title: "LangGraph Official Documentation",
-        type: "docs",
-        description: "Trang tài liệu chính thức của LangGraph framework.",
-        url: "https://langchain-ai.github.io/langgraph/",
+        title: "DeepLearning.AI: Multi AI Agent Systems with crewAI",
+        type: "course",
+        description: "Khóa học miễn phí giảng dạy trực tiếp bởi sáng lập CrewAI (João Moura).",
+        url: "https://learn.deeplearning.ai/courses/multi-ai-agent-systems-with-crewai",
         moduleId: "mod-6",
         isFree: true
       },
       {
         id: "res-m6-2",
-        title: "LangGraph How-To Guides",
-        type: "docs",
-        description: "Bộ hướng dẫn thực hành Persistence, Human-in-the-loop & Time-travel.",
-        url: "https://langchain-ai.github.io/langgraph/how-tos/",
+        title: "Hugging Face Context Course (Unit 4: Sub-agents)",
+        type: "course",
+        description: "Khóa học miễn phí về thiết kế và điều phối sub-agents chuyên biệt.",
+        url: "https://huggingface.co/learn/context-course/unit4/introduction",
         moduleId: "mod-6",
         isFree: true
       },
       {
         id: "res-m6-3",
-        title: "Khóa 1 (Chapter 6)",
+        title: "CrewAI Official Documentation",
+        type: "docs",
+        description: "Tài liệu chính thức về CrewAI framework.",
+        url: "https://docs.crewai.com/",
+        moduleId: "mod-6",
+        isFree: true
+      },
+      {
+        id: "res-m6-4",
+        title: "Khóa Packt: Agentic AI Systems (Chapter 7 - Multi-Agent LangGraph)",
         type: "course",
-        description: "Video bài giảng chuyên sâu LangGraph Deep Dive.",
+        description: "Video bài giảng Packt về Supervisor Pattern, Agent Handoffs & Map-Reduce.",
         url: "https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814",
         moduleId: "mod-6",
         isFree: false
@@ -570,97 +560,116 @@ export const SPRINT_MODULES: SprintModule[] = [
   {
     id: "mod-7",
     moduleNum: 7,
-    title: "Module 7: Multi-Agent Architectures",
-    subtitle: "CrewAI, Supervisor LangGraph, Cloud Agents & Project 3: Multi-Agent System",
-    statusColor: "#ec4899",
-    duration: "5 Ngày (30 Pomodoros / 25h)",
+    title: "Module 7: Production Deployment, LLMOps, Security & Evaluation",
+    subtitle: "LangSmith, Security LLM Guard, Agent Evals (Arize/Ragas) & Project 4: Cloud Render API",
+    statusColor: "#a855f7",
+    duration: "11 Ngày (66 Pomodoros / 55h)",
     objectives: [
-      "Xây dựng hệ thống Multi-Agent với CrewAI (Role-playing & Tasks)",
-      "Thiết kế Đa Agent trên LangGraph: Supervisor Pattern, Agent Handoffs, Map-Reduce & Shared State",
-      "Khám phá Cloud Agents: AWS Monitoring Agent & Cross-Cloud Agent (AWS + GCP)",
-      "Hoàn thành Project 3: Multi-Agent Research System"
+      "Cấu hình Observability: LangSmith Tracing, Sub-agent tracking & Agent Hooks",
+      "Thiết lập Security Layer: PII Detection, Prompt Injection Defense, LLM Guard (Smart Bouncer)",
+      "Triển khai RAG & Agent Evaluation: Arize AI / Ragas (Faithfulness, Relevance, LLM-as-a-Judge)",
+      "Cấu hình Resilience: Circuit Breaker, Fallback Chain, Model Router & Semantic Caching",
+      "Hoàn thành Project 4: Production LangGraph API + FastAPI + Docker + Cloud Render Deployment"
     ],
     knowledgeToLoad: [
-      "CrewAI Multi-Agent Setup & Execution (Khóa 2 Chap 6)",
-      "LangGraph Multi-Agent Patterns: Supervisor, Handoffs, Blackboard (Khóa 1 Chap 7)",
-      "Cloud Monitoring Agents & Agentic Design Patterns (Khóa 2 Chap 6 & 9)"
+      "LangSmith Tracing & Observability (Khóa Packt - Chap 8)",
+      "Evaluating AI Agents với Arize AI (DeepLearning.AI Course)",
+      "Security Defense-in-Depth & LLM Guard (Khóa Packt - Chap 8)",
+      "FastAPI Integration, Multi-container Docker & Render Cloud Deployment"
     ],
     deliverables: [
       {
         id: "m7-t1",
-        title: "Xây dựng Multi-Agent System với CrewAI",
-        description: "Cài đặt CrewAI, định nghĩa Agents (Researcher, Writer), Tasks và thực thi luồng làm việc.",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["CrewAI", "MultiAgent", "Tasks"]
+        title: "Cấu hình LangSmith Tracing & Agent Hooks",
+        description: "Gắn LangSmith Tracing, theo dõi sub-agents và sử dụng Agent Hooks để giám sát vòng đời Agent.",
+        hoursEstimate: 8.3,
+        pomodoros: 10,
+        tags: ["LangSmith", "Tracing", "Hooks"]
       },
       {
         id: "m7-t2",
-        title: "Triển khai Supervisor Agent Pattern trên LangGraph",
-        description: "Tạo Supervisor Node phân phối công việc cho các Worker Agents và nhận kết quả phản hồi.",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["LangGraph", "Supervisor", "Handoffs"]
+        title: "Thiết lập Security Layer (PII Detection & Prompt Injection Defense)",
+        description: "Tích hợp LLM Guard (Smart Bouncer), PII Detection và chống tấn công Prompt Injection.",
+        hoursEstimate: 8.3,
+        pomodoros: 10,
+        tags: ["Security", "LLMGuard", "PromptInjection"]
       },
       {
         id: "m7-t3",
-        title: "Thực hành Cloud Agents (AWS & Google Cloud)",
-        description: "Tìm hiểu mô hình AWS Monitoring Agent & Cross-Cloud Architecture.",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["CloudAgents", "AWS", "GCP"]
+        title: "Triển khai Evaluation & LLM-as-a-Judge với Arize AI / Ragas",
+        description: "Viết bộ test tự động đánh giá Faithfulness, Answer Relevance và Context Recall bằng Arize AI / Ragas.",
+        hoursEstimate: 10,
+        pomodoros: 12,
+        tags: ["Evaluation", "ArizeAI", "Ragas"]
       },
       {
         id: "m7-t4",
-        title: "Xây dựng Project 3: Multi-Agent Research System (Phần 1)",
-        description: "Thiết kế Custom State Schema, Router & Worker Nodes cho dự án nghiên cứu đa agent.",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["Project3", "MultiAgent", "Architecture"]
+        title: "Xây dựng Resilience, Model Router & Semantic Cache",
+        description: "Cài đặt Circuit Breaker, Fallback Chain, Semantic Caching để tối ưu chi phí token và độ tin cậy.",
+        hoursEstimate: 8.3,
+        pomodoros: 10,
+        tags: ["Resilience", "Cache", "CircuitBreaker"]
       },
       {
         id: "m7-t5",
-        title: "Hoàn thiện Project 3: Multi-Agent Research System (Phần 2)",
-        description: "Áp dụng Send API cho Map-Reduce strategy, kiểm thử tích hợp và hoàn thiện dự án.",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["Project3", "MapReduce", "Git"]
+        title: "Xây dựng Project 4: Production API Packaging với FastAPI & Docker",
+        description: "Đấu nối LangGraph Agent với FastAPI Server, viết Dockerfile & docker-compose.yml.",
+        hoursEstimate: 10,
+        pomodoros: 12,
+        tags: ["Project4", "FastAPI", "Docker"]
+      },
+      {
+        id: "m7-t6",
+        title: "Hoàn thiện Project 4: Triển khai Cloud Render & E2E Testing",
+        description: "Deploy ứng dụng Production-Ready API lên Render Cloud, test public endpoint và hoàn thành!",
+        hoursEstimate: 10,
+        pomodoros: 12,
+        tags: ["Project4", "RenderCloud", "FinalCommit"]
       }
     ],
     resources: [
       {
         id: "res-m7-1",
-        title: "CrewAI Official Documentation",
-        type: "docs",
-        description: "Tài liệu chính thức về CrewAI framework.",
-        url: "https://docs.crewai.com/",
+        title: "DeepLearning.AI: Evaluating AI Agents (Arize AI)",
+        type: "course",
+        description: "Khóa học miễn phí hướng dẫn đánh giá chất lượng Agent với Arize AI.",
+        url: "https://learn.deeplearning.ai/courses/evaluating-ai-agents",
         moduleId: "mod-7",
         isFree: true
       },
       {
         id: "res-m7-2",
-        title: "LangGraph Multi-Agent Concepts",
-        type: "docs",
-        description: "Các mẫu kiến trúc Multi-Agent chuẩn trên LangGraph.",
-        url: "https://langchain-ai.github.io/langgraph/concepts/multi_agent/",
+        title: "Hugging Face Context Course (Unit 5: Agent Hooks & Observability)",
+        type: "course",
+        description: "Khóa học miễn phí về tự động hóa và giám sát vòng đời Agent.",
+        url: "https://huggingface.co/learn/context-course/unit5/introduction",
         moduleId: "mod-7",
         isFree: true
       },
       {
         id: "res-m7-3",
-        title: "Khóa 1: Agentic AI Systems (Chapter 7 - Multi-Agent LangGraph)",
-        type: "course",
-        description: "Video bài giảng Packt về Supervisor Pattern, Agent Handoffs & Map-Reduce.",
-        url: "https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814",
+        title: "LangSmith Observability & Tracing Docs",
+        type: "docs",
+        description: "Trang tài liệu giám sát và đánh giá LLM của LangSmith.",
+        url: "https://docs.smith.langchain.com/",
         moduleId: "mod-7",
-        isFree: false
+        isFree: true
       },
       {
         id: "res-m7-4",
-        title: "Khóa 2: Autonomous Agentic AI Systems (Chapter 6 & 9 - CrewAI & Cloud Agents)",
+        title: "FastAPI & Render Cloud Guides",
+        type: "docs",
+        description: "Hướng dẫn dựng API hiệu năng cao và deploy ứng dụng Python/Docker lên Cloud Render.",
+        url: "https://fastapi.tiangolo.com/tutorial/",
+        moduleId: "mod-7",
+        isFree: true
+      },
+      {
+        id: "res-m7-5",
+        title: "Khóa Packt: Agentic AI Systems (Chapter 8 - LLMOps & Render Cloud)",
         type: "course",
-        description: "Video bài giảng Packt về CrewAI, Cloud Agents (AWS/GCP) & Agentic Design Patterns.",
-        url: "https://www.packtpub.com/en-us/product/building-autonomous-agentic-ai-systems-for-beginners-handson-9781807609818",
+        description: "Video bài giảng Packt về LangSmith Tracing, Security LLM Guard & Deploy Render.",
+        url: "https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814",
         moduleId: "mod-7",
         isFree: false
       }
@@ -669,179 +678,403 @@ export const SPRINT_MODULES: SprintModule[] = [
   {
     id: "mod-8",
     moduleNum: 8,
-    title: "Module 8: Production Deployment, Security & LLMOps",
-    subtitle: "LangSmith, LLM Guard Security, Testing & Project 4: Cloud Render API",
-    statusColor: "#a855f7",
-    duration: "5 Ngày (30 Pomodoros / 25h)",
+    title: "Module 8: Model Context Protocol (MCP) Integration Quickstart",
+    subtitle: "Giao Thức Kết Nối Tools 2026: FastMCP Server, Stdio/SSE & Agent Integration",
+    statusColor: "#06b6d4",
+    duration: "2.7 Ngày (16 Pomodoros / 13.3h)",
     objectives: [
-      "Cấu hình Observability: LangSmith Tracing & Testing Traces",
-      "Thiết lập Security Layer: PII Detection, Prompt Injection Defense, LLM Guard (Smart Bouncer)",
-      "Triển khai LLM Testing & Evaluation: LLM-as-Judge, Regression Testing & LangSmith Datasets",
-      "Cấu hình Resilience: Circuit Breaker, Fallback Chain, Model Router & Semantic Caching",
-      "Hoàn thành Project 4: Production LangGraph API + FastAPI + Docker + Cloud Render Deployment"
+      "Nắm vững khái niệm cơ bản MCP Client/Server & vị trí trong hệ sinh thái AI Agent",
+      "Tự viết FastMCP Server bằng Python cung cấp Custom Tools/Resources",
+      "Kết nối LangChain Agent gọi MCP Tools qua Stdio/SSE Transports"
     ],
     knowledgeToLoad: [
-      "LangSmith Tracing & Datasets (Khóa 1 Chap 8)",
-      "Security Defense-in-Depth & LLM Guard (Khóa 1 Chap 8 & Khóa 2 Chap 8)",
-      "FastAPI Integration, Multi-container Docker & Render Cloud Deployment"
+      "MCP Architecture & Protocol Spec (Hugging Face Context Course Unit 2)",
+      "FastMCP Python SDK & Tool Decorator Pattern",
+      "Agent Connection & Transport Setup"
     ],
     deliverables: [
       {
         id: "m8-t1",
-        title: "Cấu hình LangSmith Tracing & Security Layer",
-        description: "Gắn LangSmith Tracing, tích hợp PII Detection và Prompt Injection Defense (LLM Guard).",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["LangSmith", "Security", "LLMGuard"]
+        title: "Nghiên cứu Kiến trúc MCP & FastMCP Python SDK",
+        description: "Đọc specification MCP Client/Server, tìm hiểu Stdio & SSE Transports.",
+        hoursEstimate: 4.2,
+        pomodoros: 5,
+        tags: ["MCP", "Protocol", "FastMCP"]
       },
       {
         id: "m8-t2",
-        title: "Triển khai Evaluation & LLM-as-Judge Test Suite",
-        description: "Viết bộ test tự động đánh giá chất lượng câu trả lời bằng LLM-as-Judge trên LangSmith Datasets.",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["Evaluation", "LLMasJudge", "Testing"]
+        title: "Tự viết FastMCP Server cung cấp Tools/Resources",
+        description: "Xây dựng MCP Server cung cấp Tool truy vấn dữ liệu/hệ thống bằng FastMCP SDK.",
+        hoursEstimate: 4.2,
+        pomodoros: 5,
+        tags: ["FastMCP", "Python", "Server"]
       },
       {
         id: "m8-t3",
-        title: "Xây dựng Resilience, Model Router & Semantic Cache",
-        description: "Cài đặt Circuit Breaker, Fallback Chain, Semantic Caching để tối ưu chi phí và tăng độ tin cậy.",
+        title: "Kết nối LangChain Agent với FastMCP Server qua Stdio/SSE",
+        description: "Viết Client Agent tự động kết nối và gọi Tools trên FastMCP Server.",
         hoursEstimate: 5,
         pomodoros: 6,
-        tags: ["Resilience", "Cache", "CircuitBreaker"]
-      },
-      {
-        id: "m8-t4",
-        title: "Xây dựng Project 4: Production API Packaging (Phần 1)",
-        description: "Đấu nối LangGraph Agent với FastAPI Server, viết Dockerfile & docker-compose.yml.",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["Project4", "FastAPI", "Docker"]
-      },
-      {
-        id: "m8-t5",
-        title: "Hoàn thiện Project 4: Triển khai Cloud Render & E2E Testing",
-        description: "Deploy ứng dụng Production-Ready API lên Render Cloud, test public endpoint và hoàn thành khóa học!",
-        hoursEstimate: 5,
-        pomodoros: 6,
-        tags: ["Project4", "RenderCloud", "FinalCommit"]
+        tags: ["MCP-Client", "ToolCalling", "Agent"]
       }
     ],
     resources: [
       {
         id: "res-m8-1",
-        title: "LangSmith Observability & Tracing Docs",
-        type: "docs",
-        description: "Trang tài liệu giám sát và đánh giá LLM của LangSmith.",
-        url: "https://docs.smith.langchain.com/",
+        title: "Hugging Face Context Course (Unit 2: MCP)",
+        type: "course",
+        description: "Khóa học miễn phí hướng dẫn thực hành kết nối công cụ qua Model Context Protocol.",
+        url: "https://huggingface.co/learn/context-course/unit2/introduction",
         moduleId: "mod-8",
         isFree: true
       },
       {
         id: "res-m8-2",
-        title: "FastAPI Official Tutorial",
+        title: "Model Context Protocol Official Specification",
         type: "docs",
-        description: "Hướng dẫn dựng API Server hiệu năng cao với Python FastAPI.",
-        url: "https://fastapi.tiangolo.com/tutorial/",
+        description: "Trang tài liệu chuẩn chính thức của MCP bởi Anthropic.",
+        url: "https://modelcontextprotocol.io/",
         moduleId: "mod-8",
         isFree: true
       },
       {
         id: "res-m8-3",
-        title: "Render Cloud Deployment Guides",
-        type: "docs",
-        description: "Hướng dẫn deploy ứng dụng Python & Docker lên đám mây Render.",
-        url: "https://render.com/docs/",
+        title: "FastMCP Python SDK GitHub",
+        type: "repo",
+        description: "SDK Python chính thức giúp dựng MCP Server cực nhanh.",
+        url: "https://github.com/jlowin/fastmcp",
         moduleId: "mod-8",
+        isFree: true
+      }
+    ]
+  },
+  {
+    id: "mod-9",
+    moduleNum: 9,
+    title: "Module 9: Open-Source LLMs & High-Throughput Serving (vLLM & Ollama)",
+    subtitle: "DeepSeek-R1 / Llama 3.3 Local với Ollama & Phục Vụ Inference Thông Lượng Cao vLLM",
+    statusColor: "#10b981",
+    duration: "3.3 Ngày (20 Pomodoros / 16.7h)",
+    objectives: [
+      "Chạy các mô hình mã nguồn mở (Llama 3.3, DeepSeek-R1) dưới Local/Offline với Ollama",
+      "Làm chủ kiến trúc vLLM: PagedAttention, Continuous Batching, Quantization phục vụ inference",
+      "Kết nối mô hình mã nguồn mở vào chuỗi LangChain/LangGraph"
+    ],
+    knowledgeToLoad: [
+      "DeepLearning.AI & Red Hat Course: Fast & Efficient LLM Inference with vLLM",
+      "Hugging Face AI Agents Course: smolagents framework & Function Calling Fine-tuning",
+      "Ollama setup & vLLM server deployment"
+    ],
+    deliverables: [
+      {
+        id: "m9-t1",
+        title: "Chạy Ollama Local với DeepSeek-R1 / Llama 3.3",
+        description: "Cài đặt và tự chạy mô hình suy luận mã nguồn mở local bằng Ollama.",
+        hoursEstimate: 5,
+        pomodoros: 6,
+        tags: ["Ollama", "DeepSeek", "LocalLLM"]
+      },
+      {
+        id: "m9-t2",
+        title: "Cấu hình vLLM Server (PagedAttention & Continuous Batching)",
+        description: "Triển khai vLLM Server phục vụ suy luận thông lượng cao gấp 6 lần cho production.",
+        hoursEstimate: 5.8,
+        pomodoros: 7,
+        tags: ["vLLM", "PagedAttention", "Serving"]
+      },
+      {
+        id: "m9-t3",
+        title: "Tích hợp Endpoint vLLM vào LangChain LLM Client & smolagents",
+        description: "Tạo LangChain LLM Client và smolagents kết nối endpoint vLLM local/cloud.",
+        hoursEstimate: 5.8,
+        pomodoros: 7,
+        tags: ["LangChain", "smolagents", "vLLM-Client"]
+      }
+    ],
+    resources: [
+      {
+        id: "res-m9-1",
+        title: "DeepLearning.AI: Fast & Efficient LLM Inference with vLLM",
+        type: "course",
+        description: "Khóa học miễn phí hợp tác với Red Hat về kiến trúc vLLM & PagedAttention.",
+        url: "https://www.deeplearning.ai/courses/fast-and-efficient-llm-inference-with-vllm",
+        moduleId: "mod-9",
         isFree: true
       },
       {
-        id: "res-m8-4",
-        title: "Khóa 1: Agentic AI Systems (Chapter 8 - LangSmith, Security & Render Cloud)",
+        id: "res-m9-2",
+        title: "Hugging Face Agents Course (smolagents & Fine-tuning)",
         type: "course",
-        description: "Video bài giảng Packt về LangSmith Tracing, LLM Guard Security & Deploy Render.",
-        url: "https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814",
-        moduleId: "mod-8",
-        isFree: false
+        description: "Khóa học miễn phí làm chủ framework smolagents & fine-tuning function calling.",
+        url: "https://huggingface.co/learn/agents-course/unit2/smolagents/introduction",
+        moduleId: "mod-9",
+        isFree: true
       },
       {
-        id: "res-m8-5",
-        title: "Khóa 2: Autonomous Agentic AI Systems (Chapter 8 - Reflection & Safety)",
+        id: "res-m9-3",
+        title: "vLLM Official Documentation",
+        type: "docs",
+        description: "Trang tài liệu hướng dẫn triển khai vLLM.",
+        url: "https://docs.vllm.ai/",
+        moduleId: "mod-9",
+        isFree: true
+      }
+    ]
+  },
+  {
+    id: "mod-10",
+    moduleNum: 10,
+    title: "Module 10: Full-Stack Web AI Interface (Next.js 15 & Vercel AI SDK)",
+    subtitle: "Giao Diện Web AI Hiện Đại: HTTP Streaming Response (useChat), Generative UI & FastAPI Integration",
+    statusColor: "#6366f1",
+    duration: "4.5 Ngày (27 Pomodoros / 22.5h)",
+    objectives: [
+      "Khởi tạo dự án Web AI với Next.js 15 App Router, TypeScript, TailwindCSS, Shadcn/ui",
+      "Tích hợp Vercel AI SDK: Hooks (useChat, useCompletion), Streaming text & Data streams",
+      "Xây dựng Generative UI, Tool Calling UI và kết nối Next.js Frontend với FastAPI Backend"
+    ],
+    knowledgeToLoad: [
+      "freeCodeCamp Course: Build a Support Agent with Vercel AI SDK",
+      "Developers Digest Tutorial: Agents 101 (Next.js + Vercel AI Gateway + CI/CD)",
+      "Vercel AI SDK Documentation"
+    ],
+    deliverables: [
+      {
+        id: "m10-t1",
+        title: "Khởi tạo Next.js 15 App Router & Vercel AI SDK Setup",
+        description: "Dựng khung ứng dụng Next.js 15, cài đặt Vercel AI SDK, TailwindCSS & Shadcn/ui.",
+        hoursEstimate: 6.7,
+        pomodoros: 8,
+        tags: ["Nextjs15", "VercelAISDK", "Frontend"]
+      },
+      {
+        id: "m10-t2",
+        title: "Xây dựng Streaming Chat UI với useChat & SSE",
+        description: "Tạo giao diện Chatbot hỗ trợ phản hồi realtime dạng streaming token-by-token.",
+        hoursEstimate: 7.5,
+        pomodoros: 9,
+        tags: ["useChat", "Streaming", "SSE"]
+      },
+      {
+        id: "m10-t3",
+        title: "Thiết kế Generative UI, Tool Calling UI & Đấu nối FastAPI Backend",
+        description: "Dựng giao diện Generative UI render dynamic components và đấu nối API với FastAPI/LangGraph.",
+        hoursEstimate: 8.3,
+        pomodoros: 10,
+        tags: ["GenerativeUI", "FastAPI", "FullStack"]
+      }
+    ],
+    resources: [
+      {
+        id: "res-m10-1",
+        title: "freeCodeCamp: Build Support Agent with Vercel AI SDK",
         type: "course",
-        description: "Video bài giảng Packt về Reflection, Self-Improvement, Guardrails & Safety.",
-        url: "https://www.packtpub.com/en-us/product/building-autonomous-agentic-ai-systems-for-beginners-handson-9781807609818",
-        moduleId: "mod-8",
-        isFree: false
+        description: "Hướng dẫn video xây dựng AI Support Agent với Vercel AI SDK, RAG & Tool Calling.",
+        url: "https://www.youtube.com/watch?v=WKIjkxxNH0c",
+        moduleId: "mod-10",
+        isFree: true
+      },
+      {
+        id: "res-m10-2",
+        title: "Developers Digest: Agents 101 Tutorial",
+        type: "course",
+        description: "Hướng dẫn dựng Full-stack Next.js AI App kết hợp Vercel AI Gateway.",
+        url: "https://www.developersdigest.tech/tutorials/eWs50bhFvMY",
+        moduleId: "mod-10",
+        isFree: true
+      },
+      {
+        id: "res-m10-3",
+        title: "Vercel AI SDK Documentation",
+        type: "docs",
+        description: "Trang tài liệu tra cứu chính thức của Vercel AI SDK.",
+        url: "https://sdk.vercel.ai/docs",
+        moduleId: "mod-10",
+        isFree: true
+      }
+    ]
+  },
+  {
+    id: "mod-11",
+    moduleNum: 11,
+    title: "Module 11 (Tùy chọn): MCP Masterclass (Anthropic Official Curriculum)",
+    subtitle: "Anthropic Official MCP Masterclass: 3 Core Primitives, Sampling, Progress, Roots & StreamableHTTP",
+    statusColor: "#f43f5e",
+    duration: "5.7 Ngày (34 Pomodoros / 28.3h)",
+    objectives: [
+      "Làm chủ 3 Primitives cốt lõi: Tools, Resources, Prompts & Kiểm thử với MCP Inspector",
+      "Làm chủ Advanced Primitives: Sampling (Server-initiated LLM calls), Progress Notifications, Roots",
+      "Triển khai Transports: stdio vs StreamableHTTP cho Cloud/Serverless",
+      "Nắm vững Enterprise Specification: OAuth CIMD, Header routing (Mcp-Method) & MCP Apps"
+    ],
+    knowledgeToLoad: [
+      "Anthropic Official Course 1: Introduction to Model Context Protocol",
+      "Anthropic Official Course 2: Model Context Protocol: Advanced Topics",
+      "MCP 2026 Specification & Enterprise Security"
+    ],
+    deliverables: [
+      {
+        id: "m11-t1",
+        title: "Thực hành MCP Core: Tools, Resources, Prompts & MCP Inspector",
+        description: "Viết MCP Server với Python SDK hỗ trợ 3 Primitives cốt lõi và kiểm thử bằng MCP Inspector.",
+        hoursEstimate: 8.3,
+        pomodoros: 10,
+        tags: ["MCP-Primitives", "Inspector", "Anthropic"]
+      },
+      {
+        id: "m11-t2",
+        title: "Thực hành Advanced Primitives: Sampling, Progress Notifications & Roots",
+        description: "Cài đặt Sampling callbacks, phát thông báo tiến độ tác vụ và giới hạn phạm vi truy cập hệ thống tệp.",
+        hoursEstimate: 10,
+        pomodoros: 12,
+        tags: ["Sampling", "Progress", "Roots"]
+      },
+      {
+        id: "m11-t3",
+        title: "Triển khai Transports (stdio vs StreamableHTTP) & Enterprise Specification",
+        description: "Cấu hình StreamableHTTP transport cho Cloud/Serverless, OAuth CIMD và Header-based routing.",
+        hoursEstimate: 10,
+        pomodoros: 12,
+        tags: ["StreamableHTTP", "OAuth", "EnterpriseSpec"]
+      }
+    ],
+    resources: [
+      {
+        id: "res-m11-1",
+        title: "Anthropic Official Course 1: Introduction to MCP",
+        type: "course",
+        description: "Khóa học miễn phí từ Anthropic dạy 3 Core Primitives, Python SDK & MCP Inspector.",
+        url: "https://anthropic.skilljar.com/introduction-to-model-context-protocol",
+        moduleId: "mod-11",
+        isFree: true
+      },
+      {
+        id: "res-m11-2",
+        title: "Anthropic Official Course 2: MCP Advanced Topics",
+        type: "course",
+        description: "Khóa học miễn phí từ Anthropic dạy Sampling, Progress Notifications, Roots & StreamableHTTP.",
+        url: "https://anthropic.skilljar.com/model-context-protocol-advanced-topics",
+        moduleId: "mod-11",
+        isFree: true
+      },
+      {
+        id: "res-m11-3",
+        title: "Model Context Protocol Specification & Enterprise Architecture",
+        type: "docs",
+        description: "Trang tài liệu chuẩn kỹ thuật nâng cao MCP, Transports, Roots & Enterprise Specification.",
+        url: "https://modelcontextprotocol.io/",
+        moduleId: "mod-11",
+        isFree: true
       }
     ]
   }
 ];
 
-// Generate 7 Weeks x 5 Days x 6 Pomodoros = 210 Pomodoros (35 Days)
+// Generate 12 Weeks x 5 Days x 6 Pomodoros = 360 Available Slots for 351 Pomodoros Curriculum
 export const generateDailySchedule = (): DailyScheduleDay[] => {
   const days: DailyScheduleDay[] = [];
   const dayNames = ["Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6"];
   
   const dailyThemes: string[][] = [
-    // Week 1 (Module 1 - 5 days)
+    // Week 1 (Module 1: LangChain Foundations & Project 1)
     [
-      "Agentic AI Concepts & Setup Python Environment",
-      "LCEL, Runnable Chains & Realtime Streaming",
+      "Environment & LCEL Core Setup Python 3.11+",
+      "LCEL Runnable Chains, Batching & Realtime Streaming",
       "Multi-model Setup, Prompt Templates & Parsers",
-      "Project 1: Smart Q&A Bot - Core Architecture",
-      "Project 1: Testing & Refactoring - Commit GitHub"
+      "Project 1: Smart Q&A Bot - Core Logic & Multi-model",
+      "Project 1: Testing, Refactoring & Gemini Flashcards"
     ],
-    // Week 2 (Module 2: 3 days + Module 3: 2 days)
+    // Week 2 (Module 2: Advanced LCEL & Module 3: Document AI Part 1)
     [
       "Parallel Chains, Passthrough & Branching LCEL",
-      "Smolagents Framework: Weather & SQL Agent",
-      "Low-code Agentic Workflows với n8n",
-      "Model Context Protocol Architecture & Spec",
-      "Viết FastMCP Server với Python SDK"
+      "Fallback Chains, Callbacks & Chain Debugging",
+      "Document Loaders (Text, Web, PDF Loaders)",
+      "LlamaParse Complex Doc AI (Tables & Scanned PDF)",
+      "Text Splitting Deep Dive (Recursive, Overlap, Markdown)"
     ],
-    // Week 3 (Module 3: 2 days + Module 4: 3 days)
+    // Week 3 (Module 3: ChromaDB & Module 4: Advanced RAG & pgvector Part 1)
     [
-      "Kết nối AI Agent với FastMCP Server",
-      "Triển khai Docker MCP Server & Test E2E",
-      "Document Loaders (PDF, Web, LazyLoader)",
-      "Text Splitting & Chunk Overlap Deep Dive",
-      "Vector Store ChromaDB & Embeddings Setup"
+      "Vector Store ChromaDB, Embeddings & Metadata Filtering",
+      "Basic RAG Pipeline, Fallback & Structured Outputs",
+      "Advanced RAG (Multi-Query, Compression, Hybrid Search)",
+      "PostgreSQL & pgvector Extension (HNSW Indexing)",
+      "Memory Systems (Summary, Windowed & Persistent Memory)"
     ],
-    // Week 4 (Module 4: 1 day + Module 5: 4 days)
+    // Week 4 (Module 4: Project 2 & Module 5: LangGraph Core)
     [
-      "VectorStore Retriever & Metadata Filtering",
-      "Basic RAG, Fallback & Structured Outputs",
-      "Advanced RAG (Multi-Query, Hybrid Search)",
-      "Memory Patterns (Summary & Persistent Memory)",
-      "Project 2: AI Research Assistant - Ingestion & Memory"
+      "Project 2: AI Research Assistant - Ingestion & pgvector",
+      "Project 2: AI Research Assistant - Multi-Query Retrieval",
+      "Project 2: AI Research Assistant - Export & CLI/API Interface",
+      "LangGraph StateGraph, Reducers & Message State Core",
+      "LangGraph Chat State Pattern & Accumulating State"
     ],
-    // Week 5 (Module 5: 1 day + Module 6: 4 days)
+    // Week 5 (Module 5: LangGraph Advanced & Module 6: CrewAI)
     [
-      "Project 2: AI Research Assistant - Multi-Query & Export",
-      "LangGraph StateGraph & Message State Core",
       "Routing & Conditional Edges trong LangGraph",
       "Cycles & Self-Correcting Code Writer Loop",
-      "Human-in-the-loop & Checkpoint Persistence"
+      "Human-in-the-loop & Checkpoint Persistence",
+      "CrewAI Multi-Agent Setup (Agents, Tasks, Crew)",
+      "CrewAI Sequential & Hierarchical Execution"
     ],
-    // Week 6 (Module 7 - 5 days)
+    // Week 6 (Module 6: LangGraph Multi-Agent & Project 3 Start)
     [
-      "CrewAI Multi-Agent System & Role-playing",
       "Supervisor Agent Pattern trên LangGraph",
-      "Cloud Monitoring Agents (AWS & Google Cloud)",
+      "Agent Handoffs, Message Passing & Shared State",
+      "Map-Reduce Strategy & Blackboard Pattern",
       "Project 3: Multi-Agent Research - Custom State Schema",
-      "Project 3: Send API Map-Reduce & Final Commit"
+      "Project 3: Multi-Agent Research - Supervisor & Worker Nodes"
     ],
-    // Week 7 (Module 8 - 5 days)
+    // Week 7 (Module 6: Project 3 Finish & Module 7: LLMOps/Security)
     [
-      "LangSmith Tracing & Security LLM Guard Layer",
-      "LLM Testing & Evaluation (LLM-as-Judge)",
-      "Resilience, Model Router & Semantic Cache",
-      "Project 4: Production LangGraph API + Docker",
-      "Project 4: Triển khai Cloud Render & Final Certificate! 🚀"
+      "Project 3: Multi-Agent Research - Send API Map-Reduce",
+      "Project 3: Multi-Agent Research - Final Tracing & Commit",
+      "LangSmith Tracing Setup & Sub-agent tracking",
+      "Security Layer: PII Detection & Prompt Injection Defense",
+      "LLM Guard Smart Bouncer & Output Validator"
+    ],
+    // Week 8 (Module 7: Agent Evals & Project 4 Core)
+    [
+      "Agent Evaluation với Arize AI & Ragas (Faithfulness, Recall)",
+      "Resilience, Model Router & Semantic Caching",
+      "Project 4: Production LangGraph API + FastAPI (Phần 1)",
+      "Project 4: Production LangGraph API + FastAPI (Phần 2)",
+      "Project 4: Security Integration & Local E2E Testing"
+    ],
+    // Week 9 (Module 7: Project 4 Docker/Render & Module 8: MCP Quickstart)
+    [
+      "Project 4: Dockerization & docker-compose setup",
+      "Project 4: Deploy API Service lên Cloud Render",
+      "Model Context Protocol (MCP) Architecture & Spec",
+      "Viết FastMCP Server đơn giản bằng Python SDK",
+      "Kết nối LangChain Agent với FastMCP Server (Stdio/SSE)"
+    ],
+    // Week 10 (Module 9: Open-Source LLMs & Module 10: Next.js AI Setup)
+    [
+      "Chạy Ollama Local (Llama 3.3, DeepSeek-R1)",
+      "Cấu hình vLLM Server (PagedAttention & Continuous Batching)",
+      "Tích hợp Endpoint vLLM vào LangChain & smolagents",
+      "Khởi tạo Next.js 15 App Router & Vercel AI SDK",
+      "Cấu hình Next.js Chat UI Components & Theme"
+    ],
+    // Week 11 (Module 10: Streaming Chat UI & Module 11: Anthropic MCP Core)
+    [
+      "Streaming Chat UI với useChat & HTTP Streaming (SSE)",
+      "Generative UI & Tool Calling UI trên Next.js",
+      "Đấu nối Next.js Frontend với FastAPI Backend API",
+      "Anthropic MCP Core: Host/Client/Server & JSON-RPC",
+      "Anthropic MCP 3 Primitives: Tools, Resources, Prompts & Inspector"
+    ],
+    // Week 12 (Module 11: Advanced MCP & Graduation)
+    [
+      "Anthropic MCP Advanced: Sampling (Server-Initiated LLM Calls)",
+      "Anthropic MCP Advanced: Progress Notifications & Roots",
+      "Anthropic MCP Transports: stdio vs StreamableHTTP",
+      "Enterprise Specification: OAuth CIMD & Header Routing",
+      "Tổng kết 11 Master Modules & 4 Projects - Graduation! 🚀"
     ]
   ];
 
-  for (let w = 1; w <= 7; w++) {
+  for (let w = 1; w <= 12; w++) {
     for (let d = 1; d <= 5; d++) {
       const dayName = dayNames[d - 1];
       const theme = dailyThemes[w - 1][d - 1];
@@ -860,7 +1093,7 @@ export const generateDailySchedule = (): DailyScheduleDay[] => {
             timeSlot: "13:00 - 13:50",
             period: "afternoon",
             label: "P1: Nạp Lý Thuyết",
-            details: "Xem video bài giảng trong gói 2 khóa học local (50 phút)"
+            details: "Xem video bài giảng trong gói 2 khóa học local & top khóa free (50 phút)"
           },
           {
             id: `${dayId}-p2`,
@@ -899,8 +1132,8 @@ export const generateDailySchedule = (): DailyScheduleDay[] => {
             pomIndex: 6,
             timeSlot: "22:55 - 23:45",
             period: "evening",
-            label: "P6: Clean & Git Commit",
-            details: "Dọn dẹp code, nghiệm thu & Push GitHub Commit (50 phút)"
+            label: "P6: Flashcards & Git",
+            details: "Ôn tập Flashcards (Gemini Notebook) & Push GitHub Commit (50 phút)"
           }
         ]
       });
@@ -918,8 +1151,8 @@ export const TECH_STACK_LAYERS: TechStackLayer[] = [
     name: "1. UI & Application Layer",
     description: "Giao diện web người dùng, streaming response token-by-token, tự động hóa low-code và trải nghiệm tương tác.",
     items: [
-      { name: "Next.js (React)", role: "Standard Full-stack Framework", usageShare: "44%", isPrimaryChoice: true },
-      { name: "Vercel AI SDK", role: "React Hooks (useChat, streamText)", isPrimaryChoice: true },
+      { name: "Next.js 15 (React)", role: "Standard Full-stack Web Framework (App Router)", usageShare: "48%", isPrimaryChoice: true },
+      { name: "Vercel AI SDK", role: "React Hooks (useChat, useCompletion, streamText)", isPrimaryChoice: true },
       { name: "Tailwind CSS + Shadcn/ui", role: "Design System & Glassmorphism UI", isPrimaryChoice: true },
       { name: "n8n", role: "Low-code / No-code Agentic Automation Workflow", usageShare: "Low-code Standard", isPrimaryChoice: true }
     ]
@@ -930,8 +1163,8 @@ export const TECH_STACK_LAYERS: TechStackLayer[] = [
     description: "Khung điều phối suy luận lặp, quản lý trạng thái, protocol giao tiếp và multi-agent ecosystem.",
     items: [
       { name: "LangGraph (StateGraph)", role: "Stateful Production Agents, Memory & Checkpoints", usageShare: "57% Enterprise", isPrimaryChoice: true },
-      { name: "Model Context Protocol (MCP)", role: "Standard Protocol for Tool & DB Access (FastMCP)", isPrimaryChoice: true },
-      { name: "CrewAI", role: "Role-playing Multi-Agent Framework", isPrimaryChoice: true },
+      { name: "Model Context Protocol (MCP / FastMCP)", role: "Standard Protocol for Tool & DB Access (Anthropic Spec)", isPrimaryChoice: true },
+      { name: "CrewAI", role: "Role-playing Multi-Agent Framework (Sequential & Hierarchical)", isPrimaryChoice: true },
       { name: "Smolagents", role: "Lightweight Agent Framework (Hugging Face)", isPrimaryChoice: true },
       { name: "LangChain Core", role: "LLM Chains & Prompt Templates", isPrimaryChoice: true }
     ]
@@ -939,12 +1172,13 @@ export const TECH_STACK_LAYERS: TechStackLayer[] = [
   {
     layerNum: 3,
     name: "3. LLMs & Inference Engine",
-    description: "Mô hình ngôn ngữ lớn thương mại API và mô hình mã nguồn mở phục vụ suy luận.",
+    description: "Mô hình ngôn ngữ lớn thương mại API, mô hình mã nguồn mở và high-throughput serving engine.",
     items: [
       { name: "Anthropic Claude 3.5 / 3.7", role: "No.1 for Coding & Complex Instruction Following", isPrimaryChoice: true },
       { name: "DeepSeek-R1 / V3", role: "Leading Open Reasoning Model", isPrimaryChoice: true },
       { name: "Google Gemini 2.0 Flash / Pro", role: "1M-2M Large Context Window", isPrimaryChoice: true },
-      { name: "OpenAI GPT-4o / o3-mini", role: "Multimodal & Complex Logic Reasoning", isPrimaryChoice: true }
+      { name: "OpenAI GPT-4o / o3-mini", role: "Multimodal & Complex Logic Reasoning", isPrimaryChoice: true },
+      { name: "vLLM & Ollama", role: "High-Throughput Local/Cloud LLM Serving (PagedAttention)", isPrimaryChoice: true }
     ]
   },
   {
@@ -953,7 +1187,7 @@ export const TECH_STACK_LAYERS: TechStackLayer[] = [
     description: "Cơ sở dữ liệu lưu trữ ngữ nghĩa Vector và tìm kiếm kết hợp Hybrid Search.",
     items: [
       { name: "ChromaDB", role: "Default Lightweight Open-Source Vector Database for RAG", isPrimaryChoice: true },
-      { name: "PostgreSQL (pgvector)", role: "Enterprise Vector DB & Hybrid Search (HNSW Index)", isPrimaryChoice: true },
+      { name: "PostgreSQL (pgvector)", role: "Enterprise Vector DB & Hybrid Search (HNSW / IVFFlat Index)", isPrimaryChoice: true },
       { name: "Qdrant", role: "Dedicated High-Performance Vector DB (Rust)", usageShare: "Dedicated Option" }
     ]
   },
@@ -964,14 +1198,15 @@ export const TECH_STACK_LAYERS: TechStackLayer[] = [
     items: [
       { name: "LangSmith", role: "Deep Tracing, Datasets & Latency / Token Cost Debugging", isPrimaryChoice: true },
       { name: "LLM Guard (Smart Bouncer)", role: "PII Detection & Prompt Injection Defense Layer", isPrimaryChoice: true },
-      { name: "Ragas / LLM-as-Judge", role: "Automated Evaluation (Precision, Recall, Faithfulness)", isPrimaryChoice: true }
+      { name: "Arize AI / Ragas", role: "Automated Evaluation (Faithfulness, Relevance, LLM-as-a-Judge)", isPrimaryChoice: true }
     ]
   },
   {
     layerNum: 6,
     name: "6. Data Ingestion & Document AI",
-    description: "Xử lý, làm sạch và trích xuất tài liệu PDF/Markdown.",
+    description: "Xử lý, trích xuất tài liệu phức tạp PDF/Markdown và cắt đoạn văn bản.",
     items: [
+      { name: "LlamaParse", role: "Complex Document Parsing (Tables, Scanned PDF to Markdown)", isPrimaryChoice: true },
       { name: "LangChain Loaders & Splitters", role: "RecursiveCharacterTextSplitter, CodeSplitter, MarkdownSplitter", isPrimaryChoice: true },
       { name: "PyPDFLoader & WebBaseLoader", role: "Document Extraction & Lazy Loading", isPrimaryChoice: true }
     ]
