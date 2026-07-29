@@ -358,19 +358,19 @@ export class RoadmapViewSchedule extends HTMLElement {
 
           <!-- SVG Circular Progress Ring Display -->
           <div class="timer-svg-container ${timerMode !== 'focus' ? 'break' : ''} ${isRunning ? 'running' : ''}">
-            <svg width="270" height="270" viewBox="0 0 270 270">
+            <svg width="280" height="280" viewBox="0 0 280 280">
               <circle
                 class="timer-ring-bg"
-                cx="135"
-                cy="135"
+                cx="140"
+                cy="140"
                 r="${radius}"
                 stroke-width="12"
                 fill="none"
               />
               <circle
                 class="timer-ring-progress"
-                cx="135"
-                cy="135"
+                cx="140"
+                cy="140"
                 r="${radius}"
                 stroke-width="12"
                 fill="none"
