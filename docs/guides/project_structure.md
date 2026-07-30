@@ -1,6 +1,6 @@
 # PROJECT DIRECTORY STRUCTURE
 
-This document provides a detailed overview of the directory structure, file responsibilities, module layout, and codebase organization in the **AI Engineer Roadmap 2026 Tracker** project. All information is accurately synchronized with the latest codebase.
+This document provides a detailed overview of the directory structure, file responsibilities, module layout, and codebase organization in the **Applied AI Engineer Roadmap 2026 Tracker** project. All information is accurately synchronized with the latest codebase.
 
 ---
 

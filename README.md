@@ -1,4 +1,4 @@
-# 🚀 AI Engineer Roadmap 2026: Agentic AI Master Curriculum & Web Tracker
+# 🚀 Applied AI Engineer Roadmap 2026: Agentic AI Master Curriculum & Web Tracker
 
 Lộ trình học tập toàn diện biến lập trình viên thành **AI Engineer** thực chiến thông qua 11 Master Modules, 4 dự án thực tế lớn, quy trình quản lý chi phí chìm Quit Criteria và ứng dụng **Interactive Web Tracker SPA**.
 
