@@ -40,7 +40,7 @@ A detailed directory tree diagram and description of each module/file is documen
 - **`public/`**: Static assets (`favicon.svg`).
 - **`src/data/`**: Pure Data Model (`planData.ts`) - Contains 100% of static business data.
 - **`src/state/`**: State Store (`storage.ts`) - Manages `localStorage` & singleton `AppState`.
-- **`src/views/`**: Native Web Components (`<roadmap-view-*>`) managing the 5 UI tabs.
+- **`src/views/`**: Native Web Components (`<roadmap-view-*>`) managing the 6 UI tabs (Dashboard, Roadmap, Schedule, Resources, Tech Stack, Quit Criteria).
 - **`src/styles/`**: Layered CSS system (`@layer`) combined with CSS Custom Properties (`_tokens.css`).
 - **`src/actions/`**, **`src/utils/`**, **`src/types/`**: Pure utilities, type interfaces, and backup/restore handlers.
 

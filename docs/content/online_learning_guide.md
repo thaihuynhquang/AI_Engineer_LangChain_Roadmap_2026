@@ -38,6 +38,7 @@ Lộ trình bao gồm **Module 0 (Nền tảng Async) + 10 Module cốt lõi + 1
   * **Chapter 5: Async Generators & Iterators**: Tạo và tiêu thụ luồng dữ liệu bất đồng bộ (streaming tokens) với `async for` và `yield`.
   * **Chapter 6: Synchronization Primitives**: Quản lý rate limit & concurrency an toàn với `asyncio.Lock` và `asyncio.Semaphore`.
 * **2. Tài nguyên Tra cứu & Bài giảng**:
+  * ⚡ **Tài liệu tóm tắt nội bộ**: [Hướng Dẫn Async Python Hiện Đại (Up-to-Date)](./async_python_guide.md) (Tóm tắt Chapters 1, 2, 4, 5, 6 chuẩn Python 3.11–3.14+).
   * 📖 **Tài liệu học chính (Miễn phí)**: [Async Python Playground (Ali Gheshlaghi)](https://aligheshlaghi97.github.io/asynchronous-python/) (Học các Chapters 1, 2, 4, 5, 6).
   * 📖 **Tài liệu tra cứu chính thức**: [Python Official Docs - `asyncio`](https://docs.python.org/3/library/asyncio.html).
 * **3. Nhiệm vụ Thực hành**:

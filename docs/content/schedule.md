@@ -68,7 +68,7 @@
 ---
 
 ### ⚡ TUẦN 1: Module 0 AsyncIO & LangChain Foundations (30 Pomodoros)
-- **Nguồn tài nguyên**: [Async Python Playground](https://aligheshlaghi97.github.io/asynchronous-python/) | [Khóa Packt Chap 1-2](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) | [online_learning_guide.md#module-0](./online_learning_guide.md#⚡-module-0-python-asyncio-foundations)
+- **Nguồn tài nguyên**: [Async Python Guide](./async_python_guide.md) | [Async Python Playground](https://aligheshlaghi97.github.io/asynchronous-python/) | [Khóa Packt Chap 1-2](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) | [online_learning_guide.md#module-0](./online_learning_guide.md#⚡-module-0-python-asyncio-foundations)
 - **Phân bổ tiến độ**:
   - **Ngày 1 – 2 (P1 – P12)**: *Module 0: Python AsyncIO Foundations*: Coroutine (`async/await`), Event Loop, Tasks & Futures (`create_task`), Concurrency (`gather`/`wait`), Async Generators & Synchronization (`asyncio.Semaphore`).
   - **Ngày 3 – 4 (P13 – P24)**: *Module 1: Environment & LCEL Core*: Setup Python, OpenAI/Anthropic API keys. Thực hành LCEL, `RunnableSequence`, `RunnableParallel`, Batching & Streaming.

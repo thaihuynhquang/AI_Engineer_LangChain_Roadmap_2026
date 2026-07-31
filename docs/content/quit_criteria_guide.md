@@ -103,7 +103,7 @@ Lộ trình **Agentic AI Master Curriculum** gồm **12 Master Modules** (Module
 
 | Module | Tên Module | Định mức (Poms) | Trigger Kích Hoạt Từ Bỏ | Hành động Xoay Trục (Pivot Action) |
 | :--- | :--- | :---: | :--- | :--- |
-| **Module 0** | Python AsyncIO Foundations | 12 Poms | Mắc kẹt syntax async/await / Event Loop > 3 Poms | Học tập trung ví dụ code mẫu trên Async Python Playground, bỏ qua tự viết từ đầu |
+| **Module 0** | Python AsyncIO Foundations | 12 Poms | Mắc kẹt syntax async/await / Event Loop > 3 Poms | Đọc tóm tắt [async_python_guide.md](./async_python_guide.md) & học tập trung code mẫu trên Async Python Playground, bỏ qua tự viết từ đầu |
 | **Module 1** | LangChain Foundations | 24 Poms | Mắc kẹt setup API Keys/LCEL > 4 Poms | Chuyển sang dùng OpenAI/Anthropic SDK thuần hoặc Colab |
 | **Module 2** | Chain Patterns & LCEL | 16 Poms | Lỗi chuỗi đa nhánh `RunnableParallel` > 3 Poms | Dùng code mẫu Runnable Sequence tuyến tính đơn giản |
 | **Module 3** | Data Ingestion & LlamaParse | 23 Poms | LlamaParse API lỗi parse PDF > 3 Poms | Dùng `PyPDFLoader` mặc định, bỏ qua parse bảng phức tạp |

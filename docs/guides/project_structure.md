@@ -13,10 +13,11 @@ This document provides a detailed overview of the directory structure, file resp
 │       └── deploy.yml              # GitHub Actions workflow for automated build & deployment to GitHub Pages
 ├── docs/                           # Documentation folder for technical guides & web application content (Markdown)
 │   ├── content/                    # Content documents rendered across web pages
-│   │   ├── online_learning_guide.md# Detailed free online course roadmap covering 11 Master Modules
+│   │   ├── async_python_guide.md   # Modern Asynchronous Python guide covering Python 3.11-3.14+ (Chapters 1, 2, 4, 5, 6)
+│   │   ├── online_learning_guide.md# Detailed free online course roadmap covering 12 Master Modules (Module 0 + 10 Core + 1 Optional)
 │   │   ├── quit_criteria_guide.md  # Quit Criteria & Sunk Cost Management guide establishing decision matrix thresholds & 4-step daily process
 │   │   ├── resources.md            # Directory of free learning resources, tools, and reference links
-│   │   ├── schedule.md             # Sample study schedule & 12-week Pomodoro time allocation (351 Pomodoros)
+│   │   ├── schedule.md             # Sample study schedule & 12-week Pomodoro time allocation (363 Pomodoros)
 │   │   └── tech_stack.md           # Analysis of 7 AI Engineer tech stack layers for 2026
 │   └── guides/                     # Technical developer & AI Agent guides for codebase maintenance & replication
 │       ├── architecture_guide.md   # Master blueprint for architecture, tech stack, design patterns & replication steps
@@ -88,10 +89,11 @@ Divided into 2 distinct subdirectories according to purpose:
 - **`ui_system_design_guide.md`**: UI design manual covering CSS tokens, CSS `@layer` structure, and SVG icon dictionary.
 
 #### 📂 `docs/content/` (Web application content documentation)
-- **`online_learning_guide.md`**: Detailed breakdown of 11 Master Modules, recommended video courses, and hands-on exercises.
-- **`quit_criteria_guide.md`**: Comprehensive guide to Sunk Cost Management, tripwire mechanisms, 11-module warning triggers, and pivot execution protocols.
+- **`async_python_guide.md`**: Comprehensive Async Python reference guide covering Python 3.11–3.14+ features (Event Loop, Coroutines, Tasks, Async Generators, Concurrency, Synchronization Primitives & Free-threaded GIL updates).
+- **`online_learning_guide.md`**: Detailed breakdown of 12 Master Modules (Module 0 + 10 Core + 1 Optional), recommended video courses, and hands-on exercises.
+- **`quit_criteria_guide.md`**: Comprehensive guide to Sunk Cost Management, tripwire mechanisms, 12-module warning triggers, and pivot execution protocols.
 - **`resources.md`**: Catalog of free learning tools, cheat sheets, repositories, and documentation links.
-- **`schedule.md`**: 12-week sample study schedule allocating 351 Pomodoro sessions.
+- **`schedule.md`**: 12-week sample study schedule allocating 363 Pomodoro sessions.
 - **`tech_stack.md`**: Deep dive into the 7 AI Engineer tech stack layers for 2026 (Model Layer, Agent Framework, RAG & Vector DB, LLMOps, Client Integration, Observability & Guardrails, Cloud Deployment).
 
 ### 2.3. `public/` Directory

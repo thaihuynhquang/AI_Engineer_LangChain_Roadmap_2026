@@ -24,7 +24,7 @@ npm run build
 ## 🎓 Khóa Học Chính & Tài Nguyên
 
 - 📹 **Khóa Học Chính**: [Agentic AI Systems: Build & Deploy with LangChain/LangGraph](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) (Packt Publishing).
-- 🆓 **Nguồn Học Bổ Sung Miễn Phí**: Anthropic Academy (MCP), DeepLearning.AI (LlamaParse & RAG), BugBytes (`pgvector`), Vercel AI SDK (Full-stack Web AI), freeCodeCamp (vLLM & Local Inference).
+- 🆓 **Nguồn Học Bổ Sung Miễn Phí**: Async Python Playground (Ali Gheshlaghi), Anthropic Academy (MCP), DeepLearning.AI (LlamaParse & RAG), BugBytes (`pgvector`), Vercel AI SDK (Full-stack Web AI), freeCodeCamp (vLLM & Local Inference).
 
 ---
 
@@ -32,7 +32,7 @@ npm run build
 
 | Module | Tên Module | Dự Án / Trọng Tâm |
 | :--- | :--- | :--- |
-| **M0** | Python AsyncIO Foundations | Coroutine (`async/await`), Event Loop & Concurrency |
+| **M0** | Python AsyncIO Foundations | Coroutine (`async/await`), Event Loop, Concurrency & Async Generators ([Async Python Guide](docs/content/async_python_guide.md)) |
 | **M1** | LangChain & Agentic Foundations | 🛠️ **Project 1: Smart Q&A Bot** |
 | **M2** | Chain Patterns & Advanced LCEL | LCEL, Parallel Chains, Branching & Debugging |
 | **M3** | Data Ingestion & Vector Stores | LlamaParse, Complex Document AI, ChromaDB |
@@ -53,7 +53,7 @@ npm run build
 
 ### 📂 Nội Dung Học Tập (`docs/content/`)
 - 📖 [Lộ Trình Học Chi Tiết (12 Modules)](docs/content/online_learning_guide.md) — Chi tiết bài học, tài nguyên tra cứu & flashcards.
-- ⚡ [Hướng Dẫn Async Python Hiện Đại (Up-to-Date)](docs/content/async_python_guide.md) — Kiến thức bất đồng bộ Python chuẩn 3.11-3.14 (Chapter 1, 2, 4, 5, 6).
+- ⚡ [Hướng Dẫn Async Python Hiện Đại (Up-to-Date)](docs/content/async_python_guide.md) — Kiến thức bất đồng bộ Python chuẩn 3.11-3.14+ (Chapters 1, 2, 4, 5, 6, GIL PEP 703 & Task GC Safety).
 - ⏱️ [Lịch Học & Kế Hoạch 12 Tuần](docs/content/schedule.md) — Phân bổ 363 sessions Pomodoro (Quy tắc 50/5/20).
 - 🛠️ [Phân Tích 7 Tầng Công Nghệ AI 2026](docs/content/tech_stack.md) — Model Layer, LangGraph, pgvector, LLM Guard, v.v.
 - 🛑 [Hướng Dẫn Quit Criteria & Chi Phí Chìm](docs/content/quit_criteria_guide.md) — Ma trận quyết định & quy trình 4 bước tránh sa lầy.
