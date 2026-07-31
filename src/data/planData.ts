@@ -20,15 +20,15 @@ export interface ProjectMeta {
 
 export const META_DATA: ProjectMeta = {
   title: "Agentic AI Master Curriculum 2026",
-  subtitle: "Combo Khóa Packt LangChain/LangGraph + Top Khóa Học Miễn Phí (Anthropic, DeepLearning.AI, Hugging Face, Vercel)",
+  subtitle: "Combo Khóa Packt LangChain/LangGraph + Top Khóa Học Miễn Phí (Anthropic, DeepLearning.AI, Hugging Face, Vercel, Ali Gheshlaghi)",
   targetProject: "Agentic AI Master Systems - 4 Projects (Smart Q&A Bot, AI Research Assistant, Multi-Agent System, Cloud Render API)",
   totalWeeks: 12,
-  totalPomodoros: 351,
-  totalHours: 293,
+  totalPomodoros: 363,
+  totalHours: 303,
   hoursPerDay: 5,
   principles: [
     "Quy tắc Pomodoro 50/5/20: 50 phút Tập trung - 5 phút Nghỉ ngắn - 20 phút Nghỉ dài sau mỗi 2 Pomodoro.",
-    "Lộ trình Master Curriculum 11 Module: Tích hợp Khóa Packt (LangChain/LangGraph) + Các khóa học miễn phí từ Anthropic Academy, DeepLearning.AI, Hugging Face, freeCodeCamp, Vercel AI SDK, BugBytes.",
+    "Lộ trình Master Curriculum 12 Module (Module 0 Nền Tảng AsyncIO + 10 Module Cốt Lõi + 1 Module Nâng Cao Tùy Chọn): Tích hợp Khóa Packt (LangChain/LangGraph) + Các khóa học miễn phí từ Anthropic Academy, DeepLearning.AI, Hugging Face, freeCodeCamp, Vercel AI SDK, BugBytes, Async Python Playground.",
     "Hoàn thành 4 Dự án thực tế lớn: Smart Q&A Bot (Mod 1), AI Research Assistant (Mod 4), Multi-Agent System (Mod 6), Production API Cloud Render (Mod 7)."
   ],
   systemArchitecture: {
@@ -41,6 +41,82 @@ export const META_DATA: ProjectMeta = {
 };
 
 export const SPRINT_MODULES: SprintModule[] = [
+  {
+    id: "mod-0",
+    moduleNum: 0,
+    title: "Module 0: Python AsyncIO Foundations",
+    subtitle: "Coroutine, Event Loop, Concurrency & Async Generators (Ali Gheshlaghi Guide)",
+    statusColor: "#3b82f6",
+    duration: "2 Ngày (12 Pomodoros / 10h)",
+    objectives: [
+      "Phân biệt Synchronous vs Asynchronous, I/O-bound vs CPU-bound trong AI Engineering",
+      "Làm chủ Coroutine (async/await), Event Loop & Quản lý Task (create_task)",
+      "Xử lý bất đồng bộ song song với asyncio.gather() và asyncio.wait()",
+      "Tạo & tiêu thụ luồng dữ liệu bất đồng bộ (streaming tokens) với async for & Async Generators",
+      "Quản lý Concurrency & Rate Limiting an toàn với asyncio.Semaphore & asyncio.Lock"
+    ],
+    knowledgeToLoad: [
+      "Chapter 1 & 2: Intro to Async & Getting Started with asyncio (Ali Gheshlaghi Guide)",
+      "Chapter 4: Running Tasks Concurrently (asyncio.gather / wait)",
+      "Chapter 5: Async Generators & Iterators (yield in async)",
+      "Chapter 6: Synchronization Primitives (Semaphore & Lock)"
+    ],
+    deliverables: [
+      {
+        id: "m0-t1",
+        title: "Nạp lý thuyết Async Python & thực hành Coroutine / Event Loop",
+        description: "Đọc Chapters 1 & 2, thực hành viết coroutine với async/await và hiểu cơ chế Event Loop.",
+        hoursEstimate: 3.3,
+        pomodoros: 4,
+        tags: ["AsyncIO", "Coroutine", "EventLoop"]
+      },
+      {
+        id: "m0-t2",
+        title: "Thực hành Concurrency với gather() & Async Generators",
+        description: "Thực hành chạy song song các tác vụ I/O với asyncio.gather() và tạo Async Generators (yield).",
+        hoursEstimate: 3.3,
+        pomodoros: 4,
+        tags: ["Concurrency", "Gather", "AsyncGenerators"]
+      },
+      {
+        id: "m0-t3",
+        title: "Thực hành Rate Limiting (Semaphore), Code Refactoring & Gemini Flashcards",
+        description: "Quản lý concurrency bằng Semaphore, refactor code mẫu, ôn tập Flashcards và commit Git.",
+        hoursEstimate: 3.3,
+        pomodoros: 4,
+        tags: ["Semaphore", "Refactoring", "Flashcards"]
+      }
+    ],
+    resources: [
+      {
+        id: "res-m0-1",
+        title: "Hướng Dẫn Async Python Hiện Đại (Up-to-Date)",
+        type: "docs",
+        description: "Tài liệu tóm tắt nội bộ về Async Python chuẩn 3.11-3.14+.",
+        url: "docs/content/async_python_guide.md",
+        moduleId: "mod-0",
+        isFree: true
+      },
+      {
+        id: "res-m0-2",
+        title: "Async Python Playground (Ali Gheshlaghi)",
+        type: "course",
+        description: "Trang web học và thực hành Async Python tương tác miễn phí.",
+        url: "https://aligheshlaghi97.github.io/asynchronous-python/",
+        moduleId: "mod-0",
+        isFree: true
+      },
+      {
+        id: "res-m0-3",
+        title: "Python Official Docs - asyncio",
+        type: "docs",
+        description: "Trang tài liệu tra cứu chính thức của thư viện asyncio trong Python.",
+        url: "https://docs.python.org/3/library/asyncio.html",
+        moduleId: "mod-0",
+        isFree: true
+      }
+    ]
+  },
   {
     id: "mod-1",
     moduleNum: 1,
@@ -970,19 +1046,19 @@ export const SPRINT_MODULES: SprintModule[] = [
   }
 ];
 
-// Generate 12 Weeks x 5 Days x 6 Pomodoros = 360 Available Slots for 351 Pomodoros Curriculum
+// Generate 12 Weeks x 5 Days x 6 Pomodoros = 360 Available Slots for 363 Pomodoros Curriculum
 export const generateDailySchedule = (): DailyScheduleDay[] => {
   const days: DailyScheduleDay[] = [];
   const dayNames = ["Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6"];
   
   const dailyThemes: string[][] = [
-    // Week 1 (Module 1: LangChain Foundations & Project 1)
+    // Week 1 (Module 0: AsyncIO Foundations & Module 1: LangChain Setup)
     [
+      "Async Python Foundations: Coroutine (async/await) & Event Loop",
+      "Async Concurrency (gather), Async Generators & Semaphore",
       "Environment & LCEL Core Setup Python 3.11+",
       "LCEL Runnable Chains, Batching & Realtime Streaming",
-      "Multi-model Setup, Prompt Templates & Parsers",
-      "Project 1: Smart Q&A Bot - Core Logic & Multi-model",
-      "Project 1: Testing, Refactoring & Gemini Flashcards"
+      "Multi-model Setup, Prompt Templates & Parsers"
     ],
     // Week 2 (Module 2: Advanced LCEL & Module 3: Document AI Part 1)
     [
@@ -1226,7 +1302,7 @@ export const TECH_STACK_LAYERS: TechStackLayer[] = [
 
 export const QUIT_CRITERIA_DATA: QuitCriteriaData = {
   title: "Quit Criteria & Decision Matrix",
-  subtitle: "Ma Trận Tra Cứu Ngưỡng Cảnh Báo (Trigger) & Hành Động Xoay Trục (Pivot Action) Cho 11 Modules",
+  subtitle: "Ma Trận Tra Cứu Ngưỡng Cảnh Báo (Trigger) & Hành Động Xoay Trục (Pivot Action) Cho 12 Modules",
   docPath: "docs/content/quit_criteria_guide.md",
   dailyProcess: [
     {
@@ -1255,6 +1331,14 @@ export const QUIT_CRITERIA_DATA: QuitCriteriaData = {
     }
   ],
   decisionMatrix: [
+    {
+      moduleId: "mod-0",
+      moduleNum: 0,
+      moduleName: "Module 0: Python AsyncIO Foundations",
+      quotaPoms: 12,
+      trigger: "Mắc kẹt syntax async/await / Event Loop > 3 Poms",
+      pivotAction: "Đọc tóm tắt async_python_guide.md & học tập trung code mẫu trên Async Python Playground, bỏ qua tự viết từ đầu."
+    },
     {
       moduleId: "mod-1",
       moduleNum: 1,

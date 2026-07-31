@@ -77,7 +77,7 @@ export const calculateProgress = (): ProgressSummary => {
   const remainingHours = Math.max(0, META_DATA.totalHours - completedHours);
 
   // 5. Current Sprint Determination
-  let currentSprintNum = 1;
+  let currentSprintNum = 0;
   for (let i = 0; i < sprintProgresses.length; i++) {
     if (sprintProgresses[i].percentage < 100) {
       currentSprintNum = sprintProgresses[i].moduleNum;
