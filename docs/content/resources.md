@@ -6,9 +6,9 @@ Tổng hợp bài giảng video và tài liệu tra cứu chính thức theo cá
 
 ---
 
-### ⚡ Module 0: Python AsyncIO Foundations
-* ⚡ **Tài liệu tóm tắt nội bộ**: [Hướng Dẫn Async Python Hiện Đại (Up-to-Date)](./async_python_guide.md) (Chapters 1, 2, 4, 5, 6 chuẩn Python 3.11–3.14+)
-* 📖 **Tài liệu học chính (Miễn phí)**: [Async Python Playground - Ali Gheshlaghi](https://aligheshlaghi97.github.io/asynchronous-python/) (Chapters 1, 2, 4, 5, 6 - Bỏ qua Chap 3 low-level Futures)
+### ⚡ Module 0: Python AsyncIO Foundations (Nền Tảng Căn Bản)
+* ⚡ **Tài liệu tóm tắt nội bộ**: [Hướng Dẫn Async Python Hiện Đại (Up-to-Date)](./async_python_guide.md) (Phần A: Module 0 Essentials - Chapters 1 & 2 + Cập nhật Python 3.11–3.14+)
+* 📖 **Tài liệu học chính (Miễn phí)**: [Async Python Playground - Ali Gheshlaghi](https://aligheshlaghi97.github.io/asynchronous-python/) (Chapters 1 & 2)
 * 📖 **Tài liệu tra cứu chính thức**: [Python Docs - `asyncio`](https://docs.python.org/3/library/asyncio.html)
 
 ---
@@ -81,3 +81,10 @@ Tổng hợp bài giảng video và tài liệu tra cứu chính thức theo cá
 * 🎓 **Anthropic Official Course 1**: [Introduction to Model Context Protocol](https://anthropic.skilljar.com/introduction-to-model-context-protocol) (3 Core Primitives, Python SDK, Inspector)
 * 🎓 **Anthropic Official Course 2**: [Model Context Protocol: Advanced Topics](https://anthropic.skilljar.com/model-context-protocol-advanced-topics) (Sampling, Progress, Roots, stdio vs StreamableHTTP)
 * 📖 **Docs**: [MCP Official Spec](https://modelcontextprotocol.io/) | [FastMCP Python SDK GitHub](https://github.com/jlowin/fastmcp)
+
+---
+
+### ⚡ Module 12 (Tùy chọn / Optional): Advanced Async Python & System Concurrency
+* ⚡ **Tài liệu tóm tắt nội bộ**: [Hướng Dẫn Async Python Hiện Đại (Up-to-Date)](./async_python_guide.md) (Phần B: Module 12 Optional Advanced - Chapters 3, 4, 5 & 6)
+* 📖 **Tài liệu học chính (Miễn phí)**: [Async Python Playground - Ali Gheshlaghi](https://aligheshlaghi97.github.io/asynchronous-python/) (Chapters 3, 4, 5 & 6)
+* 📖 **Tài liệu tra cứu chính thức**: [Python Docs - `asyncio`](https://docs.python.org/3/library/asyncio.html)

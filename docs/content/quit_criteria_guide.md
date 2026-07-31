@@ -21,7 +21,7 @@ Tài liệu này hướng dẫn cách áp dụng **Phương pháp Lập Tiêu ch
 
 ## 📊 2. Phân Tích Độ Phức Tạp Lộ Trình & Các Điểm Gãy (Choke Points)
 
-Lộ trình **Agentic AI Master Curriculum** gồm **12 Master Modules** (Module 0 Nền Tảng + 10 Module Cốt Lõi + 1 Module Tùy Chọn), **363 Pomodoros** ($\approx 181.5$ giờ tập trung), **4 Projects lớn**, kéo dài **12 tuần** với cường độ **6 Pomodoros/ngày (30 Poms/tuần)**.
+Lộ trình **Agentic AI Master Curriculum** gồm **13 Master Modules** (Module 0 Nền Tảng + 10 Module Cốt Lõi + 2 Module Tùy Chọn), **373 Pomodoros** ($\approx 186.5$ giờ tập trung), **4 Projects lớn**, kéo dài **12.4 tuần** với cường độ **6 Pomodoros/ngày (30 Poms/tuần)**.
 
 ```
 [Tuần 1-2: Nền tảng] ──► 🚨 CHOKE POINT 1 ──► 🚨 CHOKE POINT 2 ──► 🚨 CHOKE POINT 3
@@ -73,11 +73,11 @@ Lộ trình **Agentic AI Master Curriculum** gồm **12 Master Modules** (Module
   - Tái cấu trúc lịch: Bỏ ca Tối (22:00–24:00), chỉ duy trì ca Chiều (4 Pomodoros/ngày). Giãn toàn bộ lộ trình từ 12 tuần thành **18–20 tuần**.
 
 ### 3.4 Ngưỡng 4: Ngưỡng Cắt Giảm Module Tùy Chọn (Optional Scope Kill Criteria)
-* **Quy tắc:** Module 11 (MCP Masterclass - Anthropic) đã được gắn nhãn **Optional** tại [online_learning_guide.md](./online_learning_guide.md#module-11).
+* **Quy tắc:** Module 11 (MCP Masterclass) và Module 12 (Advanced Async Python) đã được gắn nhãn **Optional** tại [online_learning_guide.md](./online_learning_guide.md).
 * **Trigger:** Khi bắt đầu Tuần 10 nhưng tổng thời gian thực tế đã mất $> 10$ tuần (do bị chậm ở các Module trước).
 * **Hành động Từ bỏ (Pivot Action):**
-  - **HỦY BỎ HOÀN TOÀN MODULE 11 (Kill Module 11).**
-  - Sử dụng kiến thức MCP cơ bản ở Module 8 làm chuẩn. Dành trọn 34 Pomodoros tiết kiệm được để tập trung hoàn thiện Project 4 và tốt nghiệp với 11 Module (Module 0 Nền Tảng + 10 Module Cốt Lõi).
+  - **HỦY BỎ HOÀN TOÀN MODULE 11 & MODULE 12 (Kill Module 11 & 12).**
+  - Sử dụng kiến thức MCP cơ bản ở Module 8 và Async cơ bản ở Module 0 làm chuẩn. Dành trọn 50 Pomodoros tiết kiệm được để tập trung hoàn thiện Project 4 và tốt nghiệp với 11 Module (Module 0 Nền Tảng + 10 Module Cốt Lõi).
 
 ---
 
@@ -94,16 +94,16 @@ Lộ trình **Agentic AI Master Curriculum** gồm **12 Master Modules** (Module
   - Luôn tuân thủ ca Tối là ca nhẹ nhàng: Refactoring, viết Unit Test và học Flashcards trên Gemini Notebook.
 
 ### 4.2 Phân Tích Chi Phí Cơ Hội (Opportunity Cost)
-* **363 Pomodoros ($\approx 181.5$ giờ focus):** Bằng thời gian xây dựng 1 ứng dụng SaaS AI hoàn chỉnh đưa ra thị trường hoặc viết 15 bài blog phân tích chuyên sâu.
+* **373 Pomodoros ($\approx 186.5$ giờ focus):** Bằng thời gian xây dựng 1 ứng dụng SaaS AI hoàn chỉnh đưa ra thị trường hoặc viết 15 bài blog phân tích chuyên sâu.
 * **Nguyên tắc hành động:** Mỗi Pomodoro chi ra phải thu về **Artifacts chạy được (Working Code / Commits)**. Nếu qua 2 Pomodoros mà không viết được dòng code hay ghi chú nào, lập tức DỪNG xem video và chuyển sang viết bài tập thực hành.
 
 ---
 
-## 📋 5. Ma Trận Quyết Định Từ Bỏ Theo Chi Tiết 12 Modules
+## 📋 5. Ma Trận Quyết Định Từ Bỏ Theo Chi Tiết 13 Modules
 
 | Module | Tên Module | Định mức (Poms) | Trigger Kích Hoạt Từ Bỏ | Hành động Xoay Trục (Pivot Action) |
 | :--- | :--- | :---: | :--- | :--- |
-| **Module 0** | Python AsyncIO Foundations | 12 Poms | Mắc kẹt syntax async/await / Event Loop > 3 Poms | Đọc tóm tắt [async_python_guide.md](./async_python_guide.md) & học tập trung code mẫu trên Async Python Playground, bỏ qua tự viết từ đầu |
+| **Module 0** | Python AsyncIO Foundations | 6 Poms | Mắc kẹt syntax async/await / Event Loop > 2 Poms | Đọc tóm tắt [async_python_guide.md](./async_python_guide.md) & học tập trung code mẫu Chap 1-2, bỏ qua tự viết từ đầu |
 | **Module 1** | LangChain Foundations | 24 Poms | Mắc kẹt setup API Keys/LCEL > 4 Poms | Chuyển sang dùng OpenAI/Anthropic SDK thuần hoặc Colab |
 | **Module 2** | Chain Patterns & LCEL | 16 Poms | Lỗi chuỗi đa nhánh `RunnableParallel` > 3 Poms | Dùng code mẫu Runnable Sequence tuyến tính đơn giản |
 | **Module 3** | Data Ingestion & LlamaParse | 23 Poms | LlamaParse API lỗi parse PDF > 3 Poms | Dùng `PyPDFLoader` mặc định, bỏ qua parse bảng phức tạp |
@@ -115,6 +115,7 @@ Lộ trình **Agentic AI Master Curriculum** gồm **12 Master Modules** (Module
 | **Module 9** | Open-Source LLMs (vLLM) | 20 Poms | Máy local không đủ VRAM chạy vLLM > 3 Poms | Dùng Ollama local hoặc Groq API (Free Cloud Inference) |
 | **Module 10** | Full-Stack Web AI (Next.js) | 27 Poms | Next.js App Router / Tailwind lỗi > 5 Poms | Dùng **Streamlit** hoặc **FastAPI HTML UI** |
 | **Module 11** | MCP Masterclass (Anthropic) | 34 Poms | Bị chậm tiến độ tổng hợp > 1 tuần | **HỦY BỎ MODULE 11 (OPTIONAL)** |
+| **Module 12** | Advanced Async Python | 16 Poms | Bị chậm tiến độ tổng hợp > 1 tuần | **HỦY BỎ MODULE 12 (OPTIONAL)** |
 
 ---
 
@@ -130,4 +131,5 @@ Lộ trình **Agentic AI Master Curriculum** gồm **12 Master Modules** (Module
 4. **Bước 4 (Thực thi Pivot):** Tra cứu **Ma trận Quyết định tại Mục 5** và thực hiện ngay hành động xoay trục không do dự.
 
 ---
+
 *Tài liệu này là bộ khung nguyên tắc bắt buộc kết hợp cùng [online_learning_guide.md](./online_learning_guide.md), [schedule.md](./schedule.md), và [resources.md](./resources.md) để đảm bảo hoàn thành khóa học thành công.*

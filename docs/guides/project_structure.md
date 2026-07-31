@@ -13,11 +13,11 @@ This document provides a detailed overview of the directory structure, file resp
 │       └── deploy.yml              # GitHub Actions workflow for automated build & deployment to GitHub Pages
 ├── docs/                           # Documentation folder for technical guides & web application content (Markdown)
 │   ├── content/                    # Content documents rendered across web pages
-│   │   ├── async_python_guide.md   # Modern Asynchronous Python guide covering Python 3.11-3.14+ (Chapters 1, 2, 4, 5, 6)
-│   │   ├── online_learning_guide.md# Detailed free online course roadmap covering 12 Master Modules (Module 0 + 10 Core + 1 Optional)
+│   │   ├── async_python_guide.md   # Modern Asynchronous Python guide (Part A: Module 0 Chap 1-2 + Up-to-date Python; Part B: Module 12 Optional Chap 3-6)
+│   │   ├── online_learning_guide.md# Detailed free online course roadmap covering 13 Master Modules (Module 0 + 10 Core + 2 Optional)
 │   │   ├── quit_criteria_guide.md  # Quit Criteria & Sunk Cost Management guide establishing decision matrix thresholds & 4-step daily process
 │   │   ├── resources.md            # Directory of free learning resources, tools, and reference links
-│   │   ├── schedule.md             # Sample study schedule & 12-week Pomodoro time allocation (363 Pomodoros)
+│   │   ├── schedule.md             # Sample study schedule & 12-week Pomodoro time allocation (373 Pomodoros)
 │   │   └── tech_stack.md           # Analysis of 7 AI Engineer tech stack layers for 2026
 │   └── guides/                     # Technical developer & AI Agent guides for codebase maintenance & replication
 │       ├── architecture_guide.md   # Master blueprint for architecture, tech stack, design patterns & replication steps
@@ -31,7 +31,7 @@ This document provides a detailed overview of the directory structure, file resp
 │   ├── actions/                    # Business logic for user data import/export & backup operations
 │   │   └── backup.ts               # JSON export backup, JSON import restoration & progress reset handlers
 │   ├── data/                       # Pure static business data layer
-│   │   └── planData.ts             # Data model containing 100% roadmap content (11 Modules, 12-Week Schedule, Resources, 7 Tech Layers, Quit Criteria)
+│   │   └── planData.ts             # Data model containing 100% roadmap content (13 Modules, 12-Week Schedule, Resources, 7 Tech Layers, Quit Criteria)
 │   ├── state/                      # Application State Management
 │   │   └── storage.ts              # State Store singleton - Manages AppState, localStorage & Pomodoro logs
 │   ├── styles/                     # Layered CSS system utilizing CSS Custom Properties (Tokens)
@@ -51,11 +51,11 @@ This document provides a detailed overview of the directory structure, file resp
 │   │   └── notification.ts         # Web Notification API utility for browser push alerts
 │   ├── views/                      # UI Components (Native Light-DOM Web Component Views)
 │   │   ├── roadmap-view-dashboard.ts  # <roadmap-view-dashboard> - Overview dashboard with progress stats & next task
-│   │   ├── roadmap-view-roadmap.ts    # <roadmap-view-roadmap> - Detailed view for 11 Master Modules, tasks & resources
+│   │   ├── roadmap-view-roadmap.ts    # <roadmap-view-roadmap> - Detailed view for 13 Master Modules, tasks & resources
 │   │   ├── roadmap-view-schedule.ts   # <roadmap-view-schedule> - Interactive Pomodoro timer & 12-week schedule
-│   │   ├── roadmap-view-resources.ts  # <roadmap-view-resources> - Learning resource catalog with 11-module filter
+│   │   ├── roadmap-view-resources.ts  # <roadmap-view-resources> - Learning resource catalog with module filter
 │   │   ├── roadmap-view-techstack.ts  # <roadmap-view-techstack> - Visual breakdown of 7 AI Engineer tech stack layers
-│   │   └── roadmap-view-quitcriteria.ts # <roadmap-view-quitcriteria> - Interactive 11-module decision matrix & 4-step daily process
+│   │   └── roadmap-view-quitcriteria.ts # <roadmap-view-quitcriteria> - Interactive 13-module decision matrix & 4-step daily process
 │   ├── constants.ts                # Shared constants (STORAGE_KEY, THEME_KEY, ROUTE_IDS)
 │   ├── main.ts                     # Application Bootstrap - Initializes theme, router, event listeners & render loop
 │   ├── progress.ts                 # Pure Domain Logic - Engine calculating progress %, study hours & next task
@@ -89,11 +89,11 @@ Divided into 2 distinct subdirectories according to purpose:
 - **`ui_system_design_guide.md`**: UI design manual covering CSS tokens, CSS `@layer` structure, and SVG icon dictionary.
 
 #### 📂 `docs/content/` (Web application content documentation)
-- **`async_python_guide.md`**: Comprehensive Async Python reference guide covering Python 3.11–3.14+ features (Event Loop, Coroutines, Tasks, Async Generators, Concurrency, Synchronization Primitives & Free-threaded GIL updates).
-- **`online_learning_guide.md`**: Detailed breakdown of 12 Master Modules (Module 0 + 10 Core + 1 Optional), recommended video courses, and hands-on exercises.
-- **`quit_criteria_guide.md`**: Comprehensive guide to Sunk Cost Management, tripwire mechanisms, 12-module warning triggers, and pivot execution protocols.
+- **`async_python_guide.md`**: Comprehensive Async Python reference guide (Part A: Module 0 Essentials Chap 1-2 + Up-to-date Python; Part B: Module 12 Optional Advanced Chap 3-6).
+- **`online_learning_guide.md`**: Detailed breakdown of 13 Master Modules (Module 0 + 10 Core + 2 Optional), recommended video courses, and hands-on exercises.
+- **`quit_criteria_guide.md`**: Comprehensive guide to Sunk Cost Management, tripwire mechanisms, 13-module warning triggers, and pivot execution protocols.
 - **`resources.md`**: Catalog of free learning tools, cheat sheets, repositories, and documentation links.
-- **`schedule.md`**: 12-week sample study schedule allocating 363 Pomodoro sessions.
+- **`schedule.md`**: 12-week sample study schedule allocating 373 Pomodoro sessions.
 - **`tech_stack.md`**: Deep dive into the 7 AI Engineer tech stack layers for 2026 (Model Layer, Agent Framework, RAG & Vector DB, LLMOps, Client Integration, Observability & Guardrails, Cloud Deployment).
 
 ### 2.3. `public/` Directory
@@ -101,13 +101,12 @@ Contains static assets served as-is without processing or compilation by Vite:
 - **`favicon.svg`**: Web application logo icon displayed in the browser tab.
 
 ### 2.4. `src/` Directory (Application Source Code)
-
 #### `src/actions/`
 Contains business actions for data import/export:
 - **`backup.ts`**: Provides `exportBackup()`, `importBackup()`, and `resetProgress()` functions allowing users to backup application state to JSON, restore state, or reset progress.
 
 #### `src/data/`
-- **`planData.ts`**: Single Source of Truth containing 100% of static business data, including 11 Master Modules (`SPRINT_MODULES`), 12-Week Pomodoro Schedule (`POMODORO_SCHEDULE`), Resources (`FREE_RESOURCES`), 7 Tech Stack Layers (`TECH_STACK_LAYERS`), and Quit Criteria Decision Matrix (`QUIT_CRITERIA_DATA`).
+- **`planData.ts`**: Single Source of Truth containing 100% of static business data, including 13 Master Modules (`SPRINT_MODULES`), 12-Week Pomodoro Schedule (`POMODORO_SCHEDULE`), Resources (`FREE_RESOURCES`), 7 Tech Stack Layers (`TECH_STACK_LAYERS`), and Quit Criteria Decision Matrix (`QUIT_CRITERIA_DATA`).
 
 #### `src/state/`
 - **`storage.ts`**: Manages state storage. Reads and persists user data (`checked`, `activeTab`, `theme`, `pomodoroSessions`) to `localStorage`.
@@ -135,11 +134,11 @@ Pure utility modules containing no state:
 #### `src/views/`
 Contains 6 Native Custom Elements (Light-DOM Web Components) representing the 6 main UI tabs:
 - **`roadmap-view-dashboard.ts`**: Dashboard overview showing overall progress %, stats cards, active Sprint, and Next Task recommendations.
-- **`roadmap-view-roadmap.ts`**: Detailed 11-Module roadmap showing deliverables checklist and learning goals.
+- **`roadmap-view-roadmap.ts`**: Detailed 13-Module roadmap showing deliverables checklist and learning goals.
 - **`roadmap-view-schedule.ts`**: Interactive Pomodoro timer with 12-week study schedule views.
-- **`roadmap-view-resources.ts`**: Learning resource catalog supporting search and 11-module filtering.
+- **`roadmap-view-resources.ts`**: Learning resource catalog supporting search and module filtering.
 - **`roadmap-view-techstack.ts`**: Visual breakdown of the 7 AI Engineer tech stack layers.
-- **`roadmap-view-quitcriteria.ts`**: Interactive 11-module decision matrix and 4-step daily process view with real-time search filtering.
+- **`roadmap-view-quitcriteria.ts`**: Interactive 13-module decision matrix and 4-step daily process view with real-time search filtering.
 
 #### Root Files of `src/`
 - **`constants.ts`**: System-wide constants (`STORAGE_KEY`, `THEME_KEY`, `ROUTE_IDS`).

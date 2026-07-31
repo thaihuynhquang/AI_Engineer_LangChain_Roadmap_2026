@@ -1,5 +1,5 @@
 # ⏱️ Thời Khóa Biểu Custom Pomodoro (50m Focus - 5m Short Break - 20m Long Break)
-## Lộ Trình Master Curriculum 12 Modules (Module 0 Nền Tảng + Khóa Packt + Top Khóa Học Miễn Phí)
+## Lộ Trình Master Curriculum 13 Modules (Module 0 Nền Tảng + Khóa Packt + Top Khóa Học Miễn Phí)
 
 - **Quy tắc Pomodoro**:
   - **Mỗi Pomodoro**: 50 phút Tập Trung (Focus).
@@ -9,7 +9,7 @@
   - **Ca Chiều**: 1:00 PM – 5:00 PM (4 Pomodoros | 240 phút = 200m Focus + 40m Break/Wrap-up).
   - **Ca Tối**: 10:00 PM – 12:00 AM (2 Pomodoros | 120 phút = 100m Focus + 20m Break/Wrap-up).
 - **Tổng dung lượng công việc**: **6 Pomodoros / ngày** (5 tiếng tập trung + 1 tiếng nghỉ/wrap-up) $\rightarrow$ **30 Pomodoros / tuần** (25 tiếng focus pure/tuần).
-- **Tổng khối lượng toàn khóa**: **363 Pomodoros** ($\approx$ **12 Tuần / 3 Tháng / 60-61 Ngày học**).
+- **Tổng khối lượng toàn khóa**: **373 Pomodoros** ($\approx$ **12.4 Tuần / 62 Ngày học**).
 
 ---
 
@@ -22,7 +22,7 @@
 │ 🍅 Pomodoro 1    │ 13:00 - 13:50 (50m) | 🎓 Nạp Lý Thuyết & Xem Video / Đọc Docs            │
 │ ☕ Short Break 1 │ 13:50 - 13:55 (5m)  | Nghỉ ngắn (thư giãn mắt, uống nước)                │
 ├──────────────────┼───────────────────────────────────────────────────────────────────────────┤
-│ 🍅 Pomodoro 2    │ 13:55 - 14:45 (50m) | 📖 Xem Hands-on Demo & Thử nghiệm Code Sample        │
+│ 🍅 Pomodoro 2    │ 13:55 - 14:45 (5m)  | 📖 Xem Hands-on Demo & Thử nghiệm Code Sample        │
 │ 🛑 LONG BREAK 1  │ 14:45 - 15:05 (20m) | 🌿 NGHỈ GIẢI LAO DÀI (Đứng dậy vận động, ăn nhẹ)     │
 ├──────────────────┼───────────────────────────────────────────────────────────────────────────┤
 │ 🍅 Pomodoro 3    │ 15:05 - 15:55 (50m) | 💻 Heavy Coding (Xây dựng Feature / Gõ Code từ đầu)     │
@@ -43,11 +43,11 @@
 
 ---
 
-## 📊 Bảng Phân Bổ Tổng Quan Khối Lượng 12 Master Modules (363 Pomodoros)
+## 📊 Bảng Phân Bổ Tổng Quan Khối Lượng 13 Master Modules (373 Pomodoros)
 
 | Module | Tên Module & Nội dung chính | Bài giảng Video / Docs | Bài tập & Projects Thực hành | Flashcards & Review | Tổng Pomodoros |
 | :--- | :--- | :---: | :---: | :---: | :---: |
-| **Module 0** | Python AsyncIO Foundations | 3 Poms | 7 Poms | 2 Poms | **12 Poms** (~2 ngày) |
+| **Module 0** | Python AsyncIO Foundations (Chap 1-2 + Up-to-date Python) | 2 Poms | 3 Poms | 1 Pom | **6 Poms** (~1 ngày) |
 | **Module 1** | LangChain Foundations & **Project 1 (Smart Q&A Bot)** | 5 Poms | 16 Poms (Project 1: 10 Poms) | 3 Poms | **24 Poms** (~4 ngày) |
 | **Module 2** | Chain Patterns & Advanced LCEL | 4 Poms | 10 Poms | 2 Poms | **16 Poms** (~2.7 ngày) |
 | **Module 3** | Data Ingestion, Complex Doc AI & Vector Stores | 6 Poms | 14 Poms | 3 Poms | **23 Poms** (~3.8 ngày) |
@@ -59,7 +59,8 @@
 | **Module 9** | Open-Source LLMs & High-Throughput Serving (vLLM & Ollama) | 6 Poms | 12 Poms | 2 Poms | **20 Poms** (~3.3 ngày) |
 | **Module 10** | Full-Stack Web AI Interface (Next.js 15 & Vercel AI SDK) | 6 Poms | 18 Poms | 3 Poms | **27 Poms** (~4.5 ngày) |
 | **Module 11 (Tùy chọn)** | MCP Masterclass (Anthropic Official Curriculum) | 10 Poms | 20 Poms | 4 Poms | **34 Poms** (~5.7 ngày) |
-| **TỔNG CỘNG**| **12 Master Modules** | **80 Poms** | **251 Poms** | **32 Poms** | **363 Pomodoros** |
+| **Module 12 (Tùy chọn)** | Advanced Async Python & System Concurrency (Chap 3-6) | 4 Poms | 10 Poms | 2 Poms | **16 Poms** (~2.7 ngày) |
+| **TỔNG CỘNG**| **13 Master Modules** | **83 Poms** | **257 Poms** | **33 Poms** | **373 Pomodoros** |
 
 ---
 
@@ -68,10 +69,10 @@
 ---
 
 ### ⚡ TUẦN 1: Module 0 AsyncIO & LangChain Foundations (30 Pomodoros)
-- **Nguồn tài nguyên**: [Async Python Guide](./async_python_guide.md) | [Async Python Playground](https://aligheshlaghi97.github.io/asynchronous-python/) | [Khóa Packt Chap 1-2](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) | [online_learning_guide.md#module-0](./online_learning_guide.md#⚡-module-0-python-asyncio-foundations)
+- **Nguồn tài nguyên**: [Async Python Guide](./async_python_guide.md) | [Async Python Playground](https://aligheshlaghi97.github.io/asynchronous-python/) | [Khóa Packt Chap 1-2](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) | [online_learning_guide.md#module-0](./online_learning_guide.md#⚡-module-0-python-asyncio-foundations-nền-tảng-căn-bản)
 - **Phân bổ tiến độ**:
-  - **Ngày 1 – 2 (P1 – P12)**: *Module 0: Python AsyncIO Foundations*: Coroutine (`async/await`), Event Loop, Tasks & Futures (`create_task`), Concurrency (`gather`/`wait`), Async Generators & Synchronization (`asyncio.Semaphore`).
-  - **Ngày 3 – 4 (P13 – P24)**: *Module 1: Environment & LCEL Core*: Setup Python, OpenAI/Anthropic API keys. Thực hành LCEL, `RunnableSequence`, `RunnableParallel`, Batching & Streaming.
+  - **Ngày 1 (P1 – P6)**: *Module 0: Python AsyncIO Foundations*: Coroutine (`async/await`), Event Loop, `asyncio.run()` & `asyncio.Runner()`, Tasks & GC reference safety (`create_task`), `get_running_loop()`, Eager Task Factory (`eager_task_factory`), GIL Free-threaded overview (PEP 703).
+  - **Ngày 2 – 4 (P7 – P24)**: *Module 1: Environment & LCEL Core*: Setup Python, OpenAI/Anthropic API keys. Thực hành LCEL, `RunnableSequence`, `RunnableParallel`, Batching & Streaming.
   - **Ngày 5 (P25 – P30)**: *Module 1: Multi-LLM & Parsers*: Prompt Templates, Chat Models, Structured Output & Parsers (`PydanticOutputParser`, `StrOutputParser`).
 
 ---
@@ -186,12 +187,13 @@
 
 ---
 
-### 🎓 TUẦN 12: Anthropic MCP Masterclass (Tùy chọn / Optional) & Graduation (33 Pomodoros)
-- **Nguồn tài nguyên**: [Anthropic Advanced MCP Course](https://anthropic.skilljar.com/model-context-protocol-advanced-topics) | [online_learning_guide.md#module-11](./online_learning_guide.md#-module-11-model-context-protocol-mcp-masterclass-anthropic-official-curriculum)
+### 🎓 TUẦN 12: Anthropic MCP Masterclass & Advanced Async Python (Tùy chọn / Optional) (43 Pomodoros)
+- **Nguồn tài nguyên**: [Anthropic Advanced MCP Course](https://anthropic.skilljar.com/model-context-protocol-advanced-topics) | [Async Python Guide Phần B](./async_python_guide.md#-phần-b-kỹ-thuật-async-nâng-cao-dành-cho-module-12-tùy-chọn) | [online_learning_guide.md#module-12](./online_learning_guide.md#-module-12-tùy-chọn--optional-advanced-async-python--system-concurrency)
 - **Phân bổ tiến độ**:
   - **Ngày 56 – 58 (P331 – P350)**: *Module 11 Part 2: Advanced MCP Primitives & Transports*:
     - Advanced Primitives: `Sampling` (Server-initiated LLM calls), `Progress Notifications`, `Roots` (Filesystem scoping).
     - Transports: So sánh & triển khai `stdio` vs `StreamableHTTP` cho Cloud/Serverless.
-  - **Ngày 59 – 60 (P351 – P363)**: *Enterprise Specification, Review & Graduation*:
-    - OAuth CIMD (Client ID Metadata Documents), Header-based routing (`Mcp-Method`), MCP Apps.
-    - Tổng kết toàn bộ 12 Master Modules & 4 Projects. Đóng gói Portfolio Agentic AI Systems! 🚀
+  - **Ngày 59 – 61 (P351 – P366)**: *Module 12 (Tùy chọn): Advanced Async Python & System Concurrency*:
+    - Low-level Futures, Synchronization Primitives (`asyncio.Lock`, `Semaphore`, `Barrier`, `Event`), `TaskGroup`, `timeout()`, `ExceptionGroup` (`except*`), `Queue.shutdown()`.
+  - **Ngày 62 (P367 – P373)**: *Enterprise Specification, Review & Graduation*:
+    - Tổng kết toàn bộ 13 Master Modules & 4 Projects. Đóng gói Portfolio Agentic AI Systems! 🚀

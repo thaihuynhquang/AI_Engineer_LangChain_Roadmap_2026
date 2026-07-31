@@ -23,12 +23,12 @@ export const META_DATA: ProjectMeta = {
   subtitle: "Combo Khóa Packt LangChain/LangGraph + Top Khóa Học Miễn Phí (Anthropic, DeepLearning.AI, Hugging Face, Vercel, Ali Gheshlaghi)",
   targetProject: "Agentic AI Master Systems - 4 Projects (Smart Q&A Bot, AI Research Assistant, Multi-Agent System, Cloud Render API)",
   totalWeeks: 12,
-  totalPomodoros: 363,
-  totalHours: 303,
+  totalPomodoros: 373,
+  totalHours: 311,
   hoursPerDay: 5,
   principles: [
     "Quy tắc Pomodoro 50/5/20: 50 phút Tập trung - 5 phút Nghỉ ngắn - 20 phút Nghỉ dài sau mỗi 2 Pomodoro.",
-    "Lộ trình Master Curriculum 12 Module (Module 0 Nền Tảng AsyncIO + 10 Module Cốt Lõi + 1 Module Nâng Cao Tùy Chọn): Tích hợp Khóa Packt (LangChain/LangGraph) + Các khóa học miễn phí từ Anthropic Academy, DeepLearning.AI, Hugging Face, freeCodeCamp, Vercel AI SDK, BugBytes, Async Python Playground.",
+    "Lộ trình Master Curriculum 13 Module (Module 0 Nền Tảng AsyncIO + 10 Module Cốt Lõi + 2 Module Nâng Cao Tùy Chọn): Tích hợp Khóa Packt (LangChain/LangGraph) + Các khóa học miễn phí từ Anthropic Academy, DeepLearning.AI, Hugging Face, freeCodeCamp, Vercel AI SDK, BugBytes, Async Python Playground.",
     "Hoàn thành 4 Dự án thực tế lớn: Smart Q&A Bot (Mod 1), AI Research Assistant (Mod 4), Multi-Agent System (Mod 6), Production API Cloud Render (Mod 7)."
   ],
   systemArchitecture: {
@@ -45,46 +45,45 @@ export const SPRINT_MODULES: SprintModule[] = [
     id: "mod-0",
     moduleNum: 0,
     title: "Module 0: Python AsyncIO Foundations",
-    subtitle: "Coroutine, Event Loop, Concurrency & Async Generators (Ali Gheshlaghi Guide)",
+    subtitle: "Coroutine, Event Loop, asyncio.run, GC Task Safety & Eager Task Factory (Chap 1-2)",
     statusColor: "#3b82f6",
-    duration: "2 Ngày (12 Pomodoros / 10h)",
+    duration: "1 Ngày (6 Pomodoros / 5h)",
     objectives: [
       "Phân biệt Synchronous vs Asynchronous, I/O-bound vs CPU-bound trong AI Engineering",
-      "Làm chủ Coroutine (async/await), Event Loop & Quản lý Task (create_task)",
-      "Xử lý bất đồng bộ song song với asyncio.gather() và asyncio.wait()",
-      "Tạo & tiêu thụ luồng dữ liệu bất đồng bộ (streaming tokens) với async for & Async Generators",
-      "Quản lý Concurrency & Rate Limiting an toàn với asyncio.Semaphore & asyncio.Lock"
+      "Làm chủ Coroutine (async/await), Event Loop & Quản lý Task (create_task với GC safety)",
+      "Khởi chạy Event Loop chuẩn với asyncio.run() và asyncio.Runner() (Python 3.11+)",
+      "Tối ưu tốc độ thực thi cho coroutine nhanh với eager_task_factory (Python 3.12+)",
+      "Nắm vững cập nhật GIL Free-threaded CPython (Python 3.13+ PEP 703)"
     ],
     knowledgeToLoad: [
-      "Chapter 1 & 2: Intro to Async & Getting Started with asyncio (Ali Gheshlaghi Guide)",
-      "Chapter 4: Running Tasks Concurrently (asyncio.gather / wait)",
-      "Chapter 5: Async Generators & Iterators (yield in async)",
-      "Chapter 6: Synchronization Primitives (Semaphore & Lock)"
+      "Chapter 1: Intro to Async Programming & Free-threaded GIL (PEP 703)",
+      "Chapter 2: Getting Started with asyncio (Coroutines, asyncio.run, Runner & GC Safety)",
+      "Eager Task Factory (asyncio.eager_task_factory - Python 3.12+)"
     ],
     deliverables: [
       {
         id: "m0-t1",
         title: "Nạp lý thuyết Async Python & thực hành Coroutine / Event Loop",
         description: "Đọc Chapters 1 & 2, thực hành viết coroutine với async/await và hiểu cơ chế Event Loop.",
-        hoursEstimate: 3.3,
-        pomodoros: 4,
+        hoursEstimate: 1.7,
+        pomodoros: 2,
         tags: ["AsyncIO", "Coroutine", "EventLoop"]
       },
       {
         id: "m0-t2",
-        title: "Thực hành Concurrency với gather() & Async Generators",
-        description: "Thực hành chạy song song các tác vụ I/O với asyncio.gather() và tạo Async Generators (yield).",
-        hoursEstimate: 3.3,
-        pomodoros: 4,
-        tags: ["Concurrency", "Gather", "AsyncGenerators"]
+        title: "Thực hành create_task, GC Safety, asyncio.Runner & Eager Task Factory",
+        description: "Thực hành giữ tham chiếu Task an toàn (GC safety), khởi chạy với Runner và cài đặt eager_task_factory.",
+        hoursEstimate: 2.5,
+        pomodoros: 3,
+        tags: ["GCSafety", "Runner", "EagerTask"]
       },
       {
         id: "m0-t3",
-        title: "Thực hành Rate Limiting (Semaphore), Code Refactoring & Gemini Flashcards",
-        description: "Quản lý concurrency bằng Semaphore, refactor code mẫu, ôn tập Flashcards và commit Git.",
-        hoursEstimate: 3.3,
-        pomodoros: 4,
-        tags: ["Semaphore", "Refactoring", "Flashcards"]
+        title: "Thực hành get_running_loop(), Code Refactoring & Gemini Flashcards",
+        description: "Lấy running loop an toàn, refactor code mẫu, ôn tập Flashcards và commit Git.",
+        hoursEstimate: 0.8,
+        pomodoros: 1,
+        tags: ["Refactoring", "Flashcards"]
       }
     ],
     resources: [
@@ -1043,6 +1042,72 @@ export const SPRINT_MODULES: SprintModule[] = [
         isFree: true
       }
     ]
+  },
+  {
+    id: "mod-12",
+    moduleNum: 12,
+    title: "Module 12 (Tùy chọn): Advanced Async Python & System Concurrency",
+    subtitle: "Low-level Futures, Synchronization Primitives, TaskGroup, Timeout & Queue Shutdown",
+    statusColor: "#8b5cf6",
+    duration: "2.7 Ngày (16 Pomodoros / 13.3h)",
+    objectives: [
+      "Làm chủ bản chất Low-level Futures, Loop Callbacks & Cấu trúc phân cấp Task -> Future -> Awaitable",
+      "Điều phối tài nguyên dùng chung & tránh Race Conditions với Lock, Semaphore, Barrier & Event",
+      "Structured Concurrency hiện đại với asyncio.TaskGroup & asyncio.timeout() (Python 3.11+)",
+      "Xử lý lỗi nâng cao với ExceptionGroup (except*) & Queue Producer-Consumer (Queue.shutdown)"
+    ],
+    knowledgeToLoad: [
+      "Chapter 3: Low-Level Futures & Event Loop Callbacks",
+      "Chapter 4: Synchronization Primitives (Lock, Semaphore, Barrier, Event)",
+      "Chapter 5: Advanced Async & Structured Concurrency (TaskGroup, timeout, ExceptionGroup, Queue)",
+      "Chapter 6 Advanced: Queue.shutdown & POSIX multiprocessing start method"
+    ],
+    deliverables: [
+      {
+        id: "m12-t1",
+        title: "Nạp lý thuyết Futures & Synchronization Primitives (Lock, Semaphore, Barrier)",
+        description: "Hiểu bản chất asyncio.Future, sử dụng Lock, Semaphore, Barrier và Event để đồng bộ hóa tác vụ.",
+        hoursEstimate: 3.3,
+        pomodoros: 4,
+        tags: ["Futures", "Lock", "Semaphore", "Barrier"]
+      },
+      {
+        id: "m12-t2",
+        title: "Thực hành Structured Concurrency (TaskGroup, timeout) & Queue Producer-Consumer",
+        description: "Quản lý nhóm task với TaskGroup, giới hạn thời gian chạy bằng timeout() và viết pipeline Producer-Consumer.",
+        hoursEstimate: 6.7,
+        pomodoros: 8,
+        tags: ["TaskGroup", "Timeout", "AsyncQueue"]
+      },
+      {
+        id: "m12-t3",
+        title: "Thực hành ExceptionGroup (except*), Queue.shutdown, Refactoring & Flashcards",
+        description: "Bắt lỗi trong TaskGroup với except*, đóng hàng đợi an toàn với Queue.shutdown(), ôn tập Flashcards và commit Git.",
+        hoursEstimate: 3.3,
+        pomodoros: 4,
+        tags: ["ExceptionGroup", "QueueShutdown", "Flashcards"]
+      }
+    ],
+    resources: [
+      {
+        id: "res-m12-1",
+        title: "Hướng Dẫn Async Python Hiện Đại (Up-to-Date) - Phần B",
+        type: "docs",
+        description: "Tài liệu tóm tắt nội bộ về Advanced Async Python (Chap 3, 4, 5 & 6).",
+        url: "docs/content/async_python_guide.md#-phần-b-kỹ-thuật-async-nâng-cao-dành-cho-module-12-tùy-chọn",
+        moduleId: "mod-12",
+        isFree: true
+      },
+      {
+        id: "res-m12-2",
+        title: "Async Python Playground (Ali Gheshlaghi)",
+        type: "course",
+        description: "Trang web học và thực hành Async Python tương tác cho Chapters 3, 4, 5 & 6.",
+        url: "https://aligheshlaghi97.github.io/asynchronous-python/",
+        moduleId: "mod-12",
+        isFree: true
+      }
+    ]
   }
 ];
 
@@ -1054,11 +1119,11 @@ export const generateDailySchedule = (): DailyScheduleDay[] => {
   const dailyThemes: string[][] = [
     // Week 1 (Module 0: AsyncIO Foundations & Module 1: LangChain Setup)
     [
-      "Async Python Foundations: Coroutine (async/await) & Event Loop",
-      "Async Concurrency (gather), Async Generators & Semaphore",
+      "Async Python Foundations: Coroutine (async/await), Event Loop & Eager Task",
       "Environment & LCEL Core Setup Python 3.11+",
       "LCEL Runnable Chains, Batching & Realtime Streaming",
-      "Multi-model Setup, Prompt Templates & Parsers"
+      "Multi-model Setup, Prompt Templates & Parsers",
+      "Project 1: Smart Q&A Bot - Architecture & Custom Output Parsers"
     ],
     // Week 2 (Module 2: Advanced LCEL & Module 3: Document AI Part 1)
     [
@@ -1140,13 +1205,13 @@ export const generateDailySchedule = (): DailyScheduleDay[] => {
       "Anthropic MCP Core: Host/Client/Server & JSON-RPC",
       "Anthropic MCP 3 Primitives: Tools, Resources, Prompts & Inspector"
     ],
-    // Week 12 (Module 11: Advanced MCP & Graduation)
+    // Week 12 (Module 11 & Module 12 Optional)
     [
       "Anthropic MCP Advanced: Sampling (Server-Initiated LLM Calls)",
-      "Anthropic MCP Advanced: Progress Notifications & Roots",
-      "Anthropic MCP Transports: stdio vs StreamableHTTP",
-      "Enterprise Specification: OAuth CIMD & Header Routing",
-      "Tổng kết 11 Master Modules & 4 Projects - Graduation! 🚀"
+      "Anthropic MCP Transports (stdio vs StreamableHTTP) & OAuth CIMD",
+      "Module 12 (Tùy chọn): Low-level Futures & Synchronization (Lock, Semaphore, Barrier)",
+      "Module 12 (Tùy chọn): Structured Concurrency (TaskGroup, timeout) & Queue Shutdown",
+      "Tổng kết 13 Master Modules & 4 Projects - Graduation! 🚀"
     ]
   ];
 
@@ -1302,7 +1367,7 @@ export const TECH_STACK_LAYERS: TechStackLayer[] = [
 
 export const QUIT_CRITERIA_DATA: QuitCriteriaData = {
   title: "Quit Criteria & Decision Matrix",
-  subtitle: "Ma Trận Tra Cứu Ngưỡng Cảnh Báo (Trigger) & Hành Động Xoay Trục (Pivot Action) Cho 12 Modules",
+  subtitle: "Ma Trận Tra Cứu Ngưỡng Cảnh Báo (Trigger) & Hành Động Xoay Trục (Pivot Action) Cho 13 Modules",
   docPath: "docs/content/quit_criteria_guide.md",
   dailyProcess: [
     {
@@ -1335,9 +1400,9 @@ export const QUIT_CRITERIA_DATA: QuitCriteriaData = {
       moduleId: "mod-0",
       moduleNum: 0,
       moduleName: "Module 0: Python AsyncIO Foundations",
-      quotaPoms: 12,
-      trigger: "Mắc kẹt syntax async/await / Event Loop > 3 Poms",
-      pivotAction: "Đọc tóm tắt async_python_guide.md & học tập trung code mẫu trên Async Python Playground, bỏ qua tự viết từ đầu."
+      quotaPoms: 6,
+      trigger: "Mắc kẹt syntax async/await / Event Loop > 2 Poms",
+      pivotAction: "Đọc tóm tắt async_python_guide.md & học tập trung code mẫu Chap 1-2, bỏ qua tự viết từ đầu."
     },
     {
       moduleId: "mod-1",
@@ -1426,6 +1491,15 @@ export const QUIT_CRITERIA_DATA: QuitCriteriaData = {
       quotaPoms: 34,
       trigger: "Bị chậm tiến độ tổng hợp > 1 tuần",
       pivotAction: "HỦY BỎ MODULE 11 (OPTIONAL), tập trung hoàn thiện Project 4.",
+      isOptional: true
+    },
+    {
+      moduleId: "mod-12",
+      moduleNum: 12,
+      moduleName: "Module 12 (Tùy chọn): Advanced Async Python",
+      quotaPoms: 16,
+      trigger: "Bị chậm tiến độ tổng hợp > 1 tuần",
+      pivotAction: "HỦY BỎ MODULE 12 (OPTIONAL), tập trung hoàn thiện Project 4.",
       isOptional: true
     }
   ]

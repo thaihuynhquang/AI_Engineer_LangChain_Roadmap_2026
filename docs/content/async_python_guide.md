@@ -1,13 +1,17 @@
 # Tài Liệu Hướng Dẫn Async Python Hiện Đại (Up-to-Date Guide)
-> **Phạm vi tổng hợp**: Chapter 1, Chapter 2, Chapter 4, Chapter 5 và Chapter 6.  
+> **Phân chia theo Module**:
+> * **PHẦN A (Module 0 - Python AsyncIO Foundations)**: Chapter 1 & Chapter 2 (Nền tảng coroutine, `async/await`, Event Loop, `create_task`, GC Task Safety, tích hợp các cập nhật Python 3.11–3.14+ liên quan).
+> * **PHẦN B (Module 12 Tùy chọn - Advanced Async Python & System Concurrency)**: Chapter 3, Chapter 4, Chapter 5 & các chủ đề nâng cao ở Chapter 6 (Low-level Futures, Synchronization Primitives, TaskGroup, Timeout, ExceptionGroup, Queue shutdown).
 > **Phiên bản áp dụng**: Python 3.11, Python 3.12, Python 3.13 & Python 3.14+.
 
 ---
 
+# 🔷 PHẦN A: NỀN TẢNG ASYNC (Dành Cho Module 0)
+
 ## 📌 Chapter 1: Tổng Quan Lập Trình Bất Đồng Bộ (Introduction)
 
 ### 1. Lập trình Bất đồng bộ (Asynchronous Programming) là gì?
-Lập trình bất đồng bộ (non-blocking code) cho phép chương trình tiếp tục thực thi các tác vụ khác trong lúc chờ một tác vụ tốn thời gian (như I/O mạng, truy vấn CSDL, đọc/ghi file) hoàn thành.
+Lập trình bất đồng bộ (non-blocking code) cho phép chương trình tiếp tục thực thi các tác vụ khác trong lúc chờ một tác vụ tốn thời gian (như I/O mạng, truy vấn CSDL, đọc/ghi file, gọi LLM API) hoàn thành.
 
 ### 2. Thread vs Process & Concurrency vs Parallelism
 * **Process (Tiến trình)**: Có vùng nhớ riêng biệt.
@@ -15,7 +19,7 @@ Lập trình bất đồng bộ (non-blocking code) cho phép chương trình ti
 * **Concurrency (Đồng thời)**: Xử lý nhiều việc bằng cách luôn phiên luân chuyển nhanh giữa các tác vụ (time-slicing) trên 1 CPU core.
 * **Parallelism (Song song)**: Thực thi nhiều tác vụ cùng một thời điểm trên nhiều CPU core thực tế.
 
-### 3. Cập nhật về GIL (Global Interpreter Lock) trong Python 3.13+
+### 3. Cập nhật về GIL (Global Interpreter Lock) trong Python 3.13+ (PEP 703)
 > [!IMPORTANT]
 > **Cập nhật kiến thức mới nhất**:
 > * **Trước đây**: GIL là khóa đơn luồng của CPython làm cho chỉ có 1 thread thực thi Python bytecode tại một thời điểm, hạn chế khả năng chạy song song thực sự của multithreading.
@@ -29,7 +33,7 @@ Lập trình bất đồng bộ (non-blocking code) cho phép chương trình ti
 
 ## 📌 Chapter 2: Bắt Đầu Với asyncio (Getting Started)
 
-### 1. Khởi chạy Coroutine chuẩn
+### 1. Khởi chạy Coroutine chuẩn & `asyncio.Runner()` (Python 3.11+)
 Để chạy một coroutine từ cấp cao nhất (top-level):
 ```python
 import asyncio
@@ -54,7 +58,7 @@ with asyncio.Runner() as runner:
     runner.run(main())
 ```
 
-### 2. Tạo Task & Cảnh báo quan trọng về Garbage Collection
+### 2. Tạo Task & Cảnh báo quan trọng về Garbage Collection (Python 3.11+)
 > [!WARNING]
 > **Lưu ý giữ tham chiếu Task (Python 3.11+)**:
 > Event Loop chỉ giữ *weak reference* đến các task. Nếu bạn tạo task bằng `asyncio.create_task()` mà **không lưu biến tham chiếu**, Task đó có thể bị bộ thu gom rác (Garbage Collector) dọn dẹp mid-execution trước khi chạy xong.
@@ -89,45 +93,37 @@ async def main():
     print(f"Loop đang chạy: {loop}")
 ```
 
-### 4. Structured Concurrency với `asyncio.TaskGroup` (Python 3.11+)
-`TaskGroup` là cú pháp tiêu chuẩn hiện đại để quản lý nhóm tác vụ chạy song song an toàn, thay thế cho `asyncio.gather()` hoặc tạo task lẻ thủ công.
+### 4. Tối ưu tốc độ thực thi với `eager_task_factory` (Python 3.12+)
+> [!TIP]
+> **Tăng tốc 2x - 5x cho Coroutine không chờ I/O**:
+> Từ Python 3.12, bạn có thể thiết lập `loop.set_task_factory(asyncio.eager_task_factory)`. Nếu coroutine hoàn thành ngay mà không ngắt I/O, nó sẽ được thực thi ngay lập tức mà không cần lập lịch qua Event Loop. Đồng thời, `asyncio.current_task()` được viết lại bằng C giúp tăng tốc tra cứu 4x-6x.
 
 ```python
 import asyncio
 
-async def fetch_data(id, delay):
-    await asyncio.sleep(delay)
-    return f"Data {id}"
+async def fast_coro():
+    return "Xử lý tức thì"
 
 async def main():
-    async with asyncio.TaskGroup() as tg:
-        t1 = tg.create_task(fetch_data(1, 1))
-        t2 = tg.create_task(fetch_data(2, 2))
+    loop = asyncio.get_running_loop()
+    loop.set_task_factory(asyncio.eager_task_factory)
     
-    # Sau khi thoát khối with, tất cả task trong group đều đã hoàn thành thành công
-    print(t1.result(), t2.result())
+    task = asyncio.create_task(fast_coro())
+    print(task.result()) # Có kết quả ngay lập tức
 
 asyncio.run(main())
 ```
 
-### 5. Quản lý Timeout hiện đại với `asyncio.timeout()` (Python 3.11+)
-Thay vì dùng `asyncio.wait_for()`, Python 3.11+ cung cấp Context Manager `asyncio.timeout()` sạch hơn:
+---
 
-```python
-import asyncio
+# 🔶 PHẦN B: KỸ THUẬT ASYNC NÂNG CAO (Dành Cho Module 12 Tùy Chọn)
 
-async def long_running_job():
-    await asyncio.sleep(5)
+## 📌 Chapter 3: Low-Level Futures & Task Management
 
-async def main():
-    try:
-        async with asyncio.timeout(1.5): # Giới hạn 1.5 giây
-            await long_running_job()
-    except TimeoutError:
-        print("Tác vụ quá thời gian cho phép!")
-
-asyncio.run(main())
-```
+### 1. Bản chất của `asyncio.Future`
+* `Future` đại diện cho một kết quả thực thi trong tương lai.
+* Cấu trúc phân cấp: `Task` kế thừa từ `Future`, `Future` kế thừa từ `Awaitable`.
+* `Future` kết nối giữa code callback cũ và code `async/await` hiện đại qua các phương thức `done()`, `set_result(val)`, `set_exception(err)`.
 
 ---
 
@@ -161,7 +157,7 @@ asyncio.run(main())
 ```
 
 ### 2. `asyncio.Semaphore` (Giới hạn truy cập đồng thời)
-Giới hạn số lượng tác vụ song song (ví dụ: giới hạn tối đa 2 kết nối CSDL cùng lúc).
+Giới hạn số lượng tác vụ song song (ví dụ: giới hạn tối đa 2 kết nối CSDL hoặc 5 LLM API call cùng lúc).
 
 ```python
 import asyncio
@@ -210,7 +206,46 @@ Một coroutine có thể chờ tín hiệu (`await event.wait()`), và coroutin
 
 ## 📌 Chapter 5: Kỹ Thuật Async Nâng Cao (Advanced Techniques)
 
-### 1. Xử lý Lỗi & Lan truyền Exception hiện đại
+### 1. Structured Concurrency với `asyncio.TaskGroup` (Python 3.11+)
+`TaskGroup` là cú pháp tiêu chuẩn hiện đại để quản lý nhóm tác vụ chạy song song an toàn, thay thế cho `asyncio.gather()` hoặc tạo task lẻ thủ công.
+
+```python
+import asyncio
+
+async def fetch_data(id, delay):
+    await asyncio.sleep(delay)
+    return f"Data {id}"
+
+async def main():
+    async with asyncio.TaskGroup() as tg:
+        t1 = tg.create_task(fetch_data(1, 1))
+        t2 = tg.create_task(fetch_data(2, 2))
+    
+    print(t1.result(), t2.result())
+
+asyncio.run(main())
+```
+
+### 2. Quản lý Timeout hiện đại với `asyncio.timeout()` (Python 3.11+)
+Thay vì dùng `asyncio.wait_for()`, Python 3.11+ cung cấp Context Manager `asyncio.timeout()` sạch hơn:
+
+```python
+import asyncio
+
+async def long_running_job():
+    await asyncio.sleep(5)
+
+async def main():
+    try:
+        async with asyncio.timeout(1.5):
+            await long_running_job()
+    except TimeoutError:
+        print("Tác vụ quá thời gian cho phép!")
+
+asyncio.run(main())
+```
+
+### 3. Xử lý Lỗi & Lan truyền Exception (`ExceptionGroup` & `except*`)
 Với `asyncio.TaskGroup` (Python 3.11+), nếu một task bị lỗi, các task còn lại trong nhóm sẽ tự động bị cancel và tất cả exception được gom lại thành `ExceptionGroup`. Xử lý bằng cú pháp `except*`:
 
 ```python
@@ -230,8 +265,8 @@ async def main():
 asyncio.run(main())
 ```
 
-### 2. Task Cancellation & Message (Python 3.11+)
-`asyncio.CancelledError` kế thừa từ `BaseException` (không bị bắt bởi `except Exception:`). Bạn có thể truyền lý do hủy:
+### 4. Task Cancellation & Message (Python 3.11+)
+`asyncio.CancelledError` kế thừa từ `BaseException`. Bạn có thể truyền lý do hủy:
 
 ```python
 import asyncio
@@ -245,13 +280,13 @@ async def worker():
 async def main():
     t = asyncio.create_task(worker())
     await asyncio.sleep(0.1)
-    t.cancel("Cần ngưng để bảo trì") # Truyền message
+    t.cancel("Cần ngưng để bảo trì")
     await t
 
 asyncio.run(main())
 ```
 
-### 3. Hàng đợi `asyncio.Queue` (Mô hình Producer - Consumer)
+### 5. Hàng đợi `asyncio.Queue` (Producer - Consumer)
 Mô hình hàng đợi chuẩn để truyền dữ liệu an toàn giữa các task bất đồng bộ:
 
 ```python
@@ -271,29 +306,18 @@ async def consumer(queue: asyncio.Queue):
 
 async def main():
     queue = asyncio.Queue()
-    # Tạo consumer task
     consumer_task = asyncio.create_task(consumer(queue))
     
-    # Chạy producer
     await producer(queue)
-    
-    # Chờ tất cả item trong queue được xử lý (task_done)
     await queue.join()
-    
-    # Hủy consumer task khi xong việc
     consumer_task.cancel()
 
 asyncio.run(main())
 ```
 
-### 4. Bản chất của `asyncio.Future`
-* `Future` đại diện cho một kết quả thực thi trong tương lai.
-* Cấu trúc phân cấp: `Task` kế thừa từ `Future`, `Future` kế thừa từ `Awaitable`.
-* `Future` kết nối giữa code callback cũ và code `async/await` hiện đại qua các phương thức `done()`, `set_result(val)`, `set_exception(err)`.
-
 ---
 
-## 📌 Chapter 6: Cập Nhật Tính Năng Mới Nhất (Python 3.11 – 3.14)
+## 📌 Chapter 6: Cập Nhật Tính Năng Chuyên Sâu (Python 3.11 – 3.14)
 
 | Phiên bản Python | Tính năng Async Nổi bật | Ứng dụng & Lợi ích |
 | :--- | :--- | :--- |
@@ -306,36 +330,12 @@ asyncio.run(main())
 | **Python 3.13** | Free-threaded (`python3.13t`) | Hỗ trợ gỡ bỏ GIL (No-GIL build), multithreading chạy song song thực sự. |
 | **Python 3.14** | `multiprocessing` default POSIX | Thay đổi mặc định start method trên POSIX/Linux sang `spawn`/`forkserver` (thay cho `fork` bị deprecated). |
 
-### Ví dụ Tối ưu Tốc độ với `eager_task_factory` (Python 3.12+)
-
-```python
-import asyncio
-import time
-
-async def fast_coro():
-    pass # Coroutine hoàn thành ngay lập tức mà không chờ I/O
-
-async def main():
-    # Bật Eager Task Factory cho Event Loop
-    loop = asyncio.get_running_loop()
-    loop.set_task_factory(asyncio.eager_task_factory)
-    
-    t0 = time.time()
-    async with asyncio.TaskGroup() as tg:
-        for _ in range(100000):
-            tg.create_task(fast_coro())
-            
-    print(f"Thời gian thực thi với eager task: {time.time() - t0:.4f} giây")
-
-asyncio.run(main())
-```
-
 ---
 
 ## 💡 Tổng Kết Quy Tắc Viết Code Async Standard (Best Practices)
 1. **Dùng `asyncio.run()`** làm entrypoint chính cho chương trình.
-2. **Dùng `asyncio.TaskGroup()`** thay vì `asyncio.gather()` để đảm bảo gom cụm task và xử lý lỗi an toàn.
+2. **Dùng `asyncio.TaskGroup()`** thay vì `asyncio.gather()` cho code async nâng cao để đảm bảo gom cụm task và xử lý lỗi an toàn.
 3. **Dùng `asyncio.get_running_loop()`** thay vì `asyncio.get_event_loop()`.
 4. **Luôn giữ biến tham chiếu (reference)** khi dùng `asyncio.create_task()`.
-5. **Dùng `async with asyncio.timeout()`** để giới hạn thời gian chạy.
-6. **Khai báo type hints chuẩn**: Ví dụ `tuple[int, str]` (dùng ngoặc vuông, không dùng ngoặc tròn `tuple((...))`).
+5. **Dùng `async with asyncio.timeout()`** để giới hạn thời gian chờ.
+6. **Khai báo type hints chuẩn**: Ví dụ `tuple[int, str]` (dùng ngoặc vuông, không dùng ngoặc tròn).

@@ -2,6 +2,8 @@ import { SPRINT_MODULES } from '../data/planData';
 import { getState, toggleResourceFlag } from '../state/storage';
 import { registerRenderListener, unregisterRenderListener } from '../renderer';
 import { ICONS } from '../utils/icons';
+import { resolveResourceUrl } from '../utils/url';
+
 
 export class RoadmapViewResources extends HTMLElement {
   private boundRefresh = this.refresh.bind(this);
@@ -111,7 +113,7 @@ export class RoadmapViewResources extends HTMLElement {
                       ${ICONS.gradCap} ${res.isFree ? 'Miễn phí 100%' : 'Trả phí'}
                     </span>
                     <a 
-                      href="${res.url}" 
+                      href="${resolveResourceUrl(res.url)}" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       class="action-btn btn-resource-primary"

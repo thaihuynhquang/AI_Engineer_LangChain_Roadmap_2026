@@ -1,6 +1,6 @@
 # 🚀 Applied AI Engineer Roadmap 2026: Agentic AI Master Curriculum & Web Tracker
 
-Lộ trình học tập toàn diện biến lập trình viên thành **AI Engineer** thực chiến thông qua 12 Master Modules, 4 dự án thực tế lớn, quy trình quản lý chi phí chìm Quit Criteria và ứng dụng **Interactive Web Tracker SPA**.
+Lộ trình học tập toàn diện biến lập trình viên thành **AI Engineer** thực chiến thông qua 13 Master Modules, 4 dự án thực tế lớn, quy trình quản lý chi phí chìm Quit Criteria và ứng dụng **Interactive Web Tracker SPA**.
 
 ---
 
@@ -28,11 +28,11 @@ npm run build
 
 ---
 
-## 🗺️ Tóm Tắt 12 Master Modules & 4 Dự Án
+## 🗺️ Tóm Tắt 13 Master Modules & 4 Dự Án
 
 | Module | Tên Module | Dự Án / Trọng Tâm |
 | :--- | :--- | :--- |
-| **M0** | Python AsyncIO Foundations | Coroutine (`async/await`), Event Loop, Concurrency & Async Generators ([Async Python Guide](docs/content/async_python_guide.md)) |
+| **M0** | Python AsyncIO Foundations | Coroutine (`async/await`), Event Loop, `asyncio.run()`, GC Task Safety & Free-threaded GIL ([Async Python Guide](docs/content/async_python_guide.md)) |
 | **M1** | LangChain & Agentic Foundations | 🛠️ **Project 1: Smart Q&A Bot** |
 | **M2** | Chain Patterns & Advanced LCEL | LCEL, Parallel Chains, Branching & Debugging |
 | **M3** | Data Ingestion & Vector Stores | LlamaParse, Complex Document AI, ChromaDB |
@@ -44,6 +44,7 @@ npm run build
 | **M9** | Open-Source LLMs & Local Inference | vLLM, Ollama, Quantization (GGUF/AWQ) |
 | **M10**| Full-Stack Web AI & Edge | Next.js App Router, Vercel AI SDK, Generative UI |
 | **M11**| *(Tùy chọn)* MCP Advanced Masterclass | Deep Dive MCP Protocol & Anthropic Specs |
+| **M12**| *(Tùy chọn)* Advanced Async Python | Low-level Futures, Synchronization Primitives, TaskGroup, Timeout & Queue Shutdown |
 
 ---
 
@@ -52,9 +53,9 @@ npm run build
 Để tránh trùng lặp thông tin, toàn bộ nội dung chi tiết được lưu trữ trong thư mục `docs/`:
 
 ### 📂 Nội Dung Học Tập (`docs/content/`)
-- 📖 [Lộ Trình Học Chi Tiết (12 Modules)](docs/content/online_learning_guide.md) — Chi tiết bài học, tài nguyên tra cứu & flashcards.
-- ⚡ [Hướng Dẫn Async Python Hiện Đại (Up-to-Date)](docs/content/async_python_guide.md) — Kiến thức bất đồng bộ Python chuẩn 3.11-3.14+ (Chapters 1, 2, 4, 5, 6, GIL PEP 703 & Task GC Safety).
-- ⏱️ [Lịch Học & Kế Hoạch 12 Tuần](docs/content/schedule.md) — Phân bổ 363 sessions Pomodoro (Quy tắc 50/5/20).
+- 📖 [Lộ Trình Học Chi Tiết (13 Modules)](docs/content/online_learning_guide.md) — Chi tiết bài học, tài nguyên tra cứu & flashcards.
+- ⚡ [Hướng Dẫn Async Python Hiện Đại (Up-to-Date)](docs/content/async_python_guide.md) — Kiến thức bất đồng bộ Python chuẩn 3.11-3.14+ (Phần A: Module 0 Chap 1-2; Phần B: Module 12 Optional Chap 3-6).
+- ⏱️ [Lịch Học & Kế Hoạch 12 Tuần](docs/content/schedule.md) — Phân bổ 373 sessions Pomodoro (Quy tắc 50/5/20).
 - 🛠️ [Phân Tích 7 Tầng Công Nghệ AI 2026](docs/content/tech_stack.md) — Model Layer, LangGraph, pgvector, LLM Guard, v.v.
 - 🛑 [Hướng Dẫn Quit Criteria & Chi Phí Chìm](docs/content/quit_criteria_guide.md) — Ma trận quyết định & quy trình 4 bước tránh sa lầy.
 - 🔗 [Danh Mục Tài Nguyên Học Miễn Phí](docs/content/resources.md) — Tổng hợp cheat sheets, docs & repos.

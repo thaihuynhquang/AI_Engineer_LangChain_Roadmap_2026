@@ -1,15 +1,15 @@
 # 🚀 Hướng Dẫn Lộ Trình Tự Học Agentic AI Master Curriculum (2026)
 ## Khóa Packt LangChain/LangGraph + Các Khóa Học Bổ Sung Miễn Phí (100% Free)
 
-Hướng dẫn này cung cấp khung lộ trình học tập **Master Curriculum (Module 0 Nền Tảng + 10 Module Cốt Lõi + 1 Module Tùy Chọn)** được tích hợp hoàn chỉnh giữa:
+Hướng dẫn này cung cấp khung lộ trình học tập **Master Curriculum (Module 0 Nền Tảng + 10 Module Cốt Lõi + 2 Module Tùy Chọn)** được tích hợp hoàn chỉnh giữa:
 1. 📹 **Khóa Packt (Core Engine & Production)**: [Agentic AI Systems: Build & Deploy with LangChain/LangGraph](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) (Packt Publishing).
 2. 🆓 **Các Khóa Học Miễn Phí Bổ Sung (Free Supplemental Courses)** từ **Anthropic Academy**, **DeepLearning.AI**, **Vercel**, **freeCodeCamp**, **Hugging Face**, **Neon Postgres**, **Async Python Playground (Ali Gheshlaghi)** và **MCP Official Docs** để bù đắp các khoảng trống công nghệ (Async Python, Web UI, `pgvector`, vLLM, LlamaParse, MCP Masterclass, RAG Evals).
 
-Lộ trình bao gồm **Module 0 (Nền tảng Async) + 10 Module cốt lõi + 1 Module nâng cao tùy chọn (Module 11)**, kết hợp giữa **Lý thuyết bài giảng** $\rightarrow$ **Hands-on Demos & Bài tập** $\rightarrow$ **4 Dự án thực tế lớn (Projects)**.
+Lộ trình bao gồm **Module 0 (Nền tảng Async Essentials) + 10 Module cốt lõi + 2 Module nâng cao tùy chọn (Module 11 & Module 12)**, kết hợp giữa **Lý thuyết bài giảng** $\rightarrow$ **Hands-on Demos & Bài tập** $\rightarrow$ **4 Dự án thực tế lớn (Projects)**.
 
 ---
 
-## 🗺️ Bức Tranh Tổng Quan Lộ Trình (12 Modules Overview)
+## 🗺️ Bức Tranh Tổng Quan Lộ Trình (13 Modules Overview)
 
 ```
 [Module 0: Python AsyncIO Foundations] ──► [Module 1: LangChain Foundations] ──► [Module 2: Chain Patterns & LCEL]
@@ -20,30 +20,29 @@ Lộ trình bao gồm **Module 0 (Nền tảng Async) + 10 Module cốt lõi + 1
 [Module 6: Multi-Agent Architectures] ──► [Module 7: Production & LLMOps] ──► [Module 8: MCP Quick Integration]
                                                                                                │
                                                                                                ▼
-[Module 11 (Tùy chọn): MCP Masterclass] ◄── [Module 10: Full-Stack Web AI] ◄── [Module 9: Open-Source LLMs (vLLM)]
+[Module 12 (Tùy chọn): Advanced Async] ◄── [Module 11 (Tùy chọn): MCP Masterclass] ◄── [Module 10: Web AI] ◄── [Module 9: vLLM]
 ```
 
 ---
 
 ## 📚 Hướng Dẫn Chi Tiết Theo Các Module
 
-### ⚡ Module 0: Python AsyncIO Foundations
-> **Mục tiêu**: Làm chủ bản chất lập trình bất đồng bộ (Asynchronous Programming) trong Python để chuẩn bị cho việc xử lý luồng (streaming tokens), gọi API song song và các tác vụ I/O-bound trong AI Engineering.
+### ⚡ Module 0: Python AsyncIO Foundations (Nền Tảng Căn Bản)
+> **Mục tiêu**: Làm chủ các khái niệm bất đồng bộ căn bản trong Python (Coroutine, `async/await`, Event Loop, Task creation) kết hợp các cập nhật mới nhất chuẩn Python 3.11–3.14+ để sẵn sàng tiến vào xây dựng AI Engineering Backend.
 
-* **1. Nội dung Kiến thức Cần nạp (Tập trung Chapters 1, 2, 4, 5, 6 - Bỏ qua Chap 3 low-level Futures)**:
-  * **Chapter 1: Intro to Async Programming**: Phân biệt Synchronous vs Asynchronous, I/O-bound vs CPU-bound, tại sao AI/LLM Backend cần Async.
-  * **Chapter 2: Getting Started with `asyncio`**: Định nghĩa Coroutine với `async def`, tạm dừng và resume với `await`, nguyên lý Event Loop.
-  * 💡 *(Lưu ý: Bỏ qua Chapter 3 Tasks & Futures vì cơ chế low-level Futures không cần thiết cho newbie ở góc nhìn LLM Applied Engineer).*
-  * **Chapter 4: Running Tasks Concurrently**: Chạy song song nhiều coroutines / gọi LLM API với `asyncio.gather()` và `asyncio.wait()`.
-  * **Chapter 5: Async Generators & Iterators**: Tạo và tiêu thụ luồng dữ liệu bất đồng bộ (streaming tokens) với `async for` và `yield`.
-  * **Chapter 6: Synchronization Primitives**: Quản lý rate limit & concurrency an toàn với `asyncio.Lock` và `asyncio.Semaphore`.
+* **1. Nội dung Kiến thức Cần nạp (Tập trung Chapters 1 & 2 + Tích hợp Python 3.11-3.14+)**:
+  * **Chapter 1: Intro to Async Programming**: Phân biệt Synchronous vs Asynchronous, I/O-bound vs CPU-bound, Thread vs Process, tại sao AI/LLM Backend cần Async.
+  * **Tích hợp GIL Update (PEP 703 - Python 3.13+)**: Tổng quan kiến thức Free-threaded CPython (`python3.13t` / `--disable-gil`), gỡ bỏ GIL giúp multithreading chạy song song thực sự.
+  * **Chapter 2: Getting Started with `asyncio`**: Khai báo coroutine với `async def`, ngắt/chờ với `await`, nguyên lý Event Loop, khởi chạy với `asyncio.run()` & `asyncio.Runner()` (Python 3.11+).
+  * **Tạo Task & Giữ tham chiếu (Garbage Collection Safety - Python 3.11+)**: Giữ strong reference cho biến task tạo từ `asyncio.create_task()`.
+  * **Event Loop Lookup & Eager Task (`eager_task_factory` - Python 3.12+)**: Sử dụng `asyncio.get_running_loop()`, bật eager task factory giúp tăng tốc 2x-5x cho coroutine thực thi nhanh.
 * **2. Tài nguyên Tra cứu & Bài giảng**:
-  * ⚡ **Tài liệu tóm tắt nội bộ**: [Hướng Dẫn Async Python Hiện Đại (Up-to-Date)](./async_python_guide.md) (Tóm tắt Chapters 1, 2, 4, 5, 6 chuẩn Python 3.11–3.14+).
-  * 📖 **Tài liệu học chính (Miễn phí)**: [Async Python Playground (Ali Gheshlaghi)](https://aligheshlaghi97.github.io/asynchronous-python/) (Học các Chapters 1, 2, 4, 5, 6).
+  * ⚡ **Tài liệu tóm tắt nội bộ**: [Hướng Dẫn Async Python Hiện Đại (Up-to-Date)](./async_python_guide.md) (Xem **Phần A: Module 0 Essentials** chuẩn Python 3.11–3.14+).
+  * 📖 **Tài liệu học chính (Miễn phí)**: [Async Python Playground (Ali Gheshlaghi)](https://aligheshlaghi97.github.io/asynchronous-python/) (Học Chapters 1 & 2).
   * 📖 **Tài liệu tra cứu chính thức**: [Python Official Docs - `asyncio`](https://docs.python.org/3/library/asyncio.html).
 * **3. Nhiệm vụ Thực hành**:
-  * **Phương pháp**: Đọc hiểu lý thuyết và thực hành chạy các ví dụ code mẫu (Code Walkthrough) trực tiếp trên tài liệu *Async Python Playground*.
-  * 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `Synchronous vs Asynchronous`, `I/O-bound`, `Coroutine (async/await)`, `Event Loop`, `asyncio.create_task()`, `asyncio.gather()`, `Async Generator (yield)`, `asyncio.Semaphore`.
+  * **Phương pháp**: Đọc hiểu lý thuyết và thực hành chạy các ví dụ code mẫu trực tiếp từ *Async Python Playground* (Chap 1-2).
+  * 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `Synchronous vs Asynchronous`, `I/O-bound vs CPU-bound`, `Coroutine (async/await)`, `Event Loop`, `asyncio.run()`, `asyncio.create_task() (GC safety)`, `asyncio.get_running_loop()`, `Free-threaded GIL (PEP 703)`.
 
 ---
 
@@ -241,3 +240,20 @@ Lộ trình bao gồm **Module 0 (Nền tảng Async) + 10 Module cốt lõi + 1
   - Xây dựng 1 MCP Server hoàn chỉnh bằng Python SDK hỗ trợ full 3 Primitives (`Tools`, `Resources`, `Prompts`) kết hợp với **Sampling callback** và hỗ trợ `StreamableHTTP` transport.
   - Sử dụng **MCP Inspector** để kiểm tra và debug toàn bộ các luồng giao tiếp tin nhắn.
   - 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `MCP Architecture (Host/Client/Server)`, `Tools vs Resources vs Prompts`, `MCP Inspector`, `Sampling (Server-Initiated LLM Calls)`, `Progress Notifications`, `Roots (Filesystem Scoping)`, `stdio vs StreamableHTTP`, `OAuth CIMD`.
+
+---
+
+### ⚡ Module 12 (Tùy chọn / Optional): Advanced Async Python & System Concurrency
+> 💡 **Lưu ý giảm tải khối lượng**: Module này là **Tùy chọn (Optional)** nằm ở cuối lộ trình học. Sau khi tốt nghiệp 10 Module Cốt Lõi, bạn có thể học tiếp Module này để làm chủ hoàn toàn các kỹ thuật bất đồng bộ low-level, đồng bộ hóa tài nguyên nâng cao và điều phối hệ thống.
+
+* **1. Nội dung Kiến thức Cần nạp (Tập trung Chapters 3, 4, 5 & Chap 6 Advanced)**:
+  * **Chapter 3: Low-Level Futures**: Cấu trúc `Task` -> `Future` -> `Awaitable`, kết nối callback legacy với async code qua `set_result()` / `set_exception()`.
+  * **Chapter 4: Synchronization Primitives**: Quản lý race conditions & rate-limit với `asyncio.Lock`, `asyncio.Semaphore`, `asyncio.Barrier`, `asyncio.Event`.
+  * **Chapter 5: Advanced Async & Structured Concurrency**: `asyncio.TaskGroup`, `asyncio.timeout()`, lan truyền exception với `ExceptionGroup` (`except*`), Task cancellation message, Hàng đợi `asyncio.Queue` (Producer-Consumer).
+  * **Chapter 6 Advanced**: API đóng hàng đợi `asyncio.Queue.shutdown()` (Python 3.13+), mặc định start method POSIX `spawn`/`forkserver` cho `multiprocessing` (Python 3.14+).
+* **2. Tài nguyên Tra cứu & Bài giảng**:
+  * ⚡ **Tài liệu tóm tắt nội bộ**: [Hướng Dẫn Async Python Hiện Đại (Up-to-Date)](./async_python_guide.md) (Xem **Phần B: Module 12 Optional Advanced**).
+  * 📖 **Tài liệu học chính (Miễn phí)**: [Async Python Playground (Ali Gheshlaghi)](https://aligheshlaghi97.github.io/asynchronous-python/) (Chapters 3, 4, 5 & 6).
+* **3. Nhiệm vụ Thực hành**:
+  - Viết pipeline Producer-Consumer đa luồng với `asyncio.Queue` hỗ trợ `TaskGroup` và `asyncio.Semaphore`.
+  - 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `asyncio.Future`, `asyncio.Lock`, `asyncio.Semaphore`, `asyncio.Barrier`, `asyncio.TaskGroup`, `asyncio.timeout()`, `ExceptionGroup (except*)`, `asyncio.Queue (Producer-Consumer)`.
