@@ -7,7 +7,7 @@ Tổng hợp bài giảng video và tài liệu tra cứu chính thức theo cá
 ---
 
 ### ⚡ Module 0: Python AsyncIO Foundations
-* 📖 **Tài liệu học chính (Miễn phí)**: [Async Python Playground - Ali Gheshlaghi](https://aligheshlaghi97.github.io/asynchronous-python/) (Chapters 1–6)
+* 📖 **Tài liệu học chính (Miễn phí)**: [Async Python Playground - Ali Gheshlaghi](https://aligheshlaghi97.github.io/asynchronous-python/) (Chapters 1, 2, 4, 5, 6 - Bỏ qua Chap 3 low-level Futures)
 * 📖 **Tài liệu tra cứu chính thức**: [Python Docs - `asyncio`](https://docs.python.org/3/library/asyncio.html)
 
 ---

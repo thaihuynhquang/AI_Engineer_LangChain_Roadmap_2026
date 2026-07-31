@@ -53,10 +53,12 @@ npm run build
 
 ### 📂 Nội Dung Học Tập (`docs/content/`)
 - 📖 [Lộ Trình Học Chi Tiết (12 Modules)](docs/content/online_learning_guide.md) — Chi tiết bài học, tài nguyên tra cứu & flashcards.
+- ⚡ [Hướng Dẫn Async Python Hiện Đại (Up-to-Date)](docs/content/async_python_guide.md) — Kiến thức bất đồng bộ Python chuẩn 3.11-3.14 (Chapter 1, 2, 4, 5, 6).
 - ⏱️ [Lịch Học & Kế Hoạch 12 Tuần](docs/content/schedule.md) — Phân bổ 363 sessions Pomodoro (Quy tắc 50/5/20).
 - 🛠️ [Phân Tích 7 Tầng Công Nghệ AI 2026](docs/content/tech_stack.md) — Model Layer, LangGraph, pgvector, LLM Guard, v.v.
 - 🛑 [Hướng Dẫn Quit Criteria & Chi Phí Chìm](docs/content/quit_criteria_guide.md) — Ma trận quyết định & quy trình 4 bước tránh sa lầy.
 - 🔗 [Danh Mục Tài Nguyên Học Miễn Phí](docs/content/resources.md) — Tổng hợp cheat sheets, docs & repos.
+
 
 ### 📂 Hướng Dẫn Kỹ Thuật (`docs/guides/`)
 - 🏛️ [Architecture Guide](docs/guides/architecture_guide.md) — Kiến trúc hệ thống Web App & Data layer.

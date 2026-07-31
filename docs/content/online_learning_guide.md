@@ -30,15 +30,15 @@ Lộ trình bao gồm **Module 0 (Nền tảng Async) + 10 Module cốt lõi + 1
 ### ⚡ Module 0: Python AsyncIO Foundations
 > **Mục tiêu**: Làm chủ bản chất lập trình bất đồng bộ (Asynchronous Programming) trong Python để chuẩn bị cho việc xử lý luồng (streaming tokens), gọi API song song và các tác vụ I/O-bound trong AI Engineering.
 
-* **1. Nội dung Kiến thức Cần nạp (Theo tài liệu Chap 1-6 của Ali Gheshlaghi)**:
+* **1. Nội dung Kiến thức Cần nạp (Tập trung Chapters 1, 2, 4, 5, 6 - Bỏ qua Chap 3 low-level Futures)**:
   * **Chapter 1: Intro to Async Programming**: Phân biệt Synchronous vs Asynchronous, I/O-bound vs CPU-bound, tại sao AI/LLM Backend cần Async.
   * **Chapter 2: Getting Started with `asyncio`**: Định nghĩa Coroutine với `async def`, tạm dừng và resume với `await`, nguyên lý Event Loop.
-  * **Chapter 3: Tasks and Futures**: Khởi tạo và quản lý vòng đời tác vụ ngầm với `asyncio.create_task()`.
-  * **Chapter 4: Running Tasks Concurrently**: Chạy song song nhiều coroutines với `asyncio.gather()` và `asyncio.wait()`.
-  * **Chapter 5: Async Generators & Iterators**: Tạo và tiêu thụ luồng dữ liệu bất đồng bộ với `async for` và `yield`.
-  * **Chapter 6: Synchronization Primitives**: Quản lý concurrency an toàn với `asyncio.Lock` và `asyncio.Semaphore`.
+  * 💡 *(Lưu ý: Bỏ qua Chapter 3 Tasks & Futures vì cơ chế low-level Futures không cần thiết cho newbie ở góc nhìn LLM Applied Engineer).*
+  * **Chapter 4: Running Tasks Concurrently**: Chạy song song nhiều coroutines / gọi LLM API với `asyncio.gather()` và `asyncio.wait()`.
+  * **Chapter 5: Async Generators & Iterators**: Tạo và tiêu thụ luồng dữ liệu bất đồng bộ (streaming tokens) với `async for` và `yield`.
+  * **Chapter 6: Synchronization Primitives**: Quản lý rate limit & concurrency an toàn với `asyncio.Lock` và `asyncio.Semaphore`.
 * **2. Tài nguyên Tra cứu & Bài giảng**:
-  * 📖 **Tài liệu học chính (Miễn phí)**: [Async Python Playground (Ali Gheshlaghi)](https://aligheshlaghi97.github.io/asynchronous-python/) (Học từ Chapter 1 đến Chapter 6).
+  * 📖 **Tài liệu học chính (Miễn phí)**: [Async Python Playground (Ali Gheshlaghi)](https://aligheshlaghi97.github.io/asynchronous-python/) (Học các Chapters 1, 2, 4, 5, 6).
   * 📖 **Tài liệu tra cứu chính thức**: [Python Official Docs - `asyncio`](https://docs.python.org/3/library/asyncio.html).
 * **3. Nhiệm vụ Thực hành**:
   * **Phương pháp**: Đọc hiểu lý thuyết và thực hành chạy các ví dụ code mẫu (Code Walkthrough) trực tiếp trên tài liệu *Async Python Playground*.
