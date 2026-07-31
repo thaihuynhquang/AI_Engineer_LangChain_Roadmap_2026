@@ -1,6 +1,6 @@
 # 🚀 Applied AI Engineer Roadmap 2026: Agentic AI Master Curriculum & Web Tracker
 
-Lộ trình học tập toàn diện biến lập trình viên thành **AI Engineer** thực chiến thông qua 11 Master Modules, 4 dự án thực tế lớn, quy trình quản lý chi phí chìm Quit Criteria và ứng dụng **Interactive Web Tracker SPA**.
+Lộ trình học tập toàn diện biến lập trình viên thành **AI Engineer** thực chiến thông qua 12 Master Modules, 4 dự án thực tế lớn, quy trình quản lý chi phí chìm Quit Criteria và ứng dụng **Interactive Web Tracker SPA**.
 
 ---
 
@@ -28,10 +28,11 @@ npm run build
 
 ---
 
-## 🗺️ Tóm Tắt 11 Master Modules & 4 Dự Án
+## 🗺️ Tóm Tắt 12 Master Modules & 4 Dự Án
 
 | Module | Tên Module | Dự Án / Trọng Tâm |
 | :--- | :--- | :--- |
+| **M0** | Python AsyncIO Foundations | Coroutine (`async/await`), Event Loop & Concurrency |
 | **M1** | LangChain & Agentic Foundations | 🛠️ **Project 1: Smart Q&A Bot** |
 | **M2** | Chain Patterns & Advanced LCEL | LCEL, Parallel Chains, Branching & Debugging |
 | **M3** | Data Ingestion & Vector Stores | LlamaParse, Complex Document AI, ChromaDB |
@@ -51,8 +52,8 @@ npm run build
 Để tránh trùng lặp thông tin, toàn bộ nội dung chi tiết được lưu trữ trong thư mục `docs/`:
 
 ### 📂 Nội Dung Học Tập (`docs/content/`)
-- 📖 [Lộ Trình Học Chi Tiết (11 Modules)](docs/content/online_learning_guide.md) — Chi tiết bài học, tài nguyên tra cứu & flashcards.
-- ⏱️ [Lịch Học & Kế Hoạch 12 Tuần](docs/content/schedule.md) — Phân bổ 351 sessions Pomodoro (Quy tắc 50/5/20).
+- 📖 [Lộ Trình Học Chi Tiết (12 Modules)](docs/content/online_learning_guide.md) — Chi tiết bài học, tài nguyên tra cứu & flashcards.
+- ⏱️ [Lịch Học & Kế Hoạch 12 Tuần](docs/content/schedule.md) — Phân bổ 363 sessions Pomodoro (Quy tắc 50/5/20).
 - 🛠️ [Phân Tích 7 Tầng Công Nghệ AI 2026](docs/content/tech_stack.md) — Model Layer, LangGraph, pgvector, LLM Guard, v.v.
 - 🛑 [Hướng Dẫn Quit Criteria & Chi Phí Chìm](docs/content/quit_criteria_guide.md) — Ma trận quyết định & quy trình 4 bước tránh sa lầy.
 - 🔗 [Danh Mục Tài Nguyên Học Miễn Phí](docs/content/resources.md) — Tổng hợp cheat sheets, docs & repos.

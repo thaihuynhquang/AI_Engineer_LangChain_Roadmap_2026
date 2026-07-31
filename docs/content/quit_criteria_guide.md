@@ -21,7 +21,7 @@ Tài liệu này hướng dẫn cách áp dụng **Phương pháp Lập Tiêu ch
 
 ## 📊 2. Phân Tích Độ Phức Tạp Lộ Trình & Các Điểm Gãy (Choke Points)
 
-Lộ trình **Agentic AI Master Curriculum** gồm **11 Master Modules**, **351 Pomodoros** ($\approx 175.5$ giờ tập trung), **4 Projects lớn**, kéo dài **12 tuần** với cường độ **6 Pomodoros/ngày (30 Poms/tuần)**.
+Lộ trình **Agentic AI Master Curriculum** gồm **12 Master Modules** (Module 0 Nền Tảng + 10 Module Cốt Lõi + 1 Module Tùy Chọn), **363 Pomodoros** ($\approx 181.5$ giờ tập trung), **4 Projects lớn**, kéo dài **12 tuần** với cường độ **6 Pomodoros/ngày (30 Poms/tuần)**.
 
 ```
 [Tuần 1-2: Nền tảng] ──► 🚨 CHOKE POINT 1 ──► 🚨 CHOKE POINT 2 ──► 🚨 CHOKE POINT 3
@@ -77,7 +77,7 @@ Lộ trình **Agentic AI Master Curriculum** gồm **11 Master Modules**, **351 
 * **Trigger:** Khi bắt đầu Tuần 10 nhưng tổng thời gian thực tế đã mất $> 10$ tuần (do bị chậm ở các Module trước).
 * **Hành động Từ bỏ (Pivot Action):**
   - **HỦY BỎ HOÀN TOÀN MODULE 11 (Kill Module 11).**
-  - Sử dụng kiến thức MCP cơ bản ở Module 8 làm chuẩn. Dành trọn 34 Pomodoros tiết kiệm được để tập trung hoàn thiện Project 4 và tốt nghiệp với 10 Module cốt lõi.
+  - Sử dụng kiến thức MCP cơ bản ở Module 8 làm chuẩn. Dành trọn 34 Pomodoros tiết kiệm được để tập trung hoàn thiện Project 4 và tốt nghiệp với 11 Module (Module 0 Nền Tảng + 10 Module Cốt Lõi).
 
 ---
 
@@ -94,15 +94,16 @@ Lộ trình **Agentic AI Master Curriculum** gồm **11 Master Modules**, **351 
   - Luôn tuân thủ ca Tối là ca nhẹ nhàng: Refactoring, viết Unit Test và học Flashcards trên Gemini Notebook.
 
 ### 4.2 Phân Tích Chi Phí Cơ Hội (Opportunity Cost)
-* **351 Pomodoros ($\approx 175.5$ giờ focus):** Bằng thời gian xây dựng 1 ứng dụng SaaS AI hoàn chỉnh đưa ra thị trường hoặc viết 15 bài blog phân tích chuyên sâu.
+* **363 Pomodoros ($\approx 181.5$ giờ focus):** Bằng thời gian xây dựng 1 ứng dụng SaaS AI hoàn chỉnh đưa ra thị trường hoặc viết 15 bài blog phân tích chuyên sâu.
 * **Nguyên tắc hành động:** Mỗi Pomodoro chi ra phải thu về **Artifacts chạy được (Working Code / Commits)**. Nếu qua 2 Pomodoros mà không viết được dòng code hay ghi chú nào, lập tức DỪNG xem video và chuyển sang viết bài tập thực hành.
 
 ---
 
-## 📋 5. Ma Trận Quyết Định Từ Bỏ Theo Chi Tiết 11 Modules
+## 📋 5. Ma Trận Quyết Định Từ Bỏ Theo Chi Tiết 12 Modules
 
 | Module | Tên Module | Định mức (Poms) | Trigger Kích Hoạt Từ Bỏ | Hành động Xoay Trục (Pivot Action) |
 | :--- | :--- | :---: | :--- | :--- |
+| **Module 0** | Python AsyncIO Foundations | 12 Poms | Mắc kẹt syntax async/await / Event Loop > 3 Poms | Học tập trung ví dụ code mẫu trên Async Python Playground, bỏ qua tự viết từ đầu |
 | **Module 1** | LangChain Foundations | 24 Poms | Mắc kẹt setup API Keys/LCEL > 4 Poms | Chuyển sang dùng OpenAI/Anthropic SDK thuần hoặc Colab |
 | **Module 2** | Chain Patterns & LCEL | 16 Poms | Lỗi chuỗi đa nhánh `RunnableParallel` > 3 Poms | Dùng code mẫu Runnable Sequence tuyến tính đơn giản |
 | **Module 3** | Data Ingestion & LlamaParse | 23 Poms | LlamaParse API lỗi parse PDF > 3 Poms | Dùng `PyPDFLoader` mặc định, bỏ qua parse bảng phức tạp |
