@@ -1,8 +1,14 @@
 # 📚 Thư Viện Tài Nguyên Học Tập (Master Curriculum 2026)
 
-Tổng hợp bài giảng video và tài liệu tra cứu chính thức theo **11 Master Modules** trong [online_learning_guide.md](./online_learning_guide.md).
+Tổng hợp bài giảng video và tài liệu tra cứu chính thức theo các **Master Modules** trong [online_learning_guide.md](./online_learning_guide.md).
 
 > 🎓 **Khóa học video chính**: [Packt - Agentic AI Systems: Build & Deploy with LangChain/LangGraph](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) (ISBN 9781807780814)
+
+---
+
+### ⚡ Module 0: Python AsyncIO Foundations
+* 📖 **Tài liệu học chính (Miễn phí)**: [Async Python Playground - Ali Gheshlaghi](https://aligheshlaghi97.github.io/asynchronous-python/) (Chapters 1–6)
+* 📖 **Tài liệu tra cứu chính thức**: [Python Docs - `asyncio`](https://docs.python.org/3/library/asyncio.html)
 
 ---
 

@@ -1,31 +1,50 @@
 # 🚀 Hướng Dẫn Lộ Trình Tự Học Agentic AI Master Curriculum (2026)
 ## Khóa Packt LangChain/LangGraph + Các Khóa Học Bổ Sung Miễn Phí (100% Free)
 
-Hướng dẫn này cung cấp khung lộ trình học tập **Master Curriculum (10 Module Cốt Lõi + 1 Module Tùy Chọn)** được tích hợp hoàn chỉnh giữa:
+Hướng dẫn này cung cấp khung lộ trình học tập **Master Curriculum (Module 0 Nền Tảng + 10 Module Cốt Lõi + 1 Module Tùy Chọn)** được tích hợp hoàn chỉnh giữa:
 1. 📹 **Khóa Packt (Core Engine & Production)**: [Agentic AI Systems: Build & Deploy with LangChain/LangGraph](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) (Packt Publishing).
-2. 🆓 **Các Khóa Học Miễn Phí Bổ Sung (Free Supplemental Courses)** từ **Anthropic Academy**, **DeepLearning.AI**, **Vercel**, **freeCodeCamp**, **Hugging Face**, **Neon Postgres**, và **MCP Official Docs** để bù đắp các khoảng trống công nghệ (Web UI, `pgvector`, vLLM, LlamaParse, MCP Masterclass, RAG Evals).
+2. 🆓 **Các Khóa Học Miễn Phí Bổ Sung (Free Supplemental Courses)** từ **Anthropic Academy**, **DeepLearning.AI**, **Vercel**, **freeCodeCamp**, **Hugging Face**, **Neon Postgres**, **Async Python Playground (Ali Gheshlaghi)** và **MCP Official Docs** để bù đắp các khoảng trống công nghệ (Async Python, Web UI, `pgvector`, vLLM, LlamaParse, MCP Masterclass, RAG Evals).
 
-Lộ trình bao gồm **10 Module cốt lõi + 1 Module nâng cao tùy chọn (Module 11)**, kết hợp giữa **Lý thuyết bài giảng** $\rightarrow$ **Hands-on Demos & Bài tập** $\rightarrow$ **4 Dự án thực tế lớn (Projects)**.
-
----
-
-## 🗺️ Bức Tranh Tổng Quan Lộ Trình (11 Master Modules)
-
-```
-[Module 1: LangChain Foundations] ──► [Module 2: Chain Patterns & LCEL] ──► [Module 3: Data Ingestion & LlamaParse]
-                                                                                                   │
-[Module 6: Multi-Agent Architectures] ◄── [Module 5: LangGraph Deep Dive] ◄── [Module 4: Advanced RAG & pgvector]
-         │
-         ▼
-[Module 7: Production & LLMOps] ──► [Module 8: MCP Quick Integration] ──► [Module 9: Open-Source LLMs (vLLM)]
-                                                                                                  │
-                                                                                                  ▼
-[Module 11 (Tùy chọn): MCP Masterclass (Anthropic)] ◄── [Module 10: Full-Stack Web AI (Next.js)] ◄──┘
-```
+Lộ trình bao gồm **Module 0 (Nền tảng Async) + 10 Module cốt lõi + 1 Module nâng cao tùy chọn (Module 11)**, kết hợp giữa **Lý thuyết bài giảng** $\rightarrow$ **Hands-on Demos & Bài tập** $\rightarrow$ **4 Dự án thực tế lớn (Projects)**.
 
 ---
 
-## 📚 Hướng Dẫn Chi Tiết Theo 11 Module
+## 🗺️ Bức Tranh Tổng Quan Lộ Trình (12 Modules Overview)
+
+```
+[Module 0: Python AsyncIO Foundations] ──► [Module 1: LangChain Foundations] ──► [Module 2: Chain Patterns & LCEL]
+                                                                                                 │
+[Module 5: LangGraph Deep Dive] ◄── [Module 4: Advanced RAG & pgvector] ◄── [Module 3: Data Ingestion & LlamaParse]
+       │
+       ▼
+[Module 6: Multi-Agent Architectures] ──► [Module 7: Production & LLMOps] ──► [Module 8: MCP Quick Integration]
+                                                                                               │
+                                                                                               ▼
+[Module 11 (Tùy chọn): MCP Masterclass] ◄── [Module 10: Full-Stack Web AI] ◄── [Module 9: Open-Source LLMs (vLLM)]
+```
+
+---
+
+## 📚 Hướng Dẫn Chi Tiết Theo Các Module
+
+### ⚡ Module 0: Python AsyncIO Foundations
+> **Mục tiêu**: Làm chủ bản chất lập trình bất đồng bộ (Asynchronous Programming) trong Python để chuẩn bị cho việc xử lý luồng (streaming tokens), gọi API song song và các tác vụ I/O-bound trong AI Engineering.
+
+* **1. Nội dung Kiến thức Cần nạp (Theo tài liệu Chap 1-6 của Ali Gheshlaghi)**:
+  * **Chapter 1: Intro to Async Programming**: Phân biệt Synchronous vs Asynchronous, I/O-bound vs CPU-bound, tại sao AI/LLM Backend cần Async.
+  * **Chapter 2: Getting Started with `asyncio`**: Định nghĩa Coroutine với `async def`, tạm dừng và resume với `await`, nguyên lý Event Loop.
+  * **Chapter 3: Tasks and Futures**: Khởi tạo và quản lý vòng đời tác vụ ngầm với `asyncio.create_task()`.
+  * **Chapter 4: Running Tasks Concurrently**: Chạy song song nhiều coroutines với `asyncio.gather()` và `asyncio.wait()`.
+  * **Chapter 5: Async Generators & Iterators**: Tạo và tiêu thụ luồng dữ liệu bất đồng bộ với `async for` và `yield`.
+  * **Chapter 6: Synchronization Primitives**: Quản lý concurrency an toàn với `asyncio.Lock` và `asyncio.Semaphore`.
+* **2. Tài nguyên Tra cứu & Bài giảng**:
+  * 📖 **Tài liệu học chính (Miễn phí)**: [Async Python Playground (Ali Gheshlaghi)](https://aligheshlaghi97.github.io/asynchronous-python/) (Học từ Chapter 1 đến Chapter 6).
+  * 📖 **Tài liệu tra cứu chính thức**: [Python Official Docs - `asyncio`](https://docs.python.org/3/library/asyncio.html).
+* **3. Nhiệm vụ Thực hành**:
+  * **Phương pháp**: Đọc hiểu lý thuyết và thực hành chạy các ví dụ code mẫu (Code Walkthrough) trực tiếp trên tài liệu *Async Python Playground*.
+  * 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `Synchronous vs Asynchronous`, `I/O-bound`, `Coroutine (async/await)`, `Event Loop`, `asyncio.create_task()`, `asyncio.gather()`, `Async Generator (yield)`, `asyncio.Semaphore`.
+
+---
 
 ### 🟢 Module 1: LangChain & Agentic Foundations
 > **Mục tiêu**: Nắm vững kiến trúc LangChain v1.0, LCEL, Runnable Chains, quản lý Multi-LLM provider, Prompt Templates và Output Parsers.
