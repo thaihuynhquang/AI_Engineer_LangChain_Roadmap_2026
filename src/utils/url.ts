@@ -1,4 +1,4 @@
-export const GITHUB_REPO_BASE_URL = 'https://github.com/thaihuynhquang/applied-ai-engineer-roadmap-2026-vn/blob/main';
+export const GITHUB_REPO_BASE_URL = 'https://github.com/thaihuynhquang/applied-ai-engineer-roadmap-2026-vn/blob/master';
 
 /**
  * Resolves a resource URL. If it's a relative path (e.g. docs/content/foo.md),
