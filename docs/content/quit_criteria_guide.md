@@ -21,25 +21,25 @@ Tài liệu này hướng dẫn cách áp dụng **Phương pháp Lập Tiêu ch
 
 ## 📊 2. Phân Tích Độ Phức Tạp Lộ Trình & Các Điểm Gãy (Choke Points)
 
-Lộ trình **Agentic AI Master Curriculum** gồm **13 Master Modules** (Module 0 Nền Tảng + 10 Module Cốt Lõi + 2 Module Tùy Chọn), **373 Pomodoros** ($\approx 186.5$ giờ tập trung), **4 Projects lớn**, kéo dài **12.4 tuần** với cường độ **6 Pomodoros/ngày (30 Poms/tuần)**.
+Lộ trình **Agentic AI Master Curriculum** gồm **14 Master Modules** (Module 0 Nền Tảng + 11 Module Cốt Lõi + 2 Module Tùy Chọn), **389 Pomodoros** ($\approx 194.5$ giờ tập trung), **4 Projects lớn**, kéo dài **13 tuần** với cường độ **6 Pomodoros/ngày (30 Poms/tuần)**.
 
 ```
-[Tuần 1-2: Nền tảng] ──► 🚨 CHOKE POINT 1 ──► 🚨 CHOKE POINT 2 ──► 🚨 CHOKE POINT 3
-  (LCEL & Ingestion)     (Tuần 3-4: RAG & pgvector) (Tuần 6-8: Multi-Agent & LLMOps) (Tuần 9-11: Full-stack Web AI)
+[Tuần 1-3: Nền tảng] ──► 🚨 CHOKE POINT 1 ──► 🚨 CHOKE POINT 2 ──► 🚨 CHOKE POINT 3
+  (Async, LCEL, Docker, Doc AI)  (Tuần 4-5: RAG & pgvector) (Tuần 7-9: Multi-Agent & LLMOps) (Tuần 11-12: Full-stack Web AI)
 ```
 
-### 🚨 Choke Point 1: Tuần 3–4 | Module 4 & Project 2 (Advanced RAG & `pgvector`)
+### 🚨 Choke Point 1: Tuần 4–5 | Module 5 & Project 2 (Advanced RAG & `pgvector`)
 * **Định mức:** 43 Pomodoros (Module lớn thứ 2 trong lộ trình).
 * **Rủi ro sa lầy:** Chuyển đổi từ ChromaDB local sang CSDL PostgreSQL + `pgvector` (HNSW/IVFFlat indexing, Hybrid Search).
 * **Bẫy chi phí chìm:** Dành hơn 20 Pomodoros chỉ để debug SQL/Docker container thay vì tập trung xây dựng logic RAG Retrieval.
 
-### 🚨 Choke Point 2: Tuần 6–8 | Module 6, 7 & Project 3, Project 4 (Multi-Agent, LLMOps, Security, Cloud Deploy)
+### 🚨 Choke Point 2: Tuần 7–9 | Module 7, 8 & Project 3, Project 4 (Multi-Agent, LLMOps, Security, Cloud Deploy)
 * **Định mức:** 118 Pomodoros (Chiếm $> 1/3$ tổng khối lượng cả khóa).
 * **Rủi ro sa lầy:** Độ phức tạp hệ thống tăng vọt với `Supervisor Agent`, `Agent Handoffs`, `Blackboard Pattern`, đóng gói `FastAPI` + `Docker`, đánh giá RAG bằng `Arize/Ragas` và deploy Cloud lên `Render`.
 * **Bẫy chi phí chìm:** Bị ngợp giữa quá nhiều công cụ phụ trợ. Học viên nản chí khi Project 3/4 kéo dài quá 2 tuần nhưng tiếc công sức 50% chặng đường đã đi qua nên cố học đối phó (chỉ đọc code mà không chạy được app).
 
-### 🚨 Choke Point 3: Tuần 10–11 | Module 9, 10 & 11 (Open-Source LLMs vLLM/Ollama & Full-Stack Next.js 15 AI)
-* **Định mức:** 81 Pomodoros.
+### 🚨 Choke Point 3: Tuần 11–12 | Module 10, 11 (Open-Source LLMs vLLM/Ollama & Full-Stack Next.js 15 AI)
+* **Định mức:** 47 Pomodoros.
 * **Rủi ro sa lầy:** Dịch chuyển ngôn ngữ & công nghệ từ Python Backend sang TypeScript / Next.js 15 / Tailwind / Vercel AI SDK.
 * **Bẫy chi phí chìm:** Mắc kẹt ở phần giao diện Web UI (CSS, React State) khiến xao nhãng khỏi kiến thức cốt lõi là AI Engineering.
 
@@ -69,22 +69,22 @@ Lộ trình **Agentic AI Master Curriculum** gồm **13 Master Modules** (Module
 * **Quy tắc:** Chuẩn 30 Pomodoros/tuần (6 Pomodoros/ngày).
 * **Trigger:** Hoàn thành thực tế **$< 15$ Pomodoros/tuần trong 2 tuần liên tiếp** (Hiệu suất giảm dưới $50\%$).
 * **Hành động Từ bỏ (Pivot Action):**
-  - **HỦY BỎ KHUNG THỜI GIAN 12 TUẦN (Kill 12-week deadline).**
-  - Tái cấu trúc lịch: Bỏ ca Tối (22:00–24:00), chỉ duy trì ca Chiều (4 Pomodoros/ngày). Giãn toàn bộ lộ trình từ 12 tuần thành **18–20 tuần**.
+  - **HỦY BỎ KHUNG THỜI GIAN 13 TUẦN (Kill 13-week deadline).**
+  - Tái cấu trúc lịch: Bỏ ca Tối (22:00–24:00), chỉ duy trì ca Chiều (4 Pomodoros/ngày). Giãn toàn bộ lộ trình từ 13 tuần thành **18–20 tuần**.
 
 ### 3.4 Ngưỡng 4: Ngưỡng Cắt Giảm Module Tùy Chọn (Optional Scope Kill Criteria)
-* **Quy tắc:** Module 11 (MCP Masterclass) và Module 12 (Advanced Async Python) đã được gắn nhãn **Optional** tại [online_learning_guide.md](./online_learning_guide.md).
-* **Trigger:** Khi bắt đầu Tuần 10 nhưng tổng thời gian thực tế đã mất $> 10$ tuần (do bị chậm ở các Module trước).
+* **Quy tắc:** Module 12 (MCP Masterclass) và Module 13 (Advanced Async Python) đã được gắn nhãn **Optional** tại [online_learning_guide.md](./online_learning_guide.md).
+* **Trigger:** Khi bắt đầu Tuần 11 nhưng tổng thời gian thực tế đã mất $> 11$ tuần (do bị chậm ở các Module trước).
 * **Hành động Từ bỏ (Pivot Action):**
-  - **HỦY BỎ HOÀN TOÀN MODULE 11 & MODULE 12 (Kill Module 11 & 12).**
-  - Sử dụng kiến thức MCP cơ bản ở Module 8 và Async cơ bản ở Module 0 làm chuẩn. Dành trọn 50 Pomodoros tiết kiệm được để tập trung hoàn thiện Project 4 và tốt nghiệp với 11 Module (Module 0 Nền Tảng + 10 Module Cốt Lõi).
+  - **HỦY BỎ HOÀN TOÀN MODULE 12 & MODULE 13 (Kill Module 12 & 13).**
+  - Sử dụng kiến thức MCP cơ bản ở Module 9 và Async cơ bản ở Module 0 làm chuẩn. Dành trọn 50 Pomodoros tiết kiệm được để tập trung hoàn thiện Project 4 và tốt nghiệp với 12 Module (Module 0 Nền Tảng + 11 Module Cốt Lõi).
 
 ---
 
 ## 🔮 4. Kỹ Thuật Phân Tích Pre-Mortem & Chi Phí Cơ Hội
 
 ### 4.1 Kịch Bản Phân Tích Pre-Mortem (Phân Tích Tử Thi Trước Trận Đấu)
-* **Giả định thất bại:** *"Giả sử sau 3 tháng, học viên bỏ dở lộ trình ở Tuần 6 và không có sản phẩm nào đưa vào Portfolio."*
+* **Giả định thất bại:** *"Giả sử sau 3 tháng, học viên bỏ dở lộ trình ở Tuần 7 và không có sản phẩm nào đưa vào Portfolio."*
 * **Nguyên nhân cốt lõi phát hiện được:**
   1. Thiếu kỷ luật ở ca tối (22:00 - 24:00) do cơ thể quá mệt mỏi sau ngày làm việc.
   2. Sa lầy vào cấu hình môi trường phức tạp (PostgreSQL, Docker Compose, vLLM).
@@ -94,28 +94,29 @@ Lộ trình **Agentic AI Master Curriculum** gồm **13 Master Modules** (Module
   - Luôn tuân thủ ca Tối là ca nhẹ nhàng: Refactoring, viết Unit Test và học Flashcards trên Gemini Notebook.
 
 ### 4.2 Phân Tích Chi Phí Cơ Hội (Opportunity Cost)
-* **373 Pomodoros ($\approx 186.5$ giờ focus):** Bằng thời gian xây dựng 1 ứng dụng SaaS AI hoàn chỉnh đưa ra thị trường hoặc viết 15 bài blog phân tích chuyên sâu.
+* **389 Pomodoros ($\approx 194.5$ giờ focus):** Bằng thời gian xây dựng 1 ứng dụng SaaS AI hoàn chỉnh đưa ra thị trường hoặc viết 15 bài blog phân tích chuyên sâu.
 * **Nguyên tắc hành động:** Mỗi Pomodoro chi ra phải thu về **Artifacts chạy được (Working Code / Commits)**. Nếu qua 2 Pomodoros mà không viết được dòng code hay ghi chú nào, lập tức DỪNG xem video và chuyển sang viết bài tập thực hành.
 
 ---
 
-## 📋 5. Ma Trận Quyết Định Từ Bỏ Theo Chi Tiết 13 Modules
+## 📋 5. Ma Trận Quyết Định Từ Bỏ Theo Chi Tiết 14 Modules
 
 | Module | Tên Module | Định mức (Poms) | Trigger Kích Hoạt Từ Bỏ | Hành động Xoay Trục (Pivot Action) |
 | :--- | :--- | :---: | :--- | :--- |
 | **Module 0** | Python AsyncIO Foundations | 6 Poms | Mắc kẹt syntax async/await / Event Loop > 2 Poms | Đọc tóm tắt [async_python_guide.md](./async_python_guide.md) & học tập trung code mẫu Chap 1-2, bỏ qua tự viết từ đầu |
 | **Module 1** | LangChain Foundations | 24 Poms | Mắc kẹt setup API Keys/LCEL > 4 Poms | Chuyển sang dùng OpenAI/Anthropic SDK thuần hoặc Colab |
 | **Module 2** | Chain Patterns & LCEL | 16 Poms | Lỗi chuỗi đa nhánh `RunnableParallel` > 3 Poms | Dùng code mẫu Runnable Sequence tuyến tính đơn giản |
-| **Module 3** | Data Ingestion & LlamaParse | 23 Poms | LlamaParse API lỗi parse PDF > 3 Poms | Dùng `PyPDFLoader` mặc định, bỏ qua parse bảng phức tạp |
-| **Module 4** | Advanced RAG & `pgvector` | 43 Poms | Lỗi CSDL PostgreSQL/`pgvector` > 6 Poms | Dùng **Neon Postgres Cloud** hoặc quay lại **ChromaDB** |
-| **Module 5** | LangGraph Deep Dive | 30 Poms | Lỗi State Schema / Reducers > 5 Poms | Dùng `MessageState` mặc định của LangGraph |
-| **Module 6** | Multi-Agent Architectures | 52 Poms | Supervisor Agent bị lặp vô tận > 6 Poms | Giảm số Worker Agents xuống 2, bỏ Blackboard Pattern |
-| **Module 7** | Production LLMOps & Security | 66 Poms | Docker / Render Cloud deploy lỗi > 8 Poms | Triển khai FastAPI Local + ngrok demo, bỏ Render |
-| **Module 8** | MCP Quickstart | 16 Poms | FastMCP Transport SSE lỗi > 3 Poms | Chỉ dùng Stdio Transport đơn giản |
-| **Module 9** | Open-Source LLMs (vLLM) | 20 Poms | Máy local không đủ VRAM chạy vLLM > 3 Poms | Dùng Ollama local hoặc Groq API (Free Cloud Inference) |
-| **Module 10** | Full-Stack Web AI (Next.js) | 27 Poms | Next.js App Router / Tailwind lỗi > 5 Poms | Dùng **Streamlit** hoặc **FastAPI HTML UI** |
-| **Module 11** | MCP Masterclass (Anthropic) | 34 Poms | Bị chậm tiến độ tổng hợp > 1 tuần | **HỦY BỎ MODULE 11 (OPTIONAL)** |
-| **Module 12** | Advanced Async Python | 16 Poms | Bị chậm tiến độ tổng hợp > 1 tuần | **HỦY BỎ MODULE 12 (OPTIONAL)** |
+| **Module 3** | Docker Essentials | 16 Poms | Mắc kẹt setup Dockerfile/Compose > 4 Poms | Dùng template Docker Compose có sẵn hoặc Neon Cloud |
+| **Module 4** | Data Ingestion & LlamaParse | 23 Poms | LlamaParse API lỗi parse PDF > 3 Poms | Dùng `PyPDFLoader` mặc định, bỏ qua parse bảng phức tạp |
+| **Module 5** | Advanced RAG & `pgvector` | 43 Poms | Lỗi CSDL PostgreSQL/`pgvector` > 6 Poms | Dùng **Neon Postgres Cloud** hoặc quay lại **ChromaDB** |
+| **Module 6** | LangGraph Deep Dive | 30 Poms | Lỗi State Schema / Reducers > 5 Poms | Dùng `MessageState` mặc định của LangGraph |
+| **Module 7** | Multi-Agent Architectures | 52 Poms | Supervisor Agent bị lặp vô tận > 6 Poms | Giảm số Worker Agents xuống 2, bỏ Blackboard Pattern |
+| **Module 8** | Production LLMOps & Security | 66 Poms | Docker / Render Cloud deploy lỗi > 8 Poms | Triển khai FastAPI Local + ngrok demo, bỏ Render |
+| **Module 9** | MCP Quickstart | 16 Poms | FastMCP Transport SSE lỗi > 3 Poms | Chỉ dùng Stdio Transport đơn giản |
+| **Module 10** | Open-Source LLMs (vLLM) | 20 Poms | Máy local không đủ VRAM chạy vLLM > 3 Poms | Dùng Ollama local hoặc Groq API (Free Cloud Inference) |
+| **Module 11** | Full-Stack Web AI (Next.js) | 27 Poms | Next.js App Router / Tailwind lỗi > 5 Poms | Dùng **Streamlit** hoặc **FastAPI HTML UI** |
+| **Module 12** | MCP Masterclass (Anthropic) | 34 Poms | Bị chậm tiến độ tổng hợp > 1 tuần | **HỦY BỎ MODULE 12 (OPTIONAL)** |
+| **Module 13** | Advanced Async Python | 16 Poms | Bị chậm tiến độ tổng hợp > 1 tuần | **HỦY BỎ MODULE 13 (OPTIONAL)** |
 
 ---
 
