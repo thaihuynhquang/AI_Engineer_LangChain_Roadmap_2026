@@ -1,26 +1,27 @@
 # 🚀 Hướng Dẫn Lộ Trình Tự Học Agentic AI Master Curriculum (2026)
-## Khóa Packt LangChain/LangGraph + Các Khóa Học Bổ Sung Miễn Phí (100% Free)
+## Khóa Packt LangChain/LangGraph + Các Khóa Học Bổ Sung
 
-Hướng dẫn này cung cấp khung lộ trình học tập **Master Curriculum (Module 0 Nền Tảng + 10 Module Cốt Lõi + 2 Module Tùy Chọn)** được tích hợp hoàn chỉnh giữa:
+Hướng dẫn này cung cấp khung lộ trình học tập **Master Curriculum (12 Module Cốt Lõi + 2 Module Tùy Chọn)** được tích hợp hoàn chỉnh giữa:
 1. 📹 **Khóa Packt (Core Engine & Production)**: [Agentic AI Systems: Build & Deploy with LangChain/LangGraph](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814) (Packt Publishing).
-2. 🆓 **Các Khóa Học Miễn Phí Bổ Sung (Free Supplemental Courses)** từ **Anthropic Academy**, **DeepLearning.AI**, **Vercel**, **freeCodeCamp**, **Hugging Face**, **Neon Postgres**, **Async Python Playground (Ali Gheshlaghi)** và **MCP Official Docs** để bù đắp các khoảng trống công nghệ (Async Python, Web UI, `pgvector`, vLLM, LlamaParse, MCP Masterclass, RAG Evals).
+2. 📹 **Khóa Udemy (Docker Essentials)**: [Docker & Kubernetes: The Practical Guide](https://www.udemy.com/course/docker-kubernetes-the-practical-guide/) (Maximilian Schwarzmüller - Sections 1–7, 9 [lọc], 10).
+3. 🆓 **Các Khóa Học Miễn Phí Bổ Sung (Free Supplemental Courses)** từ **Anthropic Academy**, **DeepLearning.AI**, **Vercel**, **freeCodeCamp**, **Hugging Face**, **Neon Postgres**, **Async Python Playground (Ali Gheshlaghi)** và **MCP Official Docs** để bù đắp các khoảng trống công nghệ (Async Python, Web UI, `pgvector`, vLLM, LlamaParse, MCP Masterclass, RAG Evals).
 
-Lộ trình bao gồm **Module 0 (Nền tảng Async Essentials) + 10 Module cốt lõi + 2 Module nâng cao tùy chọn (Module 11 & Module 12)**, kết hợp giữa **Lý thuyết bài giảng** $\rightarrow$ **Hands-on Demos & Bài tập** $\rightarrow$ **4 Dự án thực tế lớn (Projects)**.
+Lộ trình bao gồm **12 Module cốt lõi (Module 0–11) + 2 Module nâng cao tùy chọn (Module 12 & Module 13)**, kết hợp giữa **Lý thuyết bài giảng** $\rightarrow$ **Hands-on Demos & Bài tập** $\rightarrow$ **4 Dự án thực tế lớn (Projects)**.
 
 ---
 
-## 🗺️ Bức Tranh Tổng Quan Lộ Trình (13 Modules Overview)
+## 🗺️ Bức Tranh Tổng Quan Lộ Trình (14 Modules Overview)
 
 ```
-[Module 0: Python AsyncIO Foundations] ──► [Module 1: LangChain Foundations] ──► [Module 2: Chain Patterns & LCEL]
-                                                                                                 │
-[Module 5: LangGraph Deep Dive] ◄── [Module 4: Advanced RAG & pgvector] ◄── [Module 3: Data Ingestion & LlamaParse]
+[Module 0: AsyncIO] ──► [Module 1: LangChain] ──► [Module 2: LCEL Patterns] ──► [Module 3: Docker Essentials]
+                                                                                            │
+[Module 6: LangGraph] ◄── [Module 5: Advanced RAG & pgvector] ◄── [Module 4: Data Ingestion & LlamaParse] ◄─┘
        │
        ▼
-[Module 6: Multi-Agent Architectures] ──► [Module 7: Production & LLMOps] ──► [Module 8: MCP Quick Integration]
-                                                                                               │
-                                                                                               ▼
-[Module 12 (Tùy chọn): Advanced Async] ◄── [Module 11 (Tùy chọn): MCP Masterclass] ◄── [Module 10: Web AI] ◄── [Module 9: vLLM]
+[Module 7: Multi-Agent] ──► [Module 8: Production & Deploy] ──► [Module 9: MCP Quickstart]
+                                                                            │
+                                                                            ▼
+[Module 13 (Tùy chọn): Advanced Async] ◄── [Module 12 (Tùy chọn): MCP Masterclass] ◄── [Module 11: Web AI] ◄── [Module 10: vLLM]
 ```
 
 ---
@@ -78,7 +79,29 @@ Lộ trình bao gồm **Module 0 (Nền tảng Async Essentials) + 10 Module c�
 
 ---
 
-### 🟠 Module 3: Data Ingestion, Complex Document AI & Vector Stores
+### 🐋 Module 3: Docker & Containerization Essentials
+> **Mục tiêu**: Làm chủ Docker & Docker Compose để đóng gói ứng dụng Python/AI Services và tạo môi trường làm việc local (Vector DB ChromaDB/PostgreSQL, Redis) sẵn sàng cho các Module dữ liệu tiếp theo.
+
+* **1. Nội dung Kiến thức Cần nạp (Lọc từ 10 Sections Docker khóa Udemy)**:
+  * **Section 1 (Getting Started)**: Khái niệm Docker Engine, Docker vs VM, cài đặt Docker Desktop. Lý do AI Backend cần Docker (tránh xung đột môi trường Python/CUDA/CSDL).
+  * **Section 2 (Images & Containers)**: Phân biệt Image vs Container, viết `Dockerfile` tối ưu layer caching (`python:3.11-slim`), quản lý `requirements.txt`, các lệnh CLI (`docker build`, `run`, `stop`, `ps`, `rm`).
+  * **Section 3 (Managing Data & Volumes)**: Named Volumes (lưu trữ dữ liệu bền vững cho CSDL/Vector DB, local models cache) & Bind Mounts (sync source code live-reload khi dev Agent).
+  * **Section 4 (Networking)**: Host-to-Container port mapping (`-p`), Custom Docker Networks cho phép Python App kết nối trực tiếp với PostgreSQL qua DNS container name.
+  * **Section 5 (Multi-Container Apps)**: Hiểu quy trình và sự cồng kềnh khi chạy nhiều container bằng CLI thủ công trước khi dùng Docker Compose.
+  * **Section 6 (Docker Compose - Trọng tâm)**: Viết file `docker-compose.yaml` (`services`, `build`, `ports`, `volumes`, `environment`, `networks`, `depends_on`), quản lý với `docker compose up/down`.
+  * **Section 7 (Utility Containers & Exec)**: Dùng `docker exec -it` vào container kiểm tra CSDL; dùng Utility Container chạy script Python/migration 1 lần rồi xóa (`--rm`).
+  * **Section 9 (Deploying - Lọc 50%)**: Khái niệm Docker Registry (Docker Hub), biến môi trường Production, cấu hình `docker-compose.prod.yml` (Bỏ qua bài setup AWS EC2/ECS rườm rà).
+  * **Section 10 (Docker Summary)**: Tổng kết toàn bộ kiến thức Docker Compose & Best Practices.
+* **2. Tài nguyên Tra cứu & Bài giảng**:
+  * 📹 **Khóa học chính**: [Udemy - Docker & Kubernetes: The Practical Guide (Maximilian Schwarzmüller)](https://www.udemy.com/course/docker-kubernetes-the-practical-guide/) (Học Sections 1–7, 9 [lọc], 10).
+  * 📖 **Docs Tra cứu chính thức**: [Docker Official Documentation](https://docs.docker.com/) | [Docker Compose Specification](https://docs.docker.com/compose/).
+* **3. Nhiệm vụ Thực hành**:
+  * Viết `Dockerfile` đóng gói ứng dụng Python Starter & file `docker-compose.yml` kết nối ứng dụng với PostgreSQL database.
+  * 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `Docker Engine`, `Image vs Container`, `Dockerfile (Multi-stage/Layer Caching)`, `Named Volumes vs Bind Mounts`, `Docker Custom Networks`, `Docker Compose (docker-compose.yml)`, `docker exec`, `Docker Hub Registry`.
+
+---
+
+### 🟠 Module 4: Data Ingestion, Complex Document AI & Vector Stores
 > **Mục tiêu**: Xử lý đa dạng định dạng tài liệu (bao gồm PDF/Tables phức tạp với LlamaParse), kỹ thuật Text Splitting và lưu trữ vector với ChromaDB.
 
 * **1. Nội dung Kiến thức Cần nạp**:
@@ -96,13 +119,13 @@ Lộ trình bao gồm **Module 0 (Nền tảng Async Essentials) + 10 Module c�
 
 ---
 
-### 🔴 Module 4: Advanced RAG, Production `pgvector` & Memory Systems
+### 🔴 Module 5: Advanced RAG, Production `pgvector` & Memory Systems
 > **Mục tiêu**: Xây dựng hệ thống RAG nâng cao (Multi-Query, Compression, Hybrid, Parent Doc), tích hợp CSDL Vector Production `pgvector` và quản lý bộ nhớ.
 
 * **1. Nội dung Kiến thức Cần nạp**:
   * RAG Pipeline Architecture: Basic RAG, Fallback, Structured Outputs (*Khóa Packt - Chapter 5*).
   * Advanced RAG Strategies: Multi-Query Retriever, Contextual Compression, Hybrid Search, Parent Document Retriever.
-  * **Production Vector DB (`pgvector`)**: Cấu hình PostgreSQL với extension `pgvector`, HNSW/IVFFlat Indexing, kết hợp SQL & Vector search.
+  * **Production Vector DB (`pgvector`)**: Cấu hình PostgreSQL với extension `pgvector` chạy trên Docker container, HNSW/IVFFlat Indexing, kết hợp SQL & Vector search.
   * Memory Patterns: Conversation Memory, Multiple Sessions Memory, Message Trimming, Windowed Memory, Summary Memory, Persistent Memory.
 * **2. Tài nguyên Tra cứu & Bài giảng**:
   * 📹 **Khóa học chính**: [Packt Chapter 5](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814).
@@ -113,7 +136,7 @@ Lộ trình bao gồm **Module 0 (Nền tảng Async Essentials) + 10 Module c�
 
 ---
 
-### 🔵 Module 5: LangGraph - A Full Deep Dive
+### 🔵 Module 6: LangGraph - A Full Deep Dive
 > **Mục tiêu**: Chuyển đổi từ chuỗi tuyến tính sang đồ thị luồng điều khiển (StateGraph), quản lý trạng thái, vòng lặp tự sửa lỗi và can thiệp từ con người.
 
 * **1. Nội dung Kiến thức Cần nạp**:
@@ -131,7 +154,7 @@ Lộ trình bao gồm **Module 0 (Nền tảng Async Essentials) + 10 Module c�
 
 ---
 
-### 🟣 Module 6: Multi-Agent Architectures (CrewAI + LangGraph Multi-Agent)
+### 🟣 Module 7: Multi-Agent Architectures (CrewAI + LangGraph Multi-Agent)
 > **Mục tiêu**: Thiết kế hệ thống Đa Agent linh hoạt — so sánh giữa CrewAI (phân vai tác nhiệm nhanh) và LangGraph Multi-Agent (đồ thị phân cấp chi tiết).
 
 * **1. Nội dung Kiến thức Cần nạp**:
@@ -148,7 +171,7 @@ Lộ trình bao gồm **Module 0 (Nền tảng Async Essentials) + 10 Module c�
 
 ---
 
-### 🟤 Module 7: Production Deployment, LLMOps, Security & Evaluation
+### 🟤 Module 8: Production Deployment, LLMOps, Security & Evaluation
 > **Mục tiêu**: Bảo mật hệ thống, đánh giá chất lượng RAG/Agent (Ragas/Arize), giám sát với LangSmith, tối ưu chi phí và triển khai API Production (FastAPI + Docker + Render).
 
 * **1. Nội dung Kiến thức Cần nạp**:
@@ -156,7 +179,7 @@ Lộ trình bao gồm **Module 0 (Nền tảng Async Essentials) + 10 Module c�
   * Security & Defense in Depth: PII Detection, Prompt Injection Attack Defense, LLM Guard (Smart Bouncer), Output Validator.
   * **RAG & Agent Evaluation**: Sử dụng **Arize AI / Ragas / TruLens** đánh giá Faithfulness, Answer Relevance, Context Recall và LLM-as-a-Judge.
   * Resilience & Error Handling: Circuit Breaker, Fallback Chain, Graph-Based Retry, Model Router, Semantic Caching.
-  * Triển khai API Production: Đóng gói FastAPI + LangGraph Agent với Docker và deploy lên Cloud (Render).
+  * Triển khai API Production: Đóng gói ứng dụng Full AI Stack bằng Docker Compose (`FastAPI + LangGraph Agent + pgvector + Redis + Next.js UI`) và deploy lên Cloud (Render).
 * **2. Tài nguyên Tra cứu & Bài giảng**:
   * 📹 **Khóa học chính**: [Packt Chapter 8](https://www.packtpub.com/en-us/product/agentic-ai-systems-build-deploy-with-langchainlanggraph-9781807780814).
   * 🆓 **Khóa học bổ sung miễn phí**: DeepLearning.AI — [Evaluating AI Agents](https://learn.deeplearning.ai/courses/evaluating-ai-agents) (với Arize AI).
@@ -167,7 +190,7 @@ Lộ trình bao gồm **Module 0 (Nền tảng Async Essentials) + 10 Module c�
 
 ---
 
-### 🔌 Module 8: Model Context Protocol (MCP) Integration Quickstart
+### 🔌 Module 9: Model Context Protocol (MCP) Integration Quickstart
 > **Mục tiêu**: Tích hợp nhanh giao thức kết nối công cụ mở Model Context Protocol (MCP) vào luồng phát triển AI Agent, tạo cầu nối kết nối Agent với các công cụ & nguồn dữ liệu bên ngoài.
 
 * **1. Nội dung Kiến thức Cần nạp**:
@@ -183,7 +206,7 @@ Lộ trình bao gồm **Module 0 (Nền tảng Async Essentials) + 10 Module c�
 
 ---
 
-### ⚡ Module 9: Open-Source LLMs & High-Throughput Serving (vLLM & Ollama)
+### ⚡ Module 10: Open-Source LLMs & High-Throughput Serving (vLLM & Ollama)
 > **Mục tiêu**: Làm chủ các mô hình AI mã nguồn mở (Llama 3.3, DeepSeek-R1), tự phục vụ local với Ollama và triển khai high-throughput server với vLLM.
 
 * **1. Nội dung Kiến thức Cần nạp**:
@@ -200,7 +223,7 @@ Lộ trình bao gồm **Module 0 (Nền tảng Async Essentials) + 10 Module c�
 
 ---
 
-### 🌐 Module 10: Full-Stack Web AI Interface (Next.js & Vercel AI SDK)
+### 🌐 Module 11: Full-Stack Web AI Interface (Next.js & Vercel AI SDK)
 > **Mục tiêu**: Xây dựng giao diện Web AI hiện đại, hỗ trợ HTTP Streaming Response (stream từng token), Chat UI, Generative UI và Tool Calling UI.
 
 * **1. Nội dung Kiến thức Cần nạp**:
@@ -217,8 +240,8 @@ Lộ trình bao gồm **Module 0 (Nền tảng Async Essentials) + 10 Module c�
 
 ---
 
-### 🎓 Module 11 (Tùy chọn / Optional): Model Context Protocol (MCP) Masterclass (Anthropic Official Curriculum)
-> 💡 **Lưu ý giảm tải khối lượng**: Module này là **Tùy chọn (Optional)**. Kiến thức MCP cơ bản tích hợp vào Agent đã được phủ ở **Module 8**. Bạn có thể tạm thời bỏ qua Module 11 để hoàn thành lộ trình cốt lõi nhanh hơn và quay lại khi cần đào sâu chuẩn MCP nâng cao từ Anthropic.
+### 🎓 Module 12 (Tùy chọn / Optional): Model Context Protocol (MCP) Masterclass (Anthropic Official Curriculum)
+> 💡 **Lưu ý giảm tải khối lượng**: Module này là **Tùy chọn (Optional)**. Kiến thức MCP cơ bản tích hợp vào Agent đã được phủ ở **Module 9**. Bạn có thể tạm thời bỏ qua Module 12 để hoàn thành lộ trình cốt lõi nhanh hơn và quay lại khi cần đào sâu chuẩn MCP nâng cao từ Anthropic.
 >
 > **Mục tiêu**: (Tùy chọn) Làm chủ toàn diện chuẩn giao thức kết nối công cụ Model Context Protocol (MCP) từ kiến trúc nền tảng đến kỹ thuật nâng cao Production (Sampling, Roots, Progress, Transports & Security) dựa trên 2 khóa học chính thức từ Anthropic.
 
@@ -239,12 +262,12 @@ Lộ trình bao gồm **Module 0 (Nền tảng Async Essentials) + 10 Module c�
 * **3. Nhiệm vụ Thực hành**:
   - Xây dựng 1 MCP Server hoàn chỉnh bằng Python SDK hỗ trợ full 3 Primitives (`Tools`, `Resources`, `Prompts`) kết hợp với **Sampling callback** và hỗ trợ `StreamableHTTP` transport.
   - Sử dụng **MCP Inspector** để kiểm tra và debug toàn bộ các luồng giao tiếp tin nhắn.
-  - 🗂️ **Mock Interview bằng Flashcards (Gemini Notebook)**: Keywords: `MCP Architecture (Host/Client/Server)`, `Tools vs Resources vs Prompts`, `MCP Inspector`, `Sampling (Server-Initiated LLM Calls)`, `Progress Notifications`, `Roots (Filesystem Scoping)`, `stdio vs StreamableHTTP`, `OAuth CIMD`.
+
 
 ---
 
-### ⚡ Module 12 (Tùy chọn / Optional): Advanced Async Python & System Concurrency
-> 💡 **Lưu ý giảm tải khối lượng**: Module này là **Tùy chọn (Optional)** nằm ở cuối lộ trình học. Sau khi tốt nghiệp 10 Module Cốt Lõi, bạn có thể học tiếp Module này để làm chủ hoàn toàn các kỹ thuật bất đồng bộ low-level, đồng bộ hóa tài nguyên nâng cao và điều phối hệ thống.
+### ⚡ Module 13 (Tùy chọn / Optional): Advanced Async Python & System Concurrency
+> 💡 **Lưu ý giảm tải khối lượng**: Module này là **Tùy chọn (Optional)** nằm ở cuối lộ trình học. Sau khi tốt nghiệp 12 Module Cốt Lõi, bạn có thể học tiếp Module này để làm chủ hoàn toàn các kỹ thuật bất đồng bộ low-level, đồng bộ hóa tài nguyên nâng cao và điều phối hệ thống.
 
 * **1. Nội dung Kiến thức Cần nạp (Tập trung Chapters 3, 4, 5 & Chap 6 Advanced)**:
   * **Chapter 3: Low-Level Futures**: Cấu trúc `Task` -> `Future` -> `Awaitable`, kết nối callback legacy với async code qua `set_result()` / `set_exception()`.
@@ -252,7 +275,7 @@ Lộ trình bao gồm **Module 0 (Nền tảng Async Essentials) + 10 Module c�
   * **Chapter 5: Advanced Async & Structured Concurrency**: `asyncio.TaskGroup`, `asyncio.timeout()`, lan truyền exception với `ExceptionGroup` (`except*`), Task cancellation message, Hàng đợi `asyncio.Queue` (Producer-Consumer).
   * **Chapter 6 Advanced**: API đóng hàng đợi `asyncio.Queue.shutdown()` (Python 3.13+), mặc định start method POSIX `spawn`/`forkserver` cho `multiprocessing` (Python 3.14+).
 * **2. Tài nguyên Tra cứu & Bài giảng**:
-  * ⚡ **Tài liệu tóm tắt nội bộ**: [Hướng Dẫn Async Python Hiện Đại (Up-to-Date)](./async_python_guide.md) (Xem **Phần B: Module 12 Optional Advanced**).
+  * ⚡ **Tài liệu tóm tắt nội bộ**: [Hướng Dẫn Async Python Hiện Đại (Up-to-Date)](./async_python_guide.md) (Xem **Phần B: Module 13 Optional Advanced**).
   * 📖 **Tài liệu học chính (Miễn phí)**: [Async Python Playground (Ali Gheshlaghi)](https://aligheshlaghi97.github.io/asynchronous-python/) (Chapters 3, 4, 5 & 6).
 * **3. Nhiệm vụ Thực hành**:
   - Viết pipeline Producer-Consumer đa luồng với `asyncio.Queue` hỗ trợ `TaskGroup` và `asyncio.Semaphore`.
