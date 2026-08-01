@@ -99,7 +99,7 @@ export const SPRINT_MODULES: SprintModule[] = [
       {
         id: "res-m0-2",
         title: "Async Python Playground (Ali Gheshlaghi)",
-        type: "course",
+        type: "docs",
         description: "Trang web học và thực hành Async Python tương tác miễn phí.",
         url: "https://aligheshlaghi97.github.io/asynchronous-python/",
         moduleId: "mod-0",
@@ -1174,7 +1174,7 @@ export const SPRINT_MODULES: SprintModule[] = [
       {
         id: "res-m13-2",
         title: "Async Python Playground (Ali Gheshlaghi)",
-        type: "course",
+        type: "docs",
         description: "Trang web học và thực hành Async Python tương tác cho Chapters 3, 4, 5 & 6.",
         url: "https://aligheshlaghi97.github.io/asynchronous-python/",
         moduleId: "mod-13",

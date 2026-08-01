@@ -72,13 +72,13 @@ export class RoadmapViewResources extends HTMLElement {
                 res.type === 'course' ? '#10b981' : res.type === 'docs' ? '#6366f1' : '#f59e0b';
               const typeIcon =
                 res.type === 'course'
-                  ? ICONS.video
+                  ? ICONS.gradCap
                   : res.type === 'docs'
                   ? ICONS.bookOpen
                   : ICONS.code;
               const typeLabel =
                 res.type === 'course'
-                  ? 'Video Course'
+                  ? 'Course'
                   : res.type === 'docs'
                   ? 'Official Docs'
                   : 'Code Repo';
